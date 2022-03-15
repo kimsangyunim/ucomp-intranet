@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<%-include('../_templates/_data.header.front.ejs', {
+	pageStyle: 'bui.page.snippet.css',
+	pageJavascript: ''
+}) %>
+</head>
+<body>
+<div id="wrap">
+	<!-- page -->
+	<div id="page">
+<%-include('../_templates/_header.snippet.ejs') %>
+		<!-- page-body -->
+		<div class="page-body" id="local">
+			<!-- local-head -->
+			<div class="local-head">
+				<h2 class="local-title" id="localTitle"><span class="local-name">snippet</span></h2>
+			</div>
+			<!-- //local-head -->
+			<!-- local-body -->
+			<div class="local-body" id="content">
+				<!-- content-head -->
+				<div class="content-head">
+					<h3 class="content-title" id="contentTitle"><span class="content-name">tab</span></h3>
+				</div>
+				<!-- //content-head -->
+				<!-- content-body -->
+				<div class="content-body">
+					<!-- section -->
+					<div class="section">
+						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'tab display'}) %></div>
+						<div class="section-body">
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'HTML Structure'}) %></div>
+								<div class="subsection-body">
+									<pre class="highlight-js">
+<code class="html">&lt;div class="tab-display"&gt;
+	&lt;ul class="tab-list"&gt;
+		&lt;li class="tab-item current" title="현재 선택된 항목"&gt;&lt;a href="#" class="tab-name"&gt;one&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="tab-item"&gt;&lt;a href="#" class="tab-name"&gt;two&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="tab-item"&gt;&lt;a href="#" class="tab-name"&gt;three&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="tab-item"&gt;&lt;a href="#" class="tab-name"&gt;four&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="tab-item"&gt;&lt;a href="#" class="tab-name"&gt;five&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'Class Options'}) %></div>
+								<div class="subsection-body">
+									<!--data-table-->
+									<div class="data-table module-bui type-a">
+										<table>
+											<colgroup>
+												<col style="width: 128rem;">
+												<col>
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">module</th>
+													<td>tab-display</td>
+												</tr>
+												<tr>
+													<th scope="row">style</th>
+													<td>style-*</td>
+												</tr>
+												<tr>
+													<th scope="row">type</th>
+													<td>type-*</td>
+												</tr>
+												<tr>
+													<th scope="row">outline</th>
+													<td>medium</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!--//data-table-->
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection : module-a -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'module-a'}) %></div>
+								<div class="subsection-body">
+									<!-- highlight-js -->
+									<pre class="highlight-js"><code class="html">&lt;ul class="data-list module-a"&gt;</code></pre>
+									<!-- //highlight-js -->
+
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type'}) %></div>
+										<div class="subsubsection-body">
+											<p class="para">type-a</p>
+											<!--tab-display-->
+											<div class="tab-display module-a style-a type-a medium">
+												<ul class="tab-list">
+													<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">one</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">two</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">three</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+												</ul>
+											</div>
+											<!--//tab-display-->
+											<p class="para">type-b</p>
+											<!--tab-display-->
+											<div class="tab-display module-a style-a type-b medium">
+												<ul class="tab-list">
+													<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">one</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">two</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">three</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+												</ul>
+											</div>
+											<!--//tab-display-->
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'outline'}) %></div>
+										<div class="subsubsection-body">
+											<p class="para">small</p>
+											<!--tab-display-->
+											<div class="tab-display module-a style-a type-a small">
+												<ul class="tab-list">
+													<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">one</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">two</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">three</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+												</ul>
+											<!--//tab-display-->
+											<p class="para">medium</p>
+											<!--tab-display-->
+											<div class="tab-display module-a style-a type-a medium">
+												<ul class="tab-list">
+													<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">one</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">two</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">three</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+												</ul>
+											</div>
+											<!--//tab-display-->
+
+											<p class="para">large</p>
+											<!--tab-display-->
+											<div class="tab-display module-a style-a type-a large">
+												<ul class="tab-list">
+													<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">one</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">two</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">three</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+												</ul>
+											</div>
+											<!--//tab-display-->
+										</div>
+									</div>
+									<!-- //subsubsection -->
+								</div>
+							</div>
+							<!-- //subsection : module-a -->
+
+
+							<!-- subsection : module-b -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'module-b'}) %></div>
+								<div class="subsection-body">
+									<!-- highlight-js -->
+									<pre class="highlight-js"><code class="html">&lt;ul class="data-list module-b"&gt;</code></pre>
+									<!-- //highlight-js -->
+
+									<!-- subsubsection -->
+									<!-- <div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type'}) %></div>
+										<div class="subsubsection-body">
+											<p class="para">type-a</p>
+											<div class="tab-display module-b style-a type-a medium">
+												<ul class="tab-list">
+													<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">one</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">two</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">three</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+												</ul>
+											</div>
+										</div>
+									</div> -->
+									<!-- //subsubsection -->
+
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type'}) %></div>
+										<div class="subsubsection-body">
+											<p class="para">type-b</p>
+											<!--tab-display-->
+											<div class="tab-display module-b style-a type-b medium">
+												<ul class="tab-list">
+													<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">one</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">two</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">three</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+												</ul>
+											</div>
+											<!--//tab-display-->
+										</div>
+									</div>
+									<!-- //subsubsection -->
+
+									<!-- subsubsection -->
+									<!-- <div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type'}) %></div>
+										<div class="subsubsection-body">
+											<p class="para">type-c</p>
+											<div class="tab-display module-b style-a type-c medium">
+												<ul class="tab-list">
+													<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">one</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">two</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">three</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+												</ul>
+											</div>
+										</div>
+									</div> -->
+									<!-- //subsubsection ---->
+
+
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'module-e'}) %></div>
+										<div class="subsubsection-body">
+											<p class="para">type-d</p>
+											<!--tab-display-->
+											<div class="tab-display module-e style-a type-d medium">
+												<ul class="tab-list">
+													<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">one</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">two</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">three</a></li>
+													<li class="tab-item"><a class="tab-name" href="#">four</a></li>
+												</ul>
+											</div>
+											<!--//tab-display-->
+										</div>
+									</div>
+									<!-- //subsubsection -->
+								</div>
+							</div>
+							<!-- //subsection -->
+						</div>
+					</div>
+					<!-- //section -->
+				</div>
+				<!-- content-body -->
+			</div>
+			<!-- //local-body -->
+		</div>
+		<!-- //page-body -->
+<%-include('../_templates/_footer.front.ejs') %>
+	</div>
+	<!-- //page -->
+</div>
+<script type="text/javascript">
+	window.addEventListener('DOMContentLoaded', function() {
+		var buttons = document.querySelectorAll('.bui-button-area .btn');
+		Array.prototype.forEach.call(buttons, function(button) {
+			button.addEventListener('click', function(e) {
+				e.preventDefault();
+			});
+		});
+	});
+</script>
+</body>
+</html>

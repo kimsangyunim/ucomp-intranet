@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<%-include('../_templates/_data.header.front.ejs', {
+	pageStyle: 'bui.page.snippet.css',
+	pageJavascript: ''
+}) %>
+</head>
+<body>
+<div id="wrap">
+	<!-- page -->
+	<div id="page">
+<%-include('../_templates/_header.snippet.ejs') %>
+		<!-- page-body -->
+		<div class="page-body" id="local">
+			<!-- local-head -->
+			<div class="local-head">
+				<h2 class="local-title" id="localTitle"><span class="local-name">snippet</span></h2>
+			</div>
+			<!-- //local-head -->
+			<!-- local-body -->
+			<div class="local-body" id="content">
+				<!-- content-head -->
+				<div class="content-head">
+					<h3 class="content-title" id="contentTitle"><span class="content-name">icon</span></h3>
+				</div>
+				<!-- //content-head -->
+				<!-- content-body -->
+				<div class="content-body">
+					<!-- section -->
+					<div class="section">
+						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'SVG icon'}) %></div>
+						<div class="section-body">
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'HTML'}) %></div>
+								<div class="subsection-body">
+									<pre class="highlight-js">
+<code class="html">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" focusable="false"&gt;
+	&lt;title&gt;Text alternatives for non-text content&lt;/title&gt;
+	&lt;path d="..."&gt;&lt;/path&gt;
+&lt;/svg&gt;</code></pre>
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'SCSS'}) %></div>
+								<div class="subsection-body">
+									<pre class="highlight-js"><code class="scss">background-image: icon($name, $color);</code></pre>
+								</div>
+							</div>
+							<!-- //subsection -->
+
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'example'}) %></div>
+								<div class="subsection-body">
+									<pre class="highlight-js"><code class="scss">background-image: icon(info, color(base, 00));</code></pre>
+								</div>
+							</div>
+							<!-- //subsection -->
+
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'demos'}) %></div>
+								<div class="subsection-body">
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'information'}) %></div>
+										<div class="subsubsection-body">
+											<ul class="data-list svg-icon">
+												<li class="data-item"><span class="data-name">home</span></li>
+												<li class="data-item"><span class="data-name">close</span></li>
+												<li class="data-item"><span class="data-name">check</span></li>
+												<li class="data-item"><span class="data-name">menu</span></li>
+												<li class="data-item"><span class="data-name">calendar</span></li>
+												<li class="data-item"><span class="data-name">help-outline</span></li>
+												<li class="data-item"><span class="data-name">people</span></li>
+												<li class="data-item"><span class="data-name">vote</span></li>
+												<li class="data-item"><span class="data-name">bullet-dot</span></li>
+												<li class="data-item"><span class="data-name">bullet-dash</span></li>
+												<li class="data-item"><span class="data-name">bullet-square</span></li>
+
+												
+												
+												
+												<li class="data-item"><span class="data-name">expand-more</span></li>
+												<li class="data-item"><span class="data-name">chevron-left</span></li>
+												<li class="data-item"><span class="data-name">chevron-right</span></li>
+												<li class="data-item"><span class="data-name">chevron-top</span></li>
+												<li class="data-item"><span class="data-name">chevron-down</span></li>
+												
+												<li class="data-item"><span class="data-name">arrow-top</span></li>
+												<li class="data-item"><span class="data-name">arrow-down</span></li>
+												<li class="data-item"><span class="data-name">arrow-left</span></li>
+												<li class="data-item"><span class="data-name">arrow-right</span></li>
+											</ul>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'symbol'}) %></div>
+										<div class="subsubsection-body">
+											<ul class="data-list svg-icon">
+												<li class="data-item"><span class="data-name">statics</span></li>
+												<li class="data-item"><span class="data-name">analyze</span></li>
+												<li class="data-item"><span class="data-name">survey</span></li>
+												<li class="data-item"><span class="data-name">survey-complete</span></li>
+												<li class="data-item"><span class="data-name">reject</span></li>
+											</ul>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'Admin-login'}) %></div>
+										<div class="subsubsection-body">
+											<ul class="data-list svg-icon">
+												<li class="data-item"><span class="data-name">person</span></li>
+												<li class="data-item"><span class="data-name">lock</span></li>
+											</ul>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<!-- <div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'direction'}) %></div>
+										<div class="subsubsection-body">
+											<ul class="data-list svg-icon">
+												<li class="data-item"><span class="data-name">chevron-small-up</span></li>
+												<li class="data-item"><span class="data-name">chevron-small-down</span></li>
+												<li class="data-item"><span class="data-name">chevron-small-back</span></li>
+												<li class="data-item"><span class="data-name">chevron-small-next</span></li>
+												<li class="data-item"><span class="data-name">chevron-medium-up</span></li>
+												<li class="data-item"><span class="data-name">chevron-medium-down</span></li>
+												<li class="data-item"><span class="data-name">chevron-medium-back</span></li>
+												<li class="data-item"><span class="data-name">chevron-medium-next</span></li>
+											</ul>
+										</div>
+									</div> -->
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<!-- <div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'direction'}) %></div>
+										<div class="subsubsection-body">
+											<ul class="data-list svg-icon">
+												<li class="data-item"><span class="data-name">arrow-north</span></li>
+											</ul>
+										</div>
+									</div> -->
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<!-- <div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'interaction'}) %></div>
+										<div class="subsubsection-body">
+											<ul class="data-list svg-icon">
+												<li class="data-item"><span class="data-name">button-top</span></li>
+											</ul>
+										</div>
+									</div> -->
+									<!-- //subsubsection -->
+								</div>
+							</div>
+							<!-- //subsection -->
+						</div>
+					</div>
+					<!-- //section -->
+				</div>
+				<!-- content-body -->
+			</div>
+			<!-- //local-body -->
+		</div>
+		<!-- //page-body -->
+<%-include('../_templates/_footer.front.ejs') %>
+	</div>
+	<!-- //page -->
+</div>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+		var svgIcons = document.querySelectorAll('.svg-icon .data-name');
+		Array.prototype.forEach.call(svgIcons, function(icon) {
+			icon.parentElement.classList.add(icon.textContent);
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,1165 @@
+@import 'partials/_variables';
+@import 'partials/_mixin';
+
+#page {	
+	padding-top: 60rem;
+	// laptop
+	@include respond-above(x-large) {
+		padding-top: 120rem;
+	}
+ }
+
+#local {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200rem;
+}
+
+/**
+ * @type layout
+ * @name page-head
+ */
+.page-head {
+	box-shadow: inset 0 -1px 0 0 color(base, 07);
+
+	&::before {
+		background-color: color(base, 10);
+		box-shadow: inherit;
+	}
+
+	.page-title {
+		.page-name {
+			svg {
+				.object-01 {fill: #e6223d;}
+				.object-02 {fill: #878787;}
+				.object-03 {fill: #313851;}
+			}
+		}
+	}
+
+
+	@include respond-above(x-large) {
+		.section.page-navi {
+			.section-body {
+				.gnb-list {
+					.gnb-item {
+						height: 120rem;
+						position: relative;
+	
+						.gnb-name {
+							color: color(base, 01);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/**
+ * @type layout
+ * @name page-body
+ */
+.page-body {
+	padding-bottom: 100rem;
+	.local-head {
+		@include hidden;
+	}
+}
+
+.content-head {
+	display: flex;
+
+	.content-title {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		
+		.content-name {
+			display: block;
+		}
+
+		.content-info {
+			display: block;
+			margin-left: 8rem;
+
+			svg {
+				display: block;
+				
+				path {
+					fill: color(base, 05);
+				}
+			}
+		}
+	}
+
+	// mobile
+	@include respond-below(x-large) {
+		justify-content: flex-start;
+		flex-direction: column;
+		margin-bottom: 28rem;
+
+		.content-title {
+			order: 2;
+			margin-top: 40rem;
+			@include font((outline: body, size: x-large, weight: bold)...);
+		}
+
+		.content-path {
+			order: 1;
+			position: relative;
+
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: calc(50% - 50vw);
+				bottom: 0;
+				width: 100vw;
+				height: 1px;
+				background-color: rgba(0,0,0,0.1);
+			}
+		}
+	}
+
+	// laptop
+	@include respond-above(x-large) {
+		align-items: flex-end;
+		justify-content: space-between;
+		margin: 160rem 0 80rem;
+
+		.content-title {
+			@include font((outline: body, size: xxxx-large, weight: bold)...);
+		}
+	}
+
+	.content-path {
+		margin: 0;
+
+		.path-head {
+			@include hidden;
+		}
+		.path-body {
+			display: flex;
+			flex-wrap: wrap;
+			@include font((outline: body, size: x-small)...);
+	
+			.data-home,
+			.data-flow {
+				display: block;
+				position: relative;
+				width: 24rem;
+				min-width: 24rem;
+				height: 24rem;
+				color: color(base, 05);
+				text-align: center;
+		
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+				}
+			}
+	
+			.data-home {
+				&::after {
+					background: icon(home, color(base, 05), color(base, 10));
+				}
+			}
+			
+			.data-flow {
+				&::after {
+					background: icon(chevron-right, color(base, 06), color(base, 10));
+				}
+			}
+
+			.data-item {
+				white-space: nowrap;
+			}
+	
+			a.data-item {
+				color: color(base, 05);
+				&:not(:hover) {
+					text-decoration: none;
+				}; 
+			}
+			strong.data-item {
+				@include font((weight: bold)...);
+				color: color(base, 02);
+			}
+
+			// mobile
+			@include respond-below(x-large) {
+				padding: 12rem 0;
+			}
+
+			// laptop
+			@include respond-above(x-large) {
+				@include font((outline: body, size:small)...);
+
+				.data-flow {
+					margin: 0 4rem;
+				}
+			}
+		}
+	}
+}
+
+.content-body {
+	.subsection.data-field {
+	}
+
+	.section.data-field {
+		margin-top: 56rem;
+
+		// laptop
+		@include respond-above(x-large) {
+			margin-top: 76rem;
+		}
+
+		.section-head {
+			~.section-body {
+				margin-top: 36rem;
+
+				.subsection.data-field {
+					margin-top: 36rem;
+					
+					.subsection-body {
+
+					}
+				}
+
+				// laptop
+				@include respond-above(x-large) {
+					// display: flex;
+					// flex-wrap: wrap;
+					// margin-top: 48rem;
+
+					// .subsection.data-field {
+					// 	width: calc(50% - 40rem);
+
+					// 	&:nth-child(even) {
+					// 		margin-left: 80rem;
+					// 	}
+
+					// 	&:nth-child(n+3) {
+					// 		margin-top: 48rem;
+					// 	}
+					// }
+				}
+			}
+		}
+	}
+}
+
+.subsection.type-chart {
+	.subsection-head {
+		.subsection-title {
+			margin: 0;
+			color: color(base, 02);
+			@include font((outline: body, size: small, weight: bold)...);
+
+			// laptop
+			@include respond-above(x-large) {
+				@include font((outline: body, size: medium)...);
+			}
+
+			.subsection-name {
+				display: block;
+			}
+		}
+		~.subsection-body {
+			margin-top: 16rem;
+		}
+	}
+}
+
+.subsection.type-status {
+	.subsection-head {
+		@include hidden;
+	}
+}
+
+.section.data-field {
+	.section-head {
+		display: flex;
+		align-items: center;
+		padding: 12rem;
+		background-color: color(secondary, 01);
+		border-radius: 10rem;
+
+		// laptop
+		@include respond-above(x-large) {
+			padding: 20rem;
+		}
+		
+		.section-title {
+			position: relative;
+			margin: 0;
+			padding-left: 0.75em; // width(1.5em) / 2 
+			color: color(base, 10);
+			@include font((outline: body, size: medium, weight: bold)...);
+
+			// laptop
+			@include respond-above(x-large) {
+				@include font((outline: body, size: large)...);
+			}
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: -0.375em; // padding-left(.375em) / 2
+				width: 1.5em;
+				height: 1.5em;
+				background: icon(bullet-dot, color(base, 10)) no-repeat center/cover;
+				//background: icon(bullet-dot, color(base, 10)) no-repeat center/100 auto; IE 적용 안 됨
+			}
+
+			.section-name {
+				display: block;
+			}
+		}
+	}
+
+	.section-body {
+		&[data-display-column] {
+			.subsection {
+				margin-top: 36rem;
+			}
+
+			// laptop
+			@include respond-above(x-large) {
+				display: flex;
+				flex-wrap: wrap;
+				
+				.subsection.type-chart {
+					@include display-column(2, 80rem, 36rem);
+				}
+			}		
+		}
+	}
+}
+
+
+.data-display.customer-survey-read {
+	>.data-list {
+		>.data-item {
+			+.data-item {
+				margin-top: 48rem;
+
+				// laptop
+				@include respond-above(x-large) {
+					margin-top: 36rem;
+				}
+			}
+			>.data-wrap {
+				>.data-head {
+					display: flex;
+					align-items: center;
+					margin-bottom: 32rem;
+					padding: 16rem;
+					@include font((outline: body, size: x-small, weight: bold)...);
+					color: color(base, 10);
+					background-color: color(secondary, 01);
+					border-radius: 10rem;
+					
+					// laptop
+					@include respond-above(x-large) {
+						padding: 20rem;
+						@include font((outline: body, size: large)...);
+					}
+					
+					.data-name {
+						margin: 0;
+					}
+				}
+
+				>.data-body {
+					padding: 0 12rem;
+						
+					// laptop
+					@include respond-above(x-large) {
+						padding: 0 24rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.data-display.survey-results {
+	.data-list {
+		.data-item {
+			+.data-item {	
+				margin-top: 6rem;
+				// laptop
+				@include respond-above(x-large) {
+					margin-top: 12rem;
+				}
+			}
+			
+			.data-wrap {
+				position: relative;
+
+				.data-head {
+					display: flex;
+					align-items: center;
+
+					position: relative;
+					z-index: 1;
+					overflow: hidden;
+					padding: 0 12rem;
+					height: 36rem;
+					outline-offset: 1px;
+					
+					@include font((outline: body, size: xx-small)...);
+					border-radius: 4rem;
+					background-color: color(base, 08);
+					cursor: default;
+
+					// laptop
+					@include respond-above(x-large) {
+						padding: 0 20rem;
+						height: 48rem;
+						@include font((outline: body, size: small)...);
+					}
+
+					.data-name {
+						display: block;
+						position: relative;
+						color: color(base, 03);
+					}
+
+					&::before {
+						content: '';
+						display: block;
+						position: absolute;
+						// z-index: -1;
+						top: 0;
+						bottom: 0;
+						left: 0;
+						width: var(--turnout);
+						border-radius: 4rem;
+						background-color: color(base, 07);
+					}
+				}
+
+				.data-body {
+					visibility: hidden;
+					opacity: 0;
+					position: absolute;
+					z-index: 1;
+					bottom: calc(100% + 12rem);
+					left: calc(var(--turnout) - 6rem);
+					transform: translateX(-50%) translateY(6rem);
+					padding: 6rem 12rem;
+					min-width: 96rem;
+					box-sizing: border-box;
+					@include font((outline: body, size: xx-small, weight: bold)...);
+					text-align: center;
+					border: 1px solid color(base, 01);
+					border-radius: 6rem;
+					box-shadow: 0px 0px 8px 0 rgba(0,0,0,0.12);
+					background-color: color(base, 10);
+					transition: visibility 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+
+					// laptop
+					@include respond-above(x-large) {
+						padding: 16rem 18rem;
+						min-width: 120rem;
+						@include font((outline: body, size: small)...);
+					}
+
+					&::before {
+						content: '';
+						position: absolute;
+						display: block;
+						background-color: #fff;
+						top: 100%;
+						left: 50%;
+						
+						width: 8rem;
+						height: 8rem;
+						border-radius: 2rem;
+						box-sizing: border-box;
+						border-right: 1px solid color(base, 01);
+						border-bottom: 1px solid color(base, 01);
+						background-color: #fff;
+						transform: rotate(45deg) translateX(-50%);
+
+					}
+
+					.grade {
+						display: block;
+						color: color(base, 02);
+					}
+
+					.turnout {
+						display: block;
+						color: color(primary, 01);
+					}
+				}
+				&:focus-within,
+				&:hover {
+					// z-index: 1;
+					.data-body {
+						opacity: 1;
+						visibility: visible;
+						transform: translateX(-50%) translateY(0);
+					}
+				}
+			}
+		}
+
+		.data-item.active {
+			.data-wrap {
+				position: relative;
+				
+				.data-head {
+					.data-name {
+						color: color(base, 01);
+					}
+					&::before {
+						background: linear-gradient(90deg, color(base, 10) -25%, color(primary, 01) 120%);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+// 생산성분석 그래프
+.data-display.productivity-analysis {
+	margin: 0 auto;
+	width: 960rem;
+	max-width: 100%;
+	word-break: break-all;
+
+	>.data-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		>.data-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: relative;
+			
+			>.data-side {
+				.data-display {	
+					.data-list {
+						.data-item {
+							.data-wrap {
+								padding: 8rem 12rem;
+								@include font((outline: body, size: xx-small)...);
+								color: color(base, 02);
+								text-align: center;
+								box-sizing: border-box;
+				
+								// laptop
+								@include respond-above(x-large) {
+									padding: 12rem 12rem;
+									width: 240rem;
+									@include font((outline: body, size: medium)...);
+								}
+				
+				
+								.data-head {
+									display:  block;
+									@include font((weight: bold)...);
+									.data-name {
+										display: block;
+									}
+								}
+				
+								.data-body {
+									display:  block;
+								}
+							}	
+						}
+					}
+				}
+			}
+		}
+
+		>.data-item.type-a {
+			margin-bottom: 64rem;
+			width: 100%;
+
+			// laptop
+			@include respond-above(x-large) {
+				margin-bottom: 104rem;
+			}
+
+			>.data-wrap{
+				order: 2;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-top: 32rem;
+				width: 96rem;
+				height: 96rem;
+				@include font((outline: body, size: x-small)...);
+				color: color(base, 10);
+				text-align: center;
+				border-radius: 50%;
+				box-shadow: 0 4rem 6rem 0 color(base, 00, 0.25), 0 0 0 8rem color(base, 03, 0.1), 0 0 0 16rem color(base, 03, 0.05);
+				background-color: color(secondary, 01);
+
+				// laptop
+				@include respond-above(x-large) {
+					margin-top: 68rem;
+					width: 176rem;
+					height: 176rem;
+					@include font((outline: body, size: medium)...);
+					box-shadow: 0 4rem 6rem 0 color(base, 00, 0.25), 0 0 0 10rem color(base, 03, 0.1), 0 0 0 20rem color(base, 03, 0.05);
+				}
+
+				>.data-head {
+					display:  block;
+					@include font((weight: bold)...);
+					.data-name {
+						display: block;
+					}
+				}
+				>.data-body {
+					@include font((weight: light)...);
+				}
+			}
+
+			>.data-side {
+				order: 1;
+				width: 100%;
+
+				.data-display {
+					.data-list {
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+
+						.data-item {
+							flex-grow: 1 1 auto;
+							display: flex;
+							justify-content: center;
+							position: relative;
+							width: calc(33.3% - (16rem / 3));
+
+							// 그래프 라인 공통
+							&::before {
+								content: '';
+								display: block;
+								position: absolute;
+								top: 100%;
+								box-sizing: border-box;
+							}
+
+							&:nth-child(odd) {
+								margin-right: 33.3%;
+							}
+
+							&:nth-child(n+3) {
+								margin-top: 12rem;;
+
+								// laptop
+								@include respond-above(x-large) {
+									margin-top: 40rem;
+								}
+							}
+
+							.data-wrap {
+								width: 240rem;
+								background-color: color(base, 10);
+								border: 1px solid color(base, 06);
+								border-radius: 8rem;
+							}
+						}
+						
+						.data-item:nth-child(1) {
+							// 그래프 라인
+							&::before {
+								left: 50%;
+								width: 50%;
+								height: 12rem;
+								border-left: 2px solid color(base, 05);
+
+								// laptop
+								@include respond-above(x-large) {
+									width: calc(100% - 88rem - 60rem);
+									height: 40rem;
+								}
+							}
+
+							// 그래프 화살표
+							&::after {
+								content: '';
+								display: block;
+								position: absolute;
+								top: 100%;
+								left: calc(50% + 1px);
+								width: 12rem;
+								height: 12rem;
+								box-sizing: border-box;
+								border-top: 2px solid color(base, 05);
+								border-left: 2px solid color(base, 05);
+								transform: translateX(-50%) rotate(45deg);
+							}
+						}
+
+						.data-item:nth-child(2) {
+							// 그래프 라인
+							&::before {
+								right: 50%;
+								width: 50%;
+								height: 12rem;
+								border-right: 2px solid color(base, 05);
+								// laptop
+								@include respond-above(x-large) {
+									width: calc(100% - 88rem - 60rem);
+									height: 40rem;
+								}
+							}
+
+							// 그래프 화살표
+							&::after {
+								content: '';
+								display: block;
+								position: absolute;
+								top: 100%;
+								right: calc(50% + 1px);
+								width: 12rem;
+								height: 12rem;
+								box-sizing: border-box;
+								border-top: 2px solid color(base, 05);
+								border-left: 2px solid color(base, 05);
+								transform: translateX(50%) rotate(45deg);
+							}
+						}
+
+						.data-item:nth-child(3) {
+							// 그래프 라인
+							&::before {
+								left: 50%;
+								width: calc(100% - 48rem - 16rem);
+								height: calc(32rem + 48rem - 6rem);
+								border-bottom: 2px solid color(base, 05);
+								border-left: 2px solid color(base, 05);
+
+								// laptop
+								@include respond-above(x-large) {
+									width: calc(100% - 88rem - 60rem);
+									height: calc(68rem + 88rem - 16rem);
+								}
+							}
+						}
+
+						.data-item:nth-child(4) {
+							// 그래프 라인
+							&::before {
+								right: 50%;
+								width: calc(100% - 48rem - 16rem);
+								height: calc(32rem + 48rem - 6rem);
+								border-bottom: 2px solid color(base, 05);
+								border-right: 2px solid  color(base, 05);
+
+								// laptop
+								@include respond-above(x-large) {
+									width: calc(100% - 88rem - 60rem);
+									height: calc(68rem + 88rem - 16rem);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		>.data-item.type-b {
+			flex-grow: 1;
+			width: calc(33.3% - (16rem / 3));
+
+			>.data-wrap {
+				order: 2;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 76rem;
+				height: 76rem;
+				@include font((outline: body, size: xx-small)...);
+				color: color(base, 10);
+				text-align: center;
+				border-radius: 50%;
+				box-shadow: 0 4rem 6rem 0 color(base, 00, 0.25), 0 0 0 8rem color(base, 03, 0.1), 0 0 0 16rem color(base, 03, 0.05);
+				background-color: color(base, 03);
+
+				// laptop
+				@include respond-above(x-large) {
+					width: 140rem;
+					height: 140rem;
+					@include font((outline: body, size: medium)...);
+					box-shadow: 0 4rem 6rem 0 color(base, 00, 0.25), 0 0 0 10rem color(base, 03, 0.1), 0 0 0 20rem color(base, 03, 0.05);
+				}
+
+				>.data-head {
+					display:  block;
+					@include font((weight: bold)...);
+					.data-name {
+						display: block;
+					}
+				}
+				>.data-body {
+					@include font((weight: light)...);
+				}
+
+			}
+
+			>.data-side {
+				order: 2;
+				width: 100%;
+				
+				.data-display {
+					position: relative;
+
+					// 그래프 화살표
+					&::before {
+						content: '';
+						display: block;
+						height: 64rem;
+						background-repeat: no-repeat;
+						background-position: center bottom;
+						background-color: blue;
+	
+						// laptop
+						@include respond-above(x-large) {
+							height: 72rem;
+						}
+					}
+
+					// 그래프 라인
+					&::before {
+						content: '';
+						display: block;
+						position: relative;
+						top: 0;
+						left: calc(50% - 1px);
+						width: 2px;
+						height: 64rem;
+						background-color: color(base, 05);
+	
+						// laptop
+						@include respond-above(x-large) {
+							height: 72rem;
+						}
+					}
+
+					// 그래프 화살표
+					&::after {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 64rem;
+						left: 50%;
+						width: 12rem;
+						height: 12rem;
+						box-sizing: border-box;
+						border-top: 2px solid color(base, 05);
+						border-left: 2px solid color(base, 05);
+						transform: translate(-50%, -100%) rotate(-135deg);
+
+						// laptop
+						@include respond-above(x-large) {
+							top: 72rem;
+						}
+					}
+
+					.data-list {
+						margin: 0 auto;
+						width: 240rem;
+						max-width: 100%;
+						border-radius: 8rem;
+						border: 1px solid color(base, 06);
+						background-color: color(base, 10);
+
+						.data-item {
+							+.data-item {
+								border-top: 1px solid color(base, 06);
+							}
+						}
+					}
+				}
+			}
+
+			.data-prev,
+			.data-next {
+				display: flex;
+				justify-content: center;
+	
+				.data-head {
+					@include hidden;
+				}
+				.data-body {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 54rem;
+					height: 22rem;
+					@include font((outline: body, size: xx-small)...);
+					color: color(base, 10);
+					text-align: center;
+					border-radius: 4rem;
+					background-color: #3c9ba1;
+	
+					// laptop
+					@include respond-above(x-large) {
+						width: 64rem;
+						height: 28rem;
+						@include font((outline: body, size: small)...);
+					}
+				}
+			}
+	
+			.data-prev {
+				position: absolute;
+				bottom: calc(100% + 12rem);
+				width: 100%;
+	
+				// laptop
+				@include respond-above(x-large) {
+					bottom: calc(100% + 24rem);
+				}
+			}
+	
+			.data-next {
+				position: absolute;
+				z-index: 1;
+				width: calc(100% - 24rem);
+				top: 76rem;
+				height: 24rem;
+				border-left: 2rem solid #3c9ba1;
+				border-bottom: 2rem solid #3c9ba1;
+				border-right: 2rem solid #3c9ba1;
+				box-sizing: border-box;
+	
+				.data-body {
+					position: absolute;
+					bottom: 0;
+					transform: translateY(50%);
+				}
+	
+				// laptop
+				@include respond-above(x-large) {
+					top: calc(140rem - 2rem);
+					height: 36rem;
+				}
+	
+				// 그래프 화살표
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 2rem;
+					width: 12rem;
+					height: 12rem;
+					box-sizing: border-box;
+					border-top: 2px solid #3c9ba1;
+					border-left: 2px solid #3c9ba1;
+				}
+			}
+		}
+
+		// 생산성
+		>.data-item:nth-child(1) {
+			.data-side {
+				.data-display {
+					.data-list {
+
+					}
+				}
+			}
+		}
+
+		// 수익성
+		>.data-item:nth-child(2) {
+			order: 3;
+			margin-left: 8rem;
+
+			// 그래프 라인
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: calc(50% - 1px);
+				width: 2rem;
+				height: calc(64rem - 12rem);
+				box-sizing: border-box;
+				background-color: #3c9ba1;
+				transform: translate(0, -100%);
+
+				// laptop
+				@include respond-above(x-large) {
+					height: calc(104rem - 32rem);
+				}
+			}
+
+			// 그래프 화살표
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: calc((64rem - 12rem) * -1);
+				left: 50%;
+				width: 12rem;
+				height: 12rem;
+				box-sizing: border-box;
+				border-top: 2px solid #3c9ba1;
+				border-left: 2px solid #3c9ba1;
+				transform: translate(-50%, 0) rotate(45deg);
+
+				// laptop
+				@include respond-above(x-large) {
+					top: calc((104rem - 32rem) * -1);
+				}
+			}
+		}
+
+		// 경제효율성
+		>.data-item:nth-child(3) {
+			order: 2;
+			position: relative;
+
+			// 그래프 라인
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: calc((64rem + 48rem - 6rem) * -1);
+				left: 50%;
+				width: calc(100% - 48rem - 16rem);
+				height: calc(64rem + 48rem - 6rem);
+				box-sizing: border-box;
+				border-top: 2px solid #3c9ba1;
+				border-left: 2px solid #3c9ba1;
+
+				// laptop
+				@include respond-above(x-large) {
+					top: calc((104rem + 88rem - 16rem) * -1);
+					width: calc(100% - 88rem - 60rem);
+					height: calc(104rem + 88rem - 16rem);
+				}
+			}
+
+			// 그래프 화살표
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: calc((64rem + 48rem - 1px) * -1);
+				left: calc(150% - 48rem - 16rem);
+				width: 12rem;
+				height: 12rem;
+				box-sizing: border-box;
+				border-top: 2px solid #3c9ba1;
+				border-left: 2px solid #3c9ba1;
+				transform: translateX(-100%) rotate(135deg);
+
+				// laptop
+				@include respond-above(x-large) {
+					top: calc((104rem + 88rem - 11rem) * -1);
+					left: calc(150% - 88rem - 60rem);
+				}
+			}
+
+			.data-next {
+				left: calc(50% + 16rem);
+				&::before {
+					right: -1rem;
+					transform: translate(50%, 0) rotate(45deg);
+				}
+			}
+		}
+
+		// 고객가치
+		>.data-item:nth-child(4) {
+			order: 4;
+			position: relative;
+			margin-left: 8rem;
+
+			// 그래프 라인
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: calc((64rem + 48rem - 6rem) * -1);
+				right: 50%;
+				width: calc(100% - 48rem - 16rem);
+				height: calc(64rem + 48rem - 6rem);
+				box-sizing: border-box;
+				border-top: 2px solid #3c9ba1;
+				border-right: 2px solid #3c9ba1;
+
+				// laptop
+				@include respond-above(x-large) {
+					top: calc((104rem + 88rem - 16rem) * -1);
+					width: calc(100% - 88rem - 60rem);
+					height: calc(104rem + 88rem - 16rem);
+				}
+			}
+
+			// 그래프 화살표
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: calc((64rem + 48rem - 1px) * -1);
+				right: calc(150% - 48rem - 16rem);
+				width: 12rem;
+				height: 12rem;
+				box-sizing: border-box;
+				border-top: 2px solid #3c9ba1;
+				border-left: 2px solid #3c9ba1;
+				transform: translateX(100%) rotate(-45deg);
+
+				// laptop
+				@include respond-above(x-large) {
+					top: calc((104rem + 88rem - 11rem) * -1);
+					right: calc(150% - 88rem - 60rem);
+				}
+			}
+
+			.data-next {
+				right: calc(50% + 16rem);
+
+				&::before {
+					left: -1rem;
+					transform: translate(-50%, 0) rotate(45deg);
+				}
+			}
+		}
+	}
+}
+
+/* 공통 이용 안내 */
+.noti-board.module-a.style-a {
+	margin-top: 34rem;
+	// laptop
+	@include respond-above(x-large) {
+		margin-top: 48rem;
+	}
+	.board-wrap {
+		.board-head {
+			@include hidden;
+		}
+	}
+}

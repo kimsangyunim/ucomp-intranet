@@ -1,0 +1,54 @@
+/**
+ * @module google chart
+ */
+div.google-visualization-tooltip {
+	margin: 0 ;
+	padding: 12rem;
+	text-align: center;
+	border: 1px solid color(base, 01);
+	border-radius: 6rem;
+	box-sizing: border-box;
+	box-shadow: 0 0 8rem 0 rgb(0,0,0,0.12);
+	background-color: color(base, 09);
+
+	// laptop
+	@include respond-above(x-large) {
+		padding: 16rem 12rem;
+	}
+
+	.google-visualization-tooltip-item-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		
+		.google-visualization-tooltip-item {
+			display: flex;
+			justify-content: center;
+			margin: 0;
+			padding: 0;
+			@include font((outline: body, size: x-small, weight: bold)...);
+			
+			span {
+				display: block;
+				margin: 0;
+				line-height: inherit !important;
+				font-weight: inherit !important;
+				font-size: inherit !important;
+				color: color(base, 01) !important;
+				white-space: nowrap;
+
+				+ span {
+					margin-left: 0.25em !important;
+					color: color(primary, 01) !important;
+				}
+			}
+		}
+	}
+}
+
+// .google-visualization-tooltip {
+// 	path {
+// 		fill: color(base, 09) !important;
+// 		stroke: color(base, 01) !important;
+// 	}
+// }

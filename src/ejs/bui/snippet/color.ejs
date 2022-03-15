@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<%-include('../_templates/_data.header.front.ejs', {
+	pageStyle: 'bui.page.snippet.css',
+	pageJavascript: ''
+}) %>
+</head>
+<body>
+<div id="wrap">
+	<!-- page -->
+	<div id="page">
+<%-include('../_templates/_header.snippet.ejs') %>
+		<!-- page-body -->
+		<div class="page-body" id="local">
+			<!-- local-head -->
+			<div class="local-head">
+				<h2 class="local-title" id="localTitle"><span class="local-name">snippet</span></h2>
+			</div>
+			<!-- //local-head -->
+			<!-- local-body -->
+			<div class="local-body" id="content">
+				<!-- content-head -->
+				<div class="content-head">
+					<h3 class="content-title" id="contentTitle"><span class="content-name">color</span></h3>
+					<p class="para">본 프로젝트의 컬러 시스템을 아래와 같이 정의하며, 반드시 약속된 값을 사용합니다.<br />웹 페이지의 컬러는 사용자에게 이정표와 같은 역할을 하므로 일관성 없이 남용된 컬러의 사용은 사용자에게 혼란을 주게 됩니다.</p>
+				</div>
+				<!-- //content-head -->
+				<!-- content-body -->
+				<div class="content-body">
+					<!-- section -->
+					<div class="section color-variation">
+						<div class="section-head">
+							<%- include('../_mixin/_title.section.ejs', {name: 'color system'}) %>
+							<p class="para">Base는 총 11가지의 Variants를 포함하며, Accent Color는 Primary, Secondary가 존재합니다.</p>
+						</div>
+						<div class="section-body">
+							<div class="subsection base">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'base'}) %></div>
+								<div class="subsection-body">
+									<ul class="data-list">
+										<li class="data-item" style="background-color: #000000"><span class="data-name">color(base, 00)</span><span class="data-code">#000000</span></li>
+										<li class="data-item" style="background-color: #1d1d1d"><span class="data-name">color(base, 01)</span><span class="data-code">#1d1d1d</span></li>
+										<li class="data-item" style="background-color: #3a3a3a"><span class="data-name">color(base, 02)</span><span class="data-code">#3a3a3a</span></li>
+										<li class="data-item" style="background-color: #656565"><span class="data-name">color(base, 03)</span><span class="data-code">#656565</span></li>
+										<li class="data-item" style="background-color: #737373"><span class="data-name">color(base, 04)</span><span class="data-code">#737373</span></li>
+										<li class="data-item" style="background-color: #909090"><span class="data-name">color(base, 05)</span><span class="data-code">#909090</span></li>
+										<li class="data-item" style="background-color: #c7c7c7"><span class="data-name">color(base, 06)</span><span class="data-code">#c7c7c7</span></li>
+										<li class="data-item" style="background-color: #e3e3e3"><span class="data-name">color(base, 07)</span><span class="data-code">#e3e3e3</span></li>
+										<li class="data-item" style="background-color: #f4f4f4"><span class="data-name">color(base, 08)</span><span class="data-code">#f4f4f4</span></li>
+										<li class="data-item" style="background-color: #fbfbfb"><span class="data-name">color(base, 09)</span><span class="data-code">#fbfbfb</span></li>
+										<li class="data-item" style="background-color: #ffffff"><span class="data-name">color(base, 10)</span><span class="data-code">#ffffff</span></li>
+									</ul>
+								</div>
+							</div>
+							<div class="subsection primary">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'primary'}) %></div>
+								<div class="subsection-body">
+									<ul class="data-list">
+										<li class="data-item" style="background-color: #EE2C49"><span class="data-name">color(primary, 01)</span><span class="data-code">#EE2C49</span></li>
+									</ul>
+								</div>
+							</div>
+							<div class="subsection seccondary">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'secondary'}) %></div>
+								<div class="subsection-body">
+									<ul class="data-list">
+										<li class="data-item" style="background-color: #313851"><span class="data-name">color(secondary, 01)</span><span class="data-code">#313851</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //section -->
+
+					<!-- section -->
+					<div class="section color-variation">
+						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'SCSS usage'}) %></div>
+						<div class="section-body">
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'argument'}) %></div>
+								<div class="subsection-body">
+									<pre class="highlight-js"><code class="scss">color($theme, $variant, $opacity);</code></pre>
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'example'}) %></div>
+								<div class="subsection-body">
+									<pre class="highlight-js">
+<code class="scss">color: color(base, 02);
+border-color: color(base, 06);
+background-color: color(base, 00, 0.6);</code></pre>
+								</div>
+							</div>
+							<!-- //subsection -->
+						</div>
+					</div>
+					<!-- //section -->
+				</div>
+				<!-- content-body -->
+			</div>
+			<!-- //local-body -->
+		</div>
+		<!-- //page-body -->
+<%-include('../_templates/_footer.front.ejs') %>
+	</div>
+	<!-- //page -->
+</div>
+<script type="text/javascript">
+	window.addEventListener('DOMContentLoaded', function() {
+		var buttons = document.querySelectorAll('.bui-button-area .btn');
+		Array.prototype.forEach.call(buttons, function(button) {
+			button.addEventListener('click', function(e) {
+				e.preventDefault();
+			});
+		});
+	});
+</script>
+</body>
+</html>

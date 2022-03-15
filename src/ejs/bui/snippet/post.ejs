@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<%-include('../_templates/_data.header.front.ejs', {
+	pageStyle: 'bui.page.snippet.css',
+	pageJavascript: ''
+}) %>
+</head>
+<body>
+<div id="wrap">
+	<!-- page -->
+	<div id="page">
+<%-include('../_templates/_header.snippet.ejs') %>
+		<!-- page-body -->
+		<div class="page-body" id="local">
+			<!-- local-head -->
+			<div class="local-head">
+				<h2 class="local-title" id="localTitle"><span class="local-name">snippet</span></h2>
+			</div>
+			<!-- //local-head -->
+			<!-- local-body -->
+			<div class="local-body" id="content">
+				<!-- content-head -->
+				<div class="content-head"><%- include('../_mixin/_title.content.ejs', {name: 'post'}) %></div>
+				<!-- //content-head -->
+				<!-- content-body -->
+				<div class="content-body">
+					<!-- section : Button System-->
+					<div class="section">
+						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'button system'}) %></div>
+						<div class="section-body">
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'HTML Structure'}) %></div>
+								<div class="subsection-body">
+									<pre class="highlight-js">
+<code class="html">&lt;a href="#" class="btn"&gt;&lt;span class="btn-text"&gt;name&lt;/span&gt;&lt;/a&gt;
+&lt;button type="button" class="btn"&gt;&lt;span class="btn-text"&gt;name&lt;/span&gt;&lt;/button&gt;
+&lt;button type="submit" class="btn"&gt;&lt;span class="btn-text"&gt;name&lt;/span&gt;&lt;/button&gt;</code></pre>
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'Class Options'}) %></div>
+								<div class="subsection-body">
+									<!-- data-table -->
+									<div class="data-table module-bui type-a">
+										<table>
+											<colgroup>
+												<col style="width: 128rem;">
+												<col>
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">module</th>
+													<td>module-*</td>
+												</tr>
+												<tr>
+													<th scope="row">style</th>
+													<td>style-*</td>
+												</tr>
+												<tr>
+													<th scope="row">type</th>
+													<td>type-*</td>
+												</tr>
+												<tr>
+													<th scope="row">outline</th>
+													<td>xx-small, x-small, small, medium, large, x-large, xx-large, xx-large</td>
+												</tr>
+												<tr>
+													<th scope="row">accent</th>
+													<td>normal-*, accent-*</td>
+												</tr>
+												<tr>
+													<th scope="row">symbols</th>
+													<td>symbol-ltr-*, symbol-rtl-*</td>
+												</tr>
+												<tr>
+													<th scope="row">options</th>
+													<td>disabled</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- //data-table -->
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'style'}) %></div>
+								<div class="subsection-body">
+									<!-- highlight-js -->
+									<pre class="highlight-js">
+<code class="html">&lt;a href="#" class="btn module-b style-a"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-b style-b"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-b style-c"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;</code></pre>
+									<!-- //highlight-js -->
+
+									<!-- 최근 게시물 -->
+									<!-- post-latest -->
+
+									<!-- 게시물 읽기 -->
+									<!-- post-read -->
+									
+									<!-- 게시물 쓰기 -->
+									<!-- post-write -->
+
+									<!-- 게시물 목록 -->
+									<!-- post-display -->
+									<div class="post-display">
+										<div class="post-list">
+											<div class="post-item">
+												<div class="post-wrap">
+													<div class="post-figure">
+														<div class="post-cover"><a class="post-thumbnail" href="#"><img src="" alt="" /></a></div>
+													</div>
+													<div class="post-inform">
+														<div class="post-type">
+															<div class="data-list">
+																<span class="data-item"></span>
+																<span class="data-item"></span>
+															</div>
+														</div>
+														<div class="post-head">
+															<div class="post-subject">
+																<span class="post-name"></span>
+															</div>
+														</div>
+														<div class="post-foot">
+															<div class="data-list">
+																<span class="data-item date"></span>
+																<span class="data-item writer"></span>
+															</div>
+														</div>
+														<div class="post-body"></div>
+														<div class="post-util"></div>
+													</div>
+												</div>
+												<div class="post-side"></div>
+											</div>
+										</div>
+									</div>
+									<!-- //post-display -->
+
+									<!-- post-display -->
+									<div class="post-display module-a">
+										<div class="post-list">
+											<% for(var i = 0; i < 8; i++) {
+												Number.prototype.pad = function(size) {
+													var s = String(this);
+													while (s.length < (size || 2)) {s = "0" + s;}
+													return s;
+												} %>
+												<% if(i === 0) { %>
+													<%-include('../../front/_mixin/_post.item.survey.ejs', {
+														postStateClass: 'ongoing',
+														postStateText: '진행중'
+													}) %>
+												<% } else { %>
+													<%-include('../../front/_mixin/_post.item.survey.ejs', {
+														postStateClass: 'closing',
+														postStateText: '설문마감'
+													}) %>
+												<% } %>
+											<% } %>
+										</div>
+										<div class="post-util">
+											<div class="button-area module-a style-a type-c">
+												<button class="btn module-b style-c type-line normal-03 large symbol-rtl-expand-more" type="button"><span class="btn-text">더보기</span></button>
+											</div>
+										</div>
+									</div>
+									<!-- //post-display -->
+									<br /><br />
+									<!-- post-display -->
+									<div class="post-display module-a">
+										<div class="post-read">
+											<div class="post-wrap">
+												<div class="post-inform">
+													<div class="post-head">
+														<div class="post-subject">
+															<span class="post-status closing">설문마감</span>
+															<span class="post-name">설문 타이틀명 영역입니다. 문구가 길어지면 최대 2줄까지 보여집니다. 설문 타이틀명 영역입니다. 문구가 길어지면 최대 2줄까지 보여집니다.</span>
+														</div>
+														<div class="post-data">
+															<div class="data-list">
+																<span class="data-item period"><span class="data-head">기간</span> <span class="data-body">2021.12.08 10:00 ~ 2021.12.13 23:00</span></span>
+																<span class="data-item voter"><span class="data-head">참여자</span> <span class="data-body">1,230명</span></span>
+															</div>
+														</div>
+													</div>
+													<div class="post-body">
+														<br /><br /><br /><br /><br />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="post-util">
+											<div class="button-area module-a style-a type-c">
+												<a class="btn module-b style-c type-line normal-03 large" href="#"><span class="btn-text">목록</span></a>
+											</div>
+										</div>
+									</div>
+									<!-- //post-display -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //section -->
+				</div>
+				<!-- content-body -->
+			</div>
+			<!-- //local-body -->
+		</div>
+		<!-- //page-body -->
+<%-include('../_templates/_footer.front.ejs') %>
+	</div>
+	<!-- //page -->
+</div>
+<script type="text/javascript">
+	window.addEventListener('DOMContentLoaded', function() {
+		var buttons = document.querySelectorAll('.bui-button-area .btn');
+		Array.prototype.forEach.call(buttons, function(button) {
+			button.addEventListener('click', function(e) {
+				e.preventDefault();
+			});
+		});
+
+		var forTest = ['a', 'b', 'c', 'd'];
+
+		for(var i = 0; i < forTest.length; i++) {
+			console.log(forTest[i]);
+		}
+
+		// for (const [key, value] of Object.entries(object1)) {
+		// 	console.log(value);
+		// }
+
+
+
+
+
+		var temp = document.querySelector('body');
+
+		// temp.style.backgroundColor = "blue";
+
+		var object1 = {
+			test1: 'test1',
+			test2: 'test2'
+		}
+
+		
+		for (const [key, value] of Object.entries(object1)) {
+			if (key === 'test2') {
+				console.log(value);
+			}
+		}
+	});
+</script>
+</body>
+</html>

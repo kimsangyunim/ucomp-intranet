@@ -1,0 +1,58 @@
+@import '_variables';
+
+/*
+ * @ text accent
+ * @ $text-color
+ */
+$text-accent: (
+	accent-01: #EE2C49,
+	accent-02: #313851,
+
+	normal-00: #000000,
+	normal-01: #1d1d1d,
+	normal-02: #3a3a3a,
+	normal-03: #656565,
+	normal-04: #737373,
+	normal-05: #909090,
+	normal-06: #c7c7c7,
+	normal-07: #e3e3e3,
+	normal-08: #f4f4f4,
+	normal-09: #fbfbfb,
+	normal-10: #ffffff,
+);
+
+em.em {
+	font-style: normal;
+}
+
+a.em {
+	&:not([class*=normal-]):not([class*=accent-]) {
+		color: inherit;
+	}
+}
+
+.para,
+.em {
+	&.type-a {
+	}
+	&.type-b {
+		text-align: right;
+	}
+	&.type-c {
+		text-align: center;
+	}
+
+	// accent
+	@each $name, $font-color in $text-accent {
+		&.#{$name} {
+			color: $font-color;
+		}
+	}
+
+	&.large {@include font((outline: body, size: large)...)}
+	&.medium {@include font((outline: body, size: medium)...)}
+	&.small {@include font((outline: body, size: small)...)}
+	&.x-small {@include font((outline: body, size: x-small)...)}
+	&.xx-small {@include font((outline: body, size: xx-small)...)}
+}
+

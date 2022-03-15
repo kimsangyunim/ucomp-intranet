@@ -1,0 +1,90 @@
+@import 'partials/_variables';
+@import 'partials/_mixin';
+
+/**
+ * @type page
+ * @name page-etc-error
+ * @summary 404
+ */
+.page-body.page-etc-error {
+	.content-body {
+		justify-content: center;
+		margin: 28rem 0;
+
+		.info-board.module-a {
+			.board-wrap {
+				width: 100%;
+				max-width: 480rem;
+
+				&::before {
+					width: 120rem;
+					height: 120rem;
+
+					// laptop
+					@include respond-above(x-large) {
+						width: 160rem;
+						height: 160rem;
+					}
+				}
+
+				.board-util {
+					margin-top: 28rem;
+					// laptop
+					@include respond-above(x-large) {
+						margin-top: 48rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+/**
+ * @type page
+ * @name page-etc-error
+ * @summary 설문조사 작성
+ */
+.page-body.page-survey-write {
+
+	.content-body {
+		margin: 28rem 0 48rem 0;
+
+		// laptop
+		@include respond-above(x-large) {
+			margin: 56rem 0 96rem 0;
+		}
+	}
+}
+
+/**
+ * @type page
+ * @name page-survey-complete
+ * @summary 설문조사 완료
+ */
+.page-body.page-survey-complete {
+	.content-body {
+		justify-content: center;
+		margin: 28rem 0 48rem 0;
+		background-color: color(etc, 01);
+
+		// laptop
+		@include respond-above(x-large) {
+			margin: 56rem 0 96rem 0;
+		}
+
+		.info-board.module-a {
+			.board-wrap {
+				width: 100%;
+				max-width: 480rem;
+
+				.board-body {
+					.para {
+						.wbr {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+}

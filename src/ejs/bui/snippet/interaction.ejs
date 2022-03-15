@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<%-include('../_templates/_data.header.front.ejs', {
+	pageStyle: 'bui.page.snippet.css',
+	pageJavascript: ''
+}) %>
+</head>
+<body>
+<div id="wrap">
+	<!-- page -->
+	<div id="page">
+<%-include('../_templates/_header.snippet.ejs') %>
+		<!-- page-body -->
+		<div class="page-body" id="local">
+			<!-- local-head -->
+			<div class="local-head">
+				<h2 class="local-title" id="localName"><span class="local-name">snippet</span></h2>
+			</div>
+			<!-- //local-head -->
+			<!-- local-body -->
+			<div class="local-body" id="content">
+				<!-- content-head -->
+				<div class="content-head">
+					<h3 class="content-title" id="contentName"><span class="content-name">interaction</span></h3>
+				</div>
+				<!-- //content-head -->
+				<!-- content-body -->
+				<div class="content-body">
+					<!-- section -->
+					<div class="section">
+						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'BuiToggle'}) %></div>
+						<div class="section-body">
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'HTML Structure'}) %></div>
+								<div class="subsection-body">
+<pre class="highlight-js"><code class="html">&lt;script type="text/javascript" defer src="/assets/js/module.bui.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" defer src="/assets/js/module.bui.template.js"&gt;&lt;/script&gt;
+
+&lt;div id="targetElementId" data-bui-toggle="toggle-selector" data-bui-toggle-target="targetElementId"&gt;toggle target&lt;/div&gt;
+&lt;a href="#targetElementId" data-bui-toggle-button="targetElementId"&gt;toggle button&lt;/a&gt;</code></pre>
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'API'}) %></div>
+								<div class="subsection-body">
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'initialize buiToggle'}) %></div>
+										<div class="subsubsection-body">
+											<pre class="highlight-js"><code class="javascript">var toggleName = new buiToggle('selector');</code></pre>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'parameters'}) %></div>
+										<div class="subsubsection-body">
+<pre class="highlight-js"><code class="javascript">var toggleName = new buiToggle('selector', {
+	// general
+	mode: 'normal',
+	event: 'click',
+	active: true,
+	activeClass: 'active',
+	inactive: false,
+	inactiveClass: 'inactive',
+	disabled: false,
+	disabledClass: null,
+	focusin: false,
+	focusout: false,
+	clickout: false,
+	clickoutTarget: null,
+
+	// target
+	target: null,
+	targetClass: 'bui-toggle-target',
+	targetActiveClass: 'active',
+	targetAttribute: 'data-toggle-target',
+	targetObject: null,
+
+	// close
+	close: false,
+	closeButton: 'button',
+	closeButtonClass: 'close',
+	closeButtonText: 'close',
+	closeButtonArea: null,
+
+	// react target
+	reactTarget: null,
+	reactTargetClass: null,
+	reactTargetActiveClass: 'active',
+
+	// react Parent
+	reactParent: null,
+	reactParentClass: null,
+	reactParentActiveClass: 'active',
+
+	/* callback */
+	onloadCallBack: function() {return false;},
+	eventBeforeCallBack: function() {return false;},
+	eventAfterCallBack: function() {return false;},
+	activeBeforeCallBack: function() {return false;},
+	activeAfterCallBack: function() {return false;},
+	inactiveBeforeCallBack: function() {return false;},
+	inactiveAfterCallBack: function() {return false;}
+});</code></pre>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'Methods & Properties'}) %></div>
+										<div class="subsubsection-body">
+<pre class="highlight-js"><code class="javascript">// toggle actions
+toggleName.toggle('Toggle Target ID');
+
+// Run active actions
+toggleName.active('Toggle Target ID');
+
+//  Run inactive actions
+toggleName.inactive('Toggle Target ID');
+
+// Add to array of toggle items
+toggleName.appendToggle('Toggle Target ID');
+
+// myToggle Properties
+toggleName.myToggle['Toggle Target ID'].name
+toggleName.myToggle['Toggle Target ID'].active
+toggleName.myToggle['Toggle Target ID'].target
+toggleName.myToggle['Toggle Target ID'].reactTarget
+toggleName.myToggle['Toggle Target ID'].button
+</code></pre>
+
+										</div>
+									</div>
+									<!-- //subsubsection -->
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'demos'}) %></div>
+								<div class="subsection-body">
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'default'}) %></div>
+										<div class="subsubsection-body">
+											<pre class="highlight-js"><code class="javascript">var toggleDefault = new buiToggle('[data-bui-toggle="toggle-default"]');</code></pre>
+											<a class="toggle-button-demo" href="#toggleDefault" data-bui-toggle-button="toggleDefault">toggle button</a>
+											<div class="toggle-target-demo" id="toggleDefault" data-bui-toggle="toggle-default" data-bui-toggle-target="toggleDefault"><div class="toggle-target-body"><p>toggle target</p></div></div>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'close'}) %></div>
+										<div class="subsubsection-body">
+<pre class="highlight-js"><code class="javascript">var toggleClose = new buiToggle('[data-bui-toggle="toggle-close"]', {
+	close: true,
+	closeButtonArea: '.toggle-target-body',
+});</code></pre>
+											<a class="toggle-button-demo" href="#toggleClose" data-bui-toggle-button="toggleClose">toggle button</a>
+											<div class="toggle-target-demo" id="toggleClose" data-bui-toggle="toggle-close" data-bui-toggle-target="toggleClose"><div class="toggle-target-body"><p>toggle target</p></div></div>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'clickout'}) %></div>
+										<div class="subsubsection-body">
+<pre class="highlight-js"><code class="javascript">var toggleClickout = new buiToggle('[data-bui-toggle="toggle-clickout"]', {
+	close: true,
+	closeButtonArea: '.toggle-target-body',
+	clickout: true
+});</code></pre>
+											<a class="toggle-button-demo" href="#toggleClickout" data-bui-toggle-button="toggleClickout">toggle button</a>
+											<div class="toggle-target-demo" id="toggleClickout" data-bui-toggle="toggle-clickout" data-bui-toggle-target="toggleClickout"><div class="toggle-target-body"><p>toggle target</p></div></div>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'focusin'}) %></div>
+										<div class="subsubsection-body">
+<pre class="highlight-js"><code class="javascript">var toggleFocusin = new buiToggle('[data-bui-toggle="toggle-focusin"]', {
+	close: true,
+	closeButtonArea: '.toggle-target-body',
+	focusin: true
+});</code></pre>
+											<a class="toggle-button-demo" href="#toggleFocusin" data-bui-toggle-button="toggleFocusin">toggle button</a>
+											<div class="toggle-target-demo" id="toggleFocusin" data-bui-toggle="toggle-focusin" data-bui-toggle-target="toggleFocusin"><div class="toggle-target-body"><p>toggle target</p></div></div>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'focusout'}) %></div>
+										<div class="subsubsection-body">
+<pre class="highlight-js"><code class="javascript">var toggleFocusout = new buiToggle('[data-bui-toggle="toggle-focusout"]', {
+	close: true,
+	closeButtonArea: '.toggle-target-body',
+	focusout: true
+});</code></pre>
+											<a class="toggle-button-demo" href="#toggleFocusout" data-bui-toggle-button="toggleFocusout">toggle button</a>
+											<div class="toggle-target-demo" id="toggleFocusout" data-bui-toggle="toggle-focusout" data-bui-toggle-target="toggleFocusout"><div class="toggle-target-body"><p>toggle target</p></div></div>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'reactTarget'}) %></div>
+										<div class="subsubsection-body">
+<pre class="highlight-js"><code class="javascript">var toggleReactTarget = new buiToggle('[data-bui-toggle="toggle-react-target"]', {
+	close: true,
+	closeButtonArea: '.toggle-target-body',
+	reactTarget: 'html',
+	reactTargetActiveClass: 'active-toggle-react-target'
+});</code></pre>
+											<a class="toggle-button-demo" href="#toggleReactTarget" data-bui-toggle-button="toggleReactTarget">toggle button</a>
+											<div class="toggle-target-demo" id="toggleReactTarget" data-bui-toggle="toggle-react-target" data-bui-toggle-target="toggleReactTarget"><div class="toggle-target-body"><p>toggle target</p></div></div>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+								</div>
+							</div>
+							<!-- //subsection -->
+						</div>
+					</div>
+					<!-- //section -->
+					<!-- section -->
+					<div class="section">
+						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'BuiTab'}) %></div>
+						<div class="section-body">
+							<!--subsection-->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'HTML Structure'}) %></div>
+								<div class="subsection-body">
+<pre class="highlight-js"><code class="html">&lt;script type="text/javascript" defer src="/assets/js/module.bui.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" defer src="/assets/js/module.bui.template.js"&gt;&lt;/script&gt;
+
+&lt;div class="tab-display" data-bui-tab="normal"&gt;
+	&lt;ul class="tab-list"&gt;
+		&lt;li class="tab-item"&gt;&lt;a class="tab-name" href="#tabTarget1"&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="tab-item"&gt;&lt;a class="tab-name" href="#tabTarget2"&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="tab-item"&gt;&lt;a class="tab-name" href="#tabTarget3"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="tabTarget1"&gt;Tab Target 1&lt;/div&gt;
+&lt;div class="tabTarget2"&gt;Tab Target 2&lt;/div&gt;
+&lt;div class="tabTarget3"&gt;Tab Target 3&lt;/div&gt;</code></pre>
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'javascript'}) %></div>
+								<div class="subsection-body">
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'default'}) %></div>
+										<div class="subsubsection-body">
+											<pre class="highlight-js"><code class="javascript">var tabs = new buiTab('[data-bui-tab="normal"]');</code></pre>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'options'}) %></div>
+										<div class="subsubsection-body">
+<pre class="highlight-js"><code class="javascript">var tabs = new buiTab('[data-bui-tab="normal"]'), {
+	// general
+	active: false,
+	activeClass: 'current',
+	initial: 0,
+
+	// tab
+	tabItem: '.tab-item',
+	tabName: '.tab-name',
+	
+	// target
+	target: null,
+	targetClass: 'bui-tab-target',
+	targetActiveClass: 'active',
+});</code></pre>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'demos'}) %></div>
+								<div class="subsection-body">
+									<div class="tab-display tab-demo" data-bui-tab="tabDemo">
+										<ul class="tab-list">
+											<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#tabTargetDemo1">one</a></li>
+											<li class="tab-item"><a class="tab-name" href="#tabTargetDemo2">two</a></li>
+											<li class="tab-item"><a class="tab-name" href="#tabTargetDemo3">three</a></li>
+										</ul>
+									</div>
+									<div id="tabTargetDemo1" class="tab-target-demo">Tab Target 1</div>
+									<div id="tabTargetDemo2" class="tab-target-demo">Tab Target 2</div>
+									<div id="tabTargetDemo3" class="tab-target-demo">Tab Target 3</div>
+								</div>
+							</div>
+							<!-- //subsection -->
+						</div>
+					</div>
+					<!-- //section -->
+				</div>
+				<!-- //content-body -->
+			</div>
+			<!-- //local-body -->
+		</div>
+		<!-- //page-body -->
+<%-include('../_templates/_footer.front.ejs') %>
+	</div>
+	<!-- //page -->
+</div>
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+		// toggle-default
+		var toggleDefault = new buiToggle('[data-bui-toggle="toggle-default"]');
+
+		// toggle-close
+		var toggleClose = new buiToggle('[data-bui-toggle="toggle-close"]', {
+			close: true,
+			closeButtonArea: '.toggle-target-body',
+		});
+
+		// toggle-clickout
+		var toggleClickout = new buiToggle('[data-bui-toggle="toggle-clickout"]', {
+			close: true,
+			closeButtonArea: '.toggle-target-body',
+			clickout: true
+		});
+		
+		// toggle-focusin
+		var toggleFocusin = new buiToggle('[data-bui-toggle="toggle-focusin"]', {
+			close: true,
+			closeButtonArea: '.toggle-target-body',
+			focusin: true
+		});
+
+		// toggle-focusout
+		var toggleFocusout = new buiToggle('[data-bui-toggle="toggle-focusout"]', {
+			close: true,
+			closeButtonArea: '.toggle-target-body',
+			focusout: true
+		});
+
+		// toggle-react-target
+		var toggleReactTarget = new buiToggle('[data-bui-toggle="toggle-react-target"]', {
+			close: true,
+			closeButtonArea: '.toggle-target-body',
+			reactTarget: 'html',
+			reactTargetActiveClass: 'active-toggle-react-target'
+		});
+
+		// tab-demo
+		// var tabDemo = new buiTab('[data-bui-tab="tabDemo"]');
+	});
+</script>
+</body>
+</html>

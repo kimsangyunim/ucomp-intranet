@@ -1,0 +1,368 @@
+.form {
+	position: relative;
+
+	.form-elem {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		border-radius: 0;
+		background-color: transparent;
+		appearance: none;
+
+		&::-webkit-search-cancel-button {
+			display: none;
+		}
+
+		&::-ms-clear{
+			display: none;
+		}
+	}
+}
+
+label.form {
+	display: inline-flex;
+	vertical-align: top;
+}
+
+/*
+ * form module-b system
+ */
+
+/**
+ * @ module-b accent
+ *
+ * @ $text-color
+ * @ $unit-color
+ * @ $border-color
+ * @ $background-color
+ */
+$form-module-b-accent: (
+	'accent-01'		color(primary, 01) color(base, 06) color(primary, 01) color(primary, 01),
+	'accent-02'		color(secondary, 01) color(base, 06) color(secondary, 01) color(secondary, 01),
+	'normal-00'		color(base, 00) color(base, 06) color(base, 00) color(base, 00),
+	'normal-01'		color(base, 01) color(base, 06) color(base, 01) color(base, 01),
+	'normal-02'		color(base, 05) color(base, 06) color(base, 05) color(base, 05),
+	'normal-03'		color(base, 03) color(base, 06) color(base, 06) color(base, 06),
+);
+
+/*
+ * module-b outline
+ *
+ * @ $padding
+ * @ $height
+ * @ $font-weight
+ * @ $line-height
+ * @ $font-size
+ * @ $border-width
+ * @ $border-radius ($height / $border-radius)
+ * @ $symbol-size
+ * @ $symbol-margin
+ */  
+$form-module-b-outline: (
+	'small'			11rem 44rem 700 1.5 14rem 1rem 5rem 1.5em 2rem,
+	'medium'		12rem 48rem 700 1.5 16rem 1rem 6rem 1.5em 3rem,
+	'large'			14rem 56rem 700 1.5 18rem 1rem 7rem 1.5em 4rem,
+	'x-large'		16rem 70rem 700 1.5 21rem 1rem 8rem 1.5em 5rem,
+);
+
+
+.form.module-a {
+	display: inline-block;
+
+	&.checkbox,
+	&.radio {
+		display: inline-flex;
+		align-items: center;
+		
+		.form-elem {
+			display: block;
+			width: 24rem;
+			min-width: 24px;
+			height: 24rem;
+			border-style: solid;
+			border-width: 1rem;
+			border-color: color(base, 06);
+			background-color: color(base, 10);
+			background-repeat: no-repeat;
+			background-position: center;
+
+			&:hover {
+				border-color: color(primary, 01);
+			}
+		}
+
+		.form-text {
+			display: block;
+			margin-left: 0.625em;
+			line-height: 1.5;
+			font-size: 16px;
+		}
+	}
+
+	&.radio {
+		.form-elem {
+			border-radius: 50%;
+			background-color: color(base, 10);
+
+			&:checked {
+				border-color: color(primary, 01);
+				background-color: color(primary, 01);
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 10rem;
+					height: 10rem;
+					border-radius: 50%;
+					background-color: color(base, 10);
+				}
+			}
+		}
+	}
+
+	&.checkbox {
+		.form-elem {
+			border-radius: 4rem;
+			background-color: color(base, 10);
+			&:checked {
+				border-color: color(primary, 01);
+				background-color: color(primary, 01);
+				background-image: icon(check, color(base, 10));
+			}
+		}
+	}
+
+
+
+
+	&.select,
+	&.textarea,
+	&.textfield {
+		.form-elem {
+			border-width: 1rem;
+			border-style: solid;
+			width: 100%;
+			box-sizing: border-box;
+			text-overflow: ellipsis;
+		}
+	}
+
+	&.textfield {
+		.form-elem {
+			&.typed:focus~.form-util .form-cancel,
+			&.typed:hover~.form-util .form-cancel {
+				visibility: visible;
+			}
+		}
+
+		.form-util {
+			display: flex;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			pointer-events: none;
+			
+			.form-cancel {
+				display: block;
+				visibility: hidden;
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: cover;
+			}
+		}
+	}
+
+	&.textarea {
+		.form-elem {
+			resize: none;
+		}
+	}
+
+	&.select {
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			pointer-events: none;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		&:not(:focus-within)::after {
+			opacity: 0.75;
+		}
+
+		.form-elem::-ms-expand {
+			display: none;
+		}
+	}
+
+	// accent
+	@each $name, $text-color, $unit-color, $border-color, $background-color in $form-module-b-accent {
+		&.type-line.#{$name} {
+			.form-elem {
+				color: $text-color;
+				border-color: $border-color;
+				background-color: #fff;
+
+				&:-ms-input-placeholder {color: rgba($text-color,0.5);}
+				&:-moz-placeholder {color: rgba($text-color,0.5);}
+				&::-moz-placeholder {color: rgba($text-color,0.5);}
+				&::-webkit-input-placeholder {color: rgba($text-color,0.5);}
+
+				&:valid {
+					// 나중에 진행
+				}
+
+				&[readonly] {
+					background-color: rgba($border-color, 0.1);
+				}
+
+				&[disabled] {
+					opacity: 0.5;
+				}
+			}
+
+			&.textfield {
+				.form-util {
+					.form-cancel {
+						background-image: icon(cancel, $unit-color);
+					}
+
+					.form-unit {
+						color: rgba($text-color,0.75);
+					}
+				}
+			}
+
+			&.select {
+				&::after {
+					background-image: icon(expand-more, $text-color);
+				}
+			}
+		}
+
+		
+		&.type-fill.#{$name} {
+			.form-elem {
+				color: #fff;
+				border-color: $border-color;
+				background-color: $background-color;
+				&:-ms-input-placeholder {color: rgba(255,255,255,0.5);}
+				&:-moz-placeholder {color: rgba(255,255,255,0.5);}
+				&::-moz-placeholder {color: rgba(255,255,255,0.5);}
+				&::-webkit-input-placeholder {color: rgba(255,255,255,0.5);}
+
+				&[readonly] {
+					background-color: rgba($border-color, 0.5);
+				}
+
+				&[disabled] {
+					opacity: 0.5;
+				}
+			}
+			
+			&.textfield {
+				.form-util {
+					.form-cancel {
+						background-image: icon(cancel, #fff);
+					}
+					.form-unit {
+						color: rgba(255,255,255,0.75);
+					}
+				}
+			}
+
+			&.select {
+				&::after {
+					background-image: icon(expand-more, #fff);
+				}
+			}
+		}
+	}
+
+	// outline
+	@each $name, $padding, $height, $font-weight, $line-height, $font-size, $border-width, $border-radius, $symbol-size, $symbol-margin in $form-module-b-outline {
+		&.#{$name} {
+
+			&.style-b {
+				.form-elem {
+					border-radius: $border-radius;
+				}
+			}
+
+			.form-elem {
+				line-height: $line-height;
+				font-size: $font-size;
+				@include font((family: default)...);
+				
+				// &:hover {
+					// 	box-shadow: 0 2rem 8rem 0 rgba(0,0,0,0.1);
+					// }
+			}
+
+			&.textfield {
+				&.style-c {
+					.form-elem {
+						border-radius: calc($height / 2);
+					}
+				}
+				
+				.form-elem {
+					height: $height;
+					text-indent: $padding;
+					padding-right: $padding;
+				}
+
+				.form-util {
+					padding: 0 $padding;
+		
+					>*+* {
+						margin-left: $symbol-margin;
+					}
+					
+					.form-cancel {
+						width: $symbol-size;
+						height: $symbol-size;
+					}
+				}
+			}
+			
+			&.select {
+				&.style-c {
+					.form-elem {
+						border-radius: calc($height / 2);
+					}
+				}
+
+				.form-elem {
+					height: $height;
+					padding-left: $padding;
+					padding-right: calc($symbol-size + ($padding * 2));
+					background-position: calc(100% - $padding) 50%;
+					background-size: $symbol-size $symbol-size;
+				}
+
+				&::after {
+					right: $padding;
+					width: $symbol-size;
+					height: $symbol-size;
+				}
+			}
+
+			&.textarea {
+				.form-elem {
+					padding: $padding;
+				}
+			}
+		}
+	}
+}

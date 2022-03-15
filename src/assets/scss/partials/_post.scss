@@ -1,0 +1,366 @@
+/* post-display */
+.post-display {
+	.post-list {
+		margin: 0;
+		padding: 0;
+		.post-item {
+			list-style: none;
+		}
+	}
+}
+
+// post-display
+.post-display.module-a {
+
+	.post-status {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-sizing: border-box;
+
+		width: 66rem;
+		min-width: 66rem;
+		height: 28rem;
+		@include font((outline: body, size: x-small, weight: bold, line-height: 1.5)...);
+		border-radius: 6rem;
+		border-width: 1rem;
+		border-style: solid;
+
+		// laptop
+		@include respond-above(large) {
+			width: 96rem;
+			min-width: 96rem;
+			height: 40rem;
+			@include font((size: small)...);
+		}
+
+		&.closing {
+			color: color(base, 05);
+			border-color: color(base, 05);
+		}
+
+		&.ongoing {
+			color: color(primary, 01);
+			border-color: color(primary, 01);
+		}
+	}
+
+
+	.post-util {
+		margin-top: 24rem;
+
+		// laptop
+		@include respond-above(large) {
+			margin-top: 48rem;
+		}
+
+		.button-area {
+			.btn {
+				flex-grow: 1;
+			}
+
+			// laptop
+			@include respond-above(large) {
+				.btn {
+					flex-grow: 0;
+					width: 146rem;
+				}
+			}
+		}
+	}
+
+	//목록
+	.post-list {
+		border-top: 2rem solid color(base, 02);
+		border-bottom: 1rem solid color(base, 06);
+
+		.post-item {
+			position: relative;
+			padding: 16rem;
+
+			// laptop
+			@include respond-above(large) {
+				padding: 40rem;
+			}
+
+			+.post-item {
+				border-top: 1rem solid color(base, 06);
+			}
+
+			.post-wrap {
+				.post-inform {
+					// laptop
+					@include respond-above(large) {
+						display: flex;
+						align-items: center;
+
+						.post-head {
+							flex-grow: 1;
+							flex-basis: 100%;
+						}
+					}
+
+					.post-head {
+						.post-subject {
+							
+							// laptop
+							@include respond-above(large) {
+								display: flex;
+							}
+
+							.post-status {
+								margin: 0 0 8rem 0;
+								// laptop
+								@include respond-above(large) {
+									margin: 0 40rem 0 0;
+								}
+							}
+
+	
+							.post-name {
+								display: block;
+								@include font((outline: body, size: small)...);
+								color: color(base, 02);
+								@include ellipsis(2);
+
+								&:not(:hover) {
+									text-decoration: none;
+								}
+								
+								// mobile
+								@include respond-below(large) {
+									// 클릭 영역 전체로 확장
+									&::after {
+										content: '';
+										display: block;
+										position: absolute;
+										top: 0;
+										right: 0;
+										bottom: 0;
+										left: 0;
+									}
+								}
+	
+								// laptop
+								@include respond-above(large) {
+									@include font((outline: body, size: large)...);
+									@include ellipsis(1);
+								}
+							}
+						}
+	
+						~.post-foot {
+							margin-top: 6rem;				
+
+							// laptop
+							@include respond-above(large) {
+								margin: 0 0 0 40rem;
+							}
+						}
+					}
+	
+					.post-foot {
+						.data-list {
+							display: flex;
+							flex-wrap: wrap;
+	
+							.data-item {
+								display: flex;
+	
+								.data-head {
+									@include hidden;
+								}
+	
+								.data-body {
+									display: block;
+									@include font((outline: body, size: x-small)...);
+									color: color(base, 05);
+									
+									// laptop
+									@include respond-above(large) {
+										@include font((outline: body, size: small)...);
+										white-space: nowrap;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//읽기
+	.post-read {
+		border-top: 2rem solid color(base, 02);
+
+		.post-wrap {
+			.post-inform {
+				.post-head {
+					padding: 16rem 0;
+					border-bottom: 1rem solid color(base, 06);
+
+					// laptop
+					@include respond-above(large) {
+						padding: 48rem 0;
+					}
+
+					.post-subject {
+						// laptop
+						@include respond-above(large) {
+							&::after {
+								@include clear;
+							}
+						}
+
+						.post-status {
+							margin-bottom: 4rem;
+
+							// laptop
+							@include respond-above(large) {
+								margin: 0 12rem 0 0;
+								float: left;
+							}
+						}
+
+						.post-name {
+							@include font((outline: body, size: small, weight: bold)...);
+							color: color(base, 02);
+							
+							// mobile
+							@include respond-below(large) {
+
+							}
+
+							// laptop
+							@include respond-above(large) {
+								@include font((outline: body, size: x-large)...);
+							}
+						}
+					}
+
+					.post-data {
+						margin-top: 8rem;				
+
+						// laptop
+						@include respond-above(large) {
+							margin-top: 16rem;	
+						}
+					}
+				}
+
+				.post-data {
+					.data-list {
+						display: flex;
+						flex-wrap: wrap;
+						overflow: hidden;
+
+						.data-item {
+							display: flex;
+							position: relative;
+							left: -2em;
+							margin-left: 1em;
+							padding-left: 1em;
+							@include font((outline: body, size: xx-small)...);
+
+							&::before {
+								content: '';
+								display: block;
+								margin-right: 0.25em;
+								width: 1.5em;
+								min-width: 1.5em;
+								height: 1.5em;
+								background-repeat: no-repeat;
+								background-position: center;
+								background-size: cover;
+							}
+
+							&::after {
+								content: '';
+								display: block;
+								position: absolute;
+								left: 0;
+								top: calc(50% - 0.375em);
+								width: 1rem;
+								height: 0.75em;
+								background-color: color(base, 06);
+							}
+
+							// laptop
+							@include respond-above(large) {
+								@include font((outline: body, size: medium)...);
+							}
+
+							.data-head {
+								@include hidden;
+							}
+
+							.data-body {
+								display: block;
+								color: color(base, 05);
+								white-space: nowrap;
+							}
+
+							&.period {
+								&::before {background-image: icon(calendar, color(base, 06));}
+							}
+							&.voter {
+								&::before {background-image: icon(vote, color(base, 06));}
+							}
+						}
+					}
+				}
+				
+				.post-body {
+					padding: 32rem 0 48rem 0;
+					border-bottom: 1rem solid color(base, 06);
+					
+					// laptop
+					@include respond-above(large) {
+						padding: 64rem 0 96rem 0;
+					}
+				}
+			}
+		}
+	}
+
+	//쓰기
+	.post-write {
+		.post-head {
+			display: block;
+			padding: 16rem 8rem;
+			width: 100%;
+			text-align: center;
+			border-top: 2rem solid color(base, 02);
+			border-bottom: 1rem solid color(base, 06);
+			box-sizing: border-box;
+			background-color: color(etc, 01);
+
+			// laptop
+			@include respond-above(large) {
+				padding: 24rem 16rem;
+			}
+			
+			.post-subject {
+				margin: 0;
+				@include font((outline: body, size: small)...);
+				color: color(base, 01);
+
+				// laptop
+				@include respond-above(large) {
+					@include font((outline: body, size: large)...);
+				}
+			}
+		}
+
+		.post-body {
+			padding: 32rem 0 48rem 0;
+			border-bottom: 1rem solid color(base, 06);
+			
+			// laptop
+			@include respond-above(large) {
+				padding: 64rem 0 96rem 0;
+			}
+		}
+	}	
+}

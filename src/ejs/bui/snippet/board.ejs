@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<%-include('../_templates/_data.header.front.ejs', {
+	pageStyle: 'bui.page.snippet.css',
+	pageJavascript: ''
+}) %>
+</head>
+<body>
+<div id="wrap">
+	<!-- page -->
+	<div id="page">
+<%-include('../_templates/_header.snippet.ejs') %>
+		<!-- page-body -->
+		<div class="page-body" id="local">
+			<!-- local-head -->
+			<div class="local-head">
+				<h2 class="local-title" id="localTitle"><span class="local-name">snippet</span></h2>
+			</div>
+			<!-- //local-head -->
+			<!-- local-body -->
+			<div class="local-body" id="content">
+				<!-- content-head -->
+				<div class="content-head"><%- include('../_mixin/_title.content.ejs', {name: 'board'}) %></div>
+				<!-- //content-head -->
+				<!-- content-body -->
+				<div class="content-body">
+					<!-- section : Button System-->
+					<div class="section">
+						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'button system'}) %></div>
+						<div class="section-body">
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'HTML Structure'}) %></div>
+								<div class="subsection-body">
+									<pre class="highlight-js">
+<code class="html">&lt;a href="#" class="btn"&gt;&lt;span class="btn-text"&gt;name&lt;/span&gt;&lt;/a&gt;
+&lt;button type="button" class="btn"&gt;&lt;span class="btn-text"&gt;name&lt;/span&gt;&lt;/button&gt;
+&lt;button type="submit" class="btn"&gt;&lt;span class="btn-text"&gt;name&lt;/span&gt;&lt;/button&gt;</code></pre>
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'Class Options'}) %></div>
+								<div class="subsection-body">
+									<!-- data-table -->
+									<div class="data-table module-bui type-a">
+										<table>
+											<colgroup>
+												<col style="width: 128rem;">
+												<col>
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">module</th>
+													<td>module-*</td>
+												</tr>
+												<tr>
+													<th scope="row">style</th>
+													<td>style-*</td>
+												</tr>
+												<tr>
+													<th scope="row">type</th>
+													<td>type-*</td>
+												</tr>
+												<tr>
+													<th scope="row">outline</th>
+													<td>xx-small, x-small, small, medium, large, x-large, xx-large, xx-large</td>
+												</tr>
+												<tr>
+													<th scope="row">accent</th>
+													<td>normal-*, accent-*</td>
+												</tr>
+												<tr>
+													<th scope="row">symbols</th>
+													<td>symbol-ltr-*, symbol-rtl-*</td>
+												</tr>
+												<tr>
+													<th scope="row">options</th>
+													<td>disabled</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- //data-table -->
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- info-board 기본 구조 -->
+							<div class="info-board">
+								<div class="board-wrap">
+									<div class="board-head">
+										<p class="board-caption"><span class="wbr"></span> <span class="wbr"></span></p>
+										<p class="board-subject"><span class="wbr"></span> <span class="wbr"></span></p>
+										<p class="board-summary"><span class="wbr"></span> <span class="wbr"></span></p>
+									</div>
+									<div class="board-body">
+										<p class="para"><span class="wbr"></span> <span class="wbr"></span></p>
+										<p class="para"><span class="wbr"></span> <span class="wbr"></span></p>
+									</div>
+									<div class="board-foot"></div>
+									<div class="board-util"></div>
+									<div class="board-side"></div>
+								</div>
+							</div>
+							<!-- //info-board -->
+
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'Style A'}) %></div>
+								<div class="subsection-body">
+									<!-- highlight-js -->
+									<pre class="highlight-js">
+<code class="html">&lt;div class="info-board module-a style-a type-c attr-error"&gt;
+	&lt;div class="board-wrap"&gt;
+		&lt;div class="board-head"&gt;
+			&lt;p class="board-subject"&gt;&lt;span class="wbr"&gt;죄송합니다.&lt;/span&gt;&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="board-body"&gt;
+			&lt;p class="para"&gt;감사합니다.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="board-util"&gt;
+			&lt;div class="button-area module-a style-a type-c"&gt;
+				&lt;a class="btn module-b style-c type-fill accent-01 x-large" href="#"&gt;&lt;span class="btn-text"&gt;메인으로 이동하기&lt;/span&gt;&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+									<!-- //highlight-js -->
+
+									<!-- info-board -->
+									<div class="info-board module-a style-a type-c attr-error">
+										<div class="board-wrap">
+											<div class="board-head">
+												<p class="board-subject"><span class="wbr">이용에 불편을 드려 죄송합니다.</span></p>
+											</div>
+											<div class="board-body">
+												<p class="para">방문하시려는 웹 페이지의 주소가 잘못 입력되었거나, 일시적인 오류 혹은 변경으로 요청하신 페이지를 찾을 수 없습니다. 입력하신 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.<br />감사합니다.</p>
+											</div>
+											<div class="board-util">
+												<div class="button-area module-a style-a type-c">
+													<a class="btn module-b style-c type-fill accent-01 x-large" href="#"><span class="btn-text">메인으로 이동하기</span></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- //info-board -->
+								</div>
+							</div>
+							<!-- //subsection -->
+
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'Style B'}) %></div>
+								<div class="subsection-body">
+									<!-- highlight-js -->
+									<pre class="highlight-js">
+<code class="html">
+&lt;div class="info-board module-b style-a type-c"&gt;
+	&lt;div class="board-wrap"&gt;
+		&lt;div class="board-head"&gt;
+			&lt;p class="board-subject"&gt;&lt;span class="wbr"&gt;정보&lt;/span&gt;&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="board-body"&gt;
+			&lt;p class="para"&gt;&lt;span class="wbr"&gt; ... &lt;/span&gt;&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="board-util"&gt;
+			&lt;div class="button-area"&gt;
+				&lt;a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"&gt;&lt;span class="btn-text"&gt;바로가기&lt;/span&gt;&lt;/a&gt;
+				&lt;a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"&gt;&lt;span class="btn-text"&gt;바로가기&lt;/span&gt;&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;	
+</code></pre>
+									<!-- //highlight-js -->
+
+									<!--
+									<div class="temp-item">
+										<div class="temp-wrap">
+											<div class="temp-head"></div>
+											<div class="temp-body"></div>
+										</div>
+									</div>
+
+									<div class="data-display">
+										<ul class="data-list">
+											<li class="data-item">
+												<a class="data-wrap" href="#">
+													<span class="data-head"></span>
+													<span class="data-body"></span>
+												</a>		
+											</li>
+										</ul>
+									</div>
+
+
+									<ul class="data-list for-test">
+										<li class="data-item eye"><a class="data-wrap" href="#">data item</a></li>
+										<li class="data-item start"><a class="data-wrap" href="#">data item</a></li>
+										<li class="data-item stop"><a class="data-wrap" href="#">data item</a></li>
+									</ul> -->
+
+
+
+									
+
+									<!-- info-board -->
+									<div class="info-board module-b style-a type-c">
+										<div class="board-wrap">
+											<div class="board-head">
+												<p class="board-subject"><span class="wbr">생산성 정보</span></p>
+											</div>
+											<div class="board-body">
+												<p class="para"><span class="wbr">주요 산업 또는 기업 수준의 생산성 분석,</span> <span class="wbr">생산성 정책 연구 등 생산성 관련 이슈페이퍼 발간</span></p>
+												<p class="para"><span class="wbr">국내 연구기관, 국제기구(OECD, ILO, World Bank 등)</span> <span class="wbr">또는 해외 생산성 연구기관(美 BLS, The Conference Board 등)</span> <span class="wbr">에서 발표하는 생산성 관련 정보자료를 제공합니다.</span></p>
+											</div>
+											<div class="board-util">
+												<div class="button-area">
+													<a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"><span class="btn-text">생산성 정보 바로가기</span></a>
+													<a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"><span class="btn-text">생산성 용어 바로가기</span></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- //info-board -->
+								</div>
+							</div>
+							<!-- //subsection -->
+
+							
+
+						</div>
+					</div>
+					<!-- //section -->
+				</div>
+				<!-- content-body -->
+			</div>
+			<!-- //local-body -->
+		</div>
+		<!-- //page-body -->
+<%-include('../_templates/_footer.front.ejs') %>
+	</div>
+	<!-- //page -->
+</div>
+<script type="text/javascript">
+	window.addEventListener('DOMContentLoaded', function() {
+		var buttons = document.querySelectorAll('.bui-button-area .btn');
+		Array.prototype.forEach.call(buttons, function(button) {
+			button.addEventListener('click', function(e) {
+				e.preventDefault();
+			});
+		});
+
+		var forTest = ['a', 'b', 'c', 'd'];
+
+		for(var i = 0; i < forTest.length; i++) {
+			console.log(forTest[i]);
+		}
+
+		// for (const [key, value] of Object.entries(object1)) {
+		// 	console.log(value);
+		// }
+
+
+
+
+
+		var temp = document.querySelector('body');
+
+		// temp.style.backgroundColor = "blue";
+
+		var object1 = {
+			test1: 'test1',
+			test2: 'test2'
+		}
+
+		
+		for (const [key, value] of Object.entries(object1)) {
+			if (key === 'test2') {
+				console.log(value);
+			}
+		}
+	});
+</script>
+</body>
+</html>
