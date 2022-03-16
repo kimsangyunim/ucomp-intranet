@@ -31,13 +31,33 @@ button.btn {
 * @ $border-color
 * @ $background-color
 */
-$btn-module-b-accent: (
-	'accent-01'		color(primary, 01) color(primary, 01) color(primary, 01),
-	'accent-02'		color(secondary, 01) color(secondary, 01) color(secondary, 01),
-	'normal-00'		color(base, 00) color(base, 00) color(base, 00),
-	'normal-01'		color(base, 01) color(base, 01) color(base, 01),
-	'normal-02'		color(base, 05) color(base, 05) color(base, 05),
-	'normal-03'		color(base, 03) color(base, 06) color(base, 06),
+$btn-module-a-accent: (
+	'normal-00': (
+		'none' color(base, 10) transparent transparent,
+		'line' color(base, 10) color(base, 10) color(base, 00),
+		'fill' color(base, 00) color(base, 10) color(base, 10),
+	),
+	'normal-01': (
+		'none' color(base, 10) transparent transparent,
+		'line' color(base, 10) color(base, 10) color(base, 00),
+		'fill' color(base, 00) color(base, 10) color(base, 10),
+	),
+	'normal-02': (
+		'none' color(base, 07) transparent transparent,
+		'line' color(base, 07) color(base, 07) color(base, 00),
+		'fill' color(base, 00) color(base, 07) color(base, 07),
+	),
+	'normal-03': (
+		'none' color(base, 07) transparent transparent,
+		'line' color(base, 07) color(base, 03) color(base, 00),
+		'fill' color(base, 07) color(base, 03) color(base, 03),
+	),
+
+	'accent-01': (
+		'none' color(primary, 05) transparent transparent,
+		'line' color(primary, 05) color(primary, 05) color(primary, 00),
+		'fill' color(primary, 00) color(primary, 05) color(primary, 05),
+	),
 );
 
 /*
@@ -54,19 +74,20 @@ $btn-module-b-accent: (
  * @ $symbol-size
  * @ $symbol-margin
  */  
-$btn-module-b-outline: (
-	'small'			22rem 22rem 44rem 700 1.5 14rem 1rem 6 1.5em 2rem,
-	'medium'		24rem 24rem 48rem 700 1.5 16rem 1rem 6 1.5em 3rem,
-	'large'			28rem 28rem 56rem 700 1.5 18rem 1rem 6 1.5em 4rem,
-	'x-large'		32rem 32rem 70rem 700 1.5 21rem 1rem 6 1.5em 5rem,
+$btn-module-a-outline: (
+	'x-small'		calc(24rem / 2) calc(24rem / 2) 24rem 700 16rem calc(16rem / 1.25) 1rem calc(24rem * 0.2) 16rem calc(16rem * 0.075),
+	'small'			calc(32rem / 2) calc(32rem / 2) 32rem 700 20rem calc(20rem / 1.25) 1rem calc(32rem * 0.2) 20rem calc(20rem * 0.075),
+	'medium'		calc(40rem / 2) calc(40rem / 2) 40rem 700 24rem calc(24rem / 1.25) 1rem calc(40rem * 0.2) 24rem calc(24rem * 0.075),
+	'large'			calc(48rem / 2) calc(48rem / 2) 48rem 700 24rem calc(24rem / 1.25) 1rem calc(48rem * 0.2) 24rem calc(24rem * 0.075),
+	'x-large'		calc(56rem / 2) calc(56rem / 2) 56rem 700 28rem calc(28rem / 1.25) 1rem calc(56rem * 0.2) 28rem calc(28rem * 0.075),
 );
 
 // btn module-b reset
- a.btn.module-b {
+ a.btn.module-a {
 	 text-decoration: none;
  }
 
- .btn.module-b {
+ .btn.module-a {
 	// general
 	display: flex;
 	align-items: center;
@@ -80,10 +101,6 @@ $btn-module-b-outline: (
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-	}
-
-	&.style-c {
-		border-radius: 100em;
 	}
 
 	// icon
@@ -105,45 +122,42 @@ $btn-module-b-outline: (
 	}
 
 	// accent
-	@each $name, $text-color, $border-color, $background-color in $btn-module-b-accent {
-		&.type-line.#{$name} {
-			color: $text-color;
-			border-color: $border-color;
-			background-color: color(base, 10);
-
-			// icon
-			@each $icon-name, $icon in $symbol-list {
-				&.symbol-ltr-#{$icon-name} {.btn-text {&::before {background-image: icon($icon-name, $text-color);}}}
-				&.symbol-rtl-#{$icon-name} {.btn-text {&::after {background-image: icon($icon-name, $text-color);}}}
-			}
-		}
-
-		&.type-fill.#{$name} {
-			color: #fff;
-			border-color: $border-color;
-			background-color: $background-color;
-
-			// icon
-			@each $icon-name, $icon in $symbol-list {
-				&.symbol-ltr-#{$icon-name} {.btn-text {&::before {background-image: icon($icon-name, #fff);}}}
-				&.symbol-rtl-#{$icon-name} {.btn-text {&::after {background-image: icon($icon-name, #fff);}}}
+	@each $accent-name in $btn-module-a-accent {
+		&.#{nth($accent-name, 1)} {
+			// @debug "divider offset: #{nth($accent-name, 1)}";
+			@each $type-name, $color, $border-color, $background-color in map-get($btn-module-a-accent, nth($accent-name, 1)) {
+				&.type-#{$type-name} {
+					color: $color;
+					border-color: $border-color;
+					background-color: $background-color;
+					
+					@each $icon-name, $icon in $symbol-list {
+						&.symbol-ltr-#{$icon-name} {.btn-text {&::before {background-image: icon($icon-name, $color);}}}
+						&.symbol-rtl-#{$icon-name} {.btn-text {&::after {background-image: icon($icon-name, $color);}}}
+					}
+				}
 			}
 		}
 	}
 
 	// outline
-	@each $name, $padding-right, $padding-left, $height, $font-weight, $line-height, $font-size, $border-width, $border-radius, $symbol-size, $symbol-margin in $btn-module-b-outline {
+	@each $name, $padding-right, $padding-left, $height, $font-weight, $line-height, $font-size, $border-width, $border-radius, $symbol-size, $symbol-margin in $btn-module-a-outline {
 		&.#{$name} {
 			padding-right: $padding-right;
 			padding-left: $padding-left;
 			height: $height;
+
 			font-weight: $font-weight;
 			line-height: $line-height;
 			font-size: $font-size;
 			border-width: $border-width;
 
 			&.style-b {
-				border-radius: calc($height / $border-radius);
+				border-radius: $border-radius;
+			}
+
+			&.style-c {
+				border-radius: calc($height / 2);
 			}
 
 			// icon
@@ -156,7 +170,7 @@ $btn-module-b-outline: (
 
 			
 			&[class*="symbol-ltr"] {
-				padding-left: calc($padding-right * 3 / 4);
+				padding-left: calc($padding-right - ($symbol-size / 4));
 				.btn-text {
 					&::before {
 						margin-right: $symbol-margin;
@@ -165,7 +179,7 @@ $btn-module-b-outline: (
 			}
 
 			&[class*="symbol-rtl"] {
-				padding-right: calc($padding-left * 3 / 4);
+				padding-right: calc($padding-left - ($symbol-size / 4));
 				.btn-text {
 					&::after {
 						margin-left: $symbol-margin;
@@ -175,155 +189,6 @@ $btn-module-b-outline: (
 		}
 	}
 }
-
-/*
- * btn module-c system
-*/
-
-/*
-* @ module-c accent
-*
-* @ $text-color
-* @ $border-color
-* @ $background-color
-*/
-$btn-module-c-accent: (
-	'accent-01'		color(primary, 01) color(primary, 01) color(primary, 01),
-	'accent-02'		color(secondary, 01) color(secondary, 01) color(secondary, 01),
-	'normal-00'		color(base, 00) color(base, 00) color(base, 00),
-	'normal-01'		color(base, 01) color(base, 01) color(base, 01),
-	'normal-02'		color(base, 05) color(base, 05) color(base, 05),
-	'normal-03'		color(base, 03) color(base, 06) color(base, 06),
-);
-
-
-/*
- * module-c outline
- *
- * @ $padding-right
- * @ $padding-left
- * @ $height
- * @ $font-weight
- * @ $line-height
- * @ $font-size
- * @ $border-width
- * @ $border-radius ($height / $border-radius)
- * @ $symbol-size
- * @ $symbol-margin
- */
-$btn-module-c-outline: (
-	'small'			22rem 22rem 44rem 700 1.5 14rem 2rem 6 1.5em 2rem,
-	'medium'		24rem 24rem 48rem 700 1.5 16rem 2rem 6 1.5em 3rem,
-	'large'			28rem 28rem 56rem 700 1.5 18rem 2rem 6 1.5em 4rem,
-	'x-large'		32rem 32rem 70rem 700 1.5 21rem 2rem 6 1.5em 5rem,
-);
-// btn module-c reset
-a.btn.module-c {
-	text-decoration: none;
-}
-	
-.btn.module-c {
-	// general
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	@include font((family: default)...);
-	box-sizing: border-box;
-	border-style: solid;
-
-	.btn-text {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-	}
-
-	&.style-c {
-		border-radius: 100em;
-	}
-
-	&[class*=symbol-ltr-] .btn-text::before,
-	&[class*=symbol-rtl-] .btn-text::after {
-		content: '';
-		display: block;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-
-	// accent
-	@each $name, $text-color, $border-color, $background-color in $btn-module-c-accent {
-		&.type-line.#{$name} {
-			color: $text-color;
-			border-color: $border-color;
-			background-color: color(base, 10);
-
-			// icon
-			@each $icon-name, $icon in $symbol-list {
-				&.symbol-ltr-#{$icon-name} {.btn-text {&::before {background-image: icon($icon-name, $text-color);}}}
-				&.symbol-rtl-#{$icon-name} {.btn-text {&::after {background-image: icon($icon-name, $text-color);}}}
-			}
-		}
-
-		&.type-fill.#{$name} {
-			color: #fff;
-			border-color: $border-color;
-			background-color: $background-color;
-
-			// icon
-			@each $icon-name, $icon in $symbol-list {
-				&.symbol-ltr-#{$icon-name} {.btn-text {&::before {background-image: icon($icon-name, #fff);}}}
-				&.symbol-rtl-#{$icon-name} {.btn-text {&::after {background-image: icon($icon-name, #fff);}}}
-			}
-		}
-	}
-
-	// outline
-	@each $name, $padding-right, $padding-left, $height, $font-weight, $line-height, $font-size, $border-width, $border-radius, $symbol-size, $symbol-margin in $btn-module-c-outline {
-		&.#{$name} {
-			padding-right: $padding-right;
-			padding-left: $padding-left;
-			height: $height;
-			font-weight: $font-weight;
-			line-height: $line-height;
-			font-size: $font-size;
-			border-width: $border-width;
-
-			&.style-b {
-				border-radius: calc($height / $border-radius);
-			}
-
-			// icon
-			&[class*=symbol-ltr-] .btn-text::before,
-			&[class*=symbol-rtl-] .btn-text::after {
-				width: $symbol-size;
-				min-width: $symbol-size;
-				height: $symbol-size;
-			}
-
-
-
-			&[class*="symbol-ltr"] {
-				padding-right: calc($padding-left * 3 / 4);
-				.btn-text {
-					&::before {
-						margin-right: $symbol-margin;
-					}
-				}
-			}
-
-			&[class*="symbol-rtl"] {
-				padding-right: calc($padding-left * 3 / 4);
-				.btn-text {
-					&::after {
-						margin-left: $symbol-margin;
-					}
-				}
-			}			
-		}
-	}
-}
-
-
 
 // button-area
 .button-area.module-a {

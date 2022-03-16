@@ -66,7 +66,7 @@
 												</tr>
 												<tr>
 													<th scope="row">outline</th>
-													<td>xx-small, x-small, small, medium, large, x-large, xx-large, xx-large</td>
+													<td>xx-small, x-small, small, large, large, x-large, xx-large, xx-large</td>
 												</tr>
 												<tr>
 													<th scope="row">accent</th>
@@ -93,14 +93,14 @@
 								<div class="subsection-body">
 									<!-- highlight-js -->
 									<pre class="highlight-js">
-<code class="html">&lt;a href="#" class="btn module-b style-a"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b style-b"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b style-c"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;</code></pre>
+<code class="html">&lt;a href="#" class="btn module-a style-a"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a style-b"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a style-c"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;</code></pre>
 									<!-- //highlight-js -->
 									<div class="bui-button-area">
-										<a class="btn module-b style-a type-line normal-00 medium" href="#"><span class="btn-text">Button style-a</span></a>
-										<a class="btn module-b style-b type-line normal-00 medium" href="#"><span class="btn-text">Button style-b</span></a>
-										<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-c</span></a>
+										<a class="btn module-a style-a type-line normal-00 large" href="#"><span class="btn-text">Button style-a</span></a>
+										<a class="btn module-a style-b type-line normal-00 large" href="#"><span class="btn-text">Button style-b</span></a>
+										<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-c</span></a>
 									</div>
 								</div>
 							</div>
@@ -110,13 +110,65 @@
 								<div class="subsection-body">
 									<!-- highlight-js -->
 									<pre class="highlight-js">
-<code class="html">&lt;a href="#" class="btn module-b type-line"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b type-fill"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;</code></pre>
+<code class="html">&lt;a href="#" class="btn module-a type-line"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a type-fill"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;</code></pre>
 									<!-- //highlight-js -->
 									<div class="bui-button-area">
-										<a class="btn module-b style-a type-line normal-00 medium" href="#"><span class="btn-text">Button type-line</span></a>
-										<a class="btn module-b style-a type-fill normal-00 medium" href="#"><span class="btn-text">Button type-fill</span></a>
+										<a class="btn module-a style-a type-line normal-00 large" href="#"><span class="btn-text">Button type-line</span></a>
+										<a class="btn module-a style-a type-fill normal-00 large" href="#"><span class="btn-text">Button type-fill</span></a>
 									</div>
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'accent'}) %></div>
+								<div class="subsection-body">
+									<!-- highlight-js -->
+									<pre class="highlight-js">
+<code class="html">&lt;a href="#" class="btn module-a normal-01"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a normal-02"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a normal-03"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+</code></pre>
+									<!-- //highlight-js -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-none'}) %></div>
+										<!-- border 색 기준 -->
+										<div class="subsubsection-body">
+											<div class="bui-button-area">
+												<a class="btn module-a style-a type-none normal-01 large" href="#"><span class="btn-text">btn normal-01</span></a>
+												<a class="btn module-a style-a type-none normal-02 large" href="#"><span class="btn-text">btn normal-02</span></a>
+												<a class="btn module-a style-a type-none normal-03 large" href="#"><span class="btn-text">btn normal-03</span></a>
+											</div>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-line'}) %></div>
+										<!-- border 색 기준 -->
+										<div class="subsubsection-body">
+											<div class="bui-button-area">
+												<a class="btn module-a style-a type-line normal-01 large" href="#"><span class="btn-text">btn normal-01</span></a>
+												<a class="btn module-a style-a type-line normal-02 large" href="#"><span class="btn-text">btn normal-02</span></a>
+												<a class="btn module-a style-a type-line normal-03 large" href="#"><span class="btn-text">btn normal-03</span></a>
+											</div>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-fill'}) %></div>
+										<div class="subsubsection-body">
+											<div class="bui-button-area">
+												<a class="btn module-a style-a type-fill normal-01 large" href="#"><span class="btn-text">btn normal-01</span></a>
+												<a class="btn module-a style-a type-fill normal-02 large" href="#"><span class="btn-text">btn normal-02</span></a>
+												<a class="btn module-a style-a type-fill normal-03 large" href="#"><span class="btn-text">btn normal-03</span></a>
+											</div>
+										</div>
+									</div>
+									<!-- //subsubsection -->
 								</div>
 							</div>
 							<!-- //subsection -->
@@ -128,75 +180,18 @@
 									<!-- highlight-js -->
 									<pre class="highlight-js">
 <code class="html">
-&lt;a href="#" class="btn module-b style-a x-large"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b style-a large"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b style-a medium"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b style-a small"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a style-a x-large"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a style-a large"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a style-a large"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a style-a small"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
 </code></pre>
 									<!-- //highlight-js -->
-									<!-- subsubsection -->
-									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-line'}) %></div>
-										<div class="subsubsection-body">
-											<div class="bui-button-area">
-												<a class="btn module-b style-a type-line normal-00 x-large" href="#"><span class="btn-text">x-large</span></a>
-												<a class="btn module-b style-a type-line normal-00 large" href="#"><span class="btn-text">large</span></a>
-												<a class="btn module-b style-a type-line normal-00 medium" href="#"><span class="btn-text">medium</span></a>
-												<a class="btn module-b style-a type-line normal-00 small" href="#"><span class="btn-text">small</span></a>
-											</div>
-										</div>
+									<div class="bui-button-area">
+										<a class="btn module-a style-a type-line normal-00 x-large" href="#"><span class="btn-text">x-large</span></a>
+										<a class="btn module-a style-a type-line normal-00 large" href="#"><span class="btn-text">large</span></a>
+										<a class="btn module-a style-a type-line normal-00 large" href="#"><span class="btn-text">medium</span></a>
+										<a class="btn module-a style-a type-line normal-00 small" href="#"><span class="btn-text">small</span></a>
 									</div>
-									<!-- //subsubsection -->
-									<!-- subsubsection -->
-									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-fill'}) %></div>
-										<div class="subsubsection-body">
-											<div class="bui-button-area">
-												<a class="btn module-b style-a type-fill normal-00 x-large" href="#"><span class="btn-text">x-large</span></a>
-												<a class="btn module-b style-a type-fill normal-00 large" href="#"><span class="btn-text">large</span></a>
-												<a class="btn module-b style-a type-fill normal-00 medium" href="#"><span class="btn-text">medium</span></a>
-												<a class="btn module-b style-a type-fill normal-00 small" href="#"><span class="btn-text">small</span></a>
-											</div>
-										</div>
-									</div>
-									<!-- //subsubsection -->
-								</div>
-							</div>
-							<div class="subsection">
-								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'accent'}) %></div>
-								<div class="subsection-body">
-									<!-- highlight-js -->
-									<pre class="highlight-js">
-<code class="html">&lt;a href="#" class="btn module-b normal-01"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b normal-02"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b normal-03"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-</code></pre>
-									<!-- //highlight-js -->
-									<!-- subsubsection -->
-									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-line'}) %></div>
-										<!-- border 색 기준 -->
-										<div class="subsubsection-body">
-											<div class="bui-button-area">
-												<a class="btn module-b style-a type-line normal-01 medium" href="#"><span class="btn-text">btn normal-01</span></a>
-												<a class="btn module-b style-a type-line normal-02 medium" href="#"><span class="btn-text">btn normal-02</span></a>
-												<a class="btn module-b style-a type-line normal-03 medium" href="#"><span class="btn-text">btn normal-03</span></a>
-											</div>
-										</div>
-									</div>
-									<!-- //subsubsection -->
-									<!-- subsubsection -->
-									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-fill'}) %></div>
-										<div class="subsubsection-body">
-											<div class="bui-button-area">
-												<a class="btn module-b style-a type-fill normal-01 medium" href="#"><span class="btn-text">btn normal-01</span></a>
-												<a class="btn module-b style-a type-fill normal-02 medium" href="#"><span class="btn-text">btn normal-02</span></a>
-												<a class="btn module-b style-a type-fill normal-03 medium" href="#"><span class="btn-text">btn normal-03</span></a>
-											</div>
-										</div>
-									</div>
-									<!-- //subsubsection -->
 								</div>
 							</div>
 							<!-- //subsection -->
@@ -206,20 +201,13 @@
 								<div class="subsection-body">
 									<!-- highlight-js -->
 									<pre class="highlight-js">
-<code class="html">&lt;a href="#" class="btn module-b symbol-ltr-*"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b symbol-rtl-*"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;</code></pre>
+<code class="html">&lt;a href="#" class="btn module-a symbol-ltr-*"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a symbol-rtl-*"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;</code></pre>
 									<!-- //highlight-js -->
 									<!-- button-area -->
 									<div class="bui-button-area">
-										<a class="btn module-b style-a type-line normal-00 medium symbol-ltr-chevron-left" href="./../snippet/icon.html"><span class="btn-text">module-b insert after</span></a>
-										<a class="btn module-b style-a type-line normal-00 medium symbol-rtl-chevron-right" href="./../snippet/icon.html"><span class="btn-text">module-b insert after</span></a>
-									</div>
-									<!-- //button-area -->
-									<br />
-									<!-- button-area -->
-									<div class="bui-button-area">
-										<a class="btn module-b style-a type-fill normal-00 medium symbol-ltr-chevron-left" href="./../snippet/icon.html"><span class="btn-text">module-b insert after</span></a>
-										<a class="btn module-b style-a type-fill normal-00 medium symbol-rtl-chevron-right" href="./../snippet/icon.html"><span class="btn-text">module-b insert after</span></a>
+										<a class="btn module-a style-a type-line normal-00 large symbol-ltr-fill-chevron-left" href="./../snippet/icon.html"><span class="btn-text">module-a insert before</span></a>
+										<a class="btn module-a style-a type-line normal-00 large symbol-rtl-fill-chevron-right" href="./../snippet/icon.html"><span class="btn-text">module-a insert after</span></a>
 									</div>
 									<!-- //button-area -->
 									<p class="para">버튼 모듈에 사용되는 아이콘의 이름은 <a href="./../snippet/icon.html">snippet/icon.html</a> 참조하세요</p>
@@ -234,31 +222,42 @@
 
 					<!-- section : Module B-->
 					<div class="section">
-						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'Module B'}) %></div>
+						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'button module a'}) %></div>
 						<div class="section-body">
 							<div class="subsection">
 								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'accent'}) %></div>
 								<div class="subsection-body">
 									<!-- highlight-js -->
 									<pre class="highlight-js">
-<code class="html">&lt;a href="#" class="btn module-b accent-02"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b accent-01"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b normal-01"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b normal-02"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-b normal-03"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+<code class="html">&lt;a href="#" class="btn module-a accent-02"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a accent-01"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a normal-01"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a normal-02"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
+&lt;a href="#" class="btn module-a normal-03"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
 </code></pre>
 									<!-- //highlight-js -->
 									<!-- subsubsection -->
 									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-line'}) %></div>
-										<!-- border 색 기준 -->
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-none'}) %></div>
 										<div class="subsubsection-body">
 											<div class="bui-button-area">
-												<a class="btn module-b style-a type-line accent-02 medium" href="#"><span class="btn-text">btn accent-02</span></a>
-												<a class="btn module-b style-a type-line accent-01 medium" href="#"><span class="btn-text">btn accent-01</span></a>
-												<a class="btn module-b style-a type-line normal-01 medium" href="#"><span class="btn-text">btn normal-01</span></a>
-												<a class="btn module-b style-a type-line normal-02 medium" href="#"><span class="btn-text">btn normal-02</span></a>
-												<a class="btn module-b style-a type-line normal-03 medium" href="#"><span class="btn-text">btn normal-03</span></a>
+												<a class="btn module-a style-a type-none accent-01 large" href="#"><span class="btn-text">btn accent-01</span></a>
+												<a class="btn module-a style-a type-none normal-01 large" href="#"><span class="btn-text">btn normal-01</span></a>
+												<a class="btn module-a style-a type-none normal-02 large" href="#"><span class="btn-text">btn normal-02</span></a>
+												<a class="btn module-a style-a type-none normal-03 large" href="#"><span class="btn-text">btn normal-03</span></a>
+											</div>
+										</div>
+									</div>
+									<!-- //subsubsection -->
+									<!-- subsubsection -->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-line'}) %></div>
+										<div class="subsubsection-body">
+											<div class="bui-button-area">
+												<a class="btn module-a style-a type-line accent-01 large" href="#"><span class="btn-text">btn accent-01</span></a>
+												<a class="btn module-a style-a type-line normal-01 large" href="#"><span class="btn-text">btn normal-01</span></a>
+												<a class="btn module-a style-a type-line normal-02 large" href="#"><span class="btn-text">btn normal-02</span></a>
+												<a class="btn module-a style-a type-line normal-03 large" href="#"><span class="btn-text">btn normal-03</span></a>
 											</div>
 										</div>
 									</div>
@@ -268,11 +267,10 @@
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-fill'}) %></div>
 										<div class="subsubsection-body">
 											<div class="bui-button-area">
-												<a class="btn module-b style-a type-fill accent-02 medium" href="#"><span class="btn-text">btn accent-02</span></a>
-												<a class="btn module-b style-a type-fill accent-01 medium" href="#"><span class="btn-text">btn accent-01</span></a>
-												<a class="btn module-b style-a type-fill normal-01 medium" href="#"><span class="btn-text">btn normal-01</span></a>
-												<a class="btn module-b style-a type-fill normal-02 medium" href="#"><span class="btn-text">btn normal-02</span></a>
-												<a class="btn module-b style-a type-fill normal-03 medium" href="#"><span class="btn-text">btn normal-03</span></a>
+												<a class="btn module-a style-a type-fill accent-01 large" href="#"><span class="btn-text">btn accent-01</span></a>
+												<a class="btn module-a style-a type-fill normal-01 large" href="#"><span class="btn-text">btn normal-01</span></a>
+												<a class="btn module-a style-a type-fill normal-02 large" href="#"><span class="btn-text">btn normal-02</span></a>
+												<a class="btn module-a style-a type-fill normal-03 large" href="#"><span class="btn-text">btn normal-03</span></a>
 											</div>
 										</div>
 									</div>
@@ -280,74 +278,6 @@
 								</div>
 							</div>
 							<!-- //subsection -->
-						</div>
-					</div>
-					<!-- //section -->
-					<!-- section : Module C-->
-					<div class="section">
-						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'Module C'}) %></div>
-						<div class="section-body">
-							<div class="subsection">
-								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'accent'}) %></div>
-								<div class="subsection-body">
-									<!-- highlight-js -->
-									<pre class="highlight-js">
-<code class="html">&lt;a href="#" class="btn module-c accent-02"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-c accent-01"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-c normal-01"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-c normal-02"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-c normal-03"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-</code></pre>
-									<!-- //highlight-js -->
-									<!-- subsubsection -->
-									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-line'}) %></div>
-										<!-- border 색 기준 -->
-										<div class="subsubsection-body">
-											<div class="bui-button-area">
-												<a class="btn module-c style-a type-line accent-02 medium" href="#"><span class="btn-text">btn accent-02</span></a>
-												<a class="btn module-c style-a type-line accent-01 medium" href="#"><span class="btn-text">btn accent-01</span></a>
-												<a class="btn module-c style-a type-line normal-01 medium" href="#"><span class="btn-text">btn normal-01</span></a>
-												<a class="btn module-c style-a type-line normal-02 medium" href="#"><span class="btn-text">btn normal-02</span></a>
-												<a class="btn module-c style-a type-line normal-03 medium" href="#"><span class="btn-text">btn normal-03</span></a>
-											</div>
-										</div>
-									</div>
-									<!-- //subsubsection -->
-									<!-- subsubsection -->
-									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-fill'}) %></div>
-										<div class="subsubsection-body">
-											<div class="bui-button-area">
-												<a class="btn module-c style-a type-fill accent-02 medium" href="#"><span class="btn-text">btn accent-02</span></a>
-												<a class="btn module-c style-a type-fill accent-01 medium" href="#"><span class="btn-text">btn accent-01</span></a>
-												<a class="btn module-c style-a type-fill normal-01 medium" href="#"><span class="btn-text">btn normal-01</span></a>
-												<a class="btn module-c style-a type-fill normal-02 medium" href="#"><span class="btn-text">btn normal-02</span></a>
-												<a class="btn module-c style-a type-fill normal-03 medium" href="#"><span class="btn-text">btn normal-03</span></a>
-											</div>
-										</div>
-									</div>
-									<!-- //subsubsection -->
-								</div>
-							</div>
-							<!-- //subsection --> 
-							<!-- subsection -->
-							<!-- <div class="subsection">
-								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'symbols'}) %></div>
-								<div class="subsection-body">
-									<pre class="highlight-js">
-<code class="html">&lt;a href="#" class="btn module-c symbol-ltr-*"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;
-&lt;a href="#" class="btn module-c symbol-rtl-*"&gt;&lt;span class="btn-text"&gt;Button Text&lt;/span&gt;&lt;/a&gt;</code></pre>
-									<div class="bui-button-area">
-										<a class="btn module-c style-a type-line normal-01 medium symbol-ltr-chevron-small-back" href="./../snippet/icon.html"><span class="btn-text">module-c insert before</span></a>
-										<a class="btn module-c style-a type-line normal-01 medium symbol-rtl-chevron-small-next" href="./../snippet/icon.html"><span class="btn-text">module-c insert after</span></a>
-										<a class="btn module-c style-a type-fill normal-01 medium symbol-rtl-chevron-small-next" href="./../snippet/icon.html"><span class="btn-text">module-c insert after</span></a>
-									</div>
-									<p class="para">버튼 모듈에 사용되는 아이콘의 이름은 <a href="./../snippet/icon.html">snippet/icon.html</a> 참조하세요</p>
-								</div>
-							</div> -->
-							<!-- //subsection -->
-							<!-- //test : module-c -->
 						</div>
 					</div>
 					<!-- //section -->
@@ -414,9 +344,9 @@
 										<div class="subsubsection-body">
 											<!-- button-area -->
 											<div class="button-area module-a style-a type-a">
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-a</span></a>
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-b</span></a>
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-c</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-a</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-b</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-c</span></a>
 											</div>
 											<!-- //button-area -->
 										</div>
@@ -428,9 +358,9 @@
 										<div class="subsubsection-body">
 											<!-- button-area -->
 											<div class="button-area module-a style-a type-b">
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-a</span></a>
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-b</span></a>
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-c</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-a</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-b</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-c</span></a>
 											</div>
 											<!-- //button-area -->
 										</div>
@@ -442,9 +372,9 @@
 										<div class="subsubsection-body">
 											<!-- button-area -->
 											<div class="button-area module-a style-a type-c">
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-a</span></a>
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-b</span></a>
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-c</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-a</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-b</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-c</span></a>
 											</div>
 											<!-- //button-area -->
 										</div>
@@ -456,9 +386,9 @@
 										<div class="subsubsection-body">
 											<!-- button-area -->
 											<div class="button-area module-a style-a type-d">
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-a</span></a>
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-b</span></a>
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-c</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-a</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-b</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-c</span></a>
 											</div>
 											<!-- //button-area -->
 										</div>
@@ -470,9 +400,9 @@
 										<div class="subsubsection-body">
 											<!-- button-area -->
 											<div class="button-area module-a style-b">
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-a</span></a>
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-b</span></a>
-												<a class="btn module-b style-c type-line normal-00 medium" href="#"><span class="btn-text">Button style-c</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-a</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-b</span></a>
+												<a class="btn module-a style-c type-line normal-00 large" href="#"><span class="btn-text">Button style-c</span></a>
 											</div>
 											<!-- //button-area -->
 										</div>
