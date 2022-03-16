@@ -78,7 +78,7 @@
 													<td>900</td>
 												</tr>
 												<tr>
-													<th scope="row">Opensans</th>
+													<th scope="row">Open Sans</th>
 													<td>undefined</td>
 													<td>undefined</td>
 													<td>300</td>
@@ -120,24 +120,22 @@
 											</colgroup>
 											<thead>
 												<tr>
-													<th scope="col">family</th>
-													<th scope="col">typeface</th>
-													<th scope="col">light</th>
-													<th scope="col">regular</th>
-													<th scope="col">bold</th>
+													<th scope="col" rowspan="2">argument</th>
+													<th scope="col" colspan="2">typeface</th>
+													<th scope="col" rowspan="2">light</th>
+													<th scope="col" rowspan="2">regular</th>
+													<th scope="col" rowspan="2">bold</th>
+												</tr>
+												<tr>
+													<th scope="col">ko</th>
+													<th scope="col">en</th>
 												</tr>
 											</thead>
 											<tbody style="text-align: center;">
 												<tr>
 													<th scope="row">default</th>
 													<td>Noto Sans KR</td>
-													<td>300</td>
-													<td>400</td>
-													<td>700</td>
-												</tr>
-												<tr>
-													<th scope="row"></th>
-													<td>Opensans</td>
+													<td>Open Sans</td>
 													<td>300</td>
 													<td>400</td>
 													<td>700</td>
@@ -162,275 +160,55 @@
 							<div class="subsection">
 								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'size'}) %></div>
 								<div class="subsection-body">
-									<!-- subsubsection -->
-									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'kr'}) %></div>
-										<div class="subsubsection-body">
-											<!-- data-table -->
-											<div class="data-table module-bui type-a">
-												<table>
-													<colgroup>
-														<col>
-														<col>
-														<col>
-														<col>
-													</colgroup>
-													<thead>
-														<tr>
-															<th scope="col">argument</th>
-															<th scope="col">line-height</th>
-															<th scope="col">font-size</th>
-															<th scope="col">letter-spacing</th>
-														</tr>
-													</thead>
-													<tbody style="text-align: center;">
-														<tr>
-															<td>x-large</td>
-															<td>28</td>
-															<td>20</td>
-															<td>normal</td>
-														</tr>
-														<tr>
-															<td>large</td>
-															<td>26</td>
-															<td>18</td>
-															<td>normal</td>
-														</tr>
-														<tr>
-															<td>medium</td>
-															<td>24</td>
-															<td>16</td>
-															<td>normal</td>
-														</tr>
-														<tr>
-															<td>small</td>
-															<td>22</td>
-															<td>14</td>
-															<td>normal</td>
-														</tr>
-														<tr>
-															<td>x-small</td>
-															<td>20</td>
-															<td>12</td>
-															<td>normal</td>
-														</tr>
-														<tr>
-															<td>xx-small</td>
-															<td>18</td>
-															<td>10</td>
-															<td>normal</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<!-- //data-table -->
-										</div>
-									</div>
-									<!-- //subsubsection -->
-									<!-- subsubsection -->
-									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'en'}) %></div>
-										<div class="subsubsection-body">
-											<!-- data-table -->
-											<div class="data-table module-bui type-a">
-												<table>
-													<colgroup>
-														<col>
-														<col>
-														<col>
-														<col>
-														<col>
-													</colgroup>
-													<thead>
-														<tr>
-															<th scope="col">argument</th>
-															<th scope="col">line-height</th>
-															<th scope="col">KR</th>
-															<th scope="col">EN</th>
-														</tr>
-														<tr>
-															<th scope="col">font-size</th>
-															<th scope="col">letter-spacing</th>
-															<th scope="col">font-size</th>
-															<th scope="col">letter-spacing</th>
-														</tr>
-													</thead>
-													<tbody style="text-align: center;">
-														<tr>
-															<td>x-large</td>
-															<td>28</td>
-															<td>20</td>
-															<td>normal</td>
-															<td>20</td>
-															<td>normal</td>
-														</tr>
-														<tr>
-															<td>large</td>
-															<td>26</td>
-															<td>18</td>
-															<td>normal</td>
-															<td>18</td>
-															<td>normal</td>
-														</tr>
-														<tr>
-															<td>medium</td>
-															<td>24</td>
-															<td>16</td>
-															<td>normal</td>
-															<td>16</td>
-															<td>normal</td>
-														</tr>
-														<tr>
-															<td>small</td>
-															<td>22</td>
-															<td>14</td>
-															<td>normal</td>
-															<td>14</td>
-															<td>normal</td>
-														</tr>
-														<tr>
-															<td>x-small</td>
-															<td>20</td>
-															<td>12</td>
-															<td>normal</td>
-															<td>12</td>
-															<td>normal</td>
-														</tr>
-														<tr>
-															<td>xx-small</td>
-															<td>18</td>
-															<td>10</td>
-															<td>normal</td>
-															<td>10</td>
-															<td>normal</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-											<!-- //data-table -->
-										</div>
-									</div>
-									<!-- //subsubsection -->
-
 									<!-- data-table -->
-									<div class="data-table module-bui type-a" style="display: none;">
+									<div class="data-table module-bui type-a">
 										<table>
+											<colgroup>
+												<col>
+												<col>
+												<col>
+												<col>
+												<col>
+											</colgroup>
 											<thead>
 												<tr>
-													<th scope="col">outline</th>
-													<th scope="col">size</th>
-													<th scope="col">line-height</th>
-													<th scope="col">letter-spacing</th>
+													<th scope="col" rowspan="2">argument</th>
+													<th scope="col" rowspan="2">font-size</th>
+													<th scope="col" colspan="2">line-height</th>
+													<th scope="col" rowspan="2">letter-spacing</th>
+												</tr>
+												<tr>
+													<th scope="col">head</th>
+													<th scope="col">body</th>
 												</tr>
 											</thead>
 											<tbody style="text-align: center;">
 												<tr>
-													<td>xxx-large</td>
-													<td>52px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>xx-large</td>
-													<td>44px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
 													<td>x-large</td>
-													<td>42px</td>
-													<td>1.5</td>
-													<td>normal</td>
+													<td>32</td>
+													<td rowspan="6">/ 1.25</td>
+													<td rowspan="6">/ 1.5</td>
+													<td rowspan="6">normal</td>
 												</tr>
 												<tr>
 													<td>large</td>
-													<td>40px</td>
-													<td>1.5</td>
-													<td>normal</td>
+													<td>28</td>
 												</tr>
 												<tr>
 													<td>medium</td>
-													<td>38px</td>
-													<td>1.5</td>
-													<td>normal</td>
+													<td>24</td>
 												</tr>
 												<tr>
 													<td>small</td>
-													<td>36px</td>
-													<td>1.5</td>
-													<td>normal</td>
+													<td>20</td>
 												</tr>
 												<tr>
 													<td>x-small</td>
-													<td>34px</td>
-													<td>1.5</td>
-													<td>normal</td>
+													<td>18</td>
 												</tr>
 												<tr>
 													<td>xx-small</td>
-													<td>32px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>xxx-small</td>
-													<td>30px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>xx-large</td>
-													<td>28px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>xx-large</td>
-													<td>26px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>x-large</td>
-													<td>24px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>large</td>
-													<td>22px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>medium</td>
-													<td>20px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>small</td>
-													<td>18px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>x-small</td>
-													<td>34px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>xx-small</td>
-													<td>16px</td>
-													<td>1.5</td>
-													<td>normal</td>
-												</tr>
-												<tr>
-													<td>xxx-small</td>
-													<td>14px</td>
-													<td>1.5</td>
-													<td>normal</td>
+													<td>16</td>
 												</tr>
 											</tbody>
 										</table>
@@ -448,39 +226,6 @@
 								</div>
 							</div>
 							<!-- //subsection -->
-							<!-- subsection -->
-							<div class="subsection" style="display: none;">
-								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'demos'}) %></div>
-								<div class="subsection-body">
-									<!-- demos -->
-									<div class="demos font-outline">
-										<!-- data-display -->
-										<div class="data-display">
-											<ul class="data-list">
-												<li class="data-item"><div class="data-wrap" title="head: xxx-large"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="head: xx-large"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="head: x-large"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="head: large"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="head: medium"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="head: small"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="head: x-small"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="head: xx-small"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="head: xxx-small"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="body: xx-large"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="body: x-large"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="body: large"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="body: medium"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="body: small"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="body: x-small"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="body: xx-small"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-												<li class="data-item"><div class="data-wrap" title="body: xxx-small"><div class="data-body">모든 사람은 의견의 자유와 표현의 자유에 대한 권리를 가진다. 이러한 권리는 간섭없이 의견을 가질 자유와 국경에 관계없이 어떠한 매체를 통해서도 정보와 사상을 추구하고, 얻으며, 전달하는 자유를 포함한다. 모든 사람은 사회의 일원으로서 사회보장을 받을 권리를 가지며, 국가적 노력과 국제적 협력을 통하여, 그리고 각 국가의 조직과 자원에 따라서 자신의 존엄과 인격의 자유로운 발전에 불가결한 경제적, 사회적 및 문화적 권리들을 실현할 권리를 가진다. 모든 사람은 노동시간의 합리적 제한과 정기적인 유급휴가를 포함하여 휴식과 여가의 권리를 가진다. 모든 사람은 이 선언에 규정된 권리와 자유가 완전히 실현될 수 있도록 사회적, 국제적 질서에 대한 권리를 가진다.</div></div></li>
-											</ul>
-										</div>
-										<!-- //data-display -->
-									</div>
-									<!-- //demos -->
-								</div>
-							</div>
 						</div>
 					</div>
 					<!-- //section -->
