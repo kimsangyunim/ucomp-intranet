@@ -1,5 +1,5 @@
-# kpc PACKAGE
-[한국생산성본부] 경영지원시스템_
+# BUI PACKAGE
+[UCOMP] 인트라넷
 
 [![npm](https://img.shields.io/npm/v/@jr-cologne/create-gulp-starter-kit.svg)](https://github.com/jr-cologne/gulp-starter-kit)
 > 본 패키지는 [Gulp Starter Kit](https://github.com/kimsangyunim/kpc/) (Gulp 4) 을 참고했습니다.
@@ -30,7 +30,7 @@
 <!-- Example: -->
 ```bash
 git init
-git remote add origin https://github.com/kimsangyunim/kpc.git
+git remote add origin https://github.com/kimsangyunim/ucomp-intranet.git
 git pull origin master
 ```
 
@@ -49,4 +49,4 @@ npm run build
 
 `master branch`로 push 하면 렌더링 확인을 위한 `pages branch`로 자동 배포합니다.
 
-gitHub Page [https://kimsangyunim.github.io/kpc/dist/](https://kimsangyunim.github.io/kpc/dist/)
+gitHub Page [https://kimsangyunim.github.io/ucomp-intranet/dist/](https://kimsangyunim.github.io/ucomp-intranet/dist/)
