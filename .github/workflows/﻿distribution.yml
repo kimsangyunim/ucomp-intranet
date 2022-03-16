@@ -1,0 +1,43 @@
+name: Distribution
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Remove gitignore
+      run: rm -rf .gitignore
+      
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - name: Build
+      run: |
+        npm install
+        npm run build
+      
+    - name: Add & Commit
+      uses: EndBug/add-and-commit@v4.4.0
+      with:
+        add: 'dist'
+        ref: "pages"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Push commit
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: "pages"
+        force: true
