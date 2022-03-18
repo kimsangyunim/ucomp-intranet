@@ -80,7 +80,7 @@ body {
 	left: 0;
 	height: 72rem;
 	padding-left: 16rem;
-	background-color: bui-color(normal, 01);
+	background-color: bui-color(normal, 0100);
 
 	.page-skip {
 		display: none;
@@ -101,7 +101,7 @@ body {
 			height: 24rem;
 			width: 24rem;
 			border-radius: 50%;
-			background-color: bui-color(normal, 10);
+			background-color: bui-color(normal, 100);
 			background-repeat: no-repeat;
 			background-position: 0 0;
 			background-image: icon(bui, bui-color(normal, 00));
@@ -115,13 +115,13 @@ body {
 			margin-left: 16rem;
 			width: 100%;
 			@include bui-font((weight: light)...);
-			color: bui-color(normal, 10);
+			color: bui-color(normal, 100);
 			text-align: right;
 		}
 		
 		.page-name {
 			display: block;
-			color: bui-color(normal, 10);
+			color: bui-color(normal, 100);
 			@include bui-font((weight: 600, family: identity)...);
 			text-decoration: none;
 
@@ -147,18 +147,18 @@ body {
 					align-items: center;
 					width: 72rem;
 					height: 72rem;
-					background-color: bui-color(normal, 01);
+					background-color: bui-color(normal, 0100);
 	
 					svg {
 						display: block;
-						fill: bui-color(normal, 10);
+						fill: bui-color(normal, 100);
 						width: 24rem;
 						height: 24rem;
 					}
 		
 					&.active {
 						svg {
-							fill: bui-color(normal, 10);
+							fill: bui-color(normal, 100);
 						}
 					}
 				}
@@ -205,7 +205,7 @@ body {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: bui-color(normal, 01);
+	background-color: bui-color(normal, 010);
 	
 	&:not(.active) {
 		display: none;
@@ -247,7 +247,7 @@ body {
 	
 					.gnb-name {
 						display: block;
-						color: bui-color(normal, 10);
+						color: bui-color(normal, 100);
 						@include bui-font((outline: body, size: large, weight: light)...);
 						text-decoration: none;
 						text-transform: uppercase;
@@ -296,7 +296,7 @@ body {
 								vertical-align: top;
 								opacity: 0.5;
 								position: relative;
-								color: bui-color(normal, 10);
+								color: bui-color(normal, 100);
 								@include bui-font((outline: body, size: medium, weight: light)...);
 								text-decoration: none;
 	
@@ -312,7 +312,7 @@ body {
 									bottom: 0;
 									left: 55%;
 									height: 0.0625em;
-									background-color: bui-color(normal, 10);
+									background-color: bui-color(normal, 100);
 									transition: right 0.25s ease, left 0.25s ease;
 								}
 	
@@ -358,7 +358,7 @@ body {
 
 		svg {
 			display: block;
-			fill: bui-color(normal, 10);
+			fill: bui-color(normal, 100);
 			width: 24rem;
 			height: 24rem;
 		}
@@ -560,7 +560,7 @@ html.active-page-side {
 					height: 24rem;
 					padding: 12rem;
 					box-shadow: inset 0 0 0 16rem red;
-					background-color: bui-color(normal, 10);
+					background-color: bui-color(normal, 100);
 
 					&.home {
 						background-color: red;
@@ -628,7 +628,7 @@ hr {
 		border-spacing: 0;
 		border: 0 none transparent;
 		border-collapse: collapse;
-		border-top: 1rem solid bui-color(normal, 06);
+		border-top: 1rem solid bui-color(normal, 060);
 
 		caption {
 			overflow: hidden;
@@ -647,20 +647,20 @@ hr {
 			height: 24rem;
 			@include bui-font((outline: body, size: small, weight: regular)...);
 			word-break: break-all;
-			border-right: 1rem solid bui-color(normal, 06);
-			border-bottom: 1rem solid bui-color(normal, 06);
-			border-left: 1rem solid bui-color(normal, 06);
-			background-color: bui-color(normal, 09);
+			border-right: 1rem solid bui-color(normal, 060);
+			border-bottom: 1rem solid bui-color(normal, 060);
+			border-left: 1rem solid bui-color(normal, 060);
+			background-color: bui-color(normal, 090);
 		}
 		td {
 			padding: 12rem 12rem 11rem 12rem;
 			height: 24rem;
 			@include bui-font((outline: body, size: small, weight: regular)...);
 			word-break: break-all;
-			border-right: 1rem solid bui-color(normal, 06);
-			border-bottom: 1rem solid bui-color(normal, 06);
-			border-left: 1rem solid bui-color(normal, 06);
-			background-color: bui-color(normal, 10);
+			border-right: 1rem solid bui-color(normal, 060);
+			border-bottom: 1rem solid bui-color(normal, 060);
+			border-left: 1rem solid bui-color(normal, 060);
+			background-color: bui-color(normal, 100);
 
 			.para {
 				margin: 0;
@@ -677,7 +677,7 @@ hr {
 	.data-list {
 		margin: 0;
 		padding: 0;
-		border: 1rem solid bui-color(normal, 06);
+		border: 1rem solid bui-color(normal, 060);
 		border-radius: 4rem;
 		overflow: hidden;
 
@@ -690,8 +690,8 @@ hr {
 				align-items: center;
 				padding: 0 16rem;
 				height: 48rem;
-				background-color: bui-color(normal, 08);
-				color: bui-color(normal, 01);
+				background-color: bui-color(normal, 080);
+				color: bui-color(normal, 010);
 				@include bui-font((outline: body, size: small, weight: regular)...);
 
 				&:not(:hover) {
@@ -699,12 +699,12 @@ hr {
 				}
 
 				&:hover {
-					background-color: bui-color(normal, 07);
+					background-color: bui-color(normal, 070);
 				}
 			}
 	
 			+.data-item {
-				border-top: 1rem solid bui-color(normal, 06);
+				border-top: 1rem solid bui-color(normal, 060);
 			}
 	
 			&[title=미정] {

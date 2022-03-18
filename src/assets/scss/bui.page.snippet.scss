@@ -161,7 +161,7 @@ html.active-toggle-react-target{
 				align-items: center;
 				justify-content: center;
 				height: 64rem;
-				color: bui-color(normal, 01);
+				color: bui-color(normal, 010);
 				@include bui-font((weight: bold)...);
 				text-decoration: none;
 			}
@@ -174,7 +174,7 @@ html.active-toggle-react-target{
 		.tab-item.current {
 			.tab-name {
 				background-color: red;
-				color: bui-color(normal, 10);
+				color: bui-color(normal, 100);
 			}
 		}
 	}
@@ -289,10 +289,10 @@ html.active-toggle-react-target{
 .demos.font-outline {
 	.data-display {
 		.data-list {
-			border-top: 1rem solid bui-color(normal, 06);;
+			border-top: 1rem solid bui-color(normal, 060);;
 			.data-item {
 				padding: 2rem 0;
-				border-bottom: 1rem solid bui-color(normal, 06);;
+				border-bottom: 1rem solid bui-color(normal, 060);;
 
 				.data-wrap {
 					position: relative;
