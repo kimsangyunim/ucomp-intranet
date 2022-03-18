@@ -80,7 +80,7 @@ body {
 	left: 0;
 	height: 72rem;
 	padding-left: 16rem;
-	background-color: bui-color(normal, 0100);
+	background-color: bui-color(normal, 100);
 
 	.page-skip {
 		display: none;
@@ -101,10 +101,10 @@ body {
 			height: 24rem;
 			width: 24rem;
 			border-radius: 50%;
-			background-color: bui-color(normal, 100);
+			background-color: bui-color(normal, 000);
 			background-repeat: no-repeat;
 			background-position: 0 0;
-			background-image: icon(bui, bui-color(normal, 00));
+			background-image: icon(bui, bui-color(normal, 100));
 			background-size: 100% 100%;
 		}
 
@@ -115,13 +115,13 @@ body {
 			margin-left: 16rem;
 			width: 100%;
 			@include bui-font((weight: light)...);
-			color: bui-color(normal, 100);
+			color: bui-color(normal, 000);
 			text-align: right;
 		}
 		
 		.page-name {
 			display: block;
-			color: bui-color(normal, 100);
+			color: bui-color(normal, 000);
 			@include bui-font((weight: 600, family: identity)...);
 			text-decoration: none;
 
@@ -147,18 +147,17 @@ body {
 					align-items: center;
 					width: 72rem;
 					height: 72rem;
-					background-color: bui-color(normal, 0100);
 	
 					svg {
 						display: block;
-						fill: bui-color(normal, 100);
+						fill: bui-color(normal, 000);
 						width: 24rem;
 						height: 24rem;
 					}
 		
 					&.active {
 						svg {
-							fill: bui-color(normal, 100);
+							fill: bui-color(normal, 000);
 						}
 					}
 				}
@@ -205,7 +204,7 @@ body {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: bui-color(normal, 010);
+	background-color: bui-color(normal, 100);
 	
 	&:not(.active) {
 		display: none;
@@ -247,7 +246,7 @@ body {
 	
 					.gnb-name {
 						display: block;
-						color: bui-color(normal, 100);
+						color: bui-color(normal, 000);
 						@include bui-font((outline: body, size: large, weight: light)...);
 						text-decoration: none;
 						text-transform: uppercase;
@@ -296,7 +295,7 @@ body {
 								vertical-align: top;
 								opacity: 0.5;
 								position: relative;
-								color: bui-color(normal, 100);
+								color: bui-color(normal, 000);
 								@include bui-font((outline: body, size: medium, weight: light)...);
 								text-decoration: none;
 	
@@ -312,7 +311,7 @@ body {
 									bottom: 0;
 									left: 55%;
 									height: 0.0625em;
-									background-color: bui-color(normal, 100);
+									background-color: bui-color(normal, 000);
 									transition: right 0.25s ease, left 0.25s ease;
 								}
 	
@@ -358,7 +357,7 @@ body {
 
 		svg {
 			display: block;
-			fill: bui-color(normal, 100);
+			fill: bui-color(normal, 000);
 			width: 24rem;
 			height: 24rem;
 		}
@@ -453,9 +452,6 @@ html.active-page-side {
 				}
 
 				.section-head {
-					// display: flex;
-					// justify-content: space-between;
-					// align-items: center;
 					margin-bottom: 16rem;
 				
 					.section-title {
@@ -526,16 +522,6 @@ html.active-page-side {
 				flex: 1;
 				width: 100%;
 
-				&+.content-item {
-					// margin-left: $gutter-xsmall;
-
-					// @include respond-above(medium) {
-					// 	margin-left: $gutter-small;
-					// }
-					// @include respond-above(large) {
-					// 	margin-left: $gutter-medium;
-					// }
-				}
 				.btn {
 					display: block;
 					width: 100%;
@@ -596,7 +582,7 @@ html.active-page-side {
 		bottom: 0;
 		left: calc(50% - 50vw);
 		height: 1rem;
-		background-color: bui-color(normal, 00, 0.125);
+		background-color: bui-color(normal, 040);
 		width: 100vw;
 	}
 	.copyright {
@@ -628,7 +614,7 @@ hr {
 		border-spacing: 0;
 		border: 0 none transparent;
 		border-collapse: collapse;
-		border-top: 1rem solid bui-color(normal, 060);
+		border-top: 1rem solid bui-color(normal, 040);
 
 		caption {
 			overflow: hidden;
@@ -647,20 +633,20 @@ hr {
 			height: 24rem;
 			@include bui-font((outline: body, size: small, weight: regular)...);
 			word-break: break-all;
-			border-right: 1rem solid bui-color(normal, 060);
-			border-bottom: 1rem solid bui-color(normal, 060);
-			border-left: 1rem solid bui-color(normal, 060);
-			background-color: bui-color(normal, 090);
+			border-right: 1rem solid bui-color(normal, 040);
+			border-bottom: 1rem solid bui-color(normal, 040);
+			border-left: 1rem solid bui-color(normal, 040);
+			background-color: bui-color(normal, 010);
 		}
 		td {
 			padding: 12rem 12rem 11rem 12rem;
 			height: 24rem;
 			@include bui-font((outline: body, size: small, weight: regular)...);
 			word-break: break-all;
-			border-right: 1rem solid bui-color(normal, 060);
-			border-bottom: 1rem solid bui-color(normal, 060);
-			border-left: 1rem solid bui-color(normal, 060);
-			background-color: bui-color(normal, 100);
+			border-right: 1rem solid bui-color(normal, 040);
+			border-bottom: 1rem solid bui-color(normal, 040);
+			border-left: 1rem solid bui-color(normal, 040);
+			background-color: bui-color(normal, 000);
 
 			.para {
 				margin: 0;
