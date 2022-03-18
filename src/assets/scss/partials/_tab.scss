@@ -17,7 +17,7 @@
 			&.current{
 				z-index: 1;
 				.tab-name{
-				
+					color: color(base, 070);
 				}
 			}
 			
@@ -27,7 +27,8 @@
 				justify-content: center;
 				align-items: center;
 				text-decoration: none;
-				color: color(base, 020);
+				text-align: center;
+				color: color(base, 030);
 			}
 		}
 	}
