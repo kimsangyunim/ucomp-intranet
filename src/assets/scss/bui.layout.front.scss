@@ -663,7 +663,7 @@ hr {
 	.data-list {
 		margin: 0;
 		padding: 0;
-		border: 1rem solid bui-color(normal, 060);
+		border: 1rem solid bui-color(normal, 040);
 		border-radius: 4rem;
 		overflow: hidden;
 
@@ -676,8 +676,8 @@ hr {
 				align-items: center;
 				padding: 0 16rem;
 				height: 48rem;
-				background-color: bui-color(normal, 080);
-				color: bui-color(normal, 010);
+				background-color: bui-color(normal, 020);
+				color: bui-color(normal, 100);
 				@include bui-font((outline: body, size: small, weight: regular)...);
 
 				&:not(:hover) {
@@ -685,12 +685,12 @@ hr {
 				}
 
 				&:hover {
-					background-color: bui-color(normal, 070);
+					background-color: bui-color(normal, 030);
 				}
 			}
 	
 			+.data-item {
-				border-top: 1rem solid bui-color(normal, 060);
+				border-top: 1rem solid bui-color(normal, 040);
 			}
 	
 			&[title=미정] {

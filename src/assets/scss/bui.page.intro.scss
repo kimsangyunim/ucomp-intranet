@@ -55,13 +55,13 @@ body {
 			content: attr(title);
 			display: block;
 			@include bui-font((outline: head, size: xx-small, weight: light)...);
-			color: bui-color(normal, 00);
+			color: bui-color(normal, 100);
 			text-align: right;
 		}
 		
 		.page-name {
 			display: block;
-			color: bui-color(normal, 00);
+			color: bui-color(normal, 100);
 			@include bui-font((weight: 600, family: code)...);
 			text-decoration: none;
 
