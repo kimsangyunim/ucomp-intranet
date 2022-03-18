@@ -33,30 +33,30 @@ button.btn {
 */
 $btn-module-a-accent: (
 	'normal-00': (
-		'none' color(base, 10) transparent transparent,
-		'line' color(base, 10) color(base, 10) color(base, 00),
-		'fill' color(base, 00) color(base, 10) color(base, 10),
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 100) color(base, 100) color(base, 000),
+		'fill' color(base, 000) color(base, 100) color(base, 100),
 	),
 	'normal-01': (
-		'none' color(base, 10) transparent transparent,
-		'line' color(base, 10) color(base, 10) color(base, 00),
-		'fill' color(base, 00) color(base, 10) color(base, 10),
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 100) color(base, 100) color(base, 000),
+		'fill' color(base, 000) color(base, 100) color(base, 100),
 	),
 	'normal-02': (
-		'none' color(base, 07) transparent transparent,
-		'line' color(base, 07) color(base, 07) color(base, 00),
-		'fill' color(base, 00) color(base, 07) color(base, 07),
+		'none' color(base, 070) transparent transparent,
+		'line' color(base, 070) color(base, 070) color(base, 000),
+		'fill' color(base, 000) color(base, 070) color(base, 070),
 	),
 	'normal-03': (
-		'none' color(base, 07) transparent transparent,
-		'line' color(base, 07) color(base, 03) color(base, 00),
-		'fill' color(base, 07) color(base, 03) color(base, 03),
+		'none' color(base, 070) transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 000),
+		'fill' color(base, 070) color(base, 030) color(base, 030),
 	),
 
 	'accent-01': (
-		'none' color(primary, 05) transparent transparent,
-		'line' color(primary, 05) color(primary, 05) color(primary, 00),
-		'fill' color(primary, 00) color(primary, 05) color(primary, 05),
+		'none' color(primary, 050) transparent transparent,
+		'line' color(primary, 050) color(primary, 050) color(primary, 000),
+		'fill' color(primary, 000) color(primary, 050) color(primary, 050),
 	),
 );
 

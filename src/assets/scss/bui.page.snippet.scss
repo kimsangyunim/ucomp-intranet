@@ -233,9 +233,9 @@ html.active-toggle-react-target{
 					}
 
 					&:hover {
-						color: color(secondary, 01);
+						color: color(secondary, 010);
 						&::before {
-							background-image: icon($name, color(primary, 01));
+							background-image: icon($name, color(primary, 010));
 						}
 					}
 				}

@@ -20,18 +20,18 @@
 	/* Track */
 	&::-webkit-scrollbar-track {
 		border-radius: 4rem;
-		background-color: color(base, 08);
+		background-color: color(base, 080);
 	}
 
 	/* Handle */
 	&::-webkit-scrollbar-thumb {
 		border-radius: 4rem;
-		background-color: color(base, 06);
+		background-color: color(base, 060);
 		&:hover {
-			background-color: color(base, 05);
+			background-color: color(base, 050);
 		}
 		&:active {
-			background-color: color(base, 04);
+			background-color: color(base, 040);
 		}
 	}
 }
@@ -497,7 +497,7 @@ html.active-page-side {
 								
 								.subsubsection-title {
 									margin: 0;
-									color: bui-color(secondary, 01);
+									color: bui-color(secondary, 010);
 									@include bui-font((outline: body, size: medium, weight: regular)...);
 
 									.subsubsection-name {

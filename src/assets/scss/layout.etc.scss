@@ -43,10 +43,10 @@ img {
 	left: calc(50% - 50vw);
 	width: 100vw;
 	height: 120rem;
-	background-color: color(base, 01);
+	background-color: color(base, 010);
 
 	.skip-item {
-		color: color(base, 10);
+		color: color(base, 100);
 		@include font((outline: body, size: medium)...);
 	}
 	
@@ -97,7 +97,7 @@ img {
 
 	.page-title {
 		margin: 0;
-		color: color(base, 01);
+		color: color(base, 010);
 		
 		svg,
 		.page-name {

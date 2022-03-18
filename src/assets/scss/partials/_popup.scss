@@ -15,7 +15,7 @@
 			margin: 0;
 
 			@include font((outline: body, size: small, weight: bold)...);
-			color: color(base, 02);
+			color: color(base, 020);
 
 			// laptop
 			@include respond-above(large) {
@@ -41,7 +41,7 @@
 		.para {
 			margin: 0;
 			@include font((outline: body, size: x-small)...);
-			color: color(base, 03);
+			color: color(base, 030);
 
 			// laptop
 			@include respond-above(large) {
@@ -69,7 +69,7 @@
 			margin: 0;
 
 			@include font((outline: body, size: x-small, weight: bold)...);
-			color: color(base, 02);
+			color: color(base, 020);
 
 			// laptop
 			@include respond-above(large) {
@@ -202,14 +202,14 @@ html.active-content-popup {
 			.popup-local-head {
 				position: relative;
 				padding: 0 28rem;
-				border-bottom: 1rem solid color(base, 02);
+				border-bottom: 1rem solid color(base, 020);
 				
 				.popup-local-title {
 					display: flex;
 					align-items: center;
 					margin: 0;
 					height: 64rem;
-					color: color(base, 02);
+					color: color(base, 020);
 					@include font((outline: body, size: large, weight: bold)...);
 
 					.popup-local-name {
@@ -257,7 +257,7 @@ html.active-content-popup {
 			}
 
 			.popup-local-util {
-				box-shadow: inset 0 0.0625rem 0 0 color(base, 06);	
+				box-shadow: inset 0 0.0625rem 0 0 color(base, 060);	
 				.button-area {
 					display: flex;
 	
@@ -286,7 +286,7 @@ html.active-content-popup {
 			display: block;
 			width: 24rem;
 			height: 24rem;
-			fill: color(base, 01);
+			fill: color(base, 010);
 		}
 
 		// laptop
@@ -297,7 +297,7 @@ html.active-content-popup {
 			svg {
 				width: 32rem;
 				height: 32rem;
-				fill: color(base, 10);
+				fill: color(base, 100);
 			}
 		}
 	}

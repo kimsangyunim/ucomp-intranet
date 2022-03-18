@@ -20,7 +20,7 @@ ul.option-list {
 		display: block;
 		.form {
 			.form-text {
-				color: color(base, 03);
+				color: color(base, 030);
 				@include font((outline: body, size: x-small)...);
 
 				// laptop
@@ -177,7 +177,7 @@ fieldset {
 			justify-content: center;
 			min-width: 16rem;
 			text-align: center;
-			color: color(base, 06);
+			color: color(base, 060);
 		}
 
 		.unit {
@@ -186,7 +186,7 @@ fieldset {
 			justify-content: center;
 			min-width: 16rem;
 			text-align: center;
-			color: color(base, 06);
+			color: color(base, 060);
 		}	
 
 		.form.medium {
@@ -221,7 +221,7 @@ fieldset {
 	legend {
 		margin-bottom: 16rem;
 		@include font((outline: body, size: small)...);
-		color: color(base, 02);
+		color: color(base, 020);
 
 		// laptop
 		@include respond-above(large) {
@@ -235,7 +235,7 @@ fieldset {
 
 	.form-list {
 		padding: 20rem 16rem;
-		border: 1rem solid color(secondary, 01);
+		border: 1rem solid color(secondary, 010);
 		border-radius: 16rem;
 		background-color: #f2f4f6;
 
@@ -278,7 +278,7 @@ fieldset {
 						padding-left: 0.75em;
 						width: 80rem;
 						@include font((outline: body, size: small, weight: bold)...);
-						color: color(base, 02);
+						color: color(base, 020);
 						
 						&::before {
 							content: '';
@@ -289,7 +289,7 @@ fieldset {
 							width: 0.25em;
 							height: 0.25em;
 							border-radius: 50%;
-							background-color: color(base, 02);
+							background-color: color(base, 020);
 						}
 					}
 				}
@@ -390,8 +390,8 @@ fieldset {
 				margin-bottom: 32rem;
 				padding: 16rem;
 				@include font((outline: body, size: x-small, weight: bold)...);
-				color: color(base, 10);
-				background-color: color(secondary, 01);
+				color: color(base, 100);
+				background-color: color(secondary, 010);
 				border-radius: 10rem;
 				
 				// laptop
@@ -428,7 +428,7 @@ fieldset {
 	}
 
 	.form-util {
-		border-top: 1px solid color(base, 06);
+		border-top: 1px solid color(base, 060);
 		margin-top: 48rem;
 		padding-top: 24rem;
 

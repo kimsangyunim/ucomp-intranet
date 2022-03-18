@@ -43,10 +43,10 @@ img {
 	left: calc(50% - 50vw);
 	width: 100vw;
 	height: 120rem;
-	background-color: color(base, 01);
+	background-color: color(base, 010);
 
 	.skip-item {
-		color: color(base, 10);
+		color: color(base, 100);
 		@include font((outline: body, size: medium)...);
 	}
 	
@@ -242,7 +242,7 @@ img {
 			width: 100%;
 			bottom: 0;
 			box-sizing: border-box;
-			background-color: color(base, 10);
+			background-color: color(base, 100);
 
 			&:not(.enabled) {
 				display: none;
@@ -290,7 +290,7 @@ img {
 							display: inline-block;
 							vertical-align: top;
 							@include font((outline: body, size: medium, weight: bold)...);
-							color: color(base, 01);
+							color: color(base, 010);
 						}
 						
 						.lnb-list {
@@ -308,7 +308,7 @@ img {
 								right: -32rem;
 								left: 0;
 								height: 1px;
-								background-color: color(base, 06);
+								background-color: color(base, 060);
 							}
 	
 							.lnb-item {
@@ -326,18 +326,18 @@ img {
 									left: 0;
 									width:  0.75em;
 									height: 1.5em;
-									color: color(base, 03);
+									color: color(base, 030);
 								}
 	
 								.lnb-name {
 									position: relative;
 									@include font((outline: body, size: small)...);
-									color: color(base, 03);
+									color: color(base, 030);
 								}
 
 								&.current {
 									.lnb-name {
-										color: color(primary, 01);
+										color: color(primary, 010);
 
 										&::after {
 											content: '';
@@ -348,7 +348,7 @@ img {
 											width: 4rem;
 											height: 4rem;
 											border-radius: 50%;
-											background-color: color(primary, 01);
+											background-color: color(primary, 010);
 										}
 									}
 								}
@@ -419,7 +419,7 @@ img {
 						left: 0;
 						height: 0;
 						transition: height 0.25s ease;
-						background-color: color(base, 01);
+						background-color: color(base, 010);
 					}
 						
 					.gnb-item {
@@ -432,7 +432,7 @@ img {
 							line-height: 1.5;
 							font-size: 20rem;
 							@include font((weight: bold)...);
-							color: color(base, 01);
+							color: color(base, 010);
 							outline-offset: -1rem;
 	
 							&:not(:hover) {
@@ -442,7 +442,7 @@ img {
 
 						&.current {
 							.gnb-name {
-								color: color(primary, 01);
+								color: color(primary, 010);
 							}
 
 							&::after {
@@ -454,7 +454,7 @@ img {
 								width: 6rem;
 								height: 6rem;
 								border-radius: 50%;
-								background-color: color(primary, 01);
+								background-color: color(primary, 010);
 							}
 						}
 	
@@ -492,7 +492,7 @@ img {
 									display: block;
 									font-size: 20rem;
 									@include font((outline: body, size: small, weight: bold)...);
-									color: color(base, 05);
+									color: color(base, 050);
 									white-space: nowrap;
 									text-align: center;
 									
@@ -503,14 +503,14 @@ img {
 
 									&:hover {
 										text-decoration: none;
-										color: color(base, 10);
+										color: color(base, 100);
 									}
 								}
 
 								&.current {
 									.lnb-name {
-										color: color(base, 10);
-										border-bottom: 1px solid color(base, 10);
+										color: color(base, 100);
+										border-bottom: 1px solid color(base, 100);
 									}
 								}
 							}
@@ -571,7 +571,7 @@ img {
 	width: map-get($breakpoints, frame);
 	max-width: 100%;
 	box-sizing: border-box;
-	background-color: color(secondary, 01);
+	background-color: color(secondary, 010);
 
 	// laptop
 	@include respond-above(x-large) {
@@ -594,7 +594,7 @@ img {
 	.company-name {
 		margin: 0 0 10rem 0;
 		padding-bottom: 8rem;
-		border-bottom: 1px solid color(base, 06, 0.2);
+		border-bottom: 1px solid color(base, 060, 0.2);
 
 		// laptop
 		@include respond-above(x-large) {
@@ -606,7 +606,7 @@ img {
 			display: block;
 			width: 110.77rem;
 			height: 24rem;
-			fill: color(base, 05);
+			fill: color(base, 050);
 			// laptop
 			@include respond-above(x-large) {
 				width: 188px;
@@ -636,7 +636,7 @@ img {
 					margin-left: 8rem;
 					padding-left: 8rem;
 					@include font((outline: body, size: xx-small)...);
-					color: color(base, 05);
+					color: color(base, 050);
 
 					// 링크가 있다면? overflow의 영향으로 offset을 안쪽으로 넣습니다.
 					a {
@@ -651,7 +651,7 @@ img {
 						left: 0;
 						width: 1rem;
 						height: 0.75em;
-						background-color: color(base, 05);
+						background-color: color(base, 050);
 					}
 
 
@@ -673,7 +673,7 @@ img {
 		a {
 			display: block;
 			@include font((outline: body, size: xx-small, weight: bold)...);
-			color: color(base, 10);
+			color: color(base, 100);
 
 			&:not(:hover) {
 				text-decoration: none;
@@ -693,7 +693,7 @@ img {
 	.copyright {
 		margin: 6rem 0 0 0;
 		@include font((outline: body, size: xx-small)...);
-		color: color(base, 05, 0.8);
+		color: color(base, 050, 0.8);
 
 		// laptop
 		@include respond-above(x-large) {

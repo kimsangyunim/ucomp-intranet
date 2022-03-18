@@ -35,13 +35,13 @@
 		}
 
 		&.closing {
-			color: color(base, 05);
-			border-color: color(base, 05);
+			color: color(base, 050);
+			border-color: color(base, 050);
 		}
 
 		&.ongoing {
-			color: color(primary, 01);
-			border-color: color(primary, 01);
+			color: color(primary, 010);
+			border-color: color(primary, 010);
 		}
 	}
 
@@ -71,8 +71,8 @@
 
 	//목록
 	.post-list {
-		border-top: 2rem solid color(base, 02);
-		border-bottom: 1rem solid color(base, 06);
+		border-top: 2rem solid color(base, 020);
+		border-bottom: 1rem solid color(base, 060);
 
 		.post-item {
 			position: relative;
@@ -84,7 +84,7 @@
 			}
 
 			+.post-item {
-				border-top: 1rem solid color(base, 06);
+				border-top: 1rem solid color(base, 060);
 			}
 
 			.post-wrap {
@@ -120,7 +120,7 @@
 							.post-name {
 								display: block;
 								@include font((outline: body, size: small)...);
-								color: color(base, 02);
+								color: color(base, 020);
 								@include ellipsis(2);
 
 								&:not(:hover) {
@@ -174,7 +174,7 @@
 								.data-body {
 									display: block;
 									@include font((outline: body, size: x-small)...);
-									color: color(base, 05);
+									color: color(base, 050);
 									
 									// laptop
 									@include respond-above(large) {
@@ -192,13 +192,13 @@
 
 	//읽기
 	.post-read {
-		border-top: 2rem solid color(base, 02);
+		border-top: 2rem solid color(base, 020);
 
 		.post-wrap {
 			.post-inform {
 				.post-head {
 					padding: 16rem 0;
-					border-bottom: 1rem solid color(base, 06);
+					border-bottom: 1rem solid color(base, 060);
 
 					// laptop
 					@include respond-above(large) {
@@ -225,7 +225,7 @@
 
 						.post-name {
 							@include font((outline: body, size: small, weight: bold)...);
-							color: color(base, 02);
+							color: color(base, 020);
 							
 							// mobile
 							@include respond-below(large) {
@@ -283,7 +283,7 @@
 								top: calc(50% - 0.375em);
 								width: 1rem;
 								height: 0.75em;
-								background-color: color(base, 06);
+								background-color: color(base, 060);
 							}
 
 							// laptop
@@ -297,15 +297,15 @@
 
 							.data-body {
 								display: block;
-								color: color(base, 05);
+								color: color(base, 050);
 								white-space: nowrap;
 							}
 
 							&.period {
-								&::before {background-image: icon(calendar, color(base, 06));}
+								&::before {background-image: icon(calendar, color(base, 060));}
 							}
 							&.voter {
-								&::before {background-image: icon(vote, color(base, 06));}
+								&::before {background-image: icon(vote, color(base, 060));}
 							}
 						}
 					}
@@ -313,7 +313,7 @@
 				
 				.post-body {
 					padding: 32rem 0 48rem 0;
-					border-bottom: 1rem solid color(base, 06);
+					border-bottom: 1rem solid color(base, 060);
 					
 					// laptop
 					@include respond-above(large) {
@@ -331,10 +331,10 @@
 			padding: 16rem 8rem;
 			width: 100%;
 			text-align: center;
-			border-top: 2rem solid color(base, 02);
-			border-bottom: 1rem solid color(base, 06);
+			border-top: 2rem solid color(base, 020);
+			border-bottom: 1rem solid color(base, 060);
 			box-sizing: border-box;
-			background-color: color(etc, 01);
+			background-color: color(etc, 010);
 
 			// laptop
 			@include respond-above(large) {
@@ -344,7 +344,7 @@
 			.post-subject {
 				margin: 0;
 				@include font((outline: body, size: small)...);
-				color: color(base, 01);
+				color: color(base, 010);
 
 				// laptop
 				@include respond-above(large) {
@@ -355,7 +355,7 @@
 
 		.post-body {
 			padding: 32rem 0 48rem 0;
-			border-bottom: 1rem solid color(base, 06);
+			border-bottom: 1rem solid color(base, 060);
 			
 			// laptop
 			@include respond-above(large) {

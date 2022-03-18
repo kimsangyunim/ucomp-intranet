@@ -63,7 +63,7 @@ hr {
 			padding: 90rem 46rem;
 			box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.15);
 			box-sizing: border-box;
-			background-color: color(base, 10);
+			background-color: color(base, 100);
 			text-align: center;
 		}
 	
@@ -135,7 +135,7 @@ hr {
 									.form-area {
 										.form {
 											&::before {
-												background-image: icon(person, color(base, 05));
+												background-image: icon(person, color(base, 050));
 											}
 										}
 									}
@@ -146,7 +146,7 @@ hr {
 									.form-area {
 										.form {
 											&::before {
-												background-image: icon(lock, color(base, 05));
+												background-image: icon(lock, color(base, 050));
 											}
 										}
 									}
@@ -179,7 +179,7 @@ hr {
 		padding: 34rem 100rem;
 		box-sizing: border-box;
 		background-color: #303030;
-		color: color(base, 10);
+		color: color(base, 100);
 
 		&::before {
 			content: '';

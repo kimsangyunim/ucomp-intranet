@@ -37,12 +37,12 @@ label.form {
  * @ $background-color
  */
 $form-module-b-accent: (
-	'accent-01'		color(primary, 01) color(base, 06) color(primary, 01) color(primary, 01),
-	'accent-02'		color(secondary, 01) color(base, 06) color(secondary, 01) color(secondary, 01),
-	'normal-00'		color(base, 00) color(base, 06) color(base, 00) color(base, 00),
-	'normal-01'		color(base, 01) color(base, 06) color(base, 01) color(base, 01),
-	'normal-02'		color(base, 05) color(base, 06) color(base, 05) color(base, 05),
-	'normal-03'		color(base, 03) color(base, 06) color(base, 06) color(base, 06),
+	'accent-01'		color(primary, 010) color(base, 060) color(primary, 010) color(primary, 010),
+	'accent-02'		color(secondary, 010) color(base, 060) color(secondary, 010) color(secondary, 010),
+	'normal-00'		color(base, 000) color(base, 060) color(base, 000) color(base, 000),
+	'normal-01'		color(base, 010) color(base, 060) color(base, 010) color(base, 010),
+	'normal-02'		color(base, 050) color(base, 060) color(base, 050) color(base, 050),
+	'normal-03'		color(base, 030) color(base, 060) color(base, 060) color(base, 060),
 );
 
 /*
@@ -81,13 +81,13 @@ $form-module-b-outline: (
 			height: 24rem;
 			border-style: solid;
 			border-width: 1rem;
-			border-color: color(base, 06);
-			background-color: color(base, 10);
+			border-color: color(base, 060);
+			background-color: color(base, 100);
 			background-repeat: no-repeat;
 			background-position: center;
 
 			&:hover {
-				border-color: color(primary, 01);
+				border-color: color(primary, 010);
 			}
 		}
 
@@ -102,11 +102,11 @@ $form-module-b-outline: (
 	&.radio {
 		.form-elem {
 			border-radius: 50%;
-			background-color: color(base, 10);
+			background-color: color(base, 100);
 
 			&:checked {
-				border-color: color(primary, 01);
-				background-color: color(primary, 01);
+				border-color: color(primary, 010);
+				background-color: color(primary, 010);
 
 				&::after {
 					content: '';
@@ -118,7 +118,7 @@ $form-module-b-outline: (
 					width: 10rem;
 					height: 10rem;
 					border-radius: 50%;
-					background-color: color(base, 10);
+					background-color: color(base, 100);
 				}
 			}
 		}
@@ -127,11 +127,11 @@ $form-module-b-outline: (
 	&.checkbox {
 		.form-elem {
 			border-radius: 4rem;
-			background-color: color(base, 10);
+			background-color: color(base, 100);
 			&:checked {
-				border-color: color(primary, 01);
-				background-color: color(primary, 01);
-				background-image: icon(check, color(base, 10));
+				border-color: color(primary, 010);
+				background-color: color(primary, 010);
+				background-image: icon(check, color(base, 100));
 			}
 		}
 	}

@@ -35,14 +35,14 @@
 	
 			path.track {
 				stroke-width: 2px;
-				stroke: color(base, 07, 1);
+				stroke: color(base, 070, 1);
 				fill-opacity: 0;
 				transition: stroke 0.25s ease;
 			}
 	
 			path.value {
 				stroke-width: 2px;
-				stroke: color(primary, 01);
+				stroke: color(primary, 010);
 			}
 	
 			path.arrow {
@@ -57,7 +57,7 @@
 	
 			svg {
 				path.track {
-					stroke: color(base, 07, 0);
+					stroke: color(base, 070, 0);
 				}
 				path.arrow {
 					transform: rotate(540deg);

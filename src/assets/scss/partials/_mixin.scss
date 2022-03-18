@@ -215,9 +215,9 @@
 		&::-webkit-scrollbar-track {background-color: #f4f4f4;}
 		&::-webkit-scrollbar-track-piece {}
 		&::-webkit-scrollbar-thumb {
-			background-color: color(base, 06);
-			&:hover	{background-color: color(base, 05);}
-			&:active{background-color: color(base, 04);}
+			background-color: color(base, 060);
+			&:hover	{background-color: color(base, 050);}
+			&:active{background-color: color(base, 040);}
 		}
 		&::-webkit-scrollbar-corner {}
 		&::-webkit-resizer {}
@@ -264,7 +264,7 @@
 					// left: calc(50% - (0.375rem + 0.0625rem));
 					border-top: 0 none;
 					border-right: calc(0.375rem + 0.0625rem) solid transparent;
-					border-bottom: calc(0.5rem + 0.0625rem) solid color(base, 06);
+					border-bottom: calc(0.5rem + 0.0625rem) solid color(base, 060);
 					border-left: calc(0.375rem + 0.0625rem) solid transparent;
 				}
 				
@@ -293,7 +293,7 @@
 					left: calc(50% - (0.375rem + 0.0625rem));
 					border-top: 0 none;
 					border-right: calc(0.375rem + 0.0625rem) solid transparent;
-					border-bottom: calc(0.5rem + 0.0625rem) solid color(base, 06);
+					border-bottom: calc(0.5rem + 0.0625rem) solid color(base, 060);
 					border-left: calc(0.375rem + 0.0625rem) solid transparent;
 				}
 				
@@ -322,7 +322,7 @@
 					left: calc(50% - (0.375rem + 0.0625rem));
 					border-top: 0 none;
 					border-right: calc(0.375rem + 0.0625rem) solid transparent;
-					border-bottom: calc(0.5rem + 0.0625rem) solid color(base, 06);
+					border-bottom: calc(0.5rem + 0.0625rem) solid color(base, 060);
 					border-left: calc(0.375rem + 0.0625rem) solid transparent;
 				}
 				

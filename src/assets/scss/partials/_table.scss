@@ -6,8 +6,8 @@
 .data-table.module-c {
 	overflow-x: auto;
 	@include overflow-scroll(custom);
-	border-top: 2px solid color(base, 02);
-	border-bottom: 1px solid color(base, 06);
+	border-top: 2px solid color(base, 020);
+	border-bottom: 1px solid color(base, 060);
 
 	
 	>table {
@@ -43,11 +43,11 @@
 				>tr {
 					>th {
 						padding: 1em 1.5em;
-						color: color(base, 01);
+						color: color(base, 010);
 						@include font((weight: bold)...);
-						border-right: 1px solid color(base, 07);
-						border-bottom: 1px solid color(base, 06);
-						border-left: 1px solid color(base, 07);
+						border-right: 1px solid color(base, 070);
+						border-bottom: 1px solid color(base, 060);
+						border-left: 1px solid color(base, 070);
 					}
 				}
 		}
@@ -55,14 +55,14 @@
 			>tr {
 				>td {
 					padding: 1em 1.5em;
-					color: color(base, 03);
-					border-right: 1px solid color(base, 07);
-					border-left: 1px solid color(base, 07);
+					color: color(base, 030);
+					border-right: 1px solid color(base, 070);
+					border-left: 1px solid color(base, 070);
 				}
 			}
 
 			>tr:nth-child(even) {
-				background-color: color(etc, 01);
+				background-color: color(etc, 010);
 			}
 		}
 	}
