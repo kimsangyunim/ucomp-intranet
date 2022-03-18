@@ -101,16 +101,6 @@ $gutter: (
  */
 
 // Color palettes
-
-
-
-
-
-
-
-
-
-
 $color-palettes: (
 	base: (
 		100: #000000,
@@ -235,21 +225,25 @@ $font-theme: (
 // Font outlines
 $font-outline: (
 	head: (
-		x-large:	(font-size: 20rem, line-height: 28rem),
-		large:		(font-size: 18rem, line-height: 26rem),
-		medium:		(font-size: 16rem, line-height: 24rem),
-		small:		(font-size: 14rem, line-height: 22rem),
-		x-small:	(font-size: 12rem, line-height: 20rem),
-		xx-small:	(font-size: 10rem, line-height: 18rem)
+		xxx-large:	(line-height: 48rem, font-size: calc(48rem / 1.25)),
+		xx-large:	(line-height: 40rem, font-size: calc(40rem / 1.25)),
+		x-large:	(line-height: 32rem, font-size: calc(32rem / 1.25)),
+		large:		(line-height: 28rem, font-size: calc(28rem / 1.25)),
+		medium:		(line-height: 24rem, font-size: calc(24rem / 1.25)),
+		small:		(line-height: 20rem, font-size: calc(20rem / 1.25)),
+		x-small:	(line-height: 18rem, font-size: calc(18rem / 1.25)),
+		xx-small:	(line-height: 16rem, font-size: calc(16rem / 1.25)),
 	),
 
 	body: (
-		x-large:	(font-size: 20rem, line-height: 28rem),
-		large:		(font-size: 18rem, line-height: 26rem),
-		medium:		(font-size: 16rem, line-height: 24rem),
-		small:		(font-size: 14rem, line-height: 22rem),
-		x-small:	(font-size: 12rem, line-height: 20rem),
-		xx-small:	(font-size: 10rem, line-height: 18rem)
+		xxx-large:	(line-height: 48rem, font-size: calc(48rem / 1.5)),
+		xx-large:	(line-height: 40rem, font-size: calc(40rem / 1.5)),
+		x-large:	(line-height: 32rem, font-size: calc(32rem / 1.5)),
+		large:		(line-height: 28rem, font-size: calc(28rem / 1.5)),
+		medium:		(line-height: 24rem, font-size: calc(24rem / 1.5)),
+		small:		(line-height: 20rem, font-size: calc(20rem / 1.5)),
+		x-small:	(line-height: 18rem, font-size: calc(18rem / 1.5)),
+		xx-small:	(line-height: 16rem, font-size: calc(16rem / 1.5)),
 	),
 );
 
