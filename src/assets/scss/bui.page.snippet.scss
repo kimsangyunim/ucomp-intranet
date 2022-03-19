@@ -16,36 +16,46 @@
 .section.color-variation {
 	.section-body {
 		.subsection {
+			
 			.data-list {
+				display: flex;
+				flex-wrap: wrap;
+				overflow: hidden;
 				margin: 0;
 				padding: 0;
 				list-style: none;
-
+				
 				.data-item {
 					display: flex;
+					flex-direction: column;
 					justify-content: space-between;
+					position: relative;
+					top: -4rem;
+					left: -4rem;
+					margin: 8rem 0 0 8rem;
 					padding: 16rem;
-					height: 96rem;
+					width: 128rem;
+					height: 128rem;
 					box-sizing: border-box;
 					font-size: 16rem;
 					line-height: 1.5;
 					color: #fff;
-
-					&:nth-child(n + 8) {
-						box-shadow: inset 1rem 0 0 0 bui-color(normal, 00, 0.05), inset -1rem 0 0 0 bui-color(normal, 00, 0.05), inset 0 -1rem 0 0 bui-color(normal, 00, 0.05);
-					}
+					box-shadow: inset 0 0 0 1rem rgba(0,0,0,0.025);
 
 					.data-name {
 						display: block;
 						align-self: flex-end;
+						width: 100%;
 					}
-
+					
 					.data-code {
 						display: block;
 						align-self: flex-start;
+						width: 100%;
+						text-align: right;
 					}
 
-					&:nth-child(n+5) {
+					&:nth-child(n+8) {
 						color: rgba(0,0,0,0.75);
 					}
 				}
@@ -229,13 +239,13 @@ html.active-toggle-react-target{
 			&.#{$name} {
 				.data-name {
 					&::before {
-						background-image: icon($name, #000);
+						background-image: icon($name, color(base, 100));
 					}
 
 					&:hover {
-						color: color(secondary, 010);
+						color: color(primary, 050);
 						&::before {
-							background-image: icon($name, color(primary, 010));
+							background-image: icon($name, color(primary, 050));
 						}
 					}
 				}
@@ -380,9 +390,6 @@ html.active-toggle-react-target{
 				}
 
 				.form {
-					flex-grow: 1;
-					flex-basis: 100%;
-
 					+.form {
 						margin: 8rem 0 0 0;
 						// laptop
@@ -391,6 +398,19 @@ html.active-toggle-react-target{
 						}
 					}
 
+					&.flex {
+						flex: 1 1 100%;
+					}
+				}
+			}
+
+
+			.option-list {
+				display: flex;
+				flex-wrap: wrap;
+
+				.option-item {
+					margin: 0 16rem 8rem 0;
 				}
 			}
 		}

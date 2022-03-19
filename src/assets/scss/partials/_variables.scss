@@ -196,6 +196,18 @@ $font-theme: (
 			black:			900,
 		),
 	),
+	default: (
+		font-family: #{Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, 맑은 고딕, dotum, 돋움, sans-serif},
+		letter-spacing: normal,
+		font-weight: (
+			thin:			100,
+			light:			300,
+			regular:		400,
+			medium:			400,
+			bold:			700,
+			black:			900,
+		),
+	),
 	kr: (
 		font-family: #{Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, 맑은 고딕, dotum, 돋움, sans-serif},
 		letter-spacing: normal,

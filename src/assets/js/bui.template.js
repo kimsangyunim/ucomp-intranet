@@ -1,28 +1,39 @@
 /**
  * @module form buiFormCheckValue
  */
-function buiFormCheckValue(event, formElem) {
+function buiFormCheckValue(formElem) {
 	formElem.value.length > 0 ? formElem.classList.add('typed') : formElem.classList.remove('typed');
 }
 
 /**
  * @module form buiFormCancel
  */
-function buiFormCancel(event, formElem) {
+function buiFormCancel(formElem) {
+	if (formElem.readOnly) return;
+
+	// check value
+	buiFormCheckValue(formElem);
+	formElem.addEventListener('input', function(e) {
+		buiFormCheckValue(formElem);
+	});
+
+	// form util
 	var formUtil = formElem.parentElement.querySelector('.form-util');
 	if(!formUtil) {
-		// dom 생성
 		formUtil = document.createElement('span');
-		formUtil.classList.add('form-util'); // 그 span에 클래스 명 지정
-		formElem.parentElement.appendChild(formUtil); // formElem(= 이벤트 발생하는 input) 부모 안에 배치 
+		formUtil.classList.add('form-util');
+		formElem.parentElement.appendChild(formUtil);
 	}
 
+	// form cancel
 	var formCancel = formElem.parentElement.querySelector('.form-cancel');
 	if(!formCancel) {
 		formCancel = document.createElement('span');
 		formCancel.classList.add('form-cancel');
 		formUtil.prepend(formCancel);
 	}
+
+	formElem.style.paddingRight = formUtil.offsetWidth + 'rem';
 
 	var xStart = formUtil.offsetLeft + formCancel.offsetLeft;
 	var yStart = formUtil.offsetTop + formCancel.offsetTop;
@@ -32,9 +43,9 @@ function buiFormCancel(event, formElem) {
 	formElem.addEventListener('mousemove', function(e) {
 		if (formElem.classList.contains('typed')) {
 			if (e.offsetX >= xStart && e.offsetX <= xEnd && e.offsetY >= yStart && e.offsetY <= yEnd) {
-				formElem.setAttribute('style', 'cursor: default');
+				formElem.style.setProperty('cursor', 'default');
 			} else {
-				formElem.removeAttribute('style');
+				formElem.style.removeProperty('cursor');
 			}
 		}
 	});
@@ -44,11 +55,18 @@ function buiFormCancel(event, formElem) {
 			if (e.offsetX >= xStart && e.offsetX <= xEnd && e.offsetY >= yStart && e.offsetY <= yEnd) {
 				formElem.value = '';
 				formElem.classList.remove('typed');
-				formElem.removeAttribute('style');
+				formElem.style.removeProperty('cursor');
 			}
 		}
 	});
 }
+
+
+
+
+
+
+
 
 /**
  * @module form buiFormAfter
@@ -68,6 +86,61 @@ function buiFormAfter() {
 if ((navigator.appName == 'Netscape' && navigator.userAgent.toLowerCase().indexOf('trident') != -1) || (navigator.userAgent.toLowerCase().indexOf("msie") != -1)) {
 	buiFormAfter();
 }
+
+/**
+ * @module form buiFormResize
+ */
+function buiFormResize(elem) {
+	elem.parentNode.setAttribute('data-bui-form-value', elem.value);
+	elem.value.length > 0 ? elem.parentNode.classList.add('typed') : elem.parentNode.classList.remove('typed');
+};
+
+
+
+/**
+ * @module form buiFormResize
+ */
+function buiFormAddFile(inputEl) {
+	var curFiles = inputEl.files;
+
+	if (curFiles.length === 0) {
+		inputEl.parentElement.classList.remove('typed');
+		inputEl.parentElement.removeAttribute('data-bui-file-type');
+		inputEl.parentElement.setAttribute('data-bui-file-name', inputEl.getAttribute('title'));
+		inputEl.parentElement.removeAttribute('style');
+		inputEl.focus();
+	} else {
+		inputEl.parentElement.classList.add('typed');
+		inputEl.parentElement.setAttribute('data-bui-file-type', curFiles[0].type.split('/')[0]);
+		inputEl.parentElement.setAttribute('data-bui-file-name', inputEl.files[0].name);
+		inputEl.focus();
+
+
+		if (curFiles[0].type.split('/')[0] === 'image') {
+			inputEl.parentElement.setAttribute('style', 'background-image: url(' + URL.createObjectURL(curFiles[0]) + ')');
+		} else {
+			inputEl.parentElement.removeAttribute('style');
+			inputEl.parentElement.removeAttribute('title');
+		}
+	}
+
+	console.log();
+
+	// inputEl.parentElement.querySelector('.form-clear').addEventListener('click', function () {
+	// 	inputEl.value = null;
+	// 	inputEl.parentElement.classList.remove('typed');
+	// 	inputEl.parentElement.setAttribute('data-bui-placeholder', inputEl.getAttribute('title'));
+	// 	inputEl.parentElement.removeAttribute('style');
+	// 	inputEl.parentElement.removeAttribute('data-bui-file-type');
+	// 	inputEl.focus();
+	// });
+};
+
+
+
+
+
+
 
 /**
  * @module buiToggle contentsPopup
@@ -132,10 +205,17 @@ window.addEventListener('resize', function() {
 /**
  * @layout checkScrollStart
  */
-window.scrollY > 0 ? document.querySelector('#header').classList.add('scroll-start') : document.querySelector('#header').classList.remove('scroll-start');
-window.addEventListener('scroll', function() {
-	 window.scrollY > 0 ? document.querySelector('#header').classList.add('scroll-start') : document.querySelector('#header').classList.remove('scroll-start');
-});
+
+
+ function checkScrollStart() {
+	var elem = document.querySelector('#header');
+	if (!elem) return;
+
+	window.scrollY > 0 ? elem.classList.add('scroll-start') : elem.classList.remove('scroll-start');
+	window.addEventListener('scroll', function() {
+		window.scrollY > 0 ? elem.classList.add('scroll-start') : elem.classList.remove('scroll-start');
+	});
+ }
 
 /**
  * @layout Page Navigations

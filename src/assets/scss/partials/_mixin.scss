@@ -206,18 +206,19 @@
 
 	@if $mode == custom {
 		-webkit-overflow-scrolling: touch;
-		&::-webkit-scrollbar {width: 6px; height: 6rem;}
+		&::-webkit-scrollbar {width: 4rem; height: 4rem;}
 		&::-webkit-scrollbar-button {}
 		&::-webkit-scrollbar-button:start {}
 		&::-webkit-scrollbar-button:end {}
 		&::-webkit-scrollbar-button:vertical:increment {}
 		&::-webkit-scrollbar-button:vertical:decrement {}
-		&::-webkit-scrollbar-track {background-color: #f4f4f4;}
+		// &::-webkit-scrollbar-track {background-color: #f4f4f4;}
 		&::-webkit-scrollbar-track-piece {}
 		&::-webkit-scrollbar-thumb {
-			background-color: color(base, 060);
-			&:hover	{background-color: color(base, 050);}
-			&:active{background-color: color(base, 040);}
+			border-radius: 2rem;
+			background-color: rgba(0,0,0,0.1);
+			&:hover	{background-color: rgba(0,0,0,0.3)}
+			&:active{background-color: rgba(0,0,0,0.4)}
 		}
 		&::-webkit-scrollbar-corner {}
 		&::-webkit-resizer {}

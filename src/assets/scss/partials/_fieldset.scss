@@ -1,0 +1,94 @@
+/*
+ * @name submit-form
+ * 서식 전소용 UIO
+ * 1. label 유무
+ * 2. label과 입력 폼의 배치
+ * 3. 아이템과 form-area의 여백
+ */
+ fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+
+.submit-form.module-a {
+	legend {
+		@include hidden;
+	}
+
+	.form-list {
+		.form-item {
+			.form-wrap {
+				.form-head {
+					display: flex;
+					align-items: center;
+
+					.form-name {
+						display: block;
+					}
+				}
+
+				.form-body {
+					.form-area {
+
+					}
+				}
+			}
+		}
+	}
+
+	.form-util {
+		margin-top: 20rem;
+	}
+
+	&.type-a {
+
+	}
+
+	&.type-b {
+
+	}
+
+	// form-area
+	.form-area {
+		.sign {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 16rem;
+			text-align: center;
+			// color: color(base, 060);
+		}
+
+		.unit {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 16rem;
+			text-align: center;
+			// color: color(base, 060);
+		}	
+
+		.form.medium {
+			&~*,
+			&+* {
+				margin-left: 8rem;
+			}
+		}
+
+		.form.large {
+			&~*,
+			&+* {
+				margin-left: 10rem;
+			}
+		}
+
+		.form.x-large {
+			&~*,
+			&+* {
+				margin-left: 12rem;
+			}
+		}
+	}
+}

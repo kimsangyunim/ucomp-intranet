@@ -52,7 +52,11 @@ $btn-module-a-accent: (
 		'line' color(base, 070) color(base, 030) color(base, 000),
 		'fill' color(base, 070) color(base, 030) color(base, 030),
 	),
-
+	'normal-04': (
+		'none' color(base, 070) transparent transparent,
+		'line' color(base, 070) color(base, 010) color(base, 000),
+		'fill' color(base, 070) color(base, 010) color(base, 010),
+	),
 	'accent-01': (
 		'none' color(primary, 050) transparent transparent,
 		'line' color(primary, 050) color(primary, 050) color(primary, 000),
@@ -75,11 +79,11 @@ $btn-module-a-accent: (
  * @ $symbol-margin
  */  
 $btn-module-a-outline: (
-	'x-small'		calc(24rem / 2) calc(24rem / 2) 24rem 700 16rem calc(16rem / 1.25) 1rem calc(24rem * 0.2) 16rem calc(16rem * 0.075),
-	'small'			calc(32rem / 2) calc(32rem / 2) 32rem 700 20rem calc(20rem / 1.25) 1rem calc(32rem * 0.2) 20rem calc(20rem * 0.075),
-	'medium'		calc(40rem / 2) calc(40rem / 2) 40rem 700 24rem calc(24rem / 1.25) 1rem calc(40rem * 0.2) 24rem calc(24rem * 0.075),
-	'large'			calc(48rem / 2) calc(48rem / 2) 48rem 700 24rem calc(24rem / 1.25) 1rem calc(48rem * 0.2) 24rem calc(24rem * 0.075),
-	'x-large'		calc(56rem / 2) calc(56rem / 2) 56rem 700 28rem calc(28rem / 1.25) 1rem calc(56rem * 0.2) 28rem calc(28rem * 0.075),
+	'x-small'		24rem 16rem 1.25 700 1rem,
+	'small'			32rem 20rem 1.50 700 1rem,
+	'medium'		40rem 20rem 1.50 700 1rem,
+	'large'			48rem 20rem 1.25 700 1rem,
+	'x-large'		56rem 24rem 1.50 700 1rem,
 );
 
 // btn module-b reset
@@ -141,48 +145,48 @@ $btn-module-a-outline: (
 	}
 
 	// outline
-	@each $name, $padding-right, $padding-left, $height, $font-weight, $line-height, $font-size, $border-width, $border-radius, $symbol-size, $symbol-margin in $btn-module-a-outline {
+	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $btn-module-a-outline {
 		&.#{$name} {
-			padding-right: $padding-right;
-			padding-left: $padding-left;
+			padding-right: $height * 0.5;
+			padding-left: $height * 0.5;
 			height: $height;
 
 			font-weight: $font-weight;
 			line-height: $line-height;
-			font-size: $font-size;
+			font-size: calc($line-height / $font-size);
 			border-width: $border-width;
 
 			&.style-b {
-				border-radius: $border-radius;
+				border-radius: $height * 0.2;
 			}
 
 			&.style-c {
-				border-radius: calc($height / 2);
+				border-radius: $height * 0.5;
 			}
 
 			// icon
 			&[class*=symbol-ltr-] .btn-text::before,
 			&[class*=symbol-rtl-] .btn-text::after {
-				width: $symbol-size;
-				min-width: $symbol-size;
-				height: $symbol-size;
+				width: $line-height;
+				min-width: $line-height;
+				height: $line-height;
 			}
 
 			
 			&[class*="symbol-ltr"] {
-				padding-left: calc($padding-right - ($symbol-size / 4));
+				padding-left: ($height * 0.5) - ($line-height * 0.25);
 				.btn-text {
 					&::before {
-						margin-right: $symbol-margin;
+						margin-right: $line-height * 0.1;
 					}
 				}
 			}
 
 			&[class*="symbol-rtl"] {
-				padding-right: calc($padding-left - ($symbol-size / 4));
+				padding-right: ($height * 0.5) - ($line-height * 0.25);
 				.btn-text {
 					&::after {
-						margin-left: $symbol-margin;
+						margin-left: $line-height * 0.1;
 					}
 				}
 			}
