@@ -36,10 +36,12 @@
 								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'HTML Structure'}) %></div>
 								<div class="subsection-body">
 <pre class="highlight-js"><code class="html">&lt;script type="text/javascript" defer src="/assets/js/module.bui.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" defer src="/assets/js/module.bui.template.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	const toggleName = new buiToggle('[data-bui-toggle="toggleName"]');
+&lt;/script&gt;
 
-&lt;div id="targetElementId" data-bui-toggle="toggle-selector" data-bui-toggle-target="targetElementId"&gt;toggle target&lt;/div&gt;
-&lt;a href="#targetElementId" data-bui-toggle-button="targetElementId"&gt;toggle button&lt;/a&gt;</code></pre>
+&lt;div id="targetElementId" data-bui-toggle="toggleName"&gt;toggle target&lt;/div&gt;
+&lt;a href="#targetElementId" data-bui-toggle-button="targetElementId" onclick="toggleName.toggle('targetElementId')"&gt;toggle button&lt;/a&gt;</code></pre>
 								</div>
 							</div>
 							<!-- //subsection -->
@@ -49,54 +51,38 @@
 								<div class="subsection-body">
 									<!-- subsubsection -->
 									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'initialize buiToggle'}) %></div>
-										<div class="subsubsection-body">
-											<pre class="highlight-js"><code class="javascript">var toggleName = new buiToggle('selector');</code></pre>
-										</div>
-									</div>
-									<!-- //subsubsection -->
-									<!-- subsubsection -->
-									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'parameters'}) %></div>
 										<div class="subsubsection-body">
 <pre class="highlight-js"><code class="javascript">var toggleName = new buiToggle('selector', {
 	// general
 	mode: 'normal',
 	event: 'click',
-	active: true,
 	activeClass: 'active',
-	inactive: false,
-	inactiveClass: 'inactive',
-	disabled: false,
-	disabledClass: null,
-	focusin: false,
-	focusout: false,
+
+	// focusin
+	focusin: true,
+	focusout: true,
+
+	// clickout
 	clickout: false,
 	clickoutTarget: null,
-
+	
 	// target
-	target: null,
 	targetClass: 'bui-toggle-target',
 	targetActiveClass: 'active',
 	targetAttribute: 'data-toggle-target',
-	targetObject: null,
 
-	// close
-	close: false,
-	closeButton: 'button',
-	closeButtonClass: 'close',
-	closeButtonText: 'close',
-	closeButtonArea: null,
+	// inactiveButton
+	inactiveButton: false,
+	inactiveButtonElement: 'button',
+	inactiveButtonClass: 'close',
+	inactiveButtonText: 'close',
+	inactiveButtonArea: null,
 
 	// react target
 	reactTarget: null,
 	reactTargetClass: null,
 	reactTargetActiveClass: 'active',
-
-	// react Parent
-	reactParent: null,
-	reactParentClass: null,
-	reactParentActiveClass: 'active',
 
 	/* callback */
 	onloadCallBack: function() {return false;},
@@ -117,21 +103,16 @@
 <pre class="highlight-js"><code class="javascript">// toggle actions
 toggleName.toggle('Toggle Target ID');
 
-// Run active actions
+// active actions
 toggleName.active('Toggle Target ID');
 
-//  Run inactive actions
+//  inactive actions
 toggleName.inactive('Toggle Target ID');
 
-// Add to array of toggle items
-toggleName.appendToggle('Toggle Target ID');
-
 // myToggle Properties
-toggleName.myToggle['Toggle Target ID'].name
-toggleName.myToggle['Toggle Target ID'].active
-toggleName.myToggle['Toggle Target ID'].target
+toggleName.myToggle['Toggle Target ID'].toggleTarget
+toggleName.myToggle['Toggle Target ID'].toggleButton
 toggleName.myToggle['Toggle Target ID'].reactTarget
-toggleName.myToggle['Toggle Target ID'].button
 </code></pre>
 
 										</div>
@@ -148,9 +129,14 @@ toggleName.myToggle['Toggle Target ID'].button
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'default'}) %></div>
 										<div class="subsubsection-body">
-											<pre class="highlight-js"><code class="javascript">var toggleDefault = new buiToggle('[data-bui-toggle="toggle-default"]');</code></pre>
-											<a class="toggle-button-demo" href="#toggleDefault" data-bui-toggle-button="toggleDefault">toggle button</a>
-											<div class="toggle-target-demo" id="toggleDefault" data-bui-toggle="toggle-default" data-bui-toggle-target="toggleDefault"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<pre class="highlight-js"><code class="javascript">var toggleDefault = new buiToggle('[data-bui-toggle="toggleDefault"]');</code></pre>
+
+											<a class="toggle-button-demo" href="#toggleDemosDefault" data-bui-toggle-button="toggleDemosDefault" onclick="toggleDefault.toggle(this.dataset.buiToggleButton);">toggle button</a>
+											<div class="toggle-target-demo" id="toggleDemosDefault" data-bui-toggle="toggleDefault"><div class="toggle-target-body"><p>toggle target</p></div></div>
+
+											<script type="text/javascript">
+												var toggleDefault = new buiToggle('[data-bui-toggle="toggleDefault"]');
+											</script>
 										</div>
 									</div>
 									<!-- //subsubsection -->
@@ -158,12 +144,19 @@ toggleName.myToggle['Toggle Target ID'].button
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'close'}) %></div>
 										<div class="subsubsection-body">
-<pre class="highlight-js"><code class="javascript">var toggleClose = new buiToggle('[data-bui-toggle="toggle-close"]', {
+<pre class="highlight-js"><code class="javascript">var toggleClose = new buiToggle('[data-bui-toggle="toggleClose"]', {
 	close: true,
-	closeButtonArea: '.toggle-target-body',
+	closeButtonArea: '.toggle-target-body'
 });</code></pre>
-											<a class="toggle-button-demo" href="#toggleClose" data-bui-toggle-button="toggleClose">toggle button</a>
-											<div class="toggle-target-demo" id="toggleClose" data-bui-toggle="toggle-close" data-bui-toggle-target="toggleClose"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<a class="toggle-button-demo" href="#toggleDemosClose" data-bui-toggle-button="toggleDemosClose" onclick="toggleClose.toggle(this.dataset.buiToggleButton);">toggle button</a>
+											<div class="toggle-target-demo" id="toggleDemosClose" data-bui-toggle="toggleClose"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<script type="text/javascript">
+												// toggle-close
+												var toggleClose = new buiToggle('[data-bui-toggle="toggleClose"]', {
+													inactiveButton: true,
+													inactiveButtonArea: '.toggle-target-body',
+												});
+											</script>
 										</div>
 									</div>
 									<!-- //subsubsection -->
@@ -171,13 +164,21 @@ toggleName.myToggle['Toggle Target ID'].button
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'clickout'}) %></div>
 										<div class="subsubsection-body">
-<pre class="highlight-js"><code class="javascript">var toggleClickout = new buiToggle('[data-bui-toggle="toggle-clickout"]', {
+<pre class="highlight-js"><code class="javascript">var toggleClickout = new buiToggle('[data-bui-toggle="toggleClickout"]', {
 	close: true,
 	closeButtonArea: '.toggle-target-body',
 	clickout: true
 });</code></pre>
-											<a class="toggle-button-demo" href="#toggleClickout" data-bui-toggle-button="toggleClickout">toggle button</a>
-											<div class="toggle-target-demo" id="toggleClickout" data-bui-toggle="toggle-clickout" data-bui-toggle-target="toggleClickout"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<a class="toggle-button-demo" href="#toggleDemosClickout" data-bui-toggle-button="toggleDemosClickout" onclick="toggleClickout.toggle(this.dataset.buiToggleButton);">toggle button</a>
+											<div class="toggle-target-demo" id="toggleDemosClickout" data-bui-toggle="toggleClickout"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<script type="text/javascript">
+												// toggle-clickout
+												var toggleClickout = new buiToggle('[data-bui-toggle="toggleClickout"]', {
+													inactiveButton: true,
+													inactiveButtonArea: '.toggle-target-body',
+													clickout: true
+												});
+											</script>
 										</div>
 									</div>
 									<!-- //subsubsection -->
@@ -185,13 +186,21 @@ toggleName.myToggle['Toggle Target ID'].button
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'focusin'}) %></div>
 										<div class="subsubsection-body">
-<pre class="highlight-js"><code class="javascript">var toggleFocusin = new buiToggle('[data-bui-toggle="toggle-focusin"]', {
+<pre class="highlight-js"><code class="javascript">var toggleFocusin = new buiToggle('[data-bui-toggle="toggleFocusin"]', {
 	close: true,
 	closeButtonArea: '.toggle-target-body',
 	focusin: true
 });</code></pre>
-											<a class="toggle-button-demo" href="#toggleFocusin" data-bui-toggle-button="toggleFocusin">toggle button</a>
-											<div class="toggle-target-demo" id="toggleFocusin" data-bui-toggle="toggle-focusin" data-bui-toggle-target="toggleFocusin"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<a class="toggle-button-demo" href="#toggleDemosFocusin" data-bui-toggle-button="toggleDemosFocusin" onclick="toggleFocusin.toggle(this.dataset.buiToggleButton);">toggle button</a>
+											<div class="toggle-target-demo" id="toggleDemosFocusin" data-bui-toggle="toggleFocusin"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<script type="text/javascript">
+												// toggle-focusin
+												var toggleFocusin = new buiToggle('[data-bui-toggle="toggleFocusin"]', {
+													inactiveButton: true,
+													inactiveButtonArea: '.toggle-target-body',
+													focusin: true
+												});
+											</script>
 										</div>
 									</div>
 									<!-- //subsubsection -->
@@ -199,13 +208,21 @@ toggleName.myToggle['Toggle Target ID'].button
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'focusout'}) %></div>
 										<div class="subsubsection-body">
-<pre class="highlight-js"><code class="javascript">var toggleFocusout = new buiToggle('[data-bui-toggle="toggle-focusout"]', {
+<pre class="highlight-js"><code class="javascript">var toggleFocusout = new buiToggle('[data-bui-toggle="toggleFocusout"]', {
 	close: true,
 	closeButtonArea: '.toggle-target-body',
 	focusout: true
 });</code></pre>
-											<a class="toggle-button-demo" href="#toggleFocusout" data-bui-toggle-button="toggleFocusout">toggle button</a>
-											<div class="toggle-target-demo" id="toggleFocusout" data-bui-toggle="toggle-focusout" data-bui-toggle-target="toggleFocusout"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<a class="toggle-button-demo" href="#toggleDemosFocusout" data-bui-toggle-button="toggleDemosFocusout" onclick="toggleFocusout.toggle(this.dataset.buiToggleButton);">toggle button</a>
+											<div class="toggle-target-demo" id="toggleDemosFocusout" data-bui-toggle="toggleFocusout"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<script type="text/javascript">
+												// toggle-focusout
+												var toggleFocusout = new buiToggle('[data-bui-toggle="toggleFocusout"]', {
+													inactiveButton: true,
+													inactiveButtonArea: '.toggle-target-body',
+													focusout: true,
+												});
+											</script>
 										</div>
 									</div>
 									<!-- //subsubsection -->
@@ -213,14 +230,23 @@ toggleName.myToggle['Toggle Target ID'].button
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'reactTarget'}) %></div>
 										<div class="subsubsection-body">
-<pre class="highlight-js"><code class="javascript">var toggleReactTarget = new buiToggle('[data-bui-toggle="toggle-react-target"]', {
+<pre class="highlight-js"><code class="javascript">var toggleReactTarget = new buiToggle('[data-bui-toggle="toggleReactTarget"]', {
 	close: true,
 	closeButtonArea: '.toggle-target-body',
 	reactTarget: 'html',
 	reactTargetActiveClass: 'active-toggle-react-target'
 });</code></pre>
-											<a class="toggle-button-demo" href="#toggleReactTarget" data-bui-toggle-button="toggleReactTarget">toggle button</a>
-											<div class="toggle-target-demo" id="toggleReactTarget" data-bui-toggle="toggle-react-target" data-bui-toggle-target="toggleReactTarget"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<a class="toggle-button-demo" href="#toggleDemosReactTarget" data-bui-toggle-button="toggleDemosReactTarget" onclick="toggleReactTarget.toggle(this.dataset.buiToggleButton);">toggle button</a>
+											<div class="toggle-target-demo" id="toggleDemosReactTarget" data-bui-toggle="toggleReactTarget"><div class="toggle-target-body"><p>toggle target</p></div></div>
+											<script type="text/javascript">
+												// toggle-react-target
+												var toggleReactTarget = new buiToggle('[data-bui-toggle="toggleReactTarget"]', {
+													inactiveButton: true,
+													inactiveButtonArea: '.toggle-target-body',
+													reactTarget: 'html',
+													reactTargetActiveClass: 'active-toggle-react-target',
+												});
+											</script>
 										</div>
 									</div>
 									<!-- //subsubsection -->
@@ -231,7 +257,7 @@ toggleName.myToggle['Toggle Target ID'].button
 					</div>
 					<!-- //section -->
 					<!-- section -->
-					<div class="section">
+					<div class="section" style="display: none;">
 						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'BuiTab'}) %></div>
 						<div class="section-body">
 							<!--subsection-->
@@ -322,49 +348,5 @@ toggleName.myToggle['Toggle Target ID'].button
 	</div>
 	<!-- //page -->
 </div>
-<script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function() {
-		// toggle-default
-		var toggleDefault = new buiToggle('[data-bui-toggle="toggle-default"]');
-
-		// toggle-close
-		var toggleClose = new buiToggle('[data-bui-toggle="toggle-close"]', {
-			close: true,
-			closeButtonArea: '.toggle-target-body',
-		});
-
-		// toggle-clickout
-		var toggleClickout = new buiToggle('[data-bui-toggle="toggle-clickout"]', {
-			close: true,
-			closeButtonArea: '.toggle-target-body',
-			clickout: true
-		});
-		
-		// toggle-focusin
-		var toggleFocusin = new buiToggle('[data-bui-toggle="toggle-focusin"]', {
-			close: true,
-			closeButtonArea: '.toggle-target-body',
-			focusin: true
-		});
-
-		// toggle-focusout
-		var toggleFocusout = new buiToggle('[data-bui-toggle="toggle-focusout"]', {
-			close: true,
-			closeButtonArea: '.toggle-target-body',
-			focusout: true
-		});
-
-		// toggle-react-target
-		var toggleReactTarget = new buiToggle('[data-bui-toggle="toggle-react-target"]', {
-			close: true,
-			closeButtonArea: '.toggle-target-body',
-			reactTarget: 'html',
-			reactTargetActiveClass: 'active-toggle-react-target'
-		});
-
-		// tab-demo
-		// var tabDemo = new buiTab('[data-bui-tab="tabDemo"]');
-	});
-</script>
 </body>
 </html>
