@@ -43,7 +43,12 @@ $mark-module-accent: (
 	'normal-04': (
 		'none' color(base, 040) transparent transparent,
 		'line' color(base, 040) color(base, 010) color(base, 000),
-		'fill' color(base, 050) color(base, 010) color(base, 020),
+		'fill' color(base, 050) color(base, 020) color(base, 020),
+	),
+	'normal-05': (
+		'none' color(base, 040) transparent transparent,
+		'line' color(base, 070) color(base, 010) color(base, 000),
+		'fill' color(base, 070) color(base, 010) color(base, 010),
 	),
 	'accent-01': (
 		'none' color(primary, 050) transparent transparent,
