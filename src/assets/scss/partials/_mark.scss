@@ -1,13 +1,13 @@
 /*
  * mark system reset
 */
-/* .mark svg {
+.mark svg {
 	display: block;
 	position: relative;
 	top: 0;
 	left: 0;
 }
- */
+
 /*
  * mark module-a system
 */
@@ -27,8 +27,8 @@ $mark-module-a-accent: (
 	),
 	'normal-01': (
 		'none' color(base, 100) transparent transparent,
-		'line' color(base, 100) color(base, 100) color(base, 000),
-		'fill' color(base, 000) color(base, 100) color(base, 100),
+		'line' color(base, 80) color(base, 80) color(base, 000),
+		'fill' color(base, 000) color(base, 80) color(base, 80),
 	),
 	'normal-02': (
 		'none' color(base, 070) transparent transparent,
@@ -36,20 +36,30 @@ $mark-module-a-accent: (
 		'fill' color(base, 000) color(base, 070) color(base, 070),
 	),
 	'normal-03': (
-		'none' color(base, 070) transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 000),
-		'fill' color(base, 070) color(base, 030) color(base, 030),
+		'none' color(base, 060) transparent transparent,
+		'line' color(base, 040) color(base, 030) color(base, 000),
+		'fill' color(base, 060) color(base, 030) color(base, 060),
 	),
 	'normal-04': (
-		'none' color(base, 070) transparent transparent,
-		'line' color(base, 070) color(base, 010) color(base, 000),
-		'fill' color(base, 070) color(base, 010) color(base, 010),
+		'none' color(base, 040) transparent transparent,
+		'line' color(base, 040) color(base, 010) color(base, 000),
+		'fill' color(base, 050) color(base, 010) color(base, 020),
 	),
 	'accent-01': (
 		'none' color(primary, 050) transparent transparent,
 		'line' color(primary, 050) color(primary, 050) color(primary, 000),
 		'fill' color(primary, 000) color(primary, 050) color(primary, 050),
 	),
+	'accent-02': (
+		'none' color(secondary, 010) transparent transparent,
+		'line' color(secondary, 010) color(secondary, 010) color(base, 000),
+		'fill' color(base, 000) color(secondary, 010) color(secondary, 010),
+	),
+	'accent-03': (
+		'none' color(secondary, 030) transparent transparent,
+		'line' color(secondary, 030) color(secondary, 030) color(base, 000),
+		'fill' color(base, 000) color(secondary, 030) color(secondary, 030),
+	)
 );
 
 /*
@@ -129,8 +139,8 @@ a.mark.module-a {
 	// outline
 	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $mark-module-a-outline {
 		&.#{$name} {
-			padding-right: $height / 3;
-			padding-left: $height / 3;
+			padding-right: calc($height / 3);
+			padding-left: calc($height / 3);
 			height: $height;
 
 			font-weight: $font-weight;
