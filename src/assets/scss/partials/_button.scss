@@ -21,11 +21,11 @@ button.btn {
 }
 
 /*
- * btn module-b system
+ * btn module-a system
 */
 
 /*
-* @ module-b accent
+* @ module-a accent
 *
 * @ $text-color
 * @ $border-color
@@ -65,18 +65,13 @@ $btn-module-a-accent: (
 );
 
 /*
- * module-b outline
+ * module-a outline
  *
- * @ $padding-right
- * @ $padding-left
  * @ $height
- * @ $font-weight
  * @ $line-height
  * @ $font-size
+ * @ $font-weight
  * @ $border-width
- * @ $border-radius ($height / $border-radius)
- * @ $symbol-size
- * @ $symbol-margin
  */  
 $btn-module-a-outline: (
 	'x-small'		24rem 16rem 1.25 700 1rem,
@@ -86,7 +81,7 @@ $btn-module-a-outline: (
 	'x-large'		56rem 24rem 1.50 700 1rem,
 );
 
-// btn module-b reset
+// btn module-a reset
  a.btn.module-a {
 	 text-decoration: none;
  }
