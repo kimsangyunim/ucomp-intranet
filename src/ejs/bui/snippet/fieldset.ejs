@@ -65,26 +65,19 @@
 								<div class="subsection-body">
 									<!--subsubsection-->
 									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'data-finder'}) %></div>
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'style-a'}) %></div>
 										<div class="subsubsection-body">
 											<!-- submit-form -->
-											<fieldset class="submit-form data-finder">
-												<legend>기업과 비교하고 싶은 <span class="em">업종 및 지역을 선택</span>해주세요.</legend>
+											<fieldset class="submit-form module-a type-a medium">
+												<legend></legend>
 												<div class="form-list">
 													<div class="form-item">
 														<div class="form-wrap">
-															<div class="form-head"><label class="form-name" for="selectIndustry">업종선택</label></div>
+															<div class="form-head"><label class="form-name" for="">일시</label></div>
 															<div class="form-body">
 																<div class="form-area">
-																	<span class="form select module-a style-b type-line normal-03 medium flex">
-																		<select class="form-elem" id="selectIndustry">
-																			<option>도매 및 소매업</option>
-																		</select>
-																	</span>
-																	<span class="form select module-a style-b type-line normal-03 medium flex">
-																		<select class="form-elem" title="세부 업종 선택">
-																			<option>도매 및 상품 중개업</option>
-																		</select>
+																	<span class="form textfield module-a style-b type-line normal-04 medium flex">
+																		<input type="text" class="form-elem" placeholder="Placeholder" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" readonly="readonly" value="11, 16, 18, 21일" />
 																	</span>
 																</div>
 															</div>
@@ -92,12 +85,42 @@
 													</div>
 													<div class="form-item">
 														<div class="form-wrap">
-															<div class="form-head"><label class="form-name" for="regionSelection">지역선택</label></div>
+															<div class="form-head"><label class="form-name" for="">연락처</label></div>
 															<div class="form-body">
 																<div class="form-area">
-																	<span class="form select module-a style-b type-line normal-03 medium" style="min-width: calc(50% - 4rem);">
-																		<select class="form-elem" id="regionSelection">
-																			<option>광주광역시</option>
+																	<span class="form textfield module-a style-b type-line normal-04 medium flex">
+																		<input type="text" class="form-elem" placeholder="연락처를 입력해주세요." onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" value="010-2729-5982" />
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-item">
+														<div class="form-wrap">
+															<div class="form-head"><label class="form-name" for="">업무내역</label></div>
+															<div class="form-body">
+																<div class="form-area">
+																	<span class="form textarea module-a style-b type-line normal-04 medium flex">
+																		<textarea class="form-elem" rows="4" placeholder="업무 내역을 입력해 주세요.">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia ratione ipsum, ad ullam enim obcaecati tempore reprehenderit quas aspernatur sit sequi. Nemo molestiae deserunt mollitia commodi ipsum fugiat tenetur veritatis. Necessitatibus, facilis earum. Totam aliquam, soluta similique quibusdam non fuga labore eius provident ea numquam sint accusamus ducimus, in quis saepe. Quas ratione repellat saepe consectetur cumque numquam corrupti sunt! Sequi fuga at necessitatibus, doloribus delectus repellat alias rem. Esse, error explicabo! Enim maxime vitae sapiente aliquam, minima sit sunt. Veritatis itaque autem id expedita voluptates tempore quasi quos dolor! Sapiente nobis eaque laudantium perferendis. Blanditiis fugiat animi nobis recusandae, doloribus ipsa cupiditate pariatur vel repellat voluptate cum voluptatum quibusdam tempore eum aliquid dolores non ab, aliquam fuga molestias quia. Est quam iusto dignissimos officiis perferendis, ipsum tempore nam sapiente ea error doloribus a quis in corporis eveniet deleniti consectetur corrupti quisquam possimus animi debitis facilis maiores quasi. Ratione, vero. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia ratione ipsum, ad ullam enim obcaecati tempore reprehenderit quas aspernatur sit sequi. Nemo molestiae deserunt mollitia commodi ipsum fugiat tenetur veritatis. Necessitatibus, facilis earum. Totam aliquam, soluta similique quibusdam non fuga labore eius provident ea numquam sint accusamus ducimus, in quis saepe. Quas ratione repellat saepe consectetur cumque numquam corrupti sunt! Sequi fuga at necessitatibus, doloribus delectus repellat alias rem. Esse, error explicabo! Enim maxime vitae sapiente aliquam, minima sit sunt. Veritatis itaque autem id expedita voluptates tempore quasi quos dolor! Sapiente nobis eaque laudantium perferendis. Blanditiis fugiat animi nobis recusandae, doloribus ipsa cupiditate pariatur vel repellat voluptate cum voluptatum quibusdam tempore eum aliquid dolores non ab, aliquam fuga molestias quia. Est quam iusto dignissimos officiis perferendis, ipsum tempore nam sapiente ea error doloribus a quis in corporis eveniet deleniti consectetur corrupti quisquam possimus animi debitis facilis maiores quasi. Ratione, vero.</textarea>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-item">
+														<div class="form-wrap">
+															<div class="form-head"><label class="form-name" for="">승인위치</label></div>
+															<div class="form-body">
+																<div class="form-area">
+																	<span class="form select module-a style-b type-line normal-04 medium flex">
+																		<select class="form-elem">
+																			<option>first item</option>
+																			<option>second item</option>
+																			<option>third item</option>
+																			<option>fourth item</option>
+																			<option>fifth item</option>
+																			<option>sixth item</option>
+																			<option>sventh item</option>
 																		</select>
 																	</span>
 																</div>
@@ -105,9 +128,88 @@
 														</div>
 													</div>
 												</div>
-												<div class="form-util">
-													<div class="button-area">
-														<button class="btn module-b style-c type-line normal-03 small" type="submit"><span class="btn-text">조회</span></button>
+											</fieldset>
+											<!-- //submit-form -->
+										</div>
+									</div>
+									<!--//subsubsection-->
+									<!--subsubsection-->
+									<div class="subsubsection">
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'style-a'}) %></div>
+										<div class="subsubsection-body">
+
+
+											<!-- submit-form -->
+											<fieldset class="submit-form module-a type-a medium">
+												<legend>지출결의 기본정보 입력 서식</legend>
+												<div class="form-list">
+													<div class="form-item">
+														<div class="form-wrap">
+															<div class="form-head"><label class="form-name" for="">신청자</label></div>
+															<div class="form-body">
+																<div class="form-area">
+																	<span class="form textfield module-a style-b type-line normal-04 medium flex">
+																		<input type="text" class="form-elem" placeholder="Placeholder" readonly="readonly" value="홍길순" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-item">
+														<div class="form-wrap">
+															<div class="form-head"><label class="form-name" for="">본부</label></div>
+															<div class="form-body">
+																<div class="form-area">
+																	<span class="form textfield module-a style-b type-line normal-04 medium flex">
+																		<input type="text" class="form-elem" placeholder="연락처를 입력해주세요." readonly="readonly" value="서비스 운영 본부" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-item">
+														<div class="form-wrap">
+															<div class="form-head"><label class="form-name" for="">부서</label></div>
+															<div class="form-body">
+																<div class="form-area">
+																	<span class="form textfield module-a style-b type-line normal-04 medium flex">
+																		<input type="text" class="form-elem" placeholder="연락처를 입력해주세요." readonly="readonly" value="UX팀" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-item">
+														<div class="form-wrap">
+															<div class="form-head"><label class="form-name" for="">제목</label></div>
+															<div class="form-body">
+																<div class="form-area">
+																	<span class="form textfield module-a style-b type-line normal-04 medium flex">
+																		<input type="text" class="form-elem" placeholder="연락처를 입력해주세요." readonly="readonly" value="02월 지출결의_홍길순" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-item">
+														<div class="form-wrap">
+															<div class="form-head"><label class="form-name" for="">승인위치</label></div>
+															<div class="form-body">
+																<div class="form-area">
+																	<span class="form select module-a style-b type-line normal-04 medium flex">
+																		<select class="form-elem">
+																			<option>first item</option>
+																			<option>second item</option>
+																			<option>third item</option>
+																			<option>fourth item</option>
+																			<option>fifth item</option>
+																			<option>sixth item</option>
+																			<option>sventh item</option>
+																		</select>
+																	</span>
+																</div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</fieldset>
@@ -131,45 +233,5 @@
 	</div>
 	<!-- //page -->
 </div>
-<script type="text/javascript">
-	window.addEventListener('DOMContentLoaded', function() {
-		var buttons = document.querySelectorAll('.bui-button-area .btn');
-		Array.prototype.forEach.call(buttons, function(button) {
-			button.addEventListener('click', function(e) {
-				e.preventDefault();
-			});
-		});
-
-		var forTest = ['a', 'b', 'c', 'd'];
-
-		for(var i = 0; i < forTest.length; i++) {
-			console.log(forTest[i]);
-		}
-
-		// for (const [key, value] of Object.entries(object1)) {
-		// 	console.log(value);
-		// }
-
-
-
-
-
-		var temp = document.querySelector('body');
-
-		// temp.style.backgroundColor = "blue";
-
-		var object1 = {
-			test1: 'test1',
-			test2: 'test2'
-		}
-
-		
-		for (const [key, value] of Object.entries(object1)) {
-			if (key === 'test2') {
-				console.log(value);
-			}
-		}
-	});
-</script>
 </body>
 </html>

@@ -18,10 +18,10 @@ function buiFormCancel(formElem) {
 	});
 
 	// form util
-	var formUtil = formElem.parentElement.querySelector('.form-util');
+	var formUtil = formElem.parentElement.querySelector('.form-func');
 	if(!formUtil) {
 		formUtil = document.createElement('span');
-		formUtil.classList.add('form-util');
+		formUtil.classList.add('form-func');
 		formElem.parentElement.appendChild(formUtil);
 	}
 

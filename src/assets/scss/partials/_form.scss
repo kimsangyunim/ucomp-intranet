@@ -268,7 +268,7 @@ $form-module-a-outline: (
 			text-overflow: ellipsis;
 		}
 
-		.form-util {
+		.form-func {
 			display: flex;
 			align-items: center;
 
@@ -293,8 +293,8 @@ $form-module-a-outline: (
 			}
 		}
 
-		.form-elem.typed:focus~.form-util,
-		.form-elem.typed:hover~.form-util {
+		.form-elem.typed:focus~.form-func,
+		.form-elem.typed:hover~.form-func {
 			.form-cancel {
 				opacity: 1;
 			}
@@ -337,7 +337,7 @@ $form-module-a-outline: (
 							}
 						}
 
-						.form-util {
+						.form-func {
 							.form-cancel {
 								background-image: icon(cancel, $color-unit);
 							}
@@ -352,7 +352,7 @@ $form-module-a-outline: (
 							}
 						}
 
-						.form-util {
+						.form-func {
 							.form-cancel {
 								background-image: icon(fill-circle-delete, $color-unit);
 							}
@@ -417,11 +417,11 @@ $form-module-a-outline: (
 			&.textfield {
 				.form-elem {
 					height: $height;
-					padding-right: $line-height * 0.6;
-					text-indent: $line-height * 0.6;
+					padding-right: $line-height * 0.8;
+					text-indent: $line-height * 0.8;
 				}
 
-				.form-util {
+				.form-func {
 					padding: 0 $line-height * 0.6 + $border-width;
 
 					* + * {

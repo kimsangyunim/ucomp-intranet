@@ -43,11 +43,41 @@
 	}
 
 	&.type-a {
-
+		.form-list {
+			.form-item {
+				.form-wrap {
+					display: flex;
+					align-items: flex-start;
+				}
+			}
+		}
 	}
 
 	&.type-b {
 
+	}
+
+	&.medium {
+		.form-list {
+			.form-item {
+				+.form-item {
+					margin-top: 8rem;
+				}
+				.form-wrap {
+					.form-head {
+						flex-shrink: 0;
+						margin-right: 8rem;
+						width: 56rem;
+						min-height: 40rem;
+						@include font((outline: body, size: small)...);
+					}
+					.form-body {
+						flex: 1 1 100%;
+						width: 100%;
+					}
+				}
+			}
+		}
 	}
 
 	// form-area
@@ -59,6 +89,11 @@
 			min-width: 16rem;
 			text-align: center;
 			// color: color(base, 060);
+		}
+
+		.flex {
+			flex: 1 1 100%;
+			width: 100%;
 		}
 
 		.unit {
