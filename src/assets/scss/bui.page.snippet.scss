@@ -13,6 +13,16 @@
 	}
 }
 
+.bui-mark-area {
+	display: flex;
+	flex-wrap: wrap;
+
+	.mark {
+		& + .mark {
+			margin-left: 8rem;
+		}
+	}
+}
 .section.color-variation {
 	.section-body {
 		.subsection {

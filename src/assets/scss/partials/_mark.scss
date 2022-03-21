@@ -1,0 +1,261 @@
+/*
+ * mark system reset
+*/
+/* .mark svg {
+	display: block;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+ */
+/*
+ * mark module-a system
+*/
+
+/*
+* @ module-a accent
+*
+* @ $text-color
+* @ $border-color
+* @ $background-color
+*/
+$mark-module-a-accent: (
+	'normal-00': (
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 100) color(base, 100) color(base, 000),
+		'fill' color(base, 000) color(base, 100) color(base, 100),
+	),
+	'normal-01': (
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 100) color(base, 100) color(base, 000),
+		'fill' color(base, 000) color(base, 100) color(base, 100),
+	),
+	'normal-02': (
+		'none' color(base, 070) transparent transparent,
+		'line' color(base, 070) color(base, 070) color(base, 000),
+		'fill' color(base, 000) color(base, 070) color(base, 070),
+	),
+	'normal-03': (
+		'none' color(base, 070) transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 000),
+		'fill' color(base, 070) color(base, 030) color(base, 030),
+	),
+	'normal-04': (
+		'none' color(base, 070) transparent transparent,
+		'line' color(base, 070) color(base, 010) color(base, 000),
+		'fill' color(base, 070) color(base, 010) color(base, 010),
+	),
+	'accent-01': (
+		'none' color(primary, 050) transparent transparent,
+		'line' color(primary, 050) color(primary, 050) color(primary, 000),
+		'fill' color(primary, 000) color(primary, 050) color(primary, 050),
+	),
+);
+
+/*
+ * module-a outline
+ *
+ * @ $height
+ * @ $line-height
+ * @ $font-size
+ * @ $font-weight
+ * @ $border-width
+ */
+$mark-module-a-outline: (
+	'small'			18rem 16rem 1.5 400 1rem,
+	'medium'		24rem 18rem 1.5 400 1rem,
+	'large'			32rem 20rem 1.5 400 1rem,
+	'x-large'		40rem 24rem 1.5 400 1rem,
+);
+
+// mark module-a reset
+a.mark.module-a {
+	text-decoration: none;
+}
+
+.mark.module-a {
+	// general
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include font((family: default)...);
+	box-sizing: border-box;
+	border-style: solid;
+
+	.mark-text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	// icon
+	// 1. 아이콘의 유무는 특정 클래스명으로 한다.
+	// 2. 아이콘의 위치는 특정 클래스명으로 한다.
+	// 3. 아이콘의 종류는 지정한 아이콘셋(클래스명)으로 한다.
+	// 4. 아이콘의 사이즈는 outline별로 달라야 한다.
+	//		1) 행간에 맞춘다.
+	//		2) 별도의 사이즈를 지정한다.
+	// 5. 무조건 중앙에 또는 상단 기준을 택일
+	// 6. accent에 따라 컬러를 다르게 한다.
+
+	&[class*=symbol-ltr-] .mark-text::before,
+	&[class*=symbol-rtl-] .mark-text::after {
+		content: '';
+		display: block;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	// accent
+	@each $accent-name in $mark-module-a-accent {
+		&.#{nth($accent-name, 1)} {
+			// @debug "divider offset: #{nth($accent-name, 1)}";
+			@each $type-name, $color, $border-color, $background-color in map-get($mark-module-a-accent, nth($accent-name, 1)) {
+				&.type-#{$type-name} {
+					color: $color;
+					border-color: $border-color;
+					background-color: $background-color;
+					
+					@each $icon-name, $icon in $symbol-list {
+						&.symbol-ltr-#{$icon-name} {.mark-text {&::before {background-image: icon($icon-name, $color);}}}
+						&.symbol-rtl-#{$icon-name} {.mark-text {&::after {background-image: icon($icon-name, $color);}}}
+					}
+				}
+			}
+		}
+	}
+
+	// outline
+	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $mark-module-a-outline {
+		&.#{$name} {
+			padding-right: $height / 3;
+			padding-left: $height / 3;
+			height: $height;
+
+			font-weight: $font-weight;
+			line-height: $line-height;
+			font-size: calc($line-height / $font-size);
+			border-width: $border-width;
+
+			&.style-b {
+				border-radius: $height * 0.2;
+			}
+
+			&.style-c {
+				border-radius: $height * 0.5;
+			}
+
+			// icon
+			&[class*=symbol-ltr-] .mark-text::before,
+			&[class*=symbol-rtl-] .mark-text::after {
+				width: $line-height;
+				min-width: $line-height;
+				height: $line-height;
+			}
+
+			
+			&[class*="symbol-ltr"] {
+				padding-left: ($height * 0.5) - ($line-height * 0.25);
+				.mark-text {
+					&::before {
+						margin-right: $line-height * 0.1;
+					}
+				}
+			}
+
+			&[class*="symbol-rtl"] {
+				padding-right: ($height * 0.5) - ($line-height * 0.25);
+				.mark-text {
+					&::after {
+						margin-left: $line-height * 0.1;
+					}
+				}
+			}
+		}
+	}
+}
+
+// mark-area
+.mark-area.module-a {
+	display: flex;
+
+	&.style-a {
+		// flex-wrap: wrap;
+	
+		.flex {
+			flex-grow: 1;
+			flex-basis: 100%;
+		}
+	
+		.mark.medium {
+			&~*,
+			&+* {
+				margin-left: 8rem;
+			}
+		}
+	
+		.mark.large {
+			&~*,
+			&+* {
+				margin-left: 10rem;
+			}
+		}
+	
+		.mark.x-large {
+			&~*,
+			&+* {
+				margin-left: 12rem;
+			}
+		}
+	
+		&.type-a {
+	
+		}
+	
+		&.type-b {
+			justify-content: flex-end;
+		}
+	
+		&.type-c {
+			justify-content: center;
+		}
+	
+		&.type-d {
+			.mark {
+				flex-grow: 1;
+				flex-basis: 100%;
+			}
+		}
+	}
+
+	&.style-b {
+		flex-wrap: wrap;
+		
+		.mark {
+			flex-grow: 1;
+			flex-basis: 100%;
+		}
+
+		.mark.medium {
+			&~*,
+			&+* {
+				margin-top: 8rem;
+			}
+		}
+	
+		.mark.large {
+			&~*,
+			&+* {
+				margin-top: 10rem;
+			}
+		}
+	
+		.mark.x-large {
+			&~*,
+			&+* {
+				margin-top: 12rem;
+			}
+		}	
+	}
+}
