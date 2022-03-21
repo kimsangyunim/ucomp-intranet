@@ -1,25 +1,26 @@
-/*
- * mark system reset
-*/
-.mark svg {
+
+.tooltip svg {
 	display: block;
 	position: relative;
 	top: 0;
 	left: 0;
 }
-
+.tooltip-area {
+	display: flex;
+	flex-wrap: wrap;
+}
 /*
- * mark module system
+ * tooltip module-a system
 */
 
 /*
-* @ mark module accent
+* @ module-a accent
 *
 * @ $text-color
 * @ $border-color
 * @ $background-color
 */
-$mark-module-accent: (
+$tooltip-module-a-accent: (
 	'normal-00': (
 		'none' color(base, 100) transparent transparent,
 		'line' color(base, 100) color(base, 100) color(base, 000),
@@ -50,35 +51,27 @@ $mark-module-accent: (
 		'line' color(primary, 050) color(primary, 050) color(primary, 000),
 		'fill' color(primary, 000) color(primary, 050) color(primary, 050),
 	),
-	'accent-02': (
-		'none' color(secondary, 010) transparent transparent,
-		'line' color(secondary, 010) color(secondary, 010) color(base, 000),
-		'fill' color(base, 000) color(secondary, 010) color(secondary, 010),
-	),
-	'accent-03': (
-		'none' color(secondary, 030) transparent transparent,
-		'line' color(secondary, 030) color(secondary, 030) color(base, 000),
-		'fill' color(base, 000) color(secondary, 030) color(secondary, 030),
-	)
 );
 
 /*
- * mark module outline
+ * module-a outline
  *
  * @ $height
  * @ $line-height
  * @ $font-size
+ * @ $font-weight
  * @ $border-width
  */
-$mark-module-outline: (
-	'small'			16rem 16rem 1.5 1rem,
-	'medium'		20rem 16rem 1.5 1rem,
-	'large'			24rem 18rem 1.5 1rem,
-	'x-large'		32rem 20rem 1.5 1rem,
+$tooltip-module-a-outline: (
+	'x-small'		32rem 16rem 1.25 400 1rem,
+	'small'			40rem 20rem 1.50 400 1rem,
+	'medium'		48rem 24rem 1.50 400 1rem,
+	'large'			56rem 28rem 1.25 400 1rem,
+	'x-large'		64rem 32rem 1.50 400 1rem,
 );
 
 
-.mark {
+.tooltip.module-a {
 	// general
 	display: flex;
 	align-items: center;
@@ -87,7 +80,7 @@ $mark-module-outline: (
 	box-sizing: border-box;
 	border-style: solid;
 
-	.mark-text {
+	.tooltip-text {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -104,8 +97,8 @@ $mark-module-outline: (
 	// 5. 무조건 중앙에 또는 상단 기준을 택일
 	// 6. accent에 따라 컬러를 다르게 한다.
 
-	&[class*=symbol-ltr-] .mark-text::before,
-	&[class*=symbol-rtl-] .mark-text::after {
+	&[class*=symbol-ltr-] .tooltip-text::before,
+	&[class*=symbol-rtl-] .tooltip-text::after {
 		content: '';
 		display: block;
 		background-repeat: no-repeat;
@@ -113,18 +106,18 @@ $mark-module-outline: (
 	}
 
 	// accent
-	@each $accent-name in $mark-module-accent {
+	@each $accent-name in $tooltip-module-a-accent {
 		&.#{nth($accent-name, 1)} {
 			// @debug "divider offset: #{nth($accent-name, 1)}";
-			@each $type-name, $color, $border-color, $background-color in map-get($mark-module-accent, nth($accent-name, 1)) {
+			@each $type-name, $color, $border-color, $background-color in map-get($tooltip-module-a-accent, nth($accent-name, 1)) {
 				&.type-#{$type-name} {
 					color: $color;
 					border-color: $border-color;
 					background-color: $background-color;
 					
 					@each $icon-name, $icon in $symbol-list {
-						&.symbol-ltr-#{$icon-name} {.mark-text {&::before {background-image: icon($icon-name, $color);}}}
-						&.symbol-rtl-#{$icon-name} {.mark-text {&::after {background-image: icon($icon-name, $color);}}}
+						&.symbol-ltr-#{$icon-name} {.tooltip-text {&::before {background-image: icon($icon-name, $color);}}}
+						&.symbol-rtl-#{$icon-name} {.tooltip-text {&::after {background-image: icon($icon-name, $color);}}}
 					}
 				}
 			}
@@ -132,12 +125,13 @@ $mark-module-outline: (
 	}
 
 	// outline
-	@each $name, $height, $line-height, $font-size, $border-width in $mark-module-outline {
+	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $tooltip-module-a-outline {
 		&.#{$name} {
-			padding-right: calc($height / 3);
-			padding-left: calc($height / 3);
+			padding-right: $height * 0.5;
+			padding-left: $height * 0.5;
 			height: $height;
 
+			font-weight: $font-weight;
 			line-height: $line-height;
 			font-size: calc($line-height / $font-size);
 			border-width: $border-width;
@@ -151,8 +145,8 @@ $mark-module-outline: (
 			}
 
 			// icon
-			&[class*=symbol-ltr-] .mark-text::before,
-			&[class*=symbol-rtl-] .mark-text::after {
+			&[class*=symbol-ltr-] .tooltip-text::before,
+			&[class*=symbol-rtl-] .tooltip-text::after {
 				width: $line-height;
 				min-width: $line-height;
 				height: $line-height;
@@ -161,7 +155,7 @@ $mark-module-outline: (
 			
 			&[class*="symbol-ltr"] {
 				padding-left: ($height * 0.5) - ($line-height * 0.25);
-				.mark-text {
+				.tooltip-text {
 					&::before {
 						margin-right: $line-height * 0.1;
 					}
@@ -170,7 +164,7 @@ $mark-module-outline: (
 
 			&[class*="symbol-rtl"] {
 				padding-right: ($height * 0.5) - ($line-height * 0.25);
-				.mark-text {
+				.tooltip-text {
 					&::after {
 						margin-left: $line-height * 0.1;
 					}
@@ -180,11 +174,9 @@ $mark-module-outline: (
 	}
 }
 
-
-// module-a
-.mark.module-a {
+// button-area
+.tooltip.module-a {
 	display: flex;
-	font-weight: 400;
 
 	&.style-a {
 		// flex-wrap: wrap;
@@ -194,21 +186,21 @@ $mark-module-outline: (
 			flex-basis: 100%;
 		}
 	
-		.mark.medium {
+		.tooltip.medium {
 			&~*,
 			&+* {
 				margin-left: 8rem;
 			}
 		}
 	
-		.mark.large {
+		.tooltip.large {
 			&~*,
 			&+* {
 				margin-left: 10rem;
 			}
 		}
 	
-		.mark.x-large {
+		.tooltip.x-large {
 			&~*,
 			&+* {
 				margin-left: 12rem;
@@ -226,123 +218,31 @@ $mark-module-outline: (
 		&.type-c {
 			justify-content: center;
 		}
-	
-		&.type-d {
-			.mark {
-				flex-grow: 1;
-				flex-basis: 100%;
-			}
-		}
 	}
 
 	&.style-b {
 		flex-wrap: wrap;
 		
-		.mark {
+		.tooltip {
 			flex-grow: 1;
 			flex-basis: 100%;
 		}
 
-		.mark.medium {
+		.tooltip.medium {
 			&~*,
 			&+* {
 				margin-top: 8rem;
 			}
 		}
 	
-		.mark.large {
+		.tooltip.large {
 			&~*,
 			&+* {
 				margin-top: 10rem;
 			}
 		}
 	
-		.mark.x-large {
-			&~*,
-			&+* {
-				margin-top: 12rem;
-			}
-		}	
-	}
-}
-
-// module-b
-.mark.module-b {
-	display: flex;
-	font-weight: 700;
-
-	&.style-a {
-		// flex-wrap: wrap;
-	
-		.flex {
-			flex-grow: 1;
-			flex-basis: 100%;
-		}
-	
-		.mark.medium {
-			&~*,
-			&+* {
-				margin-left: 8rem;
-			}
-		}
-	
-		.mark.large {
-			&~*,
-			&+* {
-				margin-left: 10rem;
-			}
-		}
-	
-		.mark.x-large {
-			&~*,
-			&+* {
-				margin-left: 12rem;
-			}
-		}
-	
-		&.type-a {
-	
-		}
-	
-		&.type-b {
-			justify-content: flex-end;
-		}
-	
-		&.type-c {
-			justify-content: center;
-		}
-	
-		&.type-d {
-			.mark {
-				flex-grow: 1;
-				flex-basis: 100%;
-			}
-		}
-	}
-
-	&.style-b {
-		flex-wrap: wrap;
-		
-		.mark {
-			flex-grow: 1;
-			flex-basis: 100%;
-		}
-
-		.mark.medium {
-			&~*,
-			&+* {
-				margin-top: 8rem;
-			}
-		}
-	
-		.mark.large {
-			&~*,
-			&+* {
-				margin-top: 10rem;
-			}
-		}
-	
-		.mark.x-large {
+		.tooltip.x-large {
 			&~*,
 			&+* {
 				margin-top: 12rem;

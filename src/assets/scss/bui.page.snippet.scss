@@ -23,6 +23,17 @@
 		}
 	}
 }
+.tooltip-mark-area {
+	display: flex;
+	flex-wrap: wrap;
+
+	.tooltip {
+		& + .tooltip {
+			margin-left: 8rem;
+		}
+	}
+}
+
 .section.color-variation {
 	.section-body {
 		.subsection {
