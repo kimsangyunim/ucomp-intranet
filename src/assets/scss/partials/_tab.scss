@@ -37,20 +37,18 @@
 /*
  * module-a outline
  *
- * @ $basis
- * @ $padding
- * @ $height
- * @ $font-weight
  * @ $line-height
  * @ $font-size
-
- */  
+ * @ $font-weight
+*/
  $tab-module-a-outline: (
-	'small'			160rem 10rem 10rem 700 20rem 14rem,
-	'medium'		200rem 12rem 12rem 700 24rem 16rem,
-	'large'			240rem 14rem 15rem 700 26rem 18rem,
-	'x-large'		280rem 16rem 18rem 700 32rem 21rem,
+	'x-small'		18rem 1.25 700,
+	'small'			20rem 1.25 700,
+	'medium'		24rem 1.25 700,
+	'large'			28rem 1.25 700,
+	'x-large'		32rem 1.25 700,
 );
+
 .tab-display.module-a {
 	.tab-list {
 		overflow: hidden;
@@ -62,10 +60,20 @@
 			display: flex;
 			align-items: center;
 			position: relative;
+			& +.tab-item::before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				width: 2rem;
+				border-radius: 90rem;
+				background-color: color(base, 010);
+			}
 			
 			.tab-name {
 				outline-offset: unset;
 			}
+
 		}
 	}
 
@@ -75,13 +83,7 @@
 			.tab-item {
 
 				&::before {
-					content: '';
-					display: block;
-					position: absolute;
-					background-color: color(base, 060);
 
-					width: 1rem;
-					top: calc(50% - 5rem);
 				}
 			}
 		}
@@ -91,48 +93,44 @@
 		.tab-list{
 			justify-content: flex-end;
 			// flex-direction: row-reverse;
-			.tab-item {
-				&::after {
-					content: '';
-					display: block;
-					position: absolute;
-					top: calc(50% - 5rem);
-					width: 1rem;
-					background-color: color(base, 060);
-					
-					right: -4rem;
-					height: 10rem;
-				}
-			}
+		}
+	}
+	&.type-c { 
+		.tab-list{
+			justify-content:center;
+			// flex-direction: row-reverse;
 		}
 	}
 
 	// outline
-	@each $name, $basis, $padding, $height, $font-weight, $line-height, $font-size, $border-width, $border-radius, $symbol-size, $symbol-margin in $tab-module-a-outline {
+	@each $name, $line-height, $font-size, $font-weight in $tab-module-a-outline {
 		&.#{$name} {
 			.tab-item{
 				// flex-basis: $basis;
-				
-				// height: $height;
-				// line-height: $line-height;
-				padding-right: $padding;
-				padding-left: $padding;
-				font-size: $font-size;
+				line-height: $line-height;
+				padding-right: $line-height * 0.5;
+				padding-left: $line-height * 0.5;
+				font-size: calc($line-height / $font-size);
+				& +.tab-item::before {
+					// width: 2rem;
+					height: $line-height - 2rem;
+				}
 				.tab-name {
 				}
+
 			}
 
 			&.type-a { 
 				.tab-list{
 					.tab-item {
-						left: -($padding * 2);
-						margin: 0 0 0 $padding;
+						// left: -($padding * 2);
+						// margin: 0 0 0 $padding;
 		
 						&::before {
-							top: calc(50% - ($height / 2));
-							left: calc(($padding / 2) * -1);
-							height: calc($line-height / 2);
-							width: 1rem;
+							// top: calc(50% - ($line-height / 2));
+							// left: calc(($line-height / 2) * -1);
+							// height: calc($line-height / 2);
+							// width: 1rem;
 						}
 					}
 				}
@@ -141,14 +139,14 @@
 			&.type-b { 
 				.tab-list{
 					.tab-item {
-						right: -($padding * 2);
-						margin: 0 $padding 0 0 ;
+						// right: -($padding * 2);
+						// margin: 0 $padding 0 0 ;
 		
 						&::before {
-							top: calc(50% - ($height / 2));
-							left: calc(($padding / 2) * -1);
-							height: calc($line-height / 2);
-							width: 1rem;
+							// top: calc(50% - ($height / 2));
+							// left: calc(($padding / 2) * -1);
+							// height: calc($line-height / 2);
+							// width: 1rem;
 						}
 					}
 				}
