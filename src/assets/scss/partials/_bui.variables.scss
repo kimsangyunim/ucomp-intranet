@@ -81,7 +81,7 @@ $bui-color-palettes: (
 	),
 );
 // Create Color
-@function bui-color($theme: normal, $variant: 00, $opacity: 1) {
+@function bui-color($theme: normal, $variant: 100, $opacity: 1) {
 	$set-color: map-get($bui-color-palettes, $theme, $variant);
 	$create-color: rgba(red($set-color),green($set-color),blue($set-color),$opacity);
 	@return $create-color;
