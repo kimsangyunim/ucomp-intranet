@@ -59,7 +59,7 @@ $bui-gutter: (
 
 // Color palettes
 $bui-color-palettes: (
-	base: (
+	normal: (
 		100: #000000,
 		090: #191919,
 		080: #2d2d2d,
@@ -74,28 +74,10 @@ $bui-color-palettes: (
 		000: #ffffff,
 	),
 	primary: (
-		100: #000000,
-		090: #330b0c,
-		080: #661618,
-		070: #982125,
-		060: #cb2c31,
-		050: #fe373d,
-		040: #fe5f64,
-		030: #fe878b,
-		020: #ffbfc1,
-		010: #ffdfe0,
-		005: #ffedee,
-		000: #ffffff,
+		010: #EE2C49,
 	),
-
 	secondary: (
-		010: #3ab8ff,
-		020: #ffb274,
-		030: #ffc328,
-	),
-
-	etc: (
-		010: #f2f4f6,
+		010: #313851,
 	),
 );
 // Create Color
