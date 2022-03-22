@@ -23,13 +23,17 @@
 		}
 	}
 }
-.tooltip-mark-area {
-	display: flex;
-	flex-wrap: wrap;
+.bui-tooltip-area{
+	// display: flex;
+	// flex-wrap: wrap;
+
+	+ .bui-tooltip-area {
+		margin-top: 10px
+	}
 
 	.tooltip {
 		& + .tooltip {
-			margin-left: 8rem;
+			margin-left: 30rem;
 		}
 	}
 }

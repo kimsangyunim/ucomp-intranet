@@ -56,35 +56,36 @@ $tooltip-module-a-accent: (
 /*
  * module-a outline
  *
- * @ $height
+
  * @ $line-height
  * @ $font-size
  * @ $font-weight
  * @ $border-width
- */
+*/
 $tooltip-module-a-outline: (
-	'x-small'		32rem 16rem 1.25 400 1rem,
-	'small'			40rem 20rem 1.50 400 1rem,
-	'medium'		48rem 24rem 1.50 400 1rem,
-	'large'			56rem 28rem 1.25 400 1rem,
-	'x-large'		64rem 32rem 1.50 400 1rem,
+	'xx-small'		16rem 1.50 400 1rem,
+	'x-small'		18rem 1.50 400 1rem,
+	'small'			20rem 1.50 400 1rem,
+	'medium'		24rem 1.50 400 1rem,
+	'large'			28rem 1.50 400 1rem,
+	'x-large'		32rem 1.50 400 1rem,
 );
 
 
 .tooltip.module-a {
 	// general
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	// display: flex;
+	// align-items: center;
+	// justify-content: center;
 	@include font((family: default)...);
 	box-sizing: border-box;
 	border-style: solid;
 
 	.tooltip-text {
 		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
+		// align-items: center;
+		// justify-content: center;
+		// text-align: center;
 	}
 
 	// icon
@@ -125,11 +126,9 @@ $tooltip-module-a-outline: (
 	}
 
 	// outline
-	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $tooltip-module-a-outline {
+	@each $name, $line-height, $font-size, $font-weight, $border-width in $tooltip-module-a-outline {
 		&.#{$name} {
-			padding-right: $height * 0.5;
-			padding-left: $height * 0.5;
-			height: $height;
+			padding: calc($line-height /2 ) $line-height ;
 
 			font-weight: $font-weight;
 			line-height: $line-height;
@@ -137,11 +136,11 @@ $tooltip-module-a-outline: (
 			border-width: $border-width;
 
 			&.style-b {
-				border-radius: $height * 0.2;
+				border-radius: $line-height * .5;
 			}
 
 			&.style-c {
-				border-radius: $height * 0.5;
+				border-radius: $line-height * 2;
 			}
 
 			// icon
@@ -154,7 +153,7 @@ $tooltip-module-a-outline: (
 
 			
 			&[class*="symbol-ltr"] {
-				padding-left: ($height * 0.5) - ($line-height * 0.25);
+				padding-left: ($line-height * 0.5) - ($line-height * 0.25);
 				.tooltip-text {
 					&::before {
 						margin-right: $line-height * 0.1;
@@ -163,7 +162,7 @@ $tooltip-module-a-outline: (
 			}
 
 			&[class*="symbol-rtl"] {
-				padding-right: ($height * 0.5) - ($line-height * 0.25);
+				padding-right: ($line-height * 0.5) - ($line-height * 0.25);
 				.tooltip-text {
 					&::after {
 						margin-left: $line-height * 0.1;
@@ -221,7 +220,7 @@ $tooltip-module-a-outline: (
 	}
 
 	&.style-b {
-		flex-wrap: wrap;
+		
 		
 		.tooltip {
 			flex-grow: 1;

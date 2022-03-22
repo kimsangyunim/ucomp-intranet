@@ -111,7 +111,7 @@
 <code class="html">&lt;span class="tooltip module-a type-line"&gt;&lt;span class="tooltip-text"&gt;tooltip Text&lt;/span&gt;&lt;/span&gt;
 &lt;span class="tooltip module-a type-fill"&gt;&lt;span class="tooltip-text"&gt;tooltip Text&lt;/span&gt;&lt;/span&gt;</code></pre>
 									<!-- //highlight-js -->
-									<div class="tooltip-area">
+									<div class="bui-tooltip-area tooltip-area">
 										<div class="tooltip module-a style-a type-line normal-00 medium"><span class="tooltip-text">tooltip type-line</span></div>
 										<div class="tooltip module-a style-a type-fill normal-00 medium"><span class="tooltip-text">tooltip type-fill</span></div>
 									</div>
@@ -134,7 +134,7 @@
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-none'}) %></div>
 										<!-- border 색 기준 -->
 										<div class="subsubsection-body">
-											<div class="tooltip-area">
+											<div class="bui-tooltip-area tooltip-area">
 												<div class="tooltip module-a style-a type-none normal-01 medium"><span class="tooltip-text">tooltip normal-01</span></div>
 												<div class="tooltip module-a style-a type-none normal-02 medium"><span class="tooltip-text">tooltip normal-02</span></div>
 												<div class="tooltip module-a style-a type-none normal-03 medium"><span class="tooltip-text">tooltip normal-03</span></div>
@@ -147,7 +147,7 @@
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-line'}) %></div>
 										<!-- border 색 기준 -->
 										<div class="subsubsection-body">
-											<div class="tooltip-area">
+											<div class="bui-tooltip-area tooltip-area">
 												<div class="tooltip module-a style-a type-line normal-01 medium"><span class="tooltip-text">tooltip normal-01</span></div>
 												<div class="tooltip module-a style-a type-line normal-02 medium"><span class="tooltip-text">tooltip normal-02</span></div>
 												<div class="tooltip module-a style-a type-line normal-03 medium"><span class="tooltip-text">tooltip normal-03</span></div>
@@ -159,7 +159,7 @@
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-fill'}) %></div>
 										<div class="subsubsection-body">
-											<div class="tooltip-area">
+											<div class="bui-tooltip-area tooltip-area">
 												<div class="tooltip module-a style-a type-fill normal-01 medium"><span class="tooltip-text">tooltip normal-01</span></div>
 												<div class="tooltip module-a style-a type-fill normal-02 medium"><span class="tooltip-text">tooltip normal-02</span></div>
 												<div class="tooltip module-a style-a type-fill normal-03 medium"><span class="tooltip-text">tooltip normal-03</span></div>
@@ -184,12 +184,19 @@
 &lt;span class="tooltip module-a style-a small"&gt;&lt;span class="tooltip-text"&gt;tooltip Text&lt;/span&gt;&lt;/span&gt;
 </code></pre>
 									<!-- //highlight-js -->
-									<div class="tooltip-area">
-										<div class="tooltip module-a style-a type-line normal-00 x-large"><span class="tooltip-text">x-large</span></div>
-										<div class="tooltip module-a style-a type-line normal-00 large"><span class="tooltip-text">large</span></div>
+									<div class="bui-tooltip-area tooltip-area">
 										<div class="tooltip module-a style-a type-line normal-00 medium"><span class="tooltip-text">medium</span></div>
+									</div>
+									<div class="bui-tooltip-area tooltip-area">
 										<div class="tooltip module-a style-a type-line normal-00 small"><span class="tooltip-text">small</span></div>
 									</div>
+									<div class="bui-tooltip-area tooltip-area">
+										<div class="tooltip module-a style-a type-line normal-00 x-small"><span class="tooltip-text">x-small</span></div>
+									</div>
+									<div class="bui-tooltip-area tooltip-area">
+										<div class="tooltip module-a style-a type-line normal-00 xx-small"><span class="tooltip-text">xx-small</span></div>
+									</div>
+								</div>
 								</div>
 							</div>
 							<!-- //subsection -->
@@ -203,10 +210,21 @@
 &lt;span class="tooltip module-a symbol-rtl-*"&gt;&lt;span class="tooltip-text"&gt;tooltip Text&lt;/span&gt;&lt;/span&gt;</code></pre>
 									<!-- //highlight-js -->
 									<!-- tooltip-area -->
-									<div class="tooltip-area">
-										<div class="tooltip module-a style-a type-line normal-00 medium symbol-ltr-fill-chevron-left" href="./../snippet/icon.html"><span class="tooltip-text">module-a insert before</span></div>
-										<div class="tooltip module-a style-a type-line normal-00 medium symbol-rtl-fill-chevron-right" href="./../snippet/icon.html"><span class="tooltip-text">module-a insert after</span></div>
+									<div class="bui-tooltip-area tooltip-area">
+										<div class="tooltip module-a style-a type-fill normal-00 xx-small symbol-ltr-fill-close"><span class="tooltip-text">module-a insert before</span></div>
+										<div class="tooltip module-a style-a type-fill normal-00 xx-small symbol-rtl-fill-close"><span class="tooltip-text">module-a insert after</span></div>
 									</div>
+
+									<div class="bui-tooltip-area tooltip-area">
+										<div class="tooltip module-a style-c type-fill normal-00 x-small symbol-ltr-fill-close">
+											<button type="button" class="btn tooltip-close">
+												<span class="btn-text">close</span>
+											</button>
+											<span class="tooltip-text">module-a insert before<br>odule-a insert beforeodule-a insert beforeodule-a insert before<br>odule-a insert beforeodule-a insert beforeodule-a insert before</span>
+										</div>
+										<div class="tooltip module-a style-c type-fill normal-00 x-small symbol-rtl-fill-close"><span class="tooltip-text">module-a insert after</span></div>
+									</div>
+
 									<!-- //tooltip-area -->
 									<p class="para">버튼 모듈에 사용되는 아이콘의 이름은 <a href="./../snippet/icon.html">snippet/icon.html</a> 참조하세요</p>
 								</div>
@@ -238,7 +256,7 @@
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-none'}) %></div>
 										<div class="subsubsection-body">
-											<div class="tooltip-area">
+											<div class="bui-tooltip-area tooltip-area">
 												<div class="tooltip module-a style-a type-none accent-01 large"><span class="tooltip-text">tooltip accent-01</span></div>
 												<div class="tooltip module-a style-a type-none normal-01 large"><span class="tooltip-text">tooltip normal-01</span></div>
 												<div class="tooltip module-a style-a type-none normal-02 large"><span class="tooltip-text">tooltip normal-02</span></div>
@@ -251,7 +269,7 @@
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-line'}) %></div>
 										<div class="subsubsection-body">
-											<div class="tooltip-area">
+											<div class="bui-tooltip-area tooltip-area">
 												<div class="tooltip module-a style-a type-line accent-03 large"><span class="tooltip-text">tooltip accent-03</span></div>
 												<div class="tooltip module-a style-a type-line accent-02 large"><span class="tooltip-text">tooltip accent-02</span></div>
 												<div class="tooltip module-a style-a type-line accent-01 large"><span class="tooltip-text">tooltip accent-01</span></div>
@@ -267,7 +285,7 @@
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: 'type-fill'}) %></div>
 										<div class="subsubsection-body">
-											<div class="tooltip-area">
+											<div class="bui-tooltip-area tooltip-area">
 												<div class="tooltip module-a style-a type-fill accent-03 large"><span class="tooltip-text">tooltip accent-03</span></div>
 												<div class="tooltip module-a style-a type-fill accent-02 large"><span class="tooltip-text">tooltip accent-02</span></div>
 												<div class="tooltip module-a style-a type-fill accent-01 large"><span class="tooltip-text">tooltip accent-01</span></div>
