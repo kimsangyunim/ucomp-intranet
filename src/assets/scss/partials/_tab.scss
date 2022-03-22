@@ -134,32 +134,50 @@ $tab-module-b-outline: (
 
 .tab-display.module-b {
 	.tab-list {
-		overflow: hidden;
+		// overflow: hidden;
 		display: flex;
 		flex-wrap: wrap;
-		align-items: center;
+		// align-items: center;
+		position: relative;
 
+		width: 100%;
+
+
+		
 		.tab-item {
-			display: flex;
-			align-items: center;
+			// display: flex;
+			// align-items: center;
 			position: relative;
+			
 
-			& +.tab-item::before {
-				content: '';
-				display: block;
-				position: absolute;
-				left: 0;
-				width: 2rem;
-				border-radius: 90rem;
-				background-color: color(base, 010);
-			}
+			width: 33.3333%;
+
 			.tab-name {
 				outline-offset: unset;
 				color: color(base, 060);
+				text-align: center;
+				&::before {
+					content: ' ';
+					display: block;
+					position: absolute;
+					bottom: 0;
+					z-index: 1;
+					width: 100%;
+		
+					height: 1rem;
+					background-color: #ddd;
+				}
+		
 			}
 			&.current {
 				.tab-name {
 					@include font((weight: bold)...);
+					&::before {
+						background-color: #424242;
+						
+						height: 2rem;
+						border-radius: 90rem;
+					}
 				}
 			}
 			
@@ -193,17 +211,14 @@ $tab-module-b-outline: (
 	@each $name, $line-height, $font-size, $font-weight in $tab-module-b-outline {
 		&.#{$name} {
 			.tab-item{
+				
 				line-height: $line-height;
-				padding-right: $line-height * 0.5;
-				padding-left: $line-height * 0.5;
 				font-size: calc($line-height / $font-size);
-				& +.tab-item::before {
-					height: $line-height - 2rem;
-				}
+				
 				.tab-name {
+					height: calc($line-height * 2);
 					font-weight: $font-weight;
 				}
-
 			}
 		}
 	}
