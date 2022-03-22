@@ -1,4 +1,16 @@
 /**
+ * @module 
+ */
+function findElement(selector, target, height) {
+	var elem = document.querySelector(selector);
+	if (!elem) return;
+
+	document.querySelector(target).style.setProperty('padding-bottom', height);
+}
+findElement('.content-util', '#page', '56rem');
+
+
+/**
  * @module form buiFormCheckValue
  */
 function buiFormCheckValue(formElem) {

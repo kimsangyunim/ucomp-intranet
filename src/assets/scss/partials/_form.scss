@@ -89,8 +89,8 @@ $form-module-a-outline: (
 	'x-small'		24rem 16rem 1.5 700 1rem,
 	'small'			32rem 18rem 1.5 700 1rem,
 	'medium'		40rem 20rem 1.5 700 1rem,
-	'large'			48rem 24rem 1.5 700 1rem,
-	'x-large'		56rem 28rem 1.5 700 1rem,
+	'large'			48rem 20rem 1.5 700 1rem,
+	'x-large'		56rem 24rem 1.5 700 1rem,
 );
 
 .form.module-a {
@@ -410,6 +410,281 @@ $form-module-a-outline: (
 					font-size: calc($line-height / $font-size);
 					@include font((family: default)...);
 					border-width: $border-width;
+				}
+			}
+			
+			// textfield
+			&.textfield {
+				.form-elem {
+					height: $height;
+					padding-right: $line-height * 0.8;
+					text-indent: $line-height * 0.8;
+				}
+
+				.form-func {
+					padding: 0 $line-height * 0.6 + $border-width;
+
+					* + * {
+						margin-left: $line-height * 0.4;
+					}
+
+					.form-cancel {
+						width: $line-height;
+						height: $line-height;
+					}
+
+					.btn {
+						svg {
+							width: $line-height;
+							height: $line-height;
+						}
+					}
+				}
+			}
+
+			// textarea
+			&.textarea {
+				.form-elem {
+					padding: $line-height * 0.5 $line-height * 0.8;
+				}
+
+				&[data-bui-form-value] {
+					line-height: $line-height;
+					font-size: calc($line-height / $font-size);
+					@include font((family: default)...);
+					border-width: $border-width;
+					padding: $line-height * 0.5 $line-height * 0.8;
+				}
+			}
+
+			// select
+			&.datepicker,
+			&.select {
+				.form-elem {
+					padding-left: $line-height * 0.8;
+					padding-right: $line-height * 1.6;
+					height: $height;
+					background-size: $line-height $line-height;
+					background-position: calc(100% - ($line-height * 0.6)) 50%;
+				}
+			}
+		}
+	}
+}
+
+
+.form.module-b {
+	display: inline-flex;
+	position: relative;
+
+	.form-elem {
+		position: relative;
+		box-sizing: border-box;
+		font-weight: 700;
+	}
+
+	&.textarea,
+	&.datepicker,
+	&.select,
+	&.textfield {
+		.form-elem {
+			flex: 1 1 100%;
+			width: 100%;
+			border-style: solid;
+		}
+	}
+
+	// select
+	&.datepicker,
+	&.select {
+		.form-elem {
+			text-overflow: ellipsis;
+			background-repeat: no-repeat;
+		}
+	}
+
+	// textarea
+	&.textarea {
+		.form-elem {
+			resize: none;
+			overflow: auto;
+			@include overflow-scroll(custom);
+		}
+
+		&[data-bui-form-value] {
+			.form-elem {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				resize: none;
+				overflow: hidden;
+
+				white-space: pre-wrap;
+				word-break: break-all;
+				word-wrap: break-word;
+			}
+
+			&::before {
+				content: attr(data-bui-form-value) " ";
+				flex-grow: 1;
+				display: block;
+				opacity: 0;
+				pointer-events: none;
+				white-space: pre-wrap;
+				word-break: break-all;
+				word-wrap: break-word;
+			}
+		}
+	}
+
+	// textfield
+	&.textfield {
+		.form-elem {
+			text-overflow: ellipsis;
+		}
+
+		.form-func {
+			display: flex;
+			align-items: center;
+
+			position: absolute;
+			top: 50%;
+			right: 0;
+			height: 0;
+			overflow: visible;
+
+			.form-cancel {
+				display: block;
+				opacity: 0;
+				pointer-events: none;
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: cover;
+			}
+			.btn {
+				svg {
+					display: block;
+				}	
+			}
+		}
+
+		.form-elem.typed:focus~.form-func,
+		.form-elem.typed:hover~.form-func {
+			.form-cancel {
+				opacity: 1;
+			}
+		}
+	}
+
+	// accent
+	@each $accent-name in $form-module-a-accent {
+		&.#{nth($accent-name, 1)} {
+			// @debug "divider offset: #{nth($accent-name, 1)}";
+			@each $type-name, $color, $color-unit, $color-disabled, $border-color, $background-readonly, $background-disabled, $background-color  in map-get($form-module-a-accent, nth($accent-name, 1)) {
+				&.type-#{$type-name} {
+					// common
+					&.textarea,
+					&.datepicker,
+					&.select,
+					&.textfield {
+						.form-elem {
+							color: $color;
+							border-color: $border-color;
+							background-color: $background-color;
+
+							&::placeholder {
+								color: $color-unit;
+							}
+
+							&.invalid {
+								border-color: red;
+							}
+
+							&:not(select):read-only {
+								color: $color;
+								border-color: $border-color;
+								background-color: $background-readonly;
+							}
+
+							&:read-only:disabled {
+								color: $color-disabled;
+								background-color: $background-disabled;
+							}
+						}
+
+						.form-func {
+							.form-cancel {
+								background-image: icon(cancel, $color-unit);
+							}
+						}
+					}
+
+					// textfield
+					&.textfield {
+						.form-elem {
+							&::placeholder {
+								color: $color-unit;
+							}
+						}
+
+						.form-func {
+							.form-cancel {
+								background-image: icon(fill-circle-delete, $color-unit);
+							}
+
+							.form-search {
+								svg {
+									fill: $color;
+								}	
+							}
+						}
+					}
+
+					// select
+					&.select {
+						.form-elem {
+							background-image: icon(fill-caret-down, $color);
+						}
+					}
+
+					// datepicker
+					&.datepicker {
+						.form-elem {
+							background-image: icon(line-calendar-today, $color);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// outline
+	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $form-module-a-outline {
+		&.#{$name} {
+			// common
+			&.textarea,
+			&.datepicker,
+			&.select,
+			&.textfield {
+				&.style-b {
+					.form-elem {
+						border-radius: $height * 0.2;
+					}
+				}
+	
+				&.style-c {
+					.form-elem {
+						border-radius: $height * 0.5;
+					}
+				}
+
+				.form-elem {
+					line-height: $line-height;
+					font-size: calc($line-height / $font-size);
+					@include font((family: default)...);
+					border-width: $border-width * 2;
 				}
 			}
 			

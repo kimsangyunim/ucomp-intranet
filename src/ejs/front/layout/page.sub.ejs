@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<%-include('../_templates/_data.head.front.ejs', {
+	layoutTemplate: 'front',
+	pageStyle: '',
+	pageJavascript: ''
+}) %>
+</head>
+<body>
+<div id="wrap">
+	<!-- page -->
+	<div id="page">
+<!-- ../_templates/_header.snippet.ejs' -->
+		<!-- page-body -->
+		<div class="page-body" id="local">
+			<!-- local-head -->
+			<div class="local-head">
+				<h2 class="local-title" id="localTitle"><span class="local-name">snippet</span></h2>
+			</div>
+			<!-- //local-head -->
+			<!-- local-body -->
+			<div class="local-body" id="content">
+				<!-- content-head -->
+				<div class="content-head"><h4 class="content-title"><span class="content-name">지출내역</span></h4></div>
+				<!-- //content-head -->
+				<!-- content-body -->
+				<div class="content-body">
+					<!-- section -->
+					<div class="section module-a">
+						<div class="section-head"><h3 class="section-title"><span class="section-name">지출내역</span></h3></div>
+						<div class="section-body">
+							<!-- submit-form -->
+							<fieldset class="submit-form module-a large">
+								<legend>연차 유형 선택 서식</legend>
+								<div class="form-list">
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="">유형</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form select module-b style-b type-line normal-00 large flex">
+														<select class="form-elem">
+															<option>선택</option>
+															<option>오전반차</option>
+															<option>오후반차</option>
+															<option>연차</option>
+															<option>스마트데이</option>
+															<option>대체휴무</option>
+															<option>하계,동계휴가</option>
+															<option>예비군,민방위훈련</option>
+															<option>경조휴가</option>
+															<option>미사용연차</option>
+															<option>리플레쉬휴가</option>
+															<option>백신휴가</option>
+															<option>기타</option>
+														</select>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<!-- //submit-form -->
+							<!-- submit-form -->
+							<fieldset class="submit-form module-a type-a medium">
+								<legend>연차 등록 입력 서식</legend>
+								<div class="form-list">
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="periodLeave">일시</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form textfield module-a style-b type-line normal-04 medium flex">
+														<input type="text" class="form-elem" id="periodLeave" placeholder="일시를 입력해주세요." value="11, 16, 18, 21일" readonly="readonly" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="phoneNumbdr">연락처</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form textfield module-a style-b type-line normal-04 medium flex">
+														<input type="tel" class="form-elem" id="phoneNumbdr" placeholder="연락처를 입력해주세요." value="010-2729-5982" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="todayTask">업무내역</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form textarea module-a style-b type-line normal-04 medium flex">
+														<textarea class="form-elem" id="todayTask" rows="4" placeholder="업무 내역을 입력해 주세요."></textarea>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="approver">승인위치</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form select module-a style-b type-line normal-04 medium flex">
+														<select class="form-elem" id="approver">
+															<option>조완섭[수석]_UX팀</option>
+														</select>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<!-- //submit-form -->
+						</div>
+					</div>
+					<!-- //section -->
+					<!-- section -->
+					<div class="section module-a">
+						<div class="section-head"><h3 class="section-title"><span class="section-name">지출내역</span></h3></div>
+						<div class="section-body">
+							<!-- submit-form -->
+							<fieldset class="submit-form module-a type-a medium">
+								<legend>지출내역 입력 서식</legend>
+								<div class="form-list">
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="">날짜</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form datepicker module-a style-b type-line normal-04 medium flex">
+														<input type="text" class="form-elem" placeholder="날짜를 선택해주세요." value="2022-02-11" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="expensesType">지출타입</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form select module-a style-b type-line normal-04 medium flex">
+														<select class="form-elem" id="expensesType">
+															<option>선택</option>
+															<option>교통비</option>
+															<option>석식대</option>
+															<option>회식비</option>
+															<option>기타</option>
+														</select>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="expensesHistory">상세내역</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form textfield module-a style-b type-line normal-04 medium flex">
+														<input type="text" class="form-elem" id="expensesHistory" placeholder="지출 상세내역을 입력해주세요." value="12시 지나 퇴근이라 택시탐" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="expensesProjectName">프로젝트</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form textfield module-a style-b type-line normal-04 medium flex">
+														<input type="text" class="form-elem" id="expensesProjectName" placeholder="프로젝트명을 입력해주세요." value="UCOMP 인트라넷" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="expensesAmount">금액</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form textfield module-a style-b type-line normal-04 medium flex">
+														<input type="text" class="form-elem" id="expensesAmount" placeholder="금액을 입력해주세요." value="11,000" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							<!-- //submit-form -->
+						</div>
+					</div>
+					<!-- //section -->
+				</div>
+				<!-- //content-body -->
+				<!-- content-util -->
+				<div class="content-util">
+					<div class="button-area module-a style-a">
+						<button type="button" class="btn module-a style-a type-fill accent-01 x-large flex"><span class="btn-text">확인</span></button>
+					</div>
+				</div>
+				<!-- //content-util -->
+			</div>
+			<!-- //local-body -->
+		</div>
+		<!-- //page-body -->
+<!-- ../_templates/_footer.front.ejs -->
+	</div>
+	<!-- //page -->
+</div>
+</body>
+</html>

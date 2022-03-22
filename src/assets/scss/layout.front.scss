@@ -8,13 +8,15 @@
 	font-size: 1px;
 }
 
-html,
-body {
-	height: 100%;
-}
+// html,
+// body {
+// 	height: 100%;
+// }
+
 body {
 	margin: 0;
 	padding: 0;
+	min-height: 100%;
 	word-break: keep-all;
 	@include font((family: default, size: small)...);
 	-webkit-text-size-adjust: none;
@@ -94,459 +96,7 @@ img {
  * @name page-head
  */
 .page-head {
-	display: flex;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 60;
 
-	&::before {
-		content: '';
-		display: block;
-		position: absolute;
-		z-index: -1;
-		top: 0;
-		left: calc(50% - 50vw);
-		width: 100vw;
-		height: 100%;
-	}
-
-	// logo
-	.page-title {
-		display: flex;
-		align-items: center;
-		position: relative;
-		margin: 0;
-
-		.page-name {
-			display: block;
-			svg {
-				display: block;
-			}
-		}
-	}
-
-	// page navigations
-	.section.page-navi {
-		z-index: 40;
-		
-		.section-head {
-			@include hidden;
-		}
-		.section-body {
-			.gnb-list {
-				margin: 0;
-				padding: 0;
-				list-style: none;
-
-				.gnb-name {
-					text-decoration: none;
-				}
-			}
-
-			.lnb-list {
-				margin: 0;
-				padding: 0;
-				list-style: none;
-
-				.lnb-name {
-					text-decoration: none;
-				}
-			}
-		}
-		.section-util {
-			display: flex;
-			align-items: center;
-			position: absolute;
-			top: 0;
-			right: 18rem;
-			height: 60rem;
-
-			.btn {
-				display: block;
-			}
-		}
-	}
-
-	// mobile
-	@include respond-below(x-large) {
-		align-items: center;
-		justify-content: space-between;
-		padding: 0 16rem;
-		height: 60rem;
-
-		@at-root {
-			.page-head::after {
-				content: '';
-				display: block;
-				position: fixed;
-				z-index: 1;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				opacity: 0;
-				visibility: hidden;
-				background-color: rgba(0,0,0,0.7);
-				transition: visibility 0.25s ease-out, opacity 0.25s ease-out;
-			}
-			html.active-page-navi {
-				.page-head::after {
-					opacity: 1;
-					visibility: visible;
-				}
-			}
-		}
-	
-		// logo
-		.page-title {
-			.page-name {
-				svg {
-					width: 146rem;
-					height: 24rem;
-				}
-			}
-		}
-
-		.page-control {
-			.btn {
-				display: block;
-			}
-		}
-
-		@keyframes page-navi-active {
-			0% {
-				right: -100%;
-			}
-			100% {
-				right: 0;
-			}
-		}
-		
-		@keyframes page-navi-inactive {
-			0% {
-				right: 0;
-			}
-			100% {
-				right: -100%;
-			}
-		}
-	
-		.section.page-navi {
-			display: flex;
-			flex-direction: column;
-			position: fixed;
-			top: 0;
-			right: -100%;
-			width: 100%;
-			bottom: 0;
-			box-sizing: border-box;
-			background-color: color(base, 100);
-
-			&:not(.enabled) {
-				display: none;
-			}
-
-			&.active {
-				animation-name: page-navi-active;
-				animation-duration: 0.25s;
-				animation-fill-mode: forwards;
-				animation-timing-function: ease;
-			}
-
-			&:not(.active) {
-				animation-name: page-navi-inactive;
-				animation-duration: 0.25s;
-				animation-fill-mode: forwards;
-				animation-timing-function: ease;
-			}
-	
-			&::before {
-				content: '';
-				display: block;
-				height: 60rem;
-				min-height: 60rem;
-				box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
-				background: url(./../images/svg/logo_header.svg) no-repeat 16rem 50%/146rem 24rem;
-			}
-	
-			.section-body {
-				flex-grow: 1;
-				height: 100%;
-				overflow-y: auto;
-				// 커스컴 스크롤은 모바일 사이즈도 동일하게 표현되기 때문에 판단 필요
-				// @include overflow-scroll(custom);
-	
-				.gnb-list {
-					padding: 32rem;
-	
-					.gnb-item {
-						+.gnb-item {
-							margin-top: 16rem;
-						}
-	
-						.gnb-name {
-							display: inline-block;
-							vertical-align: top;
-							@include font((outline: body, size: medium, weight: bold)...);
-							color: color(base, 010);
-						}
-						
-						.lnb-list {
-							display: flex;
-							flex-wrap: wrap;
-							position: relative;
-							margin-top: 16rem;
-							padding-top: 20rem;
-							
-							&::before {
-								content: '';
-								display: block;
-								position: absolute;
-								top: 0;
-								right: -32rem;
-								left: 0;
-								height: 1px;
-								background-color: color(base, 060);
-							}
-	
-							.lnb-item {
-								position: relative;
-								margin-right: 40rem;
-								padding-left: 0.75em;
-								min-width: 80rem;
-								margin-bottom: 16rem;
-
-								&::before {
-									content: '-';
-									display: block;
-									position: absolute;
-									top: 0;
-									left: 0;
-									width:  0.75em;
-									height: 1.5em;
-									color: color(base, 030);
-								}
-	
-								.lnb-name {
-									position: relative;
-									@include font((outline: body, size: small)...);
-									color: color(base, 030);
-								}
-
-								&.current {
-									.lnb-name {
-										color: color(primary, 010);
-
-										&::after {
-											content: '';
-											display: block;
-											position: absolute;
-											top: calc(50% - (0.5em - 2rem));
-											right: -6rem;
-											width: 4rem;
-											height: 4rem;
-											border-radius: 50%;
-											background-color: color(primary, 010);
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		@at-root {
-			html.active-page-navi {
-				body {
-					overflow: hidden;
-				}
-			}
-		}
-	}
-
-	// laptop
-	@include respond-above(x-large) {
-		width: map-get($breakpoints, frame);
-		max-width: 100%;
-		margin: 0 auto;
-		padding: 0 40rem;
-		box-sizing: border-box;
-		justify-content: space-between;
-
-		.page-title {
-			width: 235rem;
-			height: 120rem;
-		}
-
-		.page-control {
-			order: 3;
-			width: 235rem;
-			height: 120rem;
-			pointer-events: none;
-
-			.btn {
-				display: none;
-			}
-		}
-	
-		// page navigations
-		.section.page-navi {
-			padding: 0 48rem;
-			width: 580rem;
-
-			.section-body {
-				display: flex;
-				justify-content: center;
-	
-				.gnb-list {
-					flex-grow: 1;
-					display: flex;
-					justify-content: space-between;
-					position: relative;
-					height: 120rem;
-					transition: height 0.25s ease;
-
-					&::before {
-						content: '';
-						display: block;
-						position: fixed;
-						top: 120rem;
-						right: 0;
-						left: 0;
-						height: 0;
-						transition: height 0.25s ease;
-						background-color: color(base, 010);
-					}
-						
-					.gnb-item {
-						height: 120rem;
-						position: relative;
-
-						.gnb-name {
-							display: block;
-							margin: 45rem 0;
-							line-height: 1.5;
-							font-size: 20rem;
-							@include font((weight: bold)...);
-							color: color(base, 010);
-							outline-offset: -1rem;
-	
-							&:not(:hover) {
-								text-decoration: none;
-							}
-						}
-
-						&.current {
-							.gnb-name {
-								color: color(primary, 010);
-							}
-
-							&::after {
-								content: '';
-								display: block;
-								position: absolute;
-								top: calc(50% - 0.75em - 3rem);
-								right: -8rem;
-								width: 6rem;
-								height: 6rem;
-								border-radius: 50%;
-								background-color: color(primary, 010);
-							}
-						}
-	
-						.lnb-list {			
-							// 부모의 사이즈를 기준으로 확장
-							// position: absolute;
-							// top: calc(100% + 36rem);
-							// left: 0;
-							// right: 0;
-
-							// 본인의 사이즈를 갖고 중앙으로 갔을 경우
-							// position: absolute;
-							// left: 50%;
-							// transform: translateX(-50%);
-							display: flex;
-							align-items: center;
-							position: absolute;
-							left: 50%;
-							transform: translateX(-50%);
-							top: 120rem;
-							height: 80rem;
-							visibility: hidden;
-							opacity: 0;
-							transition: visibility 0.25s ease, opacity 0.25s ease;
-
-							.lnb-item {
-								display: flex;
-								justify-content: center;
-								
-								+.lnb-item {
-									margin-left: 48rem;
-								}
-								
-								.lnb-name {
-									display: block;
-									font-size: 20rem;
-									@include font((outline: body, size: small, weight: bold)...);
-									color: color(base, 050);
-									white-space: nowrap;
-									text-align: center;
-									
-									&:not(:focus),
-									&:not(:hover) {
-										text-decoration: none;
-									}
-
-									&:hover {
-										text-decoration: none;
-										color: color(base, 100);
-									}
-								}
-
-								&.current {
-									.lnb-name {
-										color: color(base, 100);
-										border-bottom: 1px solid color(base, 100);
-									}
-								}
-							}
-						}
-
-						// GNB 메뉴 focus 시 서브 메뉴 활성
-						&:focus-within {
-							.lnb-list {
-								visibility: visible;
-								opacity: 1;
-							}
-						}
-					}
-
-					// GNB 메뉴 hover 시 서브 메뉴 활성 (focus된 메뉴가 있으면 제외)
-					&:not(:focus-within) {
-						 .gnb-item:hover {
-							.lnb-list {
-								visibility: visible;
-								opacity: 1;
-							}
-						 }
-					}
-
-					&:focus-within::before,
-					&:hover::before {
-						height: 80rem;
-					}
-				}
-			}
-
-			.section-util {
-				display: none;
-			}
-		}
-	}
 }
 
 /**
@@ -561,148 +111,46 @@ img {
 
 /**
  * @type layout
+ * @name page-util
+ */
+.content-util {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+/**
+ * @type layout
  * @name page-foot
  */
-
 .page-foot {
-	position: relative;
-	z-index: 20;
-	padding: 16rem;
-	width: map-get($breakpoints, frame);
-	max-width: 100%;
-	box-sizing: border-box;
-	background-color: color(secondary, 010);
 
-	// laptop
-	@include respond-above(x-large) {
-		padding: 32rem 40rem;
+}
+
+
+/**
+ * @type module
+ * @name section
+ */
+.section.module-a {
+	padding: 24rem 0;
+
+	+.section.module-a {
+		border-top: 4rem solid color(base, 010);
 	}
 
-	&::before {
-		content: '';
-		display: block;
-		position: absolute;
-		z-index: -1;
-		top: 0;
-		bottom: 0;
-		left: calc(50% - 50vw);
-		width: 100vw;
-		background-color: inherit;
-	}
+	.section-head {
+		margin-bottom: 16rem;
 
-	// 기업이름
-	.company-name {
-		margin: 0 0 10rem 0;
-		padding-bottom: 8rem;
-		border-bottom: 1px solid color(base, 060, 0.2);
+		.section-title {
+			margin: 0;
+			color: color(base, 090);
+			@include font((outline: body, size: medium)...);
 
-		// laptop
-		@include respond-above(x-large) {
-			margin: 0 0 18rem 0;
-			padding-bottom: 12rem;
-		}
-
-		svg {
-			display: block;
-			width: 110.77rem;
-			height: 24rem;
-			fill: color(base, 050);
-			// laptop
-			@include respond-above(x-large) {
-				width: 188px;
-				height: 40px;
+			.section-name {
+				display: block;
 			}
-		}
-	}
-
-	// 기업정보
-	.section.company-info {
-		.section-head {
-			@include hidden;
-		}
-
-		.section-body {
-			.data-list {
-				display: flex;
-				flex-wrap: wrap;
-				overflow: hidden;
-				margin: 0;
-				padding: 0;
-				list-style: none;
-
-				.data-item {
-					position: relative;
-					left: -16rem;
-					margin-left: 8rem;
-					padding-left: 8rem;
-					@include font((outline: body, size: xx-small)...);
-					color: color(base, 050);
-
-					// 링크가 있다면? overflow의 영향으로 offset을 안쪽으로 넣습니다.
-					a {
-						color: inherit;
-						outline-offset: -1rem;
-					}
-
-					&::before {
-						content: '';
-						position: absolute;
-						top: calc(50% - (0.75em / 2));
-						left: 0;
-						width: 1rem;
-						height: 0.75em;
-						background-color: color(base, 050);
-					}
-
-
-					// laptop
-					@include respond-above(x-large) {
-						@include font((outline: body, size: x-small)...);
-					}
-				}
-			}
-		}
-	}
-
-	.unsubscribe-email {
-		position: absolute;
-		margin: 0;
-		top: 22rem;
-		right: 16rem;
-
-		a {
-			display: block;
-			@include font((outline: body, size: xx-small, weight: bold)...);
-			color: color(base, 100);
-
-			&:not(:hover) {
-				text-decoration: none;
-			}
-		}
-
-		// laptop
-		@include respond-above(x-large) {
-			top: 40rem;
-			right: 40rem;
-			a {
-				@include font((outline: body, size: x-small)...);
-			}
-		}
-	}
-
-	.copyright {
-		margin: 6rem 0 0 0;
-		@include font((outline: body, size: xx-small)...);
-		color: color(base, 050, 0.8);
-
-		// laptop
-		@include respond-above(x-large) {
-			margin-top: 12rem;
-			@include font((outline: body, size: x-small)...);
-		}
-
-		.wbr {
-			display: block;
 		}
 	}
 }
