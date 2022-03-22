@@ -1,54 +1,224 @@
 /**
- * @module google chart
+ * vanillajs-datepicker
+ * https://mymth.github.io/vanillajs-datepicker/#/
  */
-div.google-visualization-tooltip {
-	margin: 0 ;
-	padding: 12rem;
-	text-align: center;
-	border: 1px solid color(base, 010);
-	border-radius: 6rem;
-	box-sizing: border-box;
-	box-shadow: 0 0 8rem 0 rgb(0,0,0,0.12);
-	background-color: color(base, 090);
+.datepicker-dropdown {
+	position: absolute;
+	z-index: 20;
+	padding: 0.5rem 0;
 
-	// laptop
-	@include respond-above(x-large) {
-		padding: 16rem 12rem;
+	&:not(.active) {
+		display: none;
 	}
 
-	.google-visualization-tooltip-item-list {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		
-		.google-visualization-tooltip-item {
-			display: flex;
-			justify-content: center;
-			margin: 0;
-			padding: 0;
-			@include font((outline: body, size: x-small, weight: bold)...);
-			
-			span {
-				display: block;
-				margin: 0;
-				line-height: inherit !important;
-				font-weight: inherit !important;
-				font-size: inherit !important;
-				color: color(base, 010) !important;
-				white-space: nowrap;
+	.datepicker-picker {
+		padding: 20rem;
+		border: solid 0.0625rem color(base, 070);
 
-				+ span {
-					margin-left: 0.25em !important;
-					color: color(primary, 010) !important;
+		overflow: hidden;
+		background-color: #fff;
+		// box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,0.08);
+	
+		.datepicker-header {
+			margin-bottom: 1.25rem;
+	
+			.datepicker-controls {
+				display: flex;
+				justify-content: center;
+				margin-bottom: 24rem;
+	
+				.button {
+					overflow: visible;
+					margin: 0;
+					padding: 0;
+					font-family: 'Open Sans, Noto Sans KR', 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+					border: 0 none transparent;
+					cursor: pointer;
+					background-color: transparent;
+					appearance: none;
+	
+	
+					&.view-switch {
+						@include font((outline: head, size: large, weight: bold)...);
+						color: color(base, 090);
+					}
+	
+					&.next-btn,
+					&.prev-btn {
+						svg {
+							display: block;
+							width: 28rem;
+							height: 28rem;
+							fill: color(base, 090);
+						}
+					}
+				}
+			}
+		}
+		.datepicker-main {
+			.days {
+				// display: flex;
+				// justify-content: center;
+
+				.days-of-week {
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+					margin-bottom: 8rem;
+		
+					.dow {
+						width: 40rem;
+						@include font((outline: body, size: x-small)...);
+						color: color(base, 040);
+						text-align: center;
+		
+						+ .dow {
+							margin-left: 0.25rem;
+						}
+					}
+				}
+				.datepicker-grid {
+					// display: flex;
+					// flex-wrap: wrap;
+					
+					
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+					
+
+					position: relative;
+					z-index: 1;
+		
+					.day {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+	
+						position: relative;
+						width: 40rem;
+						height: 40rem;
+	
+						@include font((outline: body, size: medium)...);
+						cursor: default;
+	
+						&::before {
+							content: '';
+							display: block;
+							position: absolute;
+							z-index: -1;
+							top: 0;
+							right: 0.125rem;
+							bottom: 0;
+							left: 0.125rem;
+							border-radius: 20rem;
+						}
+		
+						&:nth-child(n + 8) {
+							margin-top: 0.25rem;
+						}
+		
+						&:hover {
+							&::before {
+								background-color: rgba(0,0,0,0.04);
+							}
+						}
+	
+	
+						&.range-end,
+						&.range-start,
+						&.selected {
+							@include font((family: default, weight: bold)...);
+							color: color(base, 000);
+							&::before {
+								background-color: color(base, 080);
+							}
+						}
+	
+						&.range {
+							color: #fff;
+							&::after {
+								content: '';
+								display: block;
+								position: absolute;
+								z-index: -1;
+								top: 0;
+								right: 0;
+								bottom: 0;
+								left: 0;
+								background-color: color(primary, 030);
+							}
+						}
+	
+						&.range-start:not(.range-end) {
+							&::after {
+								content: '';
+								display: block;
+								position: absolute;
+								z-index: -1;
+								top: 0;
+								right: 0;
+								bottom: 0;
+								left: 50%;
+								background-color: color(primary, 030);
+							}
+						}
+	
+						&.range-end:not(.range-start) {
+							&::after {
+								content: '';
+								display: block;
+								position: absolute;
+								z-index: -1;
+								top: 0;
+								right: 50%;
+								bottom: 0;
+								left: 0;
+								background-color: color(primary, 030);
+							}
+						}
+	
+						&.today:not(.range):not(.selected) {
+							color: color(base, 080);
+							&::before {
+								border: 1px solid color(base, 050);
+							}
+						}
+	
+						&.prev {
+							opacity: 0;
+							visibility: hidden;
+						}
+						&.next {
+							display: none;
+						}
+					}
+		
+					.month {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 3.6875rem;
+						height: 4rem;
+						line-height: 1.25rem;
+						font-size: 0.875rem;
+						background-color: color(base, 070);
+						cursor: default;
+		
+		
+						&:not(:nth-child(4n - 3)) {
+							margin-left: 0.25rem;
+						}
+		
+						&:nth-child(n + 5) {
+							margin-top: 0.25rem;
+						}
+		
+						&.focused {
+							color: #fff;
+							background-color: color(primary, 030);
+						}
+					}
 				}
 			}
 		}
 	}
 }
-
-// .google-visualization-tooltip {
-// 	path {
-// 		fill: color(base, 090) !important;
-// 		stroke: color(base, 010) !important;
-// 	}
-// }
