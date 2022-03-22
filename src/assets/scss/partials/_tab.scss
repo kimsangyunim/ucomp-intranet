@@ -7,6 +7,7 @@
 /* tab-display */
 .tab-display {
 	.tab-list {
+		display: flex;
 		margin: 0;
 		padding: 0;
 
@@ -25,8 +26,34 @@
 
 			&.current {
 				z-index: 1;
-				.tab-name {		
-				}
+			}
+		}
+	}
+
+	// tab type
+	&.type-a { 
+		.tab-list{
+			justify-content: flex-start;
+		}
+	}
+
+	&.type-b { 
+		.tab-list{
+			justify-content: flex-end;
+		}
+	}
+
+	&.type-c { 
+		.tab-list{
+			justify-content: center;
+		}
+	}
+
+	&.type-d { 
+		.tab-list{
+			.tab-item {
+				flex: 1 1 100%;
+				width: 100%;
 			}
 		}
 	}
@@ -50,9 +77,6 @@
 .tab-display.module-a {
 	.tab-list {
 		overflow: hidden;
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
 
 		.tab-item {
 			display: flex;
@@ -76,23 +100,6 @@
 					color: color(base, 090);
 				}
 			}
-		}
-	}
-
-	&.type-a { 
-		.tab-list{
-			justify-content: flex-start;
-		}
-		
-	}
-	&.type-b { 
-		.tab-list{
-			justify-content: flex-end;
-		}
-	}
-	&.type-c { 
-		.tab-list{
-			justify-content:center;
 		}
 	}
 
@@ -134,15 +141,8 @@ $tab-module-b-outline: (
 
 .tab-display.module-b {
 	.tab-list {
-		// overflow: hidden;
-		display: flex;
-		flex-wrap: wrap;
-		// align-items: center;
 		position: relative;
-
 		width: 100%;
-
-
 		
 		.tab-item {
 			// display: flex;
@@ -181,29 +181,6 @@ $tab-module-b-outline: (
 				}
 			}
 			
-		}
-	}
-
-	&.type-a { 
-		.tab-list{
-			justify-content: flex-start;
-			.tab-item {
-
-				&::before {
-
-				}
-			}
-		}
-		
-	}
-	&.type-b { 
-		.tab-list{
-			justify-content: flex-end;
-		}
-	}
-	&.type-c { 
-		.tab-list{
-			justify-content:center;
 		}
 	}
 

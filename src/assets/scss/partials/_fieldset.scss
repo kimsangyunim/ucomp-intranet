@@ -113,6 +113,8 @@
 
 	// form-area
 	.form-area {
+		display: flex;
+
 		.sign {
 			display: flex;
 			align-items: center;
@@ -122,9 +124,14 @@
 			// color: color(base, 060);
 		}
 
-		.flex {
-			flex: 1 1 100%;
-			width: 100%;
+		.form {
+			&:not(.flex) {
+				flex-shrink: 0;
+			}
+			&.flex {
+				flex: 1 1 100%;
+				width: 100%;
+			}
 		}
 
 		.unit {
