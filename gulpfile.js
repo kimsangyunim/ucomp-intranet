@@ -145,9 +145,15 @@ gulp.task('js-all', () => {
 });
 
 gulp.task('images', () => {
-  return gulp.src([ src_assets_folder + 'images/**/*.+(png|jpg|jpeg|gif|svg|ico)' ], { since: gulp.lastRun('images') })
+  return gulp.src([ src_assets_folder + 'images/**/*.+(png|jpg|jpeg|gif|ico)' ], { since: gulp.lastRun('images') })
     .pipe(plumber())
     .pipe(imagemin())
+    .pipe(gulp.dest(dist_assets_folder + 'images'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('svg', () => {
+  return gulp.src([ src_assets_folder + 'images/**/*.svg' ], { since: gulp.lastRun('svg') })
     .pipe(gulp.dest(dist_assets_folder + 'images'))
     .pipe(browserSync.stream());
 });
@@ -183,7 +189,7 @@ gulp.task('vendor', () => {
 //     .pipe(deploy())
 // });
 
-gulp.task('build', gulp.series('clear', 'html', 'ejs', 'sass', 'less', 'stylus', 'js', 'images', 'fonts', 'vendor'));
+gulp.task('build', gulp.series('clear', 'html', 'ejs', 'sass', 'less', 'stylus', 'js', 'images', 'svg', 'fonts', 'vendor'));
 gulp.task('dev', gulp.series('html', 'ejs', 'sass', 'less', 'stylus', 'js'));
 gulp.task('serve', () => {
   return browserSync.init({

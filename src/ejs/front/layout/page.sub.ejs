@@ -12,6 +12,7 @@
 	<!-- page -->
 	<div id="page">
 <!-- ../_templates/_header.snippet.ejs' -->
+		<!-- <input type="date" /> -->
 		<!-- page-body -->
 		<div class="page-body" id="local">
 			<!-- local-head -->
@@ -26,6 +27,16 @@
 				<!-- //content-head -->
 				<!-- content-body -->
 				<div class="content-body">
+					<!-- info-board -->
+					<div class="info-board module-a style-a type-c attr-done" id="infoBoardDone">
+						<div class="board-wrap">
+							<div class="board-head">
+								<p class="board-subject">스마트데이</p>
+								<p class="board-summary">등록이 완료되었습니다!</p>
+							</div>
+						</div>
+					</div>
+					<!-- //info-board -->
 					<!-- section -->
 					<div class="section module-a">
 						<div class="section-head"><h3 class="section-title"><span class="section-name">지출내역</span></h3></div>
@@ -34,6 +45,18 @@
 							<fieldset class="submit-form module-a medium">
 								<legend>구성원 검색 서식</legend>
 								<div class="form-list">
+									<div class="form-item">
+										<div class="form-wrap">
+											<div class="form-head"><label class="form-name" for="memberSearch">구성원</label></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form textfield module-a style-b type-line normal-04 medium flex">
+														<input type="date" class="form-elem" />
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
 									<div class="form-item">
 										<div class="form-wrap">
 											<div class="form-head"><label class="form-name" for="memberSearch">구성원</label></div>
@@ -50,7 +73,7 @@
 														</select>
 													</span>
 													<span class="form textfield module-a style-b type-line normal-04 medium flex">
-														<input type="text" class="form-elem" id="periodLeave" placeholder="이름을 입력해주세요." title="이름을 입력해주세요." onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+														<input type="search" class="form-elem" id="periodLeave" placeholder="이름을 입력해주세요." title="이름을 입력해주세요." onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
 														<span class="form-func">
 															<button type="button" class="btn"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>검색</title><path d="M19.63,17.87l-2-2a7.5,7.5,0,1,0-1.76,1.76l2,2a1.24,1.24,0,0,0,1.76-1.76ZM11.5,16.5a5,5,0,1,1,5-5A5,5,0,0,1,11.5,16.5Z"></path></svg></button>
 														</span>
@@ -234,7 +257,7 @@
 											<div class="form-body">
 												<div class="form-area">
 													<span class="form textfield module-a style-b type-line normal-04 medium flex">
-														<input type="text" class="form-elem" id="expensesAmount" placeholder="금액을 입력해주세요." value="11,000" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+														<input type="text" class="form-elem" id="expensesAmount" placeholder="금액을 입력해주세요." value="11,000" pattern="[0-9]*" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
 													</span>
 												</div>
 											</div>
