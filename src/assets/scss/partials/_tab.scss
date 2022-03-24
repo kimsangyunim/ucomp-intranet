@@ -65,33 +65,23 @@
  * @ $line-height
  * @ $font-size
  * @ $font-weight
-*/
+  * @ $margin-left = $line-height/2 + 2
+ */
  $tab-module-a-outline: (
-	'x-small'		18rem 1.25 700,
-	'small'			20rem 1.25 700,
-	'medium'		24rem 1.25 700,
-	'large'			28rem 1.25 700,
-	'x-large'		32rem 1.25 700,
+	'x-small'		18rem 1.25 700 10rem,
+	'small'			20rem 1.25 700 12rem,
+	'medium'		24rem 1.25 700 14rem,
+	'large'			28rem 1.25 700 16rem,
+	'x-large'		32rem 1.25 700 18rem,
 );
 
 .tab-display.module-a {
-	.tab-list {
-		overflow: hidden;
 
+	.tab-list {
 		.tab-item {
 			display: flex;
 			align-items: center;
-			position: relative;
-			& +.tab-item::before {
-				content: '';
-				display: block;
-				position: absolute;
-				left: 0;
-				width: 2rem;
-				background-color: color(base, 010);
 
-				border-radius: 1rem;
-			}
 			.tab-name {
 				outline-offset: unset;
 				color: color(base, 040, .5);
@@ -101,29 +91,73 @@
 					color: color(base, 090);
 				}
 			}
+
 		}
 	}
 
-	// outline
-	@each $name, $line-height, $font-size, $font-weight in $tab-module-a-outline {
-		&.#{$name} {
-			.tab-item{
-				// flex-basis: $basis;
-				line-height: $line-height;
-				padding-right: $line-height * 0.5;
-				padding-left: $line-height * 0.5;
-				font-size: calc($line-height / $font-size);
+	&.style-a {
+
+	}
+	&.style-b {
+		.tab-list {
+			.tab-item {
+				position: relative;
+	
 				& +.tab-item::before {
-					height: $line-height - 2rem ;
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					width: 2rem;
+					background-color: color(base, 010);
+	
+					border-radius: 1rem;
 				}
+			}
+		}	
+	}
+
+
+	// outline
+	@each $name, $line-height, $font-size, $font-weight, $margin in $tab-module-a-outline {
+		&.#{$name} {
+			.tab-item {
+				line-height: $line-height;
+				font-size: calc($line-height / $font-size);
+
 				.tab-name {
 					font-weight: $font-weight;
 				}
 			}
+
+			&.style-a {
+				.tab-list {
+					.tab-item {
+						& + .tab-item {
+							margin-left: $margin;
+						}
+					}
+				}	
+			}
+
+			&.style-b {
+				.tab-list {
+					.tab-item {
+						padding-right: $line-height * 0.5;
+						padding-left: $line-height * 0.5;
+
+						&:first-child {
+							padding-left: 0;
+						}
+						& +.tab-item::before {
+							height: $line-height - 2rem ;
+						}
+					}
+				}	
+			}
 		}
 	}
 }
-
 
 /*
  * module-b outline
@@ -140,7 +174,7 @@ $tab-module-b-outline: (
 	'x-large'		32rem 1.50 400,
 );
 
-.tab-display.module-b {
+.tab-display.module-b.style-c {
 	.tab-list {
 		position: relative;
 
@@ -180,15 +214,15 @@ $tab-module-b-outline: (
 						border-radius: 1rem;
 					}
 				}
-			}
-			
+			}			
 		}
 	}
 
 	// outline
 	@each $name, $line-height, $font-size, $font-weight in $tab-module-b-outline {
 		&.#{$name} {
-			.tab-item{
+			.tab-item {
+				height: $line-height * 2;
 				line-height: $line-height;
 				font-size: calc($line-height / $font-size);
 				
