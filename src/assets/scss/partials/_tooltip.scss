@@ -1,17 +1,6 @@
-
-.tooltip svg {
-	display: block;
-	position: relative;
-	top: 0;
-	left: 0;
-}
-.tooltip-area {
-	display: flex;
-	flex-wrap: wrap;
-}
 /*
  * tooltip module-a system
-*/
+ */
 
 /*
 * @ module-a accent
@@ -19,7 +8,7 @@
 * @ $text-color
 * @ $border-color
 * @ $background-color
-*/
+ */
 $tooltip-module-a-accent: (
 	'normal-00': (
 		'none' color(base, 100) transparent transparent,
@@ -56,30 +45,38 @@ $tooltip-module-a-accent: (
 /*
  * module-a outline
  *
-
  * @ $line-height
  * @ $font-size
  * @ $font-weight
  * @ $border-width
-*/
+ */
 $tooltip-module-a-outline: (
-	'xx-small'		16rem 1.50 400 1rem,
-	'x-small'		18rem 1.50 400 1rem,
-	'small'			20rem 1.50 400 1rem,
-	'medium'		24rem 1.50 400 1rem,
-	'large'			28rem 1.50 400 1rem,
-	'x-large'		32rem 1.50 400 1rem,
+	'xx-small'		16rem 1.25 400 1rem,
+	'x-small'		18rem 1.25 400 1rem,
+	'small'			20rem 1.25 400 1rem,
+	'medium'		24rem 1.25 400 1rem,
+	'large'			28rem 1.25 400 1rem,
+	'x-large'		32rem 1.25 400 1rem,
 );
 
 
-.tooltip.module-a {
+.tooltip-board.module-a {
 	// general
-	// display: flex;
-	// align-items: center;
-	// justify-content: center;
+	display: inline-flex;
+	align-items: center;
 	@include font((family: default)...);
-	box-sizing: border-box;
 	border-style: solid;
+	box-sizing: border-box;
+
+	// justify-content: center;
+
+	.tooltip-body {
+		margin: 0;
+		padding: 0;
+			.para {
+				margin: 0;
+			}
+	}
 
 	.tooltip-text {
 		display: flex;
@@ -98,13 +95,7 @@ $tooltip-module-a-outline: (
 	// 5. 무조건 중앙에 또는 상단 기준을 택일
 	// 6. accent에 따라 컬러를 다르게 한다.
 
-	&[class*=symbol-ltr-] .tooltip-text::before,
-	&[class*=symbol-rtl-] .tooltip-text::after {
-		content: '';
-		display: block;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
+	
 
 	// accent
 	@each $accent-name in $tooltip-module-a-accent {
@@ -116,10 +107,10 @@ $tooltip-module-a-outline: (
 					border-color: $border-color;
 					background-color: $background-color;
 					
-					@each $icon-name, $icon in $symbol-list {
-						&.symbol-ltr-#{$icon-name} {.tooltip-text {&::before {background-image: icon($icon-name, $color);}}}
-						&.symbol-rtl-#{$icon-name} {.tooltip-text {&::after {background-image: icon($icon-name, $color);}}}
-					}
+					// @each $icon-name, $icon in $symbol-list {
+					// 	&.symbol-ltr-#{$icon-name} {.tooltip-text {&::before {background-image: icon($icon-name, $color);}}}
+					// 	&.symbol-rtl-#{$icon-name} {.tooltip-text {&::after {background-image: icon($icon-name, $color);}}}
+					// }
 				}
 			}
 		}
@@ -135,6 +126,12 @@ $tooltip-module-a-outline: (
 			font-size: calc($line-height / $font-size);
 			border-width: $border-width;
 
+			.tooltip-body {			
+				.para {
+					// font-size: calc($line-height / $font-size);
+				}
+			}
+
 			&.style-b {
 				border-radius: $line-height * .5;
 			}
@@ -144,108 +141,31 @@ $tooltip-module-a-outline: (
 			}
 
 			// icon
-			&[class*=symbol-ltr-] .tooltip-text::before,
-			&[class*=symbol-rtl-] .tooltip-text::after {
-				width: $line-height;
-				min-width: $line-height;
-				height: $line-height;
-			}
+			// &[class*=symbol-ltr-] .tooltip-text::before,
+			// &[class*=symbol-rtl-] .tooltip-text::after {
+			// 	width: $line-height;
+			// 	min-width: $line-height;
+			// 	height: $line-height;
+			// }
 
 			
-			&[class*="symbol-ltr"] {
-				padding-left: ($line-height * 0.5) - ($line-height * 0.25);
-				.tooltip-text {
-					&::before {
-						margin-right: $line-height * 0.1;
-					}
-				}
-			}
+			// &[class*="symbol-ltr"] {
+			// 	padding-left: ($line-height * 0.5) - ($line-height * 0.25);
+			// 	.tooltip-text {
+			// 		&::before {
+			// 			margin-right: $line-height * 0.1;
+			// 		}
+			// 	}
+			// }
 
-			&[class*="symbol-rtl"] {
-				padding-right: ($line-height * 0.5) - ($line-height * 0.25);
-				.tooltip-text {
-					&::after {
-						margin-left: $line-height * 0.1;
-					}
-				}
-			}
+			// &[class*="symbol-rtl"] {
+			// 	padding-right: ($line-height * 0.5) - ($line-height * 0.25);
+			// 	.tooltip-text {
+			// 		&::after {
+			// 			margin-left: $line-height * 0.1;
+			// 		}
+			// 	}
+			// }
 		}
-	}
-}
-
-// button-area
-.tooltip.module-a {
-	display: flex;
-
-	&.style-a {
-		// flex-wrap: wrap;
-	
-		.flex {
-			flex-grow: 1;
-			flex-basis: 100%;
-		}
-	
-		.tooltip.medium {
-			&~*,
-			&+* {
-				margin-left: 8rem;
-			}
-		}
-	
-		.tooltip.large {
-			&~*,
-			&+* {
-				margin-left: 10rem;
-			}
-		}
-	
-		.tooltip.x-large {
-			&~*,
-			&+* {
-				margin-left: 12rem;
-			}
-		}
-	
-		&.type-a {
-	
-		}
-	
-		&.type-b {
-			justify-content: flex-end;
-		}
-	
-		&.type-c {
-			justify-content: center;
-		}
-	}
-
-	&.style-b {
-		
-		
-		.tooltip {
-			flex-grow: 1;
-			flex-basis: 100%;
-		}
-
-		.tooltip.medium {
-			&~*,
-			&+* {
-				margin-top: 8rem;
-			}
-		}
-	
-		.tooltip.large {
-			&~*,
-			&+* {
-				margin-top: 10rem;
-			}
-		}
-	
-		.tooltip.x-large {
-			&~*,
-			&+* {
-				margin-top: 12rem;
-			}
-		}	
 	}
 }
