@@ -5,6 +5,10 @@
 	pageStyle: 'bui.page.snippet.css',
 	pageJavascript: ''
 }) %>
+
+<style>
+	.tooltip-board + .tooltip-board {margin-left: 30rem;}
+</style>
 </head>
 <body>
 <div id="wrap">
@@ -210,38 +214,56 @@
 &lt;span class="tooltip module-a symbol-rtl-*"&gt;&lt;span class="tooltip-text"&gt;tooltip Text&lt;/span&gt;&lt;/span&gt;</code></pre>
 									<!-- //highlight-js -->
 									<!-- tooltip-area -->
-									<div class="bui-tooltip-area tooltip-area">
-										<div class="tooltip module-a style-a type-fill normal-00 xx-small symbol-ltr-fill-close"><span class="tooltip-text">module-a insert before</span></div>
-										<div class="tooltip module-a style-a type-fill normal-00 xx-small symbol-rtl-fill-close"><span class="tooltip-text">module-a insert after</span></div>
-									</div>
-
-									<div class="tooltip-board module-a style-c type-a xx-small">
-										<div class="tooltip-body">
-											<p class="para">내용이 들어갑니다.</p>
-										</div>
-										<div class="tooltip-util">
-											<div class="button-area">
-												<a class="btn symbol-rtl-fill-close" href="#"><span class="btn-text">close</span></a>
-											</div>
-										</div>
-									</div>
-
-									
-
-									<div class="tooltip-board module-a style-a type-a">
+									<div class="tooltip-board module-a style-c type-fill normal-00 xx-small">
 										<div class="tooltip-wrap">
 											<div class="tooltip-body">
 												<p class="para">내용이 들어갑니다.</p>
 											</div>
-											<div class="tooltip-util">
-												<div class="button-area module-a style-a type-a">
-													<a class="btn module-a style-c type-fill normal-00 x-small symbol-rtl-fill-close" href="#"><span class="btn-text">close</span></a>
-												</div>
+											<button type="button" class="tooltip-btn symbol-rtl-fill-close"><span class="tooltip-text">close</span></button>
+										</div>
+									</div>
+									<!-- //tooltip-area -->
+									<!-- tooltip-area -->
+									<div class="tooltip-board module-a style-c type-fill normal-00 x-small">
+										<div class="tooltip-wrap">
+											<div class="tooltip-body">
+												<p class="para">내용이 들어갑니다.</p>
+											</div>
+											<button type="button" class="tooltip-btn symbol-rtl-fill-close"><span class="tooltip-text">close</span></button>
+										</div>
+									</div>
+									<!-- //tooltip-area -->
+									
+									<!-- tooltip-area -->
+									<div class="tooltip-board module-a style-c type-fill normal-00 small">
+										<div class="tooltip-wrap">
+											<div class="tooltip-body">
+												<p class="para">내용이 들어갑니다.</p>
+											</div>
+											<button type="button" class="tooltip-btn symbol-rtl-fill-close"><span class="tooltip-text">close</span></button>
+										</div>
+									</div>
+									<!-- //tooltip-area -->
+									<!-- tooltip-area -->
+									<div class="tooltip-board module-a style-c type-fill normal-00 large">
+										<div class="tooltip-wrap">
+											<button type="button" class="tooltip-btn symbol-ltr-fill-close"><span class="tooltip-text">close</span></button>
+											<div class="tooltip-body">
+												<p class="para">내용이 들어갑니다.</p>
 											</div>
 										</div>
 									</div>
-
-
+									<!-- //tooltip-area -->
+									
+									<!-- tooltip-area -->
+									<div class="tooltip-board module-a style-c type-fill normal-00 x-large">
+										<div class="tooltip-wrap">
+											<button type="button" class="tooltip-btn symbol-ltr-fill-close"><span class="tooltip-text">close</span></button>
+											<div class="tooltip-body">
+												<p class="para">내용이 들어갑니다.</p>
+											</div>
+										</div>
+									</div>
 									<!-- //tooltip-area -->
 									<p class="para">버튼 모듈에 사용되는 아이콘의 이름은 <a href="./../snippet/icon.html">snippet/icon.html</a> 참조하세요</p>
 								</div>

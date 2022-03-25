@@ -1,7 +1,22 @@
 /*
- * tooltip module-a system
+ * tooltip system
  */
+button.tooltip-btn {
+	overflow: visible;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	border: hidden;
+	background-color: transparent;
+	appearance: none;
+}
 
+.tooltip-btn svg {
+	display: block;
+	position: relative;
+	top: 0;
+	left: 0;
+}
 /*
 * @ module-a accent
 *
@@ -63,26 +78,49 @@ $tooltip-module-a-outline: (
 .tooltip-board.module-a {
 	// general
 	display: inline-flex;
-	align-items: center;
+	position: relative;
 	@include font((family: default)...);
 	border-style: solid;
 	box-sizing: border-box;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		display: block;
+		box-sizing: border-box;
 
-	// justify-content: center;
+		width: 14rem;
+		height: 14rem;
+		border-radius: 2rem;
+		border-right: 1px solid color(base, 100);
+		border-bottom: 1px solid color(base, 100);
+		background-color: color(base, 100);
+		
+		transform: rotate(45deg) translateX(50%);
+		right: 0;
+		top: 50%;
+		margin-top: -12rem;
+		
 
-	.tooltip-body {
-		margin: 0;
-		padding: 0;
+	}
+	
+
+	.tooltip-wrap {
+		display: inline-flex;
+		justify-content: center;
+		// align-items: center;
+		.tooltip-body {
+			margin: 0;
+			padding: 0;
 			.para {
 				margin: 0;
 			}
-	}
-
-	.tooltip-text {
-		display: flex;
-		// align-items: center;
-		// justify-content: center;
-		// text-align: center;
+		}
+		.tooltip-btn {
+			.tooltip-text {
+				@include hidden;
+			}
+		}
 	}
 
 	// icon
@@ -107,10 +145,12 @@ $tooltip-module-a-outline: (
 					border-color: $border-color;
 					background-color: $background-color;
 					
-					// @each $icon-name, $icon in $symbol-list {
-					// 	&.symbol-ltr-#{$icon-name} {.tooltip-text {&::before {background-image: icon($icon-name, $color);}}}
-					// 	&.symbol-rtl-#{$icon-name} {.tooltip-text {&::after {background-image: icon($icon-name, $color);}}}
-					// }
+					@each $icon-name, $icon in $symbol-list {
+						.tooltip-btn {
+							&.symbol-ltr-#{$icon-name},
+							&.symbol-rtl-#{$icon-name} {background-image: icon($icon-name, $color);}
+						}
+					}
 				}
 			}
 		}
@@ -119,53 +159,36 @@ $tooltip-module-a-outline: (
 	// outline
 	@each $name, $line-height, $font-size, $font-weight, $border-width in $tooltip-module-a-outline {
 		&.#{$name} {
+			min-height: $line-height * 2;
 			padding: calc($line-height /2 ) $line-height ;
-
 			font-weight: $font-weight;
 			line-height: $line-height;
 			font-size: calc($line-height / $font-size);
 			border-width: $border-width;
 
-			.tooltip-body {			
-				.para {
-					// font-size: calc($line-height / $font-size);
-				}
-			}
-
 			&.style-b {
 				border-radius: $line-height * .5;
 			}
-
 			&.style-c {
 				border-radius: $line-height * 2;
 			}
 
 			// icon
-			// &[class*=symbol-ltr-] .tooltip-text::before,
-			// &[class*=symbol-rtl-] .tooltip-text::after {
-			// 	width: $line-height;
-			// 	min-width: $line-height;
-			// 	height: $line-height;
-			// }
-
-			
-			// &[class*="symbol-ltr"] {
-			// 	padding-left: ($line-height * 0.5) - ($line-height * 0.25);
-			// 	.tooltip-text {
-			// 		&::before {
-			// 			margin-right: $line-height * 0.1;
-			// 		}
-			// 	}
-			// }
-
-			// &[class*="symbol-rtl"] {
-			// 	padding-right: ($line-height * 0.5) - ($line-height * 0.25);
-			// 	.tooltip-text {
-			// 		&::after {
-			// 			margin-left: $line-height * 0.1;
-			// 		}
-			// 	}
-			// }
+			.tooltip-btn {
+				&[class*=symbol-ltr-] ,
+				&[class*=symbol-rtl-] {
+					width: $line-height;
+					min-width: $line-height;
+					height: $line-height;
+				}
+				&[class*=symbol-ltr-] {
+					margin-right: $line-height * .125;
+				}
+				&[class*=symbol-rtl-] {
+					margin-left: $line-height * .125;
+					
+				}
+			}
 		}
 	}
 }
