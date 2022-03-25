@@ -7,7 +7,7 @@ function findElement(selector, target, height) {
 
 	document.querySelector(target).style.setProperty('padding-bottom', height);
 }
-findElement('.content-util', '#page', '56rem');
+// findElement('.content-util', '#page', '56rem');
 
 
 /**

@@ -101,24 +101,236 @@ img {
 
 /**
  * @type layout
+ * @name page-navi
+ */
+.page-navi {
+	order: 3;
+	position: relative;
+	width: 100%;
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 120vw;
+		left: calc(50% - 60vw);
+		box-shadow: 0 -4rem 8rem 0 rgba(0,0,0,0.06);
+	}
+
+	.navi-list {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		.navi-item {
+			flex: 1 1 100%;
+			width: 100%;
+
+			.navi-name {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+				padding-top: 16rem;
+				padding-bottom: 12rem;
+				@include font((outline: body, size: xx-small)...);
+				color: color(base, 040);
+				text-align: center;
+				text-decoration: none;
+				transition: color 0.25s ease;
+
+				&::before {
+					content: '';
+					display: block;
+					position: relative;
+					z-index: 1;
+					margin-bottom: 4rem;
+					width: 24rem;
+					height: 24rem;
+					background-color: color(base, 040);
+					backdrop-filter: blur(0);
+				}
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 16rem;
+					left: calc(50% - 12rem);
+					width: 24rem;
+					height: 24rem;
+					background-color: color(primary, 050);
+					opacity: 0;
+					transform: translate(0, 0);
+				}
+			}
+
+			&.current {
+				.navi-name {
+					@include font((weight: bold)...);
+					color: color(primary, 050);
+
+					@keyframes iconBefore {
+						from {
+							opacity: 0;
+							background-color: color(base, 040);
+							backdrop-filter: blur(0);
+						}
+						to {
+							opacity: 1;
+							background-color: rgba(255,223,224,0.2);
+							backdrop-filter: blur(8rem);
+						}
+					}
+
+					@keyframes iconAfter {
+						from {
+							opacity: 0;
+							transform: translate(0, 0);
+						}
+						to {
+							opacity: 1;
+							transform: translate(4rem, -4rem);
+						}
+					}
+
+					&::before {
+						background-color: color(primary, 050);
+						animation: iconBefore 0.25s 0s ease-in-out forwards;
+					}
+
+					&::after {
+						opacity: 1;
+						animation: iconAfter 0.25s 0s ease-in-out forwards;
+					}
+				}
+			}
+
+			&:nth-child(odd) {
+				.navi-name {
+					&::after,
+					&::before {
+						border-radius: 4rem;
+					}
+				}
+			}
+
+			&:nth-child(even) {
+				.navi-name {
+					&::after,
+					&::before {
+						border-radius: 50%;
+					}
+				}
+			}
+
+			$navi-icon-list: line-home, line-notice, line-calendar-today, line-profile, line-description;
+			@each $navi-icon-name in $navi-icon-list {
+				$i: index($navi-icon-list, $navi-icon-name);
+				&:nth-child(#{$i}) {
+					.navi-name {
+						&::before {
+							background-image: icon($navi-icon-name, color(base, 000));
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/**
+ * @type layout
  * @name page-body
  */
 .page-body {
+	order: 2	;
 	flex-grow: 1;
 	position: relative;
 	width: 100%;
+
+	.local-head {
+		@include hidden;
+	}
+}
+
+/**
+ * @type layout
+ * @name #content
+ */
+// 1depth
+// .content-head {
+// 	margin: 40rem 0 24rem 0;
+
+// 	.content-title {
+// 		margin: 0;
+// 		color: color(base, 100);
+// 		@include font((outline: head, size: large, weight: bold)...);
+
+// 		.content-name {
+// 			display: block;
+// 		}
+// 	}
+// }
+
+// 2depth
+.content-head {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 40rem;
+	height: 56rem;
+
+	
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: calc(50% - 50vw);
+		width: 100vw;
+		height: 1rem;
+		background-color: color(base, 010);
+	}
+
+	.content-title {
+		margin: 0;
+		color: color(base, 100);
+
+		@include font((outline: body, size: medium, weight: bold)...);
+
+		.content-name {
+			display: block;
+		}
+	}
+
+	.content-func {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+
+		.btn {
+			svg {
+				fill: color(base, 090);
+			}
+		}
+	}
 }
 
 /**
  * @type layout
  * @name page-util
  */
-.content-util {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	left: 0;
-}
+// .content-util {
+// 	position: fixed;
+// 	bottom: 0;
+// 	right: 0;
+// 	left: 0;
+// }
 
 /**
  * @type layout
