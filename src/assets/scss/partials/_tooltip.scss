@@ -64,14 +64,15 @@ $tooltip-module-a-accent: (
  * @ $font-size
  * @ $font-weight
  * @ $border-width
+ * @ $margin
  */
 $tooltip-module-a-outline: (
-	'xx-small'		16rem 1.25 400 1rem,
-	'x-small'		18rem 1.25 400 1rem,
-	'small'			20rem 1.25 400 1rem,
-	'medium'		24rem 1.25 400 1rem,
-	'large'			28rem 1.25 400 1rem,
-	'x-large'		32rem 1.25 400 1rem,
+	'xx-small'		16rem 1.25 400 1rem 4rem,
+	'x-small'		18rem 1.25 400 1rem 4.5rem,
+	'small'			20rem 1.25 400 1rem 5rem,
+	'medium'		24rem 1.25 400 1rem 5rem,
+	'large'			28rem 1.25 400 1rem 5rem,
+	'x-large'		32rem 1.25 400 1rem 5rem,
 );
 
 
@@ -90,12 +91,9 @@ $tooltip-module-a-outline: (
 		display: block;
 		box-sizing: border-box;
 
-
-		border-right: 1px solid color(base, 100);
-		border-bottom: 1px solid color(base, 100);
-		background-color: color(base, 100);
-		
-		transform: rotate(45deg) translateX(50%);
+		border-style: solid;
+		border-color: transparent;
+		// transform: rotate(45deg) translateX(50%);
 
 	}
 	
@@ -152,7 +150,7 @@ $tooltip-module-a-outline: (
 	}
 
 	// outline
-	@each $name, $line-height, $font-size, $font-weight, $border-width in $tooltip-module-a-outline {
+	@each $name, $line-height, $font-size, $font-weight, $border-width, $margin in $tooltip-module-a-outline {
 		&.#{$name} {
 			min-height: $line-height * 2;
 			padding: calc($line-height /2 ) $line-height ;
@@ -169,15 +167,19 @@ $tooltip-module-a-outline: (
 			}
 
 			&[class*=cursor-]::before {
-				width: $line-height - 2;
-				height: $line-height - 2;
+				// width: $line-height - 2;
+				// height: $line-height - 2;
+
+				border-width: $line-height - 4;
 				border-radius:  $line-height * .125;
 			}
 			&.cursor-right::before {
-				right: 0;
-				top: 50%;
-				margin-top: $line-height * -1 + 4;
-				margin-right: $line-height * .125;
+
+				top: $margin;
+				right: $line-height * -1.25;
+				border-left-color: #000;
+				// margin-top: $line-height * -1 + 4;
+				// margin-right: $line-height * .125;
 			}
 
 			&.cursor-left::before {
