@@ -83,7 +83,8 @@ $tooltip-module-a-outline: (
 	border-style: solid;
 	box-sizing: border-box;
 	
-	&::before {
+
+	&[class*=cursor-]::before {
 		content: '';
 		position: absolute;
 		display: block;
@@ -171,6 +172,18 @@ $tooltip-module-a-outline: (
 			}
 			&.style-c {
 				border-radius: $line-height * 2;
+			}
+
+			&[class*=cursor-]::before {
+				width:  $line-height - 2;
+				height:  $line-height - 2;
+				border-radius:  $line-height * .125;
+			}
+			&.cursor-right::before {
+				right: 1rem;
+				top: 50%;
+				margin-top: $line-height * -1 + 4;
+				// margin-right: $line-height * .125;
 			}
 
 			// icon
