@@ -167,26 +167,27 @@ $tooltip-module-a-outline: (
 			}
 
 			&[class*=cursor-]::before {
-				// width: $line-height - 2;
-				// height: $line-height - 2;
-
 				border-width: $line-height - 4;
 				border-radius:  $line-height * .125;
 			}
 			&.cursor-right::before {
-
 				top: $margin;
 				right: $line-height * -1.25;
 				border-left-color: #000;
-				// margin-top: $line-height * -1 + 4;
-				// margin-right: $line-height * .125;
 			}
 
 			&.cursor-left::before {
-				left: 0;
-				top: 50%;
-				margin-top: $line-height * -1 + 4;
-				margin-left: $line-height * -.5;;
+				top: $margin;
+				left: $line-height * -1.25;
+				border-right-color: #000;
+			}
+			&.cursor-top::before {
+				top: $line-height * -1.5;
+				border-bottom-color: #000;
+			}
+			&.cursor-bottom::before {
+				bottom: $line-height * -1.5;
+				border-top-color: #000;
 			}
 
 			// icon
