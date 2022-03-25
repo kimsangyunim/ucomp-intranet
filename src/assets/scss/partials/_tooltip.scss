@@ -90,18 +90,12 @@ $tooltip-module-a-outline: (
 		display: block;
 		box-sizing: border-box;
 
-		width: 14rem;
-		height: 14rem;
-		border-radius: 2rem;
+
 		border-right: 1px solid color(base, 100);
 		border-bottom: 1px solid color(base, 100);
 		background-color: color(base, 100);
 		
 		transform: rotate(45deg) translateX(50%);
-		right: 0;
-		top: 50%;
-		margin-top: -12rem;
-		
 
 	}
 	
@@ -175,15 +169,22 @@ $tooltip-module-a-outline: (
 			}
 
 			&[class*=cursor-]::before {
-				width:  $line-height - 2;
-				height:  $line-height - 2;
+				width: $line-height - 2;
+				height: $line-height - 2;
 				border-radius:  $line-height * .125;
 			}
 			&.cursor-right::before {
-				right: 1rem;
+				right: 0;
 				top: 50%;
 				margin-top: $line-height * -1 + 4;
-				// margin-right: $line-height * .125;
+				margin-right: $line-height * .125;
+			}
+
+			&.cursor-left::before {
+				left: 0;
+				top: 50%;
+				margin-top: $line-height * -1 + 4;
+				margin-left: $line-height * -.5;;
 			}
 
 			// icon
@@ -198,8 +199,7 @@ $tooltip-module-a-outline: (
 					margin-right: $line-height * .125;
 				}
 				&[class*=symbol-rtl-] {
-					margin-left: $line-height * .125;
-					
+					margin-left: $line-height * .125;	
 				}
 			}
 		}
