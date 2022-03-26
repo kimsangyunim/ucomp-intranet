@@ -35,15 +35,6 @@
 						<!-- //content-head -->
 						<!-- content-body -->
 						<div class="content-body">
-							<!-- post-display -->
-							<div class="post-display module-a style-a type-a">
-								<div class="post-list">
-									<% for(var i = 0; i < 3; i++) { %>
-										<%-include('../../front/_mixin/_post.item.notice.ejs') %>
-									<% } %>
-								</div>
-							</div>
-							<!-- //post-display -->
 							<!-- info-board -->
 							<div class="info-board module-a style-a type-c attr-done" id="infoBoardDone">
 								<div class="board-wrap">
@@ -54,6 +45,15 @@
 								</div>
 							</div>
 							<!-- //info-board -->
+							<!-- post-display -->
+							<div class="post-display module-a style-a type-a">
+								<div class="post-list">
+									<% for(var i = 0; i < 3; i++) { %>
+										<%-include('../../front/_mixin/_post.item.notice.ejs') %>
+									<% } %>
+								</div>
+							</div>
+							<!-- //post-display -->
 							<!-- section -->
 							<div class="section module-a">
 								<div class="section-head"><h4 class="section-title"><span class="section-name">지출내역</span></h4></div>
