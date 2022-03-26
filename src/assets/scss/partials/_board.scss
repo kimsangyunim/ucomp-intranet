@@ -79,13 +79,6 @@
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: 100%;
-
-				// laptop
-				@include respond-above(x-large) {
-					width: 120rem;
-					height: 120rem;
-					margin-bottom: 24rem;
-				}
 			}
 		}
 	}
