@@ -140,6 +140,23 @@
 								position: relative;
 								margin-left: 8rem;
 								width: 100%;
+
+								.head {
+									display: flex;
+									align-items: center;
+									@include font((outline: body, size: x-small)...);
+									color: color(base, 040);
+
+									&::after {
+										content: '';
+										display: block;
+										// margin-left: 4rem;
+										width: 20rem;
+										height: 20rem;
+										// background-repeat
+										background: icon(fill-download, color(base, 040)) no-repeat center/cover;
+									}
+								}
 								
 								.body {
 									position: absolute;
