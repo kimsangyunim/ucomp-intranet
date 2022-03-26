@@ -157,7 +157,7 @@ function buiFormAddFile(inputEl) {
 /**
  * @module buiToggle contentsPopup
  */
-var contentsPopup = new buiToggle('[data-bui-toggle="contentsPopup"]', {
+const contentsPopup = new buiToggle('[data-bui-toggle="contentsPopup"]', {
 	close: true,
 	closeButtonClass: 'btn popup-close',
 	closeButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><title>닫기</title><path d="M10.5382 12L3 4.46179L4.46179 3L12 10.5382L19.5382 3L21 4.46179L13.4618 12L21 19.5382L19.5382 21L12 13.4618L4.46179 21L3 19.5382L10.5382 12Z"/></svg>',
@@ -193,25 +193,25 @@ function checkAspectRatio(viewWidth, viewHeight) {
 }
 
 /**
- * @layout checkBrakepoint
+ * @layout checkDevice
  */
-if(window.screen.width >= 1024) {
-	document.querySelector('html').classList.add('laptop');
-	document.querySelector('html').classList.remove('mobile');
-} else {
-	document.querySelector('html').classList.add('mobile');
-	document.querySelector('html').classList.remove('laptop');
-}
-
-window.addEventListener('resize', function() {
-	if(window.screen.width >= 1024) {
-		document.querySelector('html').classList.add('laptop');
-		document.querySelector('html').classList.remove('mobile');
-	} else {
-		document.querySelector('html').classList.add('mobile');
+function checkDevice() {
+	if(navigator.userAgent.match(/Mobile/)) {
 		document.querySelector('html').classList.remove('laptop');
+		document.querySelector('html').classList.add('mobile');
+	
+	} else {
+		document.querySelector('html').classList.remove('mobile');
+		document.querySelector('html').classList.add('laptop');
 	}
-});
+}
+checkDevice();
+// window.addEventListener('resize', function() {
+// 	clearTimeout(timer);
+// 	timer = setTimeout(function() {
+// 		checkDevice();
+// 	}, 400);
+// });
 
 
 /**
@@ -232,7 +232,7 @@ window.addEventListener('resize', function() {
 /**
  * @layout Page Navigations
  */
-var pageNavigations = new buiToggle('[data-bui-toggle="pageNavigations"]', {
+const pageNavigations = new buiToggle('[data-bui-toggle="pageNavigations"]', {
 	close: true,
 	closeButtonClass: 'btn close',
 	closeButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><title>닫기</title><path d="M10.5382 12L3 4.46179L4.46179 3L12 10.5382L19.5382 3L21 4.46179L13.4618 12L21 19.5382L19.5382 21L12 13.4618L4.46179 21L3 19.5382L10.5382 12Z"/></svg>',
@@ -318,3 +318,42 @@ var pageNavigations = new buiToggle('[data-bui-toggle="pageNavigations"]', {
 	}, 400);
 }
 widgetGotoTop(0);
+
+
+console.log('ddd');
+
+
+/**
+ * @module buiToggle postItem
+ */
+ const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
+	accordion: false,
+	activeClass: 'active',
+	buttonClass: 'btn module-a style-a type-none normal-04 x-large flex symbol-rtl-fill-chevron-up',
+	buttonText: '<span class="btn-text">자세히보기</span>',
+	buttonActiveText: '<span class="btn-text">닫기</span>',
+	buttonAppendTo: '.post-func .button-display .button-area',
+	// targetClass: 'bui-expand-target',
+ });
+
+
+
+ // 혜택 목록
+// const benefitList = new buiExpand('.data-item[data-bui-expand="benefitItem"]', {
+// 	accordion: false,
+// 	activeClass: 'active',
+// 	buttonClass: 'btn expand',
+// 	buttonText: '<span class="btn-text">자세히보기</span>',
+// 	buttonAppendTo: '.data-head',
+// 	targetClass: 'bui-expand-target',
+// 	onloadCallBack: function() {
+// 		var target = this;
+// 		var toggleTargetContents = target.querySelector('.data-side>.info-board');
+// 		setTimeout(function() {
+// 			target.setAttribute('style', '--bui-expand-target-height : ' + toggleTargetContents.offsetHeight + 'px;');
+// 		}, 400);
+// 		window.addEventListener('resize', function() {
+// 			target.setAttribute('style', '--bui-expand-target-height : ' + toggleTargetContents.offsetHeight + 'px;');
+// 		});
+// 	},
+// });

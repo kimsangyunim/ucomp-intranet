@@ -11,19 +11,7 @@
 <div id="wrap">
 	<!-- page -->
 	<div id="page">
-<!-- ../_templates/_header.snippet.ejs' -->
-		<!-- <input type="date" /> -->
-		<!-- page-util -->
-		<div class="page-navi">
-			<ul class="navi-list">
-				<li class="navi-item current"><a class="navi-name" href="">메인</a></li>
-				<li class="navi-item"><a class="navi-name" href="">공지사항</a></li>
-				<li class="navi-item"><a class="navi-name" href="">연차관리</a></li>
-				<li class="navi-item"><a class="navi-name" href="">사용자 정보</a></li>
-				<li class="navi-item"><a class="navi-name" href="">결재관리</a></li>
-			</ul>
-		</div>
-		<!-- //page-util -->
+		<%-include('../_templates/_header.front.ejs') %>
 		<!-- page-body -->
 		<div class="page-body">
 			<!-- local -->
@@ -39,7 +27,7 @@
 					<div id="content">
 						<!-- content-head -->
 						<div class="content-head">
-							<h4 class="content-title"><span class="content-name">연차등록</span></h4>
+							<h3 class="content-title"><span class="content-name">연차등록</span></h3>
 							<div class="content-func">
 								<a class="btn" href="#"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>뒤로</title><path d="M12.7,5.7a1,1,0,0,0-1.4-1.4l-7,7a1,1,0,0,0,0,1.4l7,7a1,1,0,0,0,1.4-1.4L7.4,13H19a1,1,0,0,0,0-2H7.4Z"></path></svg></a>
 							</div>
@@ -47,125 +35,15 @@
 						<!-- //content-head -->
 						<!-- content-body -->
 						<div class="content-body">
-
-
 							<!-- post-display -->
-							<div class="post-display">
+							<div class="post-display module-a style-a type-a">
 								<div class="post-list">
-									<div class="post-item">
-										<div class="post-wrap">
-											<div class="post-inform">
-
-											</div>
-											<div class="post-inform">
-												<div class="post-head">
-													<div class="post-title"><span class="posts-name">급여명세서 교부 의무화 및 기재사항 변경 안내 추가공지(Q&A)</span></div>
-													<div class="posts-account">
-														<span class="head">글쓴이</span>
-														<span class="body">
-															<a class="default-pic" href="#"><img class="image" src="./../../assets/images/@temporary/img-profile-01.png" alt=""></a>
-															<a class="default-nic" href="#">몽실둥블리네</a>
-														</span>
-													</div>
-												</div>
-												<div class="post-body">
-													안녕하세요<br />
-													경영기획팀 입니다.<br />
-													급여명세서 기재사항 변경과 관련하여 자주 묻는 질문을 정리하여 배포 하오니 참고 하시기 바랍니다.<br /><br />
-													Q : 기본급,연봉,퇴직금 등이 줄어든 것인가요?<br />
-													A:  유컴패니온 직원들의 근로계약서는 기본급, 시간외 근로수당등 제수당을 포함하는 포괄임금제 형태로 작성되어 있습니다.<br /><br />
-													기존에는 편의상 기본급으로만 명시되어 급여명세서가 교부 되었으나, 근로기준법이 개정되면서 임금 구성항목에 맞도록<br />
-													기본급, 연장수당금액 등을 명확하게 기재하도록 되어 있으므로 근로계약서상 계약된 내용대로 급여명세서 양식도 변경하게 되었습니다.<br />
-													따라서 연봉, 퇴직금이 줄어드는 것은 아닙니다.<br />
-													
-												</div>
-											</div>
-										</div>
-									</div>
+									<% for(var i = 0; i < 3; i++) { %>
+										<%-include('../../front/_mixin/_post.item.notice.ejs') %>
+									<% } %>
 								</div>
 							</div>
 							<!-- //post-display -->
-
-							<!-- comment-display --> 
-							<div class="comment-display">
-								<div class="comment-write">
-									<!-- submit-form -->
-									<fieldset class="submit-form module-a">
-										<!-- submit-list -->
-										<div class="form-list">
-											<legend>전송 서식</legend>
-											<!-- submit-item -->
-											<div class="form-item">
-												<div class="form-body">
-													<div class="form-area">
-														<span class="form textarea module-a style-b type-line normal-04 medium flex" data-bui-form-value>
-															<textarea class="form-elem" placeholder="내용을 입력해주세요." oninput="buiFormResize(this);"></textarea>
-														</span>
-													</div>
-												</div>
-											</div>
-											<!-- //submit-item -->
-										</div>
-										<!-- //form-list -->
-									</fieldset>
-									<!-- //submit-form -->
-								</div>
-								<div class="comment-list">
-									<!-- comment-item -->
-									<div class="comment-item">
-										<div class="comment-wrap">
-											<div class="comment-head">
-												<!-- posts-account -->
-												<div class="posts-account">
-													<div class="account-figure"><span class="account-image"><img src="./../images/@temp/thumbnail_48x48.png" alt="" /></span></div>
-													<div class="account-inform">
-														<div class="account-head">
-															<strong class="account-name">홍길동</strong>
-															<strong class="account-titl">선임</strong>
-															<span class="account-divi">서비스운영본부</span>
-															<span class="account-dept">데이타 플랫폼 TFT팀</span>
-														</div>
-														<div class="account-util">
-															<div class="button-area">
-																<a href="#" class="btn module-a style-c type-line normal-04 x-small"><span class="btn-text">010-1234-5678</span></a>
-																<a href="#" class="btn module-a style-c type-line normal-04 x-small"><span class="btn-text">administrator@ucomp.co.kr</span></a>
-															</div>
-														</div>
-													</div>
-												</div>
-												<!-- //posts-account -->
-												<!-- posts-account -->
-												<div class="posts-account">
-													<div class="account-figure"><span class="account-image"><img src="" alt="" /></span></div>
-													<div class="account-inform">
-														<div class="account-head">
-															<strong class="account-name">홍길동</strong>
-															<strong class="account-titl">선임</strong>
-															<span class="account-divi">서비스운영본부</span>
-															<span class="account-dept">데이타 플랫폼 TFT팀</span>
-														</div>
-														<div class="account-util">
-															<div class="button-area">
-																<a href="#" class="btn module-a style-c type-line normal-04 x-small"><span class="btn-text">010-1234-5678</span></a>
-																<a href="#" class="btn module-a style-c type-line normal-04 x-small"><span class="btn-text">administrator@ucomp.co.kr</span></a>
-															</div>
-														</div>
-													</div>
-												</div>
-												<!-- //posts-account -->
-											</div>
-											<div class="comment-body">
-												<p>현재 mySUNI 파견지에서 근무를 하고 있어 본사 내 사물함 정리가 어렵습니다. 택배 발송 가능한지 문의 드립니다.</p>
-											</div>
-										</div>
-									</div>
-									<!-- //comment-item -->
-								</div>
-							</div>
-							<!-- //comment-display -->
-
-
-
 							<!-- info-board -->
 							<div class="info-board module-a style-a type-c attr-done" id="infoBoardDone">
 								<div class="board-wrap">
@@ -178,7 +56,7 @@
 							<!-- //info-board -->
 							<!-- section -->
 							<div class="section module-a">
-								<div class="section-head"><h3 class="section-title"><span class="section-name">지출내역</span></h3></div>
+								<div class="section-head"><h4 class="section-title"><span class="section-name">지출내역</span></h4></div>
 								<div class="section-body">
 									<!-- submit-form -->
 									<fieldset class="submit-form module-a medium">
@@ -217,7 +95,7 @@
 							<!-- //section -->
 							<!-- section -->
 							<div class="section module-a">
-								<div class="section-head"><h3 class="section-title"><span class="section-name">지출내역</span></h3></div>
+								<div class="section-head"><h4 class="section-title"><span class="section-name">지출내역</span></h4></div>
 								<div class="section-body">
 									<!-- submit-form -->
 									<fieldset class="submit-form module-a large">
@@ -318,7 +196,7 @@
 							<!-- //section -->
 							<!-- section -->
 							<div class="section module-a">
-								<div class="section-head"><h3 class="section-title"><span class="section-name">지출내역</span></h3></div>
+								<div class="section-head"><h4 class="section-title"><span class="section-name">지출내역</span></h4></div>
 								<div class="section-body">
 									<!-- submit-form -->
 									<fieldset class="submit-form module-a type-a medium">
@@ -400,8 +278,10 @@
 						<!-- //content-body -->
 						<!-- content-util -->
 						<div class="content-util">
-							<div class="button-area module-a style-a">
-								<button type="button" class="btn module-a style-a type-fill accent-01 x-large flex"><span class="btn-text">확인</span></button>
+							<div class="button-display module-a style-b">
+								<span class="button-area">
+									<button type="button" class="btn module-a style-a type-fill accent-01 x-large flex"><span class="btn-text">확인</span></button>
+								</span>
 							</div>
 						</div>
 						<!-- //content-util -->
@@ -413,7 +293,7 @@
 			<!-- //local -->
 		</div>
 		<!-- //page-body -->
-<!-- ../_templates/_footer.front.ejs -->
+		<%-include('../_templates/_footer.front.ejs') %>
 	</div>
 	<!-- //page -->
 </div>

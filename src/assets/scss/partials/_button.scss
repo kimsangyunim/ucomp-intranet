@@ -189,41 +189,27 @@ $btn-module-a-outline: (
 	}
 }
 
-// button-area
-.button-area.module-a {
+// button-display
+.button-display.module-a {
 	display: flex;
 
+	.button-area {
+		display: inline-flex;
+
+		.btn.flex {
+			flex: 1 1 100%;
+			width: 100%;
+		}
+
+		.btn:not(.flex) {
+			flex-shrink: 0;
+		}
+	}
+
+	// style-a
 	&.style-a {
-		// flex-wrap: wrap;
-	
-		.flex {
-			flex-grow: 1;
-			flex-basis: 100%;
-		}
-	
-		.btn.medium {
-			&~*,
-			&+* {
-				margin-left: 8rem;
-			}
-		}
-	
-		.btn.large {
-			&~*,
-			&+* {
-				margin-left: 10rem;
-			}
-		}
-	
-		.btn.x-large {
-			&~*,
-			&+* {
-				margin-left: 12rem;
-			}
-		}
-	
 		&.type-a {
-	
+			justify-content: flex-start;
 		}
 	
 		&.type-b {
@@ -233,42 +219,53 @@ $btn-module-a-outline: (
 		&.type-c {
 			justify-content: center;
 		}
-	
+
 		&.type-d {
-			.btn {
-				flex-grow: 1;
-				flex-basis: 100%;
+			.button-area {
+				flex: 1 1 100%;
+				width: 100%;
+			}
+		}
+
+		.button-area {
+			.btn.small {
+				&~*,
+				&+* {
+					margin-left: 6rem;
+				}
+			}
+
+			.btn.medium {
+				&~*,
+				&+* {
+					margin-left: 8rem;
+				}
+			}
+		
+			.btn.large {
+				&~*,
+				&+* {
+					margin-left: 10rem;
+				}
+			}
+		
+			.btn.x-large {
+				&~*,
+				&+* {
+					margin-left: 12rem;
+				}
 			}
 		}
 	}
 
+	// style-b
 	&.style-b {
-		flex-wrap: wrap;
-		
-		.btn {
-			flex-grow: 1;
-			flex-basis: 100%;
-		}
 
-		.btn.medium {
-			&~*,
-			&+* {
-				margin-top: 8rem;
-			}
-		}
-	
-		.btn.large {
-			&~*,
-			&+* {
-				margin-top: 10rem;
-			}
-		}
-	
-		.btn.x-large {
-			&~*,
-			&+* {
-				margin-top: 12rem;
-			}
+		flex-direction: column;
+
+		.button-area {
+			flex: 1 1 100%;
+			width: 100%;
 		}	
 	}
 }

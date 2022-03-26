@@ -285,4 +285,190 @@
 
 	// Return the Constructor
 	return Constructor;
-})
+});
+
+
+/**
+ * buiExpand
+ */
+(function (root, factory) {
+	if ( typeof define === 'function' && define.amd ) {
+		define([], function () {
+			return factory(root);
+		});
+	} else if ( typeof exports === 'object' ) {
+		module.exports = factory(root);
+	} else {
+		root.buiExpand = factory(root);
+	}
+})(typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : this, function (window) {
+
+	'use strict';
+
+	// Variables
+	var defaults = {
+		// general
+		active: false,
+		activeClass: 'active',
+		initial: 0,
+
+		ellipsis: false,
+		ellipsisLimit: 2,
+		ellipsisField: '',
+		ellipsisActiveClass: 'limit',
+
+		// target
+		target: null,
+		targetClass: 'bui-fold-target',
+		targetActiveClass: 'active',
+
+		// close
+		button: 'button',
+		buttonClass: 'expand',
+		buttonActiveClass: 'active',
+		buttonText: '펼치기',
+		buttonActiveText: null,
+		buttonAppendTo: null,
+
+		// accordion
+		// accordion: true,
+
+		/* callback */
+		onloadCallBack: function() {return false;},
+		eventCallBack: function() {return false;},
+		activeCallBack: function() {return false;},
+		inactiveCallBack: function() {return false;}
+	};
+
+	/**
+	 * Merge two or more objects together.
+	 * @param	{Object}	objects		The objects to merge together
+	 * @returns	{Object}				Merged values of defaults and options
+	 */
+	var extend = function () {
+		var merged = {};
+		Array.prototype.forEach.call(arguments, function (obj) {
+			for (var key in obj) {
+				if (!obj.hasOwnProperty(key)) return;
+				merged[key] = obj[key];
+			}
+		});
+		return merged;
+	};
+
+	var actionActive = function(settings, toggleTarget, toggleButton) {
+		toggleTarget.classList.add(settings.activeClass);
+		toggleButton.classList.add(settings.buttonActiveClass);
+		settings.buttonActiveText != null ?  toggleButton.innerHTML = settings.buttonActiveText : null;
+	};
+
+	var actionInactive = function(settings, toggleTarget, toggleButton) {
+		toggleTarget.classList.remove(settings.activeClass);
+		toggleButton.classList.remove(settings.buttonActiveClass);
+		settings.buttonActiveText != null ? toggleButton.innerHTML = settings.buttonText : null;
+	};
+
+	var ellipsis = function(settings, toggleTarget) {
+		var field = toggleTarget.querySelector(settings.ellipsisField); 
+		var containerHeight = field.offsetHeight 
+		var lineHeight = parseInt(window.getComputedStyle(field).getPropertyValue('line-height')); 
+		var lines = containerHeight / lineHeight;
+
+		if (lines > settings.ellipsisLimit) {
+			toggleTarget.classList.add(settings.ellipsisActiveClass);
+		} else {
+			toggleTarget.classList.remove(settings.ellipsisActiveClass);
+		}
+	};
+
+	var actionSetup = function(settings, toggleTarget) {
+
+		toggleTarget.classList.add(settings.targetClass);
+		var toggleButton = document.createElement('button');
+		toggleButton.setAttribute('type', 'button');
+		toggleButton.className = settings.buttonClass;
+		toggleButton.innerHTML = settings.buttonText;
+
+		if(settings.buttonAppendTo != null) {
+			if(toggleTarget.querySelector(settings.buttonAppendTo)) {
+				toggleTarget.querySelector(settings.buttonAppendTo).appendChild(toggleButton);
+			}
+		} else {
+			toggleTarget.appendChild(toggleButton);
+		};
+
+		toggleButton.addEventListener('click', function(e) {
+			if (settings.accordion === true) {
+				if(toggleTarget.classList.contains(settings.activeClass)) {
+					actionInactive(settings, toggleTarget, toggleButton);
+				} else {
+					actionActive(settings, toggleTarget, toggleButton);
+					var siblings = getSiblings(toggleTarget);
+					Array.prototype.forEach.call(siblings, function(siblingItem) {
+						var siblingItemButton = siblingItem.getElementsByClassName(settings.buttonClass)[0];
+						actionInactive(settings, siblingItem, siblingItemButton);
+					});
+				}
+			} else {
+				toggleTarget.classList.contains(settings.activeClass) ? actionInactive(settings, toggleTarget, toggleButton) : actionActive(settings, toggleTarget, toggleButton);
+			}
+			settings.eventCallBack.call(toggleTarget, toggleButton);
+		});
+
+		if(toggleTarget.classList.contains(settings.activeClass)) {
+			actionActive(settings, toggleTarget, toggleButton);
+		}
+	}
+
+	/**
+	 * Create the Constructor object
+	 */
+	var Constructor = function (selector, options) {
+
+		// Merge user options with defaults
+		settings = extend(defaults, options || {});
+
+		// Variables
+		var publicAPIs = {};
+		var settings;
+
+		/**
+		 * Setup the DOM with the proper attributes
+		 */
+		publicAPIs.setup = function() {
+
+			console.log('ddd');
+
+			// Variables
+			var selectItems = document.querySelectorAll(selector);
+			if (!selectItems) return;
+
+			Array.prototype.forEach.call(selectItems, function(toggleTarget) {
+
+				// Setup Toggle Button
+				actionSetup(settings, toggleTarget);
+
+				if(settings.ellipsis === true) {
+					ellipsis(settings, toggleTarget);
+					window.addEventListener('resize', function() {
+						ellipsis(settings, toggleTarget);
+					}, false);
+				}
+			});
+		};
+		/**
+		 * Initialize the instance
+		 */
+		var init = function () {
+			// Setup the DOM
+			publicAPIs.setup();
+		};
+
+		// Initialize and return the Public APIs
+		init();
+		return publicAPIs;
+	};
+	
+	// Return the Constructor
+	return Constructor;
+});

@@ -4,14 +4,17 @@
 @import 'partials/_popup';
 @import 'partials/_widget';
 
-:root {
-	font-size: 1px;
+@mixin container-padding() {
+	padding-right: 16rem;
+	padding-left: 16rem;
 }
 
-// html,
-// body {
-// 	height: 100%;
-// }
+:root {
+	font-size: 1px;
+	@include respond-below(small) {
+		font-size: 0.75px;
+	}
+}
 
 body {
 	margin: 0;
@@ -20,7 +23,8 @@ body {
 	word-break: keep-all;
 	@include font((family: default, size: small)...);
 	-webkit-text-size-adjust: none;
-	overflow-y: scroll;
+
+	background-color: color(base, 010);
 }
 
 hr {
@@ -33,9 +37,26 @@ img {
 
 /**
  * @type layout
+ * @name global
+ */
+#wrap {
+	position: relative;
+	overflow: hidden;
+}
+
+#page {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+}
+
+/**
+ * @type layout
  * @name page-skip
  */
-.page-skip {
+ .page-skip {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -44,11 +65,11 @@ img {
 	top: -120rem;
 	left: calc(50% - 50vw);
 	width: 100vw;
-	height: 120rem;
-	background-color: color(base, 010);
+	height: 56rem;
+	background-color: color(base, 090);
 
 	.skip-item {
-		color: color(base, 100);
+		color: color(base, 000);
 		@include font((outline: body, size: medium)...);
 	}
 	
@@ -59,44 +80,10 @@ img {
 
 /**
  * @type layout
- * @name global
- */
-#wrap {
-	display: flex;
-	justify-content: center;
-	position: relative;
-	overflow: hidden;
-}
-
-#page {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	min-height: 100vh;
-	box-sizing: border-box;
-}
-
-/**
- * @type layout
- * @name page-body
- */
-.page-body {
-	padding: 0 16rem;
-	box-sizing: border-box;
-
-	// laptop
-	@include respond-above(x-large) {
-		padding: 0 48rem;
-	}
-}
-
-/**
- * @type layout
  * @name page-head
  */
 .page-head {
-
+	@include hidden;
 }
 
 /**
@@ -105,8 +92,13 @@ img {
  */
 .page-navi {
 	order: 3;
+	flex-shrink: 0;
+	
 	position: relative;
+	z-index: 20;
 	width: 100%;
+	background-color: color(base, 000);
+	
 	&::before {
 		content: '';
 		display: block;
@@ -246,43 +238,86 @@ img {
  * @name page-body
  */
 .page-body {
-	order: 2	;
-	flex-grow: 1;
+	order: 2;
+	flex: 1 1 100%;
+	display: flex;
+	flex-direction: column;
 	position: relative;
-	width: 100%;
-
-	.local-head {
-		@include hidden;
-	}
+	z-index: 10;
+	height: 100%;
+	overflow: hidden;
 }
+
+
+/**
+ * @type layout
+ * @name page-foot
+ */
+.page-foot {
+	order: 3;
+	@include hidden;
+}
+
+
+
+#local {
+	flex: 1 1 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+}
+
+.local-head {
+	flex-shrink: 0;
+	margin: 40rem 0 24rem 0;
+	@include container-padding;
+
+	.local-title {
+		margin: 0;
+		color: color(base, 100);
+		@include font((outline: head, size: large, weight: bold)...);
+
+		.local-name {
+			display: block;
+		}
+	}
+
+	@include hidden;
+}
+
+
+.local-body {
+	flex: 1 1 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
 
 /**
  * @type layout
  * @name #content
  */
-// 1depth
-// .content-head {
-// 	margin: 40rem 0 24rem 0;
+#content {
+	flex: 1 1 100%;
+	height: 100%;
 
-// 	.content-title {
-// 		margin: 0;
-// 		color: color(base, 100);
-// 		@include font((outline: head, size: large, weight: bold)...);
+	display: flex;
+	flex-direction: column;
+}
 
-// 		.content-name {
-// 			display: block;
-// 		}
-// 	}
-// }
 
-// 2depth
 .content-head {
+	flex-shrink: 0;
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 0 40rem;
+	// @include container-padding;
 	height: 56rem;
+
 
 	
 	&::after {
@@ -321,25 +356,26 @@ img {
 	}
 }
 
+.content-body {
+	flex: 1 1 100%;
+	@include container-padding();
+	height: 100%;
+	overflow-y: scroll;
+
+}
+html.laptop {
+	.content-body {
+		@include overflow-scroll(custom);	
+	}
+}
+
 /**
  * @type layout
  * @name page-util
  */
-// .content-util {
-// 	position: fixed;
-// 	bottom: 0;
-// 	right: 0;
-// 	left: 0;
-// }
-
-/**
- * @type layout
- * @name page-foot
- */
-.page-foot {
-
+.content-util {
+	flex-shrink: 0;
 }
-
 
 /**
  * @type module

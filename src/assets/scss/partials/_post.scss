@@ -11,175 +11,137 @@
 
 // post-display
 .post-display.module-a {
-
-	.post-status {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		box-sizing: border-box;
-
-		width: 66rem;
-		min-width: 66rem;
-		height: 28rem;
-		@include font((outline: body, size: x-small, weight: bold, line-height: 1.5)...);
-		border-radius: 6rem;
-		border-width: 1rem;
-		border-style: solid;
-
-		// laptop
-		@include respond-above(large) {
-			width: 96rem;
-			min-width: 96rem;
-			height: 40rem;
-			@include font((size: small)...);
-		}
-
-		&.closing {
-			color: color(base, 050);
-			border-color: color(base, 050);
-		}
-
-		&.ongoing {
-			color: color(primary, 010);
-			border-color: color(primary, 010);
-		}
-	}
-
-
-	.post-util {
-		margin-top: 24rem;
-
-		// laptop
-		@include respond-above(large) {
-			margin-top: 48rem;
-		}
-
-		.button-area {
-			.btn {
-				flex-grow: 1;
-			}
-
-			// laptop
-			@include respond-above(large) {
-				.btn {
-					flex-grow: 0;
-					width: 146rem;
-				}
-			}
-		}
-	}
-
-	//목록
 	.post-list {
-		border-top: 2rem solid color(base, 020);
-		border-bottom: 1rem solid color(base, 060);
-
 		.post-item {
-			position: relative;
-			padding: 16rem;
+			display: flex;
+			flex-direction: column;
 
-			// laptop
-			@include respond-above(large) {
-				padding: 40rem;
-			}
-
+			border-radius: 16rem;
+			background-color: color(base, 000);
+			
 			+.post-item {
-				border-top: 1rem solid color(base, 060);
+				margin-top: 16rem;
 			}
+
 
 			.post-wrap {
-				.post-inform {
-					// laptop
-					@include respond-above(large) {
-						display: flex;
-						align-items: center;
+				order: 1;
+				position: relative;
 
-						.post-head {
-							flex-grow: 1;
-							flex-basis: 100%;
+				.post-inform {
+					padding: 0 20rem;
+
+					.post-type {
+						.data-list {
+							display: flex;
+
+							.data-item {
+								display: block;
+
+								+.data-item {
+									margin-left: 4rem;
+								}
+							}
+						}
+
+						~.post-head {
+							margin-top: 8rem;
 						}
 					}
 
 					.post-head {
-						.post-subject {
-							
-							// laptop
-							@include respond-above(large) {
-								display: flex;
-							}
-
-							.post-status {
-								margin: 0 0 8rem 0;
-								// laptop
-								@include respond-above(large) {
-									margin: 0 40rem 0 0;
-								}
-							}
-
-	
-							.post-name {
-								display: block;
-								@include font((outline: body, size: small)...);
-								color: color(base, 020);
-								@include ellipsis(2);
-
-								&:not(:hover) {
-									text-decoration: none;
-								}
-								
-								// mobile
-								@include respond-below(large) {
-									// 클릭 영역 전체로 확장
-									&::after {
-										content: '';
-										display: block;
-										position: absolute;
-										top: 0;
-										right: 0;
-										bottom: 0;
-										left: 0;
-									}
-								}
-	
-								// laptop
-								@include respond-above(large) {
-									@include font((outline: body, size: large)...);
-									@include ellipsis(1);
-								}
-							}
-						}
-	
-						~.post-foot {
-							margin-top: 6rem;				
-
-							// laptop
-							@include respond-above(large) {
-								margin: 0 0 0 40rem;
-							}
+						.post-title {
+							@include font((outline: body, size: medium, weight: bold)...);
+							color: color(base, 070);							
 						}
 					}
-	
-					.post-foot {
-						.data-list {
+
+					.post-body {
+						margin: 20rem 0;
+						@include font((outline: body, size: x-small)...);
+						color: color(base, 050);
+					}
+
+					.post-data {
+						margin-bottom: 20rem;
+						padding: 12rem 0;
+						border-bottom: 1rem solid color(base, 010);
+
+						>.data-list {
 							display: flex;
-							flex-wrap: wrap;
-	
+							align-items: center;
+
+							margin: 0;
+							padding: 0;
+							list-style: none;
+
+
 							.data-item {
-								display: flex;
-	
-								.data-head {
+								.head {
 									@include hidden;
 								}
-	
-								.data-body {
-									display: block;
+							}
+
+							.data-item.writer {
+								flex-shrink: 0;
+
+								.body {
+									display: flex;
 									@include font((outline: body, size: x-small)...);
-									color: color(base, 050);
+									color: color(base, 090);
+
+									&::before {
+										content: '';
+										display: block;
+										margin-right: 8rem;
+										width: 20rem;
+										height: 20rem;
+										border-radius: 50%;
+										overflow: hidden;
+										box-shadow: 0 0 0 1rem rgba(0,0,0,0.1);
+										background-repeat: no-repeat;
+										background-position: 0 0;
+										background-size: cover;
+										background-image: var(--default-picture);
+									}
+								}
+
+								~.data-item.date {
+									margin-left: 4rem;
+								}
+							}
+
+							.data-item.date {
+								flex-shrink: 0;
+
+								.body {
+									display: block;
+									@include font((outline: body, size: xx-small)...);
+									color: color(base, 040);
+								}
+							}
+
+							.data-item.attachments {
+								flex: 1 1 100%;
+								margin-left: 8rem;
+								width: 100%;
+								
+								.body {
+									display: flex;
+									justify-content: flex-end;
 									
-									// laptop
-									@include respond-above(large) {
-										@include font((outline: body, size: small)...);
-										white-space: nowrap;
+									.btn {
+										svg {
+											width: 20rem;
+											height: 20rem;
+											fill: color(base, 020);
+										}
+
+										&.active {
+											svg {
+												fill: color(base, 050);
+											}
+										}
 									}
 								}
 							}
@@ -187,180 +149,242 @@
 					}
 				}
 			}
-		}
-	}
 
-	//읽기
-	.post-read {
-		border-top: 2rem solid color(base, 020);
+			.post-func {
+				order: 3;
+				border-top: 1rem solid color(base, 010);
+			}
 
-		.post-wrap {
-			.post-inform {
-				.post-head {
-					padding: 16rem 0;
-					border-bottom: 1rem solid color(base, 060);
-
-					// laptop
-					@include respond-above(large) {
-						padding: 48rem 0;
-					}
-
-					.post-subject {
-						// laptop
-						@include respond-above(large) {
-							&::after {
-								@include clear;
-							}
-						}
-
-						.post-status {
-							margin-bottom: 4rem;
-
-							// laptop
-							@include respond-above(large) {
-								margin: 0 12rem 0 0;
-								float: left;
-							}
-						}
-
-						.post-name {
-							@include font((outline: body, size: small, weight: bold)...);
-							color: color(base, 020);
-							
-							// mobile
-							@include respond-below(large) {
-
-							}
-
-							// laptop
-							@include respond-above(large) {
-								@include font((outline: body, size: x-large)...);
-							}
-						}
-					}
-
-					.post-data {
-						margin-top: 8rem;				
-
-						// laptop
-						@include respond-above(large) {
-							margin-top: 16rem;	
-						}
-					}
+			.post-side {
+				order: 2;
+				padding: 0 20rem;
+				
+				.comment-display {
+					margin: 20rem 0;
 				}
+			}
 
-				.post-data {
-					.data-list {
-						display: flex;
-						flex-wrap: wrap;
-						overflow: hidden;
-
-						.data-item {
-							display: flex;
-							position: relative;
-							left: -2em;
-							margin-left: 1em;
-							padding-left: 1em;
-							@include font((outline: body, size: xx-small)...);
-
-							&::before {
-								content: '';
-								display: block;
-								margin-right: 0.25em;
-								width: 1.5em;
-								min-width: 1.5em;
-								height: 1.5em;
-								background-repeat: no-repeat;
-								background-position: center;
-								background-size: cover;
-							}
-
-							&::after {
-								content: '';
-								display: block;
-								position: absolute;
-								left: 0;
-								top: calc(50% - 0.375em);
-								width: 1rem;
-								height: 0.75em;
-								background-color: color(base, 060);
-							}
-
-							// laptop
-							@include respond-above(large) {
-								@include font((outline: body, size: medium)...);
-							}
-
-							.data-head {
-								@include hidden;
-							}
-
-							.data-body {
-								display: block;
-								color: color(base, 050);
-								white-space: nowrap;
-							}
-
-							&.period {
-								&::before {background-image: icon(calendar, color(base, 060));}
-							}
-							&.voter {
-								&::before {background-image: icon(vote, color(base, 060));}
-							}
+			&:not(.active) {
+				.post-wrap {
+					.post-inform {
+						.post-body {
+							@include ellipsis(3);
 						}
 					}
 				}
 				
-				.post-body {
-					padding: 32rem 0 48rem 0;
-					border-bottom: 1rem solid color(base, 060);
-					
-					// laptop
-					@include respond-above(large) {
-						padding: 64rem 0 96rem 0;
+				.post-side {
+					.comment-display {
+						display: none;
+					}
+				}
+
+				.post-func {
+					.button-display {
+						.button-area {
+							.btn {
+								.btn-text::after {
+									transform: rotate(180deg);
+								}
+							}
+						}
 					}
 				}
 			}
 		}
 	}
+}
 
-	//쓰기
-	.post-write {
-		.post-head {
-			display: block;
-			padding: 16rem 8rem;
-			width: 100%;
-			text-align: center;
-			border-top: 2rem solid color(base, 020);
-			border-bottom: 1rem solid color(base, 060);
-			box-sizing: border-box;
-			background-color: color(etc, 010);
 
-			// laptop
-			@include respond-above(large) {
-				padding: 24rem 16rem;
+// comment-display
+.comment-display.module-a {
+	.comment-write {
+		~.comment-list {
+			margin-top: 24rem;
+		}
+	}
+
+	.comment-list {
+		.comment-item {
+			+.comment-item {
+				margin-top: 16rem;
+				padding-top: 16rem;
+				border-top: 1rem solid color(base, 010);
 			}
-			
-			.post-subject {
-				margin: 0;
-				@include font((outline: body, size: small)...);
-				color: color(base, 010);
+			.comment-wrap {
+				.comment-inform {
+					.comment-type {
+						.data-list {
+							display: flex;
 
-				// laptop
-				@include respond-above(large) {
-					@include font((outline: body, size: large)...);
+							.data-item {
+								display: block;
+
+								+.data-item {
+									margin-left: 4rem;
+								}
+							}
+						}
+
+						~.comment-head {
+							margin-top: 8rem;
+						}
+					}
+
+					.comment-head {
+						.comment-title {
+							@include font((outline: body, size: medium, weight: bold)...);
+							color: color(base, 070);							
+						}
+					}
+
+					.comment-body {
+						@include font((outline: body, size: x-small)...);
+						color: color(base, 050);
+					}
+
+					.comment-data {
+						margin-bottom: 12rem;
+
+						.data-list {
+							display: flex;
+							align-items: center;
+
+							margin: 0;
+							padding: 0;
+							list-style: none;
+
+
+							.data-item {
+								.head {
+									@include hidden;
+								}
+							}
+
+							.data-item.writer {
+								
+								.body {
+									display: flex;
+									@include font((outline: body, size: x-small)...);
+									color: color(base, 090);
+
+									&::before {
+										content: '';
+										display: block;
+										margin-right: 8rem;
+										width: 20rem;
+										height: 20rem;
+										border-radius: 50%;
+										overflow: hidden;
+										box-shadow: 0 0 0 1rem rgba(0,0,0,0.1);
+										background-repeat: no-repeat;
+										background-position: 0 0;
+										background-size: cover;
+										background-image: var(--default-picture);
+									}
+								}
+
+								~.data-item.date {
+									margin-left: 4rem;
+								}
+							}
+
+							.data-item.date {
+								.body {
+									display: block;
+									@include font((outline: body, size: xx-small)...);
+									color: color(base, 040);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.comment-side {
+				padding: 0 20rem;
+			}
+
+			.comment-func {
+				border-top: 1rem solid color(base, 010);
+			}
+		}
+	}
+}
+
+.tooltip.module-a {
+	.tooltip-wrap {
+		padding: 16rem 16rem;
+
+		.tooltip-body {
+		
+		}
+	}
+
+	&.type-b {
+		.tooltip-wrap {
+			border-radius: 16rem;
+			background-color: color(base, 000);
+			box-shadow: 0 4rem 12rem 0 rgba(0,0,0,0.12);
+		}
+	}
+}
+
+
+
+.tooltip.module-a {
+	position: absolute;
+	right: 0;
+	z-index: 10;
+	width: 192rem;
+
+	.tooltip-wrap {
+
+		.tooltip-head {
+			@include hidden;
+		}
+		.tooltip-body {
+			.data-list {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				.data-item {
+					@include font((outline: body, size: x-small)...);
+					color: color(base, 050);
+
+					+.data-item {
+						margin-top: 8rem;
+					}
+
+					a {
+						display: flex;
+						// justify-content: flex-end;
+						// text-align: right;
+						color: inherit;
+
+						.file-name {
+							// flex: 1 1 100%;
+							// width: 100%;
+							overflow: hidden;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+
+						}
+
+						.extension {
+							display: block;
+							flex-shrink: 0;
+						}
+
+
+
+						&:not(:hover) {
+							text-decoration: none;
+						}
+					}
 				}
 			}
 		}
-
-		.post-body {
-			padding: 32rem 0 48rem 0;
-			border-bottom: 1rem solid color(base, 060);
-			
-			// laptop
-			@include respond-above(large) {
-				padding: 64rem 0 96rem 0;
-			}
-		}
-	}	
+	}
 }
