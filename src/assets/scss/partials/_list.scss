@@ -31,16 +31,22 @@ $list-outline: (
 	xx-small:	'small',
 );
 
+p.data-list {
+	margin: 0;
+}
+
+ul.data-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
 p.data-item {
 	margin: 0;
 }
 
 /* data-list */
 .data-list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-
 	>li.data-item {
 		a.em {
 			text-decoration: underline;

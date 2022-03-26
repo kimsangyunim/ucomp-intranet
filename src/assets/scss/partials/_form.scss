@@ -133,8 +133,12 @@ $form-module-a-outline: (
 		}
 
 		.form-text {
-			margin-left: 4rem;
 			@include font((outline: body, size: medium)...);
+		}
+
+		.form-text~.form-elem,
+		.form-elem~.form-text {
+			margin-left: 4rem;
 		}
 	}
 
@@ -159,8 +163,12 @@ $form-module-a-outline: (
 		}
 
 		.form-text {
-			margin-left: 4rem;
 			@include font((outline: body, size: medium)...);
+		}
+
+		.form-text~.form-elem,
+		.form-elem~.form-text {
+			margin-left: 4rem;
 		}
 	}
 
@@ -200,8 +208,12 @@ $form-module-a-outline: (
 		}
 
 		.form-text {
-			margin-left: 4rem;
 			@include font((outline: body, size: small)...);
+		}
+
+		.form-text~.form-elem,
+		.form-elem~.form-text {
+			margin-left: 4rem;
 		}
 	}
 

@@ -155,29 +155,6 @@ function buiFormAddFile(inputEl) {
 
 
 /**
- * @module buiToggle contentsPopup
- */
-const contentsPopup = new buiToggle('[data-bui-toggle="contentsPopup"]', {
-	close: true,
-	closeButtonClass: 'btn popup-close',
-	closeButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><title>닫기</title><path d="M10.5382 12L3 4.46179L4.46179 3L12 10.5382L19.5382 3L21 4.46179L13.4618 12L21 19.5382L19.5382 21L12 13.4618L4.46179 21L3 19.5382L10.5382 12Z"/></svg>',
-	closeButtonArea: '.popup-local',
-	reactTarget: 'html',
-	reactTargetActiveClass: 'active-content-popup',
-	focusin: true,
-	activeBeforeCallBack: function() {
-		var toggleTarget = this.target;
-		toggleTarget.classList.add('enabled');
-	},	
-	inactiveAfterCallBack: function() {
-		var toggleTarget = this.target;
-		setTimeout(function() {
-			toggleTarget.classList.remove('enabled');
-		}, 750);
-	}
-});
-
-/**
  * @module checkAspectRatio
  */
 function checkAspectRatio(viewWidth, viewHeight) {
@@ -319,14 +296,50 @@ const pageNavigations = new buiToggle('[data-bui-toggle="pageNavigations"]', {
 }
 widgetGotoTop(0);
 
+/**
+ * @module buiToggle contentsPopup
+ */
+ const contentsPopup = new buiToggle('[data-bui-toggle="contentsPopup"]', {
+	close: true,
+	closeButtonClass: 'btn popup-close',
+	closeButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><title>닫기</title><path d="M10.5382 12L3 4.46179L4.46179 3L12 10.5382L19.5382 3L21 4.46179L13.4618 12L21 19.5382L19.5382 21L12 13.4618L4.46179 21L3 19.5382L10.5382 12Z"/></svg>',
+	closeButtonArea: '.popup-local',
+	reactTarget: 'html',
+	reactTargetActiveClass: 'active-content-popup',
+	focusin: true,
+	activeBeforeCallBack: function() {
+		var toggleTarget = this.target;
+		toggleTarget.classList.add('enabled');
+	},	
+	inactiveAfterCallBack: function() {
+		var toggleTarget = this.target;
+		setTimeout(function() {
+			toggleTarget.classList.remove('enabled');
+		}, 750);
+	}
+});
 
-console.log('ddd');
-
+/**
+ * @module buiToggle postAttachments
+ */
+// const postAttachments = new buiToggle('[data-bui-toggle="postAttachments"]', {
+// 	focusin: true,
+// 	activeBeforeCallBack: function() {
+// 		var toggleTarget = this.target;
+// 		toggleTarget.classList.add('enabled');
+// 	},	
+// 	inactiveAfterCallBack: function() {
+// 		var toggleTarget = this.target;
+// 		setTimeout(function() {
+// 			toggleTarget.classList.remove('enabled');
+// 		}, 750);
+// 	}
+// });
 
 /**
  * @module buiToggle postItem
  */
- const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
+const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
 	accordion: false,
 	activeClass: 'active',
 	buttonClass: 'btn module-a style-a type-none normal-04 x-large flex symbol-rtl-fill-chevron-up',

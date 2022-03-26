@@ -157,8 +157,8 @@
 			if (!toggleTargets) return;
 			
 			toggleTargets.forEach(function(value, index, array) {
-				publicAPIs.myToggle[value.id] = {
-					toggleTarget: value,
+				publicAPIs.myToggle[value] = {
+					toggleTarget: value.id,
 					toggleButton: document.querySelectorAll('[data-bui-toggle-button="' + value.id + '"]'),
 					reactTarget: document.querySelector(settings.reactTarget),
 				}
@@ -436,8 +436,6 @@
 		 * Setup the DOM with the proper attributes
 		 */
 		publicAPIs.setup = function() {
-
-			console.log('ddd');
 
 			// Variables
 			var selectItems = document.querySelectorAll(selector);

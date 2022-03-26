@@ -26,7 +26,7 @@ body {
 	@include font((family: default, size: small)...);
 	-webkit-text-size-adjust: none;
 
-	background-color: color(base, 010);
+	background-color: color(base, 005);
 }
 
 hr {
@@ -408,5 +408,5 @@ html.laptop {
 
 .info-board.module-a {
 	padding: 24rem 0 32rem 0;;
-	
+
 }

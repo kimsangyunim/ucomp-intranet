@@ -26,12 +26,15 @@
 
 			.post-wrap {
 				order: 1;
-				position: relative;
 
 				.post-inform {
+					display: flex;
+					flex-direction: column;
+
 					padding: 0 20rem;
 
 					.post-type {
+						order: 2;
 						.data-list {
 							display: flex;
 
@@ -50,19 +53,26 @@
 					}
 
 					.post-head {
+						order: 3;
 						.post-title {
 							@include font((outline: body, size: medium, weight: bold)...);
 							color: color(base, 070);							
 						}
+
+						p.post-title {
+							margin: 0;
+						}
 					}
 
 					.post-body {
+						order: 4;
 						margin: 20rem 0;
 						@include font((outline: body, size: x-small)...);
 						color: color(base, 050);
 					}
 
 					.post-data {
+						order: 1;
 						margin-bottom: 20rem;
 						padding: 12rem 0;
 						border-bottom: 1rem solid color(base, 010);
@@ -75,15 +85,12 @@
 							padding: 0;
 							list-style: none;
 
+							.data-item.writer {
+								flex-shrink: 0;
 
-							.data-item {
 								.head {
 									@include hidden;
 								}
-							}
-
-							.data-item.writer {
-								flex-shrink: 0;
 
 								.body {
 									display: flex;
@@ -114,6 +121,10 @@
 							.data-item.date {
 								flex-shrink: 0;
 
+								.head {
+									@include hidden;
+								}
+
 								.body {
 									display: block;
 									@include font((outline: body, size: xx-small)...);
@@ -123,13 +134,20 @@
 
 							.data-item.attachments {
 								flex: 1 1 100%;
+
+								display: flex;
+								justify-content: flex-end;
+								position: relative;
 								margin-left: 8rem;
 								width: 100%;
 								
 								.body {
-									display: flex;
-									justify-content: flex-end;
-									
+									position: absolute;
+									top: 100%;
+									right: 0;
+									z-index: 10;
+									width: 192rem;
+
 									.btn {
 										svg {
 											width: 20rem;
@@ -142,6 +160,12 @@
 												fill: color(base, 050);
 											}
 										}
+									}
+								}
+
+								&:not(:focus-within) {
+									.body {
+										display: none;
 									}
 								}
 							}
@@ -201,6 +225,12 @@
 	.comment-write {
 		~.comment-list {
 			margin-top: 24rem;
+		}
+
+		.submit-form {
+			.form-util {
+				margin-top: 8rem;
+			}
 		}
 	}
 
@@ -333,13 +363,7 @@
 
 
 .tooltip.module-a {
-	position: absolute;
-	right: 0;
-	z-index: 10;
-	width: 192rem;
-
 	.tooltip-wrap {
-
 		.tooltip-head {
 			@include hidden;
 		}
@@ -385,6 +409,20 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+
+.data-inform {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 24rem 0 16rem 0;
+
+	.total-count {
+		.head {
+			@include hidden;
 		}
 	}
 }
