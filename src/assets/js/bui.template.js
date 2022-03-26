@@ -370,3 +370,8 @@ const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
 // 		});
 // 	},
 // });
+
+
+if ('virtualKeyboard' in navigator) {
+	alert('dd');
+}
