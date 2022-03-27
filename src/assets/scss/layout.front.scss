@@ -4,11 +4,6 @@
 @import 'partials/_popup';
 @import 'partials/_widget';
 
-@mixin container-padding() {
-	padding-right: 16rem;
-	padding-left: 16rem;
-}
-
 :root {
 	height: 100%;
 	font-size: 1px;
@@ -363,6 +358,7 @@ img {
 	flex: 1 1 100%;
 	@include container-padding();
 	height: 100%;
+	overflow-x: hidden;
 	overflow-y: scroll;
 
 }
@@ -385,11 +381,8 @@ html.laptop {
  * @name section
  */
 .section.module-a {
-	padding: 24rem 0;
-
-	+.section.module-a {
-		border-top: 4rem solid color(base, 010);
-	}
+	position: relative;
+	margin: 24rem 0;
 
 	.section-head {
 		margin-bottom: 16rem;
@@ -405,6 +398,24 @@ html.laptop {
 		}
 	}
 }
+
+*+.section.module-a {
+	padding-top: 24rem;
+	border-top: 4rem solid color(base, 010);
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: calc(50% - 50vw);
+		top: -4rem;
+		width: 100vw;
+		height: 4rem;
+		background-color: color(base, 010);
+	}
+}
+
+
 
 .info-board.module-a {
 	padding: 24rem 0 32rem 0;;

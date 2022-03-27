@@ -304,7 +304,102 @@ html.active-content-popup {
 }
 
 
-// laptop
-@include respond-above(large) {
 
+
+
+/**
+ * @component	toast-popup
+ * @moudle		module-a
+ * @name		common
+ * @update		2022-03-27
+ */
+@keyframes toast-popup-active {
+	0% {
+		transform: translate(0, 120%);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes toast-popup-inactive {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, 120%);
+	}
+}
+
+.toast-popup.module-a.style-b {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+
+	position: absolute;
+	z-index: 50;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	outline: none;
+	background-color: rgba(0,0,0,0);
+	transition: background-color 0.5s ease;
+
+	&:not(.enabled) {
+		display: none;
+	}
+
+	&:not(.active) {
+		.popup-page-body {
+			animation-name: toast-popup-inactive;
+			animation-duration: 0.25s;
+			animation-fill-mode: forwards;
+			animation-timing-function: cubic-bezier(.2,0,0,1);
+		}
+	}
+	
+	&.active {
+		background-color: rgba(0,0,0,0.2);
+
+		.popup-page-body {
+			animation-name: toast-popup-active;
+			animation-duration: 0.25s;
+			animation-fill-mode: forwards;
+			animation-timing-function: cubic-bezier(.2,0,0,1);
+		}
+	}
+
+	.popup-page-body {
+		flex: 0 0 100%;
+		width: 100%;
+
+		.popup-local {
+			overflow: hidden;
+			border-top-right-radius: 16rem;
+			border-top-left-radius: 16rem;
+			background-color: #fff;
+
+			.popup-local-head {
+				@include hidden;
+			}
+
+			.popup-local-body {
+				margin: 56rem 0 24rem 0;
+				@include container-padding;
+			}
+
+
+			.btn.popup-close {
+				position: absolute;
+				top: 16rem;
+				left: 50%;
+				transform: translate(-50%, 0);
+
+				svg {
+					fill: color(base, 040);
+				}
+			}
+		}
+	}
 }

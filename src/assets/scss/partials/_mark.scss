@@ -33,12 +33,12 @@ $mark-module-accent: (
 	'normal-02': (
 		'none' color(base, 060) transparent transparent,
 		'line' color(base, 040) color(base, 030) color(base, 000),
-		'fill' color(base, 000) color(base, 030) color(base, 060),
+		'fill' color(base, 000) color(base, 070) color(base, 070),
 	),
 	'normal-03': (
 		'none' color(base, 040) transparent transparent,
 		'line' color(base, 040) color(base, 030) color(base, 000),
-		'fill' color(base, 000) color(base, 030) color(base, 040),
+		'fill' color(base, 000) color(base, 030) color(base, 030),
 	),
 	'normal-04': (
 		'none' color(base, 040) transparent transparent,
@@ -71,10 +71,10 @@ $mark-module-accent: (
  * @ $border-width
  */
 $mark-module-outline: (
-	'small'			16rem 16rem 1.5 1rem,
-	'medium'		20rem 16rem 1.5 1rem,
-	'large'			24rem 18rem 1.5 1rem,
-	'x-large'		32rem 20rem 1.5 1rem,
+	'x-small'		16rem 16rem 1.5 1rem,
+	'small'			20rem 16rem 1.5 1rem,
+	'medium'		24rem 18rem 1.5 1rem,
+	'large'			32rem 20rem 1.5 1rem,
 );
 
 

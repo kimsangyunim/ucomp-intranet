@@ -107,7 +107,6 @@ $form-module-a-outline: (
 		.form-elem {
 			width: 24rem;
 			height: 24rem;
-			border-radius: 100%;
 			border: 1rem solid color(base, 020);
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -132,6 +131,18 @@ $form-module-a-outline: (
 			}
 		}
 
+		&.style-b {
+			.form-elem {
+				border-radius: 4rem;
+			}
+		}
+
+		&.style-c {
+			.form-elem {
+				border-radius: 50%;
+			}
+		}
+
 		.form-text {
 			@include font((outline: body, size: medium)...);
 		}
@@ -147,7 +158,6 @@ $form-module-a-outline: (
 		.form-elem {
 			width: 24rem;
 			height: 24rem;
-			border-radius: 4rem;
 			border: 1rem solid color(base, 020);
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -159,6 +169,18 @@ $form-module-a-outline: (
 				border-color: color(primary, 050);
 				background-color: color(primary, 050);
 				background-image: icon(fill-check, color(base, 000));
+			}
+		}
+
+		&.style-b {
+			.form-elem {
+				border-radius: 4rem;
+			}
+		}
+
+		&.style-c {
+			.form-elem {
+				border-radius: 50%;
 			}
 		}
 

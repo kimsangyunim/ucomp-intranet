@@ -300,19 +300,40 @@ widgetGotoTop(0);
  * @module buiToggle contentsPopup
  */
  const contentsPopup = new buiToggle('[data-bui-toggle="contentsPopup"]', {
-	close: true,
-	closeButtonClass: 'btn popup-close',
-	closeButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><title>닫기</title><path d="M10.5382 12L3 4.46179L4.46179 3L12 10.5382L19.5382 3L21 4.46179L13.4618 12L21 19.5382L19.5382 21L12 13.4618L4.46179 21L3 19.5382L10.5382 12Z"/></svg>',
-	closeButtonArea: '.popup-local',
+	inactiveButton: true,
+	inactiveButtonClass: 'btn popup-close',
+	inactiveButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><title>닫기</title><path d="M10.5382 12L3 4.46179L4.46179 3L12 10.5382L19.5382 3L21 4.46179L13.4618 12L21 19.5382L19.5382 21L12 13.4618L4.46179 21L3 19.5382L10.5382 12Z"/></svg>',
+	inactiveButtonArea: '.popup-local',
 	reactTarget: 'html',
 	reactTargetActiveClass: 'active-content-popup',
 	focusin: true,
-	activeBeforeCallBack: function() {
-		var toggleTarget = this.target;
+	// activeBeforeCallBack: function() {
+	// 	var toggleTarget = this.target;
+	// 	toggleTarget.classList.add('enabled');
+	// },	
+	// inactiveAfterCallBack: function() {
+	// 	var toggleTarget = this.target;
+	// 	setTimeout(function() {
+	// 		toggleTarget.classList.remove('enabled');
+	// 	}, 750);
+	// }
+});
+
+/**
+ * @module buiToggle toastPopup
+ */
+ const toastPopup = new buiToggle('[data-bui-toggle="toastPopup"]', {
+	inactiveButton: true,
+	inactiveButtonClass: 'btn popup-close',
+	inactiveButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><title>닫기</title><path d="M6.37,8.48a1.24,1.24,0,0,1,1.76,0L12,12.35l3.87-3.87a1.25,1.25,0,1,1,1.76,1.77L12,15.88,6.37,10.25A1.25,1.25,0,0,1,6.37,8.48Z"/></svg>',
+	inactiveButtonArea: '.popup-local',
+	reactTarget: 'html',
+	reactTargetActiveClass: 'active-content-popup',
+	focusin: true,
+	activeBeforeCallBack: function(toggleTarget) {
 		toggleTarget.classList.add('enabled');
 	},	
-	inactiveAfterCallBack: function() {
-		var toggleTarget = this.target;
+	inactiveAfterCallBack: function(toggleTarget) {
 		setTimeout(function() {
 			toggleTarget.classList.remove('enabled');
 		}, 750);
@@ -351,6 +372,10 @@ const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
 
 
 
+
+
+
+
  // 혜택 목록
 // const benefitList = new buiExpand('.data-item[data-bui-expand="benefitItem"]', {
 // 	accordion: false,
@@ -372,6 +397,12 @@ const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
 // });
 
 
-if ('virtualKeyboard' in navigator) {
-	alert('dd');
-}
+// if ('virtualKeyboard' in navigator) {
+// 	alert('dd');
+// }
+
+
+
+// navigator.virtualKeyboard.addEventListener('geometrychanged', (event) => {
+// 	alert('ddd');
+//  });
