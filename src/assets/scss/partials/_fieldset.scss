@@ -5,13 +5,12 @@
  * 2. label과 입력 폼의 배치
  * 3. 아이템과 form-area의 여백
  */
- fieldset {
-	margin: 0;
-	padding: 0;
-	border: 0 none;
-}
 
 .submit-form.module-a {
+	margin: 0;
+	padding: 0;
+	border: hidden;
+
 	legend {
 		@include hidden;
 	}
@@ -156,6 +155,68 @@
 			&~*,
 			&+* {
 				margin-left: 12rem;
+			}
+		}
+	}
+}
+
+
+
+
+.file-upload.module-a {
+
+	.upload-head {
+		position: relative;
+		height: 56rem;
+		width: 56rem;	
+
+		
+		.file-to-upload {
+			position: relative;
+			
+			.file-elem {
+				left: 0;
+				top: 0;
+				margin: 0;
+				padding: 0;
+				width: 56rem;
+				height: 56rem;
+				border: hidden;
+				border-radius: 0;
+				background-color: transparent;
+				appearance: none;
+			}
+		}
+		
+		.uploaded-files {			
+			.head {
+				@include hidden;
+			}
+			.body {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				height: 56rem;
+				width: 56rem;		
+
+				border-radius: 16rem;
+				border: 2rem solid color(base, 010);
+				box-sizing: border-box;
+				background-color: color(base, 000);
+				color: color(base, 030);
+
+				@include font((outline: head, size: xx-small)...);
+
+				&::before {
+					content: '';
+					flex-shrink: 0;
+					display: block;
+					width: 24rem;
+					height: 18rem;
+					background: icon(fill-camera, color(base, 030)) no-repeat center/cover;
+				}
 			}
 		}
 	}
