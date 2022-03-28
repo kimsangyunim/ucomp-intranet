@@ -108,25 +108,57 @@
 
 							<!-- subsection -->
 							<div class="subsection">
-								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'Style A'}) %></div>
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'info-board'}) %></div>
 								<div class="subsection-body">
 									<!-- highlight-js -->
 									<pre class="highlight-js">
-<code class="html">&lt;div class="info-board module-a style-a type-c attr-error"&gt;
+<code class="html">&lt;div class="info-board module-a style-a type-c attr-done" id="infoBoardDone"&gt;
 	&lt;div class="board-wrap"&gt;
 		&lt;div class="board-head"&gt;
-			&lt;p class="board-subject"&gt;&lt;span class="wbr"&gt;죄송합니다.&lt;/span&gt;&lt;/p&gt;
-		&lt;/div&gt;
-		&lt;div class="board-body"&gt;
-			&lt;p class="para"&gt;감사합니다.&lt;/p&gt;
-		&lt;/div&gt;
-		&lt;div class="board-util"&gt;
-			&lt;div class="button-area module-a style-a type-c"&gt;
-				&lt;a class="btn module-b style-c type-fill accent-01 x-large" href="#"&gt;&lt;span class="btn-text"&gt;메인으로 이동하기&lt;/span&gt;&lt;/a&gt;
-			&lt;/div&gt;
+			&lt;p class="board-subject"&gt;스마트데이&lt;/p&gt;
+			&lt;p class="board-summary"&gt;등록이 완료되었습니다!&lt;/p&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
+</code></pre>
+									<!-- //highlight-js -->
+									<!-- info-board -->
+									<div class="info-board module-a style-a type-c attr-done" id="infoBoardDone">
+										<div class="board-wrap">
+											<div class="board-head">
+												<p class="board-subject">스마트데이</p>
+												<p class="board-summary">등록이 완료되었습니다!</p>
+											</div>
+										</div>
+									</div>
+									<!-- //info-board -->
+								</div>
+							</div>
+							<!-- //subsection -->
+
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'noti-board'}) %></div>
+								<div class="subsection-body">
+									<!-- highlight-js -->
+									<pre class="highlight-js">
+<code class="html">
+&lt;div class="info-board module-b style-a type-c"&gt;
+	&lt;div class="board-wrap"&gt;
+		&lt;div class="board-head"&gt;
+			&lt;p class="board-subject"&gt;&lt;span class="wbr"&gt;정보&lt;/span&gt;&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="board-body"&gt;
+			&lt;p class="para"&gt;&lt;span class="wbr"&gt; ... &lt;/span&gt;&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="board-util"&gt;
+			&lt;div class="button-area"&gt;
+				&lt;a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"&gt;&lt;span class="btn-text"&gt;바로가기&lt;/span&gt;&lt;/a&gt;
+				&lt;a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"&gt;&lt;span class="btn-text"&gt;바로가기&lt;/span&gt;&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;	
 </code></pre>
 									<!-- //highlight-js -->
 									<style>
@@ -134,7 +166,7 @@
 									</style>
 
 									<!-- noti-board -->
-									<div class="noti-board module-a style-a type-fill accent-01 x-small">
+									<div class="noti-board module-a style-b type-fill accent-01 x-small symbol-ltr-fill-circle-caution">
 										<div class="board-wrap">
 											<div class="board-head"><h4 class="board-subject"><span class="board-name">승인 이후 수정이 불가하오니 내용 확인 후 등록 바랍니다</span></h4></div>
 											<div class="board-body" style="display: none;">
@@ -168,85 +200,6 @@
 										</div>
 									</div>
 									<!-- //noti-board -->
-								</div>
-							</div>
-							<!-- //subsection -->
-
-							<!-- subsection -->
-							<div class="subsection">
-								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'Style B'}) %></div>
-								<div class="subsection-body">
-									<!-- highlight-js -->
-									<pre class="highlight-js">
-<code class="html">
-&lt;div class="info-board module-b style-a type-c"&gt;
-	&lt;div class="board-wrap"&gt;
-		&lt;div class="board-head"&gt;
-			&lt;p class="board-subject"&gt;&lt;span class="wbr"&gt;정보&lt;/span&gt;&lt;/p&gt;
-		&lt;/div&gt;
-		&lt;div class="board-body"&gt;
-			&lt;p class="para"&gt;&lt;span class="wbr"&gt; ... &lt;/span&gt;&lt;/p&gt;
-		&lt;/div&gt;
-		&lt;div class="board-util"&gt;
-			&lt;div class="button-area"&gt;
-				&lt;a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"&gt;&lt;span class="btn-text"&gt;바로가기&lt;/span&gt;&lt;/a&gt;
-				&lt;a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"&gt;&lt;span class="btn-text"&gt;바로가기&lt;/span&gt;&lt;/a&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;	
-</code></pre>
-									<!-- //highlight-js -->
-
-									<!--
-									<div class="temp-item">
-										<div class="temp-wrap">
-											<div class="temp-head"></div>
-											<div class="temp-body"></div>
-										</div>
-									</div>
-
-									<div class="data-display">
-										<ul class="data-list">
-											<li class="data-item">
-												<a class="data-wrap" href="#">
-													<span class="data-head"></span>
-													<span class="data-body"></span>
-												</a>		
-											</li>
-										</ul>
-									</div>
-
-
-									<ul class="data-list for-test">
-										<li class="data-item eye"><a class="data-wrap" href="#">data item</a></li>
-										<li class="data-item start"><a class="data-wrap" href="#">data item</a></li>
-										<li class="data-item stop"><a class="data-wrap" href="#">data item</a></li>
-									</ul> -->
-
-
-
-									
-
-									<!-- info-board -->
-									<div class="info-board module-b style-a type-c">
-										<div class="board-wrap">
-											<div class="board-head">
-												<p class="board-subject"><span class="wbr">생산성 정보</span></p>
-											</div>
-											<div class="board-body">
-												<p class="para"><span class="wbr">주요 산업 또는 기업 수준의 생산성 분석,</span> <span class="wbr">생산성 정책 연구 등 생산성 관련 이슈페이퍼 발간</span></p>
-												<p class="para"><span class="wbr">국내 연구기관, 국제기구(OECD, ILO, World Bank 등)</span> <span class="wbr">또는 해외 생산성 연구기관(美 BLS, The Conference Board 등)</span> <span class="wbr">에서 발표하는 생산성 관련 정보자료를 제공합니다.</span></p>
-											</div>
-											<div class="board-util">
-												<div class="button-area">
-													<a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"><span class="btn-text">생산성 정보 바로가기</span></a>
-													<a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"><span class="btn-text">생산성 용어 바로가기</span></a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- //info-board -->
 								</div>
 							</div>
 							<!-- //subsection -->

@@ -21,19 +21,10 @@
 				.wbr {
 					display: block;
 				}
-
-				// laptop
-				@include respond-above(x-large) {
-					@include font((outline: body, size: large)...);
-				}
 			}
 
 			~.board-body {
 				margin-top: 16rem;
-				// laptop
-				@include respond-above(x-large) {
-					margin-top: 12rem;
-				}
 			}
 		}
 
@@ -102,4 +93,195 @@
 			text-align: center;
 		}
 	}
+}
+
+/*
+* @ mark module accent
+*
+* @ $text-color
+* @ $border-color
+* @ $background-color
+*/
+$noti-board-module-accent: (
+	'normal-00': (
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 100) color(base, 100) color(base, 000),
+		'fill' color(base, 000) color(base, 100) color(base, 100),
+	),
+	'normal-01': (
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 80) color(base, 80) color(base, 000),
+		'fill' color(base, 000) color(base, 80) color(base, 80),
+	),
+	'normal-02': (
+		'none' color(base, 050) transparent transparent,
+		'line' color(base, 050) color(base, 050) color(base, 000),
+		'fill' color(base, 050) color(base, 010) color(base, 010),
+	),
+	'accent-01': (
+		'none' color(primary, 050) transparent transparent,
+		'line' color(primary, 050) color(primary, 005) color(primary, 000),
+		'fill' color(primary, 040) color(primary, 005) color(primary, 005),
+	),
+	'accent-02': (
+		'none' color(secondary, 010) transparent transparent,
+		'line' color(secondary, 010) color(secondary, 010) color(base, 000),
+		'fill' color(base, 000) color(secondary, 010) color(secondary, 010),
+	),
+	'accent-03': (
+		'none' color(secondary, 030) transparent transparent,
+		'line' color(secondary, 030) color(secondary, 030) color(base, 000),
+		'fill' color(base, 000) color(secondary, 030) color(secondary, 030),
+	)
+);
+
+/*
+ * module-a outline
+ *
+ * @ $padding
+ * @ $line-height
+ * @ $font-size
+ * @ $font-weight
+ * @ $border-width
+ */  
+ $noti-board-module-a-outline: (
+	'x-small'		10rem 18rem 1.50 700 1rem,
+	'small'			12rem 20rem 1.50 700 1rem,
+	'medium'		14rem 24rem 1.50 700 1rem,
+	'large'			16rem 28rem 1.50 700 1rem,
+	'x-large'		18rem 32rem 1.50 700 1rem,
+);
+
+/**
+ * @type module
+ * @name noti-board
+ * @modle a
+ */
+.noti-board.module-a {
+	padding: 10rem;
+	box-sizing: border-box;
+	border-style: solid;
+	@include font((family: default)...);
+
+	.board-wrap {
+		.board-head {
+			.board-subject {
+				display: flex;
+				margin: 0;
+			}
+		}
+
+		.board-body {
+			.para {
+				margin: 0;
+				+.para {
+					// margin-top: 16rem;
+				}
+			}
+		}
+	}
+	
+	&.type-c { 
+		display: flex;
+		justify-content: center;
+
+		.board-wrap {
+			display: flex;
+			flex-wrap: wrap;
+			flex-flow: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&[class*=symbol-ltr-] .board-subject::before,
+	&[class*=symbol-rtl-] .board-subject::after {
+		content: '';
+		display: block;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	// accent
+	@each $accent-name in $noti-board-module-accent {
+		&.#{nth($accent-name, 1)} {
+			// @debug "divider offset: #{nth($accent-name, 1)}";
+			@each $type-name, $color, $border-color, $background-color in map-get($noti-board-module-accent, nth($accent-name, 1)) {
+				&.type-#{$type-name} {
+					background-color: $background-color;
+					border-color: $border-color;
+					// color: $color;
+
+					@each $icon-name, $icon in $symbol-list {
+						&.symbol-ltr-#{$icon-name} {.board-subject {&::before {background-image: icon($icon-name, $color);}}}
+						&.symbol-rtl-#{$icon-name} {.board-subject {&::after {background-image: icon($icon-name, $color);}}}
+					}
+					
+					.board-wrap {
+						.board-head {
+							.board-name {
+								color: $color;
+							}
+						}
+						.board-body {
+							
+						}
+					}
+					@each $icon-name, $icon in $symbol-list {
+						&.symbol-ltr-#{$icon-name} {.mark-text {&::before {background-image: icon($icon-name, $color);}}}
+						&.symbol-rtl-#{$icon-name} {.mark-text {&::after {background-image: icon($icon-name, $color);}}}
+					}
+				}
+			}
+		}
+	}
+	// outline
+	@each $name, $padding, $line-height, $font-size, $font-weight, $border-width in $noti-board-module-a-outline {
+		&.#{$name} {
+			padding: $padding;
+
+			font-weight: $font-weight;
+			line-height: $line-height;
+			font-size: calc($line-height / $font-size);
+			border-width: $border-width;
+
+			&.style-b {
+				border-radius: $padding * 0.4;
+			}
+
+			&.style-c {
+				border-radius: $line-height * 0.5;
+			}
+
+			// icon
+			&[class*=symbol-ltr-] .board-subject::before,
+			&[class*=symbol-rtl-] .board-subject::after {
+				width: $line-height;
+				min-width: $line-height;
+				height: $line-height;
+			}
+
+			
+			&[class*="symbol-ltr"] {
+				.board-subject {
+					&::before {
+					}
+				}
+			}
+
+			.board-wrap {
+				.board-head {
+					.board-subject {
+						
+					}
+		
+				}
+		
+				.board-body {
+					.para {
+					}
+				}
+			}
+		}
+	}	
 }
