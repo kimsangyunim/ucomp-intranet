@@ -71,11 +71,19 @@ $mark-module-accent: (
  * @ $border-width
  */
 $mark-module-outline: (
+	'x-small'		18rem 16rem 1.5 1rem,
+	'small'			20rem 16rem 1.5 1rem,
+	'medium'		24rem 18rem 1.5 1rem,
+	'large'			28rem 20rem 1.5 1rem,
+	'x-large'		32rem 24rem 1.5 1rem,
+);
+
+/* $mark-module-outline: (
 	'x-small'		16rem 16rem 1.5 1rem,
 	'small'			20rem 16rem 1.5 1rem,
 	'medium'		24rem 18rem 1.5 1rem,
 	'large'			32rem 20rem 1.5 1rem,
-);
+); */
 
 
 .mark {
