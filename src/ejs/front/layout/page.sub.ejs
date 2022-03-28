@@ -48,9 +48,9 @@
 							</div>
 							<!-- //info-board -->
 							<!-- goods-display -->
-							<div class="goods-display module-a style-a type-a" style="display: none;">
+							<div class="goods-display module-a style-a type-a">
 								<div class="goods-list">
-									<% for(var i = 0; i < 2; i++) { %>
+									<% for(var i = 0; i < 1; i++) { %>
 										<%-include('../../front/_mixin/_goods.item.staff.ejs') %>
 									<% } %>
 								</div>
@@ -101,7 +101,7 @@
 								</div>
 							</div>
 							<!-- //section -->
-							<!-- data-finder -->
+							<!-- data-finder --> 
 							<form class="data-finder">
 								<!-- submit-form -->
 								<fieldset class="submit-form module-a">
@@ -369,7 +369,7 @@
 													<div class="form-body">
 														<div class="form-area">
 															<span class="form textfield module-a style-b type-line normal-04 medium flex">
-																<input type="text" class="form-elem" id="expensesAmount" placeholder="금액을 입력해주세요." value="11,000" pattern="[0-9]*" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+																<input type="text" class="form-elem" id="expensesAmount" placeholder="금액을 입력해주세요." value="11,000" pattern="^[0-9]+$" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
 															</span>
 														</div>
 													</div>

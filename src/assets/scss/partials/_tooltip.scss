@@ -208,3 +208,65 @@ $tooltip-module-a-outline: (
 		}
 	}
 }
+
+/**
+ * @component	tooltip
+ * @moudle		module-a
+ * @name		common
+ * @update		2022-03-27
+ */
+.tooltip.module-a {
+	&.type-b {
+		.tooltip-wrap {
+			border-radius: 16rem;
+		}
+	}
+	
+	.tooltip-wrap {
+		padding: 16rem 16rem;
+		box-shadow: 0 4rem 12rem 0 rgba(0,0,0,0.12);
+		background-color: color(base, 000);
+
+		.tooltip-head {
+			@include hidden;
+		}
+
+		.tooltip-body {
+			.data-list {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				.data-item {
+					@include font((outline: body, size: x-small)...);
+					color: color(base, 050);
+
+					+.data-item {
+						margin-top: 8rem;
+					}
+
+					a {
+						display: flex;
+						color: inherit;
+
+						.file-name {
+							overflow: hidden;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+
+						}
+
+						.extension {
+							display: block;
+							flex-shrink: 0;
+						}
+
+						&:not(:hover) {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

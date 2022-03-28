@@ -15,14 +15,12 @@
 		.post-item {
 			display: flex;
 			flex-direction: column;
-
 			border-radius: 16rem;
 			background-color: color(base, 000);
 			
 			+.post-item {
 				margin-top: 16rem;
 			}
-
 
 			.post-wrap {
 				order: 1;
@@ -105,7 +103,7 @@
 										height: 20rem;
 										border-radius: 50%;
 										overflow: hidden;
-										box-shadow: 0 0 0 1rem rgba(0,0,0,0.1);
+										box-shadow: 0 0 0 1rem rgba(0,0,0,0.2);
 										background-repeat: no-repeat;
 										background-position: 0 0;
 										background-size: cover;
@@ -156,10 +154,8 @@
 									&::after {
 										content: '';
 										display: block;
-										// margin-left: 4rem;
 										width: 20rem;
 										height: 20rem;
-										// background-repeat
 										background: icon(fill-download, color(base, 040)) no-repeat center/cover;
 									}
 								}
@@ -241,7 +237,6 @@
 		}
 	}
 }
-
 
 // comment-display
 .comment-display.module-a {
@@ -327,7 +322,7 @@
 										height: 20rem;
 										border-radius: 50%;
 										overflow: hidden;
-										box-shadow: 0 0 0 1rem rgba(0,0,0,0.1);
+										box-shadow: 0 0 0 1rem rgba(0,0,0,0.2);
 										background-repeat: no-repeat;
 										background-position: 0 0;
 										background-size: cover;
@@ -369,78 +364,6 @@
 	}
 }
 
-.tooltip.module-a {
-	.tooltip-wrap {
-		padding: 16rem 16rem;
-
-		.tooltip-body {
-		
-		}
-	}
-
-	&.type-b {
-		.tooltip-wrap {
-			border-radius: 16rem;
-			background-color: color(base, 000);
-			box-shadow: 0 4rem 12rem 0 rgba(0,0,0,0.12);
-		}
-	}
-}
-
-
-
-.tooltip.module-a {
-	.tooltip-wrap {
-		.tooltip-head {
-			@include hidden;
-		}
-		.tooltip-body {
-			.data-list {
-				margin: 0;
-				padding: 0;
-				list-style: none;
-
-				.data-item {
-					@include font((outline: body, size: x-small)...);
-					color: color(base, 050);
-
-					+.data-item {
-						margin-top: 8rem;
-					}
-
-					a {
-						display: flex;
-						// justify-content: flex-end;
-						// text-align: right;
-						color: inherit;
-
-						.file-name {
-							// flex: 1 1 100%;
-							// width: 100%;
-							overflow: hidden;
-							white-space: nowrap;
-							text-overflow: ellipsis;
-
-						}
-
-						.extension {
-							display: block;
-							flex-shrink: 0;
-						}
-
-
-
-						&:not(:hover) {
-							text-decoration: none;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-
 .data-inform {
 	display: flex;
 	justify-content: space-between;
@@ -453,8 +376,6 @@
 		}
 	}
 }
-
-
 
 // post-display
 .post-display.module-b {
@@ -469,7 +390,6 @@
 			+.post-item {
 				margin-top: 16rem;
 			}
-
 
 			.post-wrap {
 				order: 1;
@@ -513,9 +433,8 @@
 							display: flex;
 							flex-wrap: wrap;
 							justify-content: space-between;
-
 							@include font((outline: body, size: small, weight: bold)...);
-							color: color(base, 070);	
+							color: color(base, 070);
 
 							.post-name {
 								display: block;
@@ -612,7 +531,6 @@
 									color: color(base, 040);
 								}
 							}
-
 
 							.data-item.status {
 								display: flex;

@@ -15,86 +15,85 @@
 		.goods-item {
 			display: flex;
 			flex-direction: column;
-			padding: 24rem 20rem;
-			border-radius: 16rem;
-			background-color: color(base, 000);
+			padding: 16rem 0;
 			
 			+.goods-item {
-				margin-top: 16rem;
+				border-top: 1rem solid color(base, 010);
 			}
 
-
 			.goods-wrap {
-				order: 1;
+				display: flex;
+				align-items: center;
 				position: relative;
-
-				.goods-select {
-					display: flex;
-					position: absolute;
-					top: 0;
-					right: 0;
-
-					~.goods-inform {
-						.goods-type {
-							padding-right: 28rem;
-						}
-					}
+				
+				&::before  {
+					content: '';
+					flex-shrink: 0;
+					display: block;
+					margin-right: 12rem;
+					width: 48rem;
+					height: 48rem;
+					border-radius: 50%;
+					box-shadow: inset 0 0 1rem 0 rgba(0,0,0,0.2);
+					background-repeat: no-repeat;
+					background-position: center;
+					background-color: color(base, 000);
+					background-size: cover;
+					background-image: var(--default-picture);
 				}
 
 				.goods-inform {
+					flex: 1 1 100%;
 					display: flex;
 					flex-direction: column;
+					position: relative;
+					width: 100%;
 
 					.goods-type {
+						position: absolute;
+						top: 0;
+						right: 0;
+
 						.data-list {
 							display: flex;
-							flex-wrap: wrap;
-
-							.data-item {
-								display: block;
-								margin-right: 4rem;
-							}
 						}
 
 						~.goods-head {
-							margin-top: 16rem;
+							padding-right: 20rem;
 						}
 					}
 
 					.goods-head {
 						.goods-title {
 							display: flex;
-							flex-wrap: wrap;
-							justify-content: space-between;
-
-							@include font((outline: body, size: small, weight: bold)...);
-							color: color(base, 070);	
-
+							align-items: center;
+							
 							.goods-name {
-								display: block;
-								margin-right: 4rem;
-								color: inherit;
+								@include font((outline: body, size: small, weight: bold)...);
+								color: color(base, 070);	
 							}
 
-							a.goods-name {
-								&:not(:hover) {
-									text-decoration: none;
-								}
+							.goods-position {
+								margin-left: 4rem;
+								@include font((outline: body, size: xx-small)...);
+								color: color(base, 070);
+							}
 
-								&::after {
+							.goods-team,
+							.goods-department {
+								display: flex;
+								align-items: center;
+								@include font((outline: body, size: xx-small)...);
+								color: color(base, 040);
+
+								&::before {
 									content: '';
+									flex-shrink: 0;
 									display: block;
-									position: absolute;
-									top: 0;
-									right: 0;
-									bottom: 0;
-									left: 0;
+									width: 12rem;
+									height: 16rem;
+									background: icon(bullet-dot, color(base, 040)) no-repeat center/cover;
 								}
-							}
-
-							.goods-period {
-								display: block;
-								flex-shrink: 0;
 							}
 						}
 
@@ -103,7 +102,7 @@
 						}
 
 						~.goods-data {
-							margin-top: 8rem;
+							margin-top: 4rem;
 						}
 					}
 
@@ -111,74 +110,73 @@
 						>.data-list {
 							display: flex;
 							flex-wrap: wrap;
-							justify-content: space-between;
 							align-items: center;
 							margin: 0;
 							padding: 0;
 							list-style: none;
 
-							.data-item.writer {
-								margin-right: 4rem;
-								.head {
-									@include hidden;
-								}
-
+							.data-item {
 								.body {
-									display: flex;
-									align-items: center;
-
-									.name {
+									display: block;
+									.text {
 										display: block;
 										@include font((outline: body, size: xx-small)...);
-										color: color(base, 090);
+									}
+									a.text:not(:hover) {
+										text-decoration: none;
+									}
+								}
+							}
+
+							.data-item.mobilephone {
+								.head {
+									@include hidden;
+								}
+								.body {
+									position: relative;
+
+									.text {
+										cursor: pointer;
+										color: color(base, 070);
 									}
 
-									.department,
-									.team {
-										display: flex;
-										@include font((outline: body, size: xx-small)...);
+									.tooltip {
+										position: absolute;
+										z-index: 10;
+										top: 100%;
+										left: 0;
+									}
+								}
+
+								&:not(:focus-within) {
+									.tooltip {
+										display: none;
+									}
+								}
+							}
+
+							.data-item.email {
+								display: flex;
+								align-items: center;
+								
+								&::before {
+									content: '';
+									margin: 0 8rem;
+									flex-shrink: 0;
+									display: block;
+									width: 1rem;
+									height: 8rem;
+									background-color: color(base, 010);
+								}
+
+								.head {
+									@include hidden;
+								}
+
+								.body {
+									.text {
 										color: color(base, 040);
-
-										&::before {
-											content: '';
-											flex-shrink: 0;
-											display: block;
-											width: 12rem;
-											height: 16rem;
-											background: icon(bullet-dot, color(base, 040)) no-repeat center/cover;
-										}
 									}
-								}
-							}
-
-							.data-item.posted {
-								display: flex;
-								justify-content: flex-end;
-
-								.head {
-									@include hidden;
-								}
-
-								.body {
-									display: block;
-									@include font((outline: body, size: xx-small)...);
-									color: color(base, 040);
-								}
-							}
-
-
-							.data-item.status {
-								display: flex;
-								justify-content: flex-end;
-
-								.head {
-									@include hidden;
-								}
-
-								.body {
-									display: block;
-									@include font((outline: body, size: xx-small)...);
-									color: color(base, 040);
 								}
 							}
 						}

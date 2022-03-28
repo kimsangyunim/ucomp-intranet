@@ -351,3 +351,44 @@ $mark-module-outline: (
 		}	
 	}
 }
+
+.lamp.module-a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	&::before {
+		content: '';
+		display: block;
+	}
+
+	.lamp-text {
+		@include hidden;
+	}
+
+	&.style-c::before {
+		border-radius: 50%;
+	}
+
+	&.small {
+		width: 20rem;
+		height: 20rem;
+
+		&::before {
+			width: 8rem;
+			height: 8rem;
+		}
+	}
+
+	&.normal-04::before {
+		background-color: color(base, 040);
+	}
+
+	&.normal-10::before {
+		background-color: color(base, 000);
+	}
+
+	&.accent-03::before {
+		background-color: #FFB274;
+	}
+}
