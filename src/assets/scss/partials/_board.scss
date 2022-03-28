@@ -1,11 +1,61 @@
-
+/*
+* @ mark module accent
+*
+* @ $text-color
+* @ $border-color
+* @ $background-color
+*/
+$board-module-accent: (
+	'normal-00': (
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 100) color(base, 100) color(base, 000),
+		'fill' color(base, 000) color(base, 100) color(base, 100),
+	),
+	'normal-01': (
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 80) color(base, 80) color(base, 000),
+		'fill' color(base, 000) color(base, 80) color(base, 80),
+	),
+	'normal-02': (
+		'none' color(base, 060) transparent transparent,
+		'line' color(base, 040) color(base, 030) color(base, 000),
+		'fill' color(base, 000) color(base, 070) color(base, 070),
+	),
+	'normal-03': (
+		'none' color(base, 040) transparent transparent,
+		'line' color(base, 040) color(base, 030) color(base, 000),
+		'fill' color(base, 000) color(base, 030) color(base, 030),
+	),
+	'normal-04': (
+		'none' color(base, 040) transparent transparent,
+		'line' color(base, 070) color(base, 010) color(base, 000),
+		'fill' color(base, 070) color(base, 010) color(base, 010),
+	),
+	'accent-01': (
+		'none' color(primary, 050) transparent transparent,
+		'line' color(primary, 050) color(primary, 050) color(primary, 000),
+		'fill' color(primary, 000) color(primary, 050) color(primary, 050),
+	),
+	'accent-02': (
+		'none' color(secondary, 010) transparent transparent,
+		'line' color(secondary, 010) color(secondary, 010) color(base, 000),
+		'fill' color(base, 000) color(secondary, 010) color(secondary, 010),
+	),
+	'accent-03': (
+		'none' color(secondary, 030) transparent transparent,
+		'line' color(secondary, 030) color(secondary, 030) color(base, 000),
+		'fill' color(base, 000) color(secondary, 030) color(secondary, 030),
+	)
+);
 /**
  * @type module
- * @name info-board
+ * @name noti-board
  * @modle a
  */
-.info-board.module-a {
+.noti-board.module-a {
 	.board-wrap {
+		padding: 10rem;
+
 		.board-head {
 			.board-subject {
 				margin: 0;
@@ -48,25 +98,6 @@
 				}
 			}
 		}
-
-		.board-util {
-			margin-top: 28rem;
-			width: 100%;
-
-			// laptop
-			@include respond-above(x-large) {
-				margin-top: 48rem;
-			}
-
-			.button-area {
-				// mobile
-				@include respond-below(x-large) {
-					.btn {
-						flex-grow: 1;
-					}
-				}
-			}
-		}
 	}
 
 	&[class*="attr-"] {
@@ -82,13 +113,6 @@
 			}
 		}
 	}
-
-	&.attr-done {
-		.board-wrap::before {
-			background-image: url(./../images/svg/infoboard-done.svg);
-		}
-	}
-
 	&.type-c { 
 		display: flex;
 		justify-content: center;
@@ -100,6 +124,25 @@
 			justify-content: center;
 			align-items: center;
 			text-align: center;
+		}
+	}
+
+	// accent
+	@each $accent-name in $board-module-accent {
+		&.#{nth($accent-name, 1)} {
+			// @debug "divider offset: #{nth($accent-name, 1)}";
+			@each $type-name, $color, $border-color, $background-color in map-get($board-module-accent, nth($accent-name, 1)) {
+				&.type-#{$type-name} {
+					color: $color;
+					border-color: $border-color;
+					background-color: $background-color;
+					
+					@each $icon-name, $icon in $symbol-list {
+						&.symbol-ltr-#{$icon-name} {.mark-text {&::before {background-image: icon($icon-name, $color);}}}
+						&.symbol-rtl-#{$icon-name} {.mark-text {&::after {background-image: icon($icon-name, $color);}}}
+					}
+				}
+			}
 		}
 	}
 }
