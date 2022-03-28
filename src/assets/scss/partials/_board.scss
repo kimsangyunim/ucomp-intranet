@@ -166,29 +166,21 @@ $noti-board-module-accent: (
 	.board-wrap {
 		.board-head {
 			.board-subject {
+				display: flex;
 				margin: 0;
-				@include font((outline: head, size: medium, weight: bold)...);
 			}
-
 		}
 
 		.board-body {
 			.para {
 				margin: 0;
-				color: color(base, 030);
-				@include font((outline: body, size: small)...);
-
 				+.para {
-					margin-top: 16rem;
+					// margin-top: 16rem;
 				}
 			}
 		}
 	}
-
-	&[class*="attr-"] {
-		.board-wrap {
-		}
-	}
+	
 	&.type-c { 
 		display: flex;
 		justify-content: center;
@@ -203,6 +195,13 @@ $noti-board-module-accent: (
 		}
 	}
 
+	&[class*=symbol-ltr-] .board-subject::before,
+	&[class*=symbol-rtl-] .board-subject::after {
+		content: '';
+		display: block;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 	// accent
 	@each $accent-name in $noti-board-module-accent {
 		&.#{nth($accent-name, 1)} {
@@ -212,6 +211,12 @@ $noti-board-module-accent: (
 					background-color: $background-color;
 					border-color: $border-color;
 					// color: $color;
+
+					@each $icon-name, $icon in $symbol-list {
+						&.symbol-ltr-#{$icon-name} {.board-subject {&::before {background-image: icon($icon-name, $color);}}}
+						&.symbol-rtl-#{$icon-name} {.board-subject {&::after {background-image: icon($icon-name, $color);}}}
+					}
+					
 					.board-wrap {
 						.board-head {
 							.board-name {
@@ -241,16 +246,16 @@ $noti-board-module-accent: (
 			border-width: $border-width;
 
 			&.style-b {
-				// border-radius: $height * 0.2;
+				border-radius: $padding * 0.4;
 			}
 
 			&.style-c {
-				// border-radius: $height * 0.5;
+				border-radius: $line-height * 0.5;
 			}
 
 			// icon
-			&[class*=symbol-ltr-] .btn-text::before,
-			&[class*=symbol-rtl-] .btn-text::after {
+			&[class*=symbol-ltr-] .board-subject::before,
+			&[class*=symbol-rtl-] .board-subject::after {
 				width: $line-height;
 				min-width: $line-height;
 				height: $line-height;
@@ -258,19 +263,22 @@ $noti-board-module-accent: (
 
 			
 			&[class*="symbol-ltr"] {
-				// padding-left: ($height * 0.5) - ($line-height * 0.25);
-				.btn-text {
+				.board-subject {
 					&::before {
-						margin-right: $line-height * 0.1;
 					}
 				}
 			}
 
-			&[class*="symbol-rtl"] {
-				// padding-right: ($height * 0.5) - ($line-height * 0.25);
-				.btn-text {
-					&::after {
-						margin-left: $line-height * 0.1;
+			.board-wrap {
+				.board-head {
+					.board-subject {
+						
+					}
+		
+				}
+		
+				.board-body {
+					.para {
 					}
 				}
 			}
