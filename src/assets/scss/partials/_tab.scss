@@ -4,6 +4,7 @@
 	}
 }
 
+
 /* tab-display */
 .tab-display {
 	.tab-list {
@@ -57,6 +58,67 @@
 			}
 		}
 	}
+
+	// style
+	&.style-b {
+		.tab-list {
+			.tab-item {
+				position: relative;
+	
+				& +.tab-item::before {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					background-color: color(base, 010);
+					
+					width: 2rem;
+					border-radius: 1rem;
+				}
+			}
+		}
+	}
+	&.style-c {
+		.tab-list {
+			position: relative;
+	
+			.tab-item {
+				position: relative;
+	
+				.tab-name {
+					outline-offset: unset;
+					color: color(base, 060);
+					text-align: center;
+					&::before {
+						content: ' ';
+						display: block;
+						position: absolute;
+						bottom: 0;
+						width: 100%;
+						background-color: #ddd;
+						height: 2rem;
+						border-radius: 1rem;
+					}
+				}
+				&.current {
+					.tab-name {
+						@include font((weight: bold)...);
+						&::before {
+							content: ' ';
+							display: block;
+							position: absolute;
+							bottom: 0;
+							width: 100%;
+							background-color: #424242;
+							
+							height: 2rem;
+							border-radius: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 /*
@@ -65,7 +127,7 @@
  * @ $line-height
  * @ $font-size
  * @ $font-weight
-  * @ $margin-left = $line-height/2 + 2
+ * @ $margin-left = $line-height/2 + 2
  */
  $tab-module-a-outline: (
 	'x-small'		18rem 1.25 700 10rem,
@@ -76,7 +138,6 @@
 );
 
 .tab-display.module-a {
-
 	.tab-list {
 		.tab-item {
 			display: flex;
@@ -137,7 +198,7 @@
 							margin-left: $margin;
 						}
 					}
-				}	
+				}
 			}
 
 			&.style-b {
@@ -153,7 +214,7 @@
 							height: $line-height - 2rem ;
 						}
 					}
-				}	
+				}
 			}
 		}
 	}
@@ -165,14 +226,76 @@
  * @ $line-height
  * @ $font-size
  * @ $font-weight
+ * @ $margin-left = $line-height/2 + 2
 */
 $tab-module-b-outline: (
-	'x-small'		18rem 1.50 400,
-	'small'			20rem 1.50 400,
-	'medium'		24rem 1.50 400,
-	'large'			28rem 1.50 400,
-	'x-large'		32rem 1.50 400,
+	'x-small'		18rem 1.50 400 11rem,
+	'small'			20rem 1.50 400 12rem,
+	'medium'		24rem 1.50 400 14rem,
+	'large'			28rem 1.50 400 16rem,
+	'x-large'		32rem 1.50 400 18rem,
 );
+
+.tab-display.module-b {
+	.tab-list {
+		position: relative;
+		
+		.tab-item {
+			position: relative;
+
+			.tab-name {
+				outline-offset: unset;
+				color: color(base, 060);
+				text-align: center;
+			}
+
+			&.current {
+				.tab-name {
+					@include font((weight: bold)...);
+
+				}
+			}
+		}
+	}
+
+	// outline
+	@each $name, $line-height, $font-size, $font-weight, $margin in $tab-module-b-outline {
+		&.#{$name} {
+			.tab-item {
+				height: $line-height * 2;
+				line-height: $line-height;
+				font-size: calc($line-height / $font-size);
+				
+				.tab-name {
+					height: calc($line-height * 2);
+					font-weight: $font-weight;
+				}
+			}
+			&.style-a {
+				.tab-list {
+					.tab-item {
+						& + .tab-item {
+							margin-left: $margin;
+						}
+					}
+				}
+			}
+			&.style-b {
+				.tab-list {
+					.tab-item {
+						padding-right: $line-height * 0.5;
+						padding-left: $line-height * 0.5;
+
+						& +.tab-item::before {
+							height: $line-height * 1.2;
+							top: 20%;
+						}
+					}
+				}	
+			}
+		}
+	}
+}
 
 .tab-display.module-b.style-c {
 	.tab-list {
@@ -190,45 +313,35 @@ $tab-module-b-outline: (
 			height: 1rem;
 			background-color: #ddd;
 		}
-		
-		.tab-item {
-			position: relative;
 
-			.tab-name {
-				outline-offset: unset;
-				color: color(base, 060);
-				text-align: center;
+		.tab-name {
+			outline-offset: unset;
+			color: color(base, 060);
+			text-align: center;
+			&::before {
+				content: ' ';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				background-color: #ddd;
+				height: 2rem;
+				border-radius: 1rem;
 			}
-			&.current {
-				.tab-name {
-					@include font((weight: bold)...);
-					&::before {
-						content: ' ';
-						display: block;
-						position: absolute;
-						bottom: 0;
-						width: 100%;
-						background-color: #424242;
-						
-						height: 2rem;
-						border-radius: 1rem;
-					}
-				}
-			}			
 		}
-	}
-
-	// outline
-	@each $name, $line-height, $font-size, $font-weight in $tab-module-b-outline {
-		&.#{$name} {
-			.tab-item {
-				height: $line-height * 2;
-				line-height: $line-height;
-				font-size: calc($line-height / $font-size);
-				
-				.tab-name {
-					height: calc($line-height * 2);
-					font-weight: $font-weight;
+		&.current {
+			.tab-name {
+				@include font((weight: bold)...);
+				&::before {
+					content: ' ';
+					display: block;
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					background-color: #424242;
+					
+					height: 2rem;
+					border-radius: 1rem;
 				}
 			}
 		}
