@@ -386,7 +386,8 @@ html.active-content-popup {
 
 			.popup-local-body {
 				margin: 56rem 0 24rem 0;
-				@include container-padding;
+				padding-right: $container-gap;
+				padding-left: $container-gap;
 			}
 
 

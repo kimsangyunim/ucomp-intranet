@@ -1,11 +1,7 @@
 /**
  * Breakpoints
  */
-
- @mixin container-padding() {
-	padding-right: 16rem;
-	padding-left: 16rem;
-}
+$container-gap: 16rem;
 
 $breakpoints: (
 	frame:		1920px,

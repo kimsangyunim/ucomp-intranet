@@ -188,7 +188,8 @@
 		display: flex;
 		padding-top: 10rem;
 		padding-bottom: 2rem;
-		@include container-padding;
+		padding-right: $container-gap;
+		padding-left: $container-gap;
 
 		.upload-head {
 			position: relative;
