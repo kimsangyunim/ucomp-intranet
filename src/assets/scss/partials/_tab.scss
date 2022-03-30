@@ -78,48 +78,62 @@
 			}
 		}
 	}
-	&.style-c {
-		.tab-list {
-			position: relative;
-	
-			.tab-item {
-				position: relative;
-	
-				.tab-name {
-					outline-offset: unset;
-					color: color(base, 060);
-					text-align: center;
-					&::before {
-						content: ' ';
-						display: block;
-						position: absolute;
-						bottom: 0;
-						width: 100%;
-						background-color: #ddd;
-						height: 2rem;
-						border-radius: 1rem;
-					}
-				}
-				&.current {
-					.tab-name {
-						@include font((weight: bold)...);
-						&::before {
-							content: ' ';
-							display: block;
-							position: absolute;
-							bottom: 0;
-							width: 100%;
-							background-color: #424242;
-							
-							height: 2rem;
-							border-radius: 1rem;
-						}
-					}
+}
+
+
+
+
+.tab-display.module-b.style-c {
+	.tab-list {
+		position: relative;
+
+		&::before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0;
+			z-index: 1;
+			width: 100vw;
+			height: 1rem;
+			background-color: #ddd;
+		}
+
+		.tab-name {
+			outline-offset: unset;
+			color: color(base, 060);
+			text-align: center;
+			&::before {
+				content: ' ';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				background-color: #ddd;
+				height: 2rem;
+				border-radius: 1rem;
+			}
+		}
+		&.current {
+			.tab-name {
+				@include font((weight: bold)...);
+				&::before {
+					content: ' ';
+					display: block;
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					background-color: #424242;
+					
+					height: 2rem;
+					border-radius: 1rem;
 				}
 			}
 		}
 	}
 }
+
 
 /*
  * module-a outline
@@ -137,7 +151,7 @@
 	'x-large'		32rem 1.25 700 18rem,
 );
 
-.tab-display.module-a {
+.tab-display.module-b {
 	.tab-list {
 		.tab-item {
 			display: flex;
@@ -220,6 +234,9 @@
 	}
 }
 
+
+
+
 /*
  * module-b outline
  *
@@ -236,7 +253,7 @@ $tab-module-b-outline: (
 	'x-large'		32rem 1.50 400 18rem,
 );
 
-.tab-display.module-b {
+.tab-display.module-a {
 	.tab-list {
 		position: relative;
 		
@@ -297,51 +314,109 @@ $tab-module-b-outline: (
 	}
 }
 
-.tab-display.module-b.style-c {
+
+/*
+ * module-c outline
+ *
+ * @ $line-height
+ * @ $font-size
+ * @ $font-weight
+ * @ $margin-left = $line-height/2 + 2
+ */
+ $tab-module-c-outline: (
+	'medium'		40rem 20rem 1.5 700 0,
+);
+
+.tab-display.module-c {
 	.tab-list {
-		position: relative;
+		.tab-item {
+			display: flex;
+			align-items: center;
 
-		&::before {
-			content: ' ';
-			display: block;
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			bottom: 0;
-			z-index: 1;
-			width: 100vw;
-			height: 1rem;
-			background-color: #ddd;
+			.tab-name {
+				position: relative;
+				color: color(base, 040, .5);
+			}
+			&.current {
+				.tab-name {
+					color: color(base, 090);
+				}
+			}
+
 		}
+	}
 
-		.tab-name {
-			outline-offset: unset;
-			color: color(base, 060);
-			text-align: center;
+	&.style-a {
+		.tab-list {
+			position: relative;
+			
 			&::before {
 				content: ' ';
 				display: block;
 				position: absolute;
 				bottom: 0;
+				left: 50%;
+				transform: translate(-50%, 0);
 				width: 100%;
-				background-color: #ddd;
-				height: 2rem;
-				border-radius: 1rem;
+				background-color: color(base, 020);;
+			}
+
+			.tab-item {
+				display: flex;
+
+				.tab-name {
+					flex: 1 1 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: color(base, 060);
+					text-align: center;
+				}
+
+				&.current {
+					.tab-name {
+						@include font((weight: bold)...);
+						&::before {
+							content: ' ';
+							display: block;
+							position: absolute;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							background-color: color(base, 60);
+						}
+					}
+				}
 			}
 		}
-		&.current {
-			.tab-name {
-				@include font((weight: bold)...);
+	}
+
+	// outline
+	@each $name, $height, $line-height, $font-size, $font-weight, $margin in $tab-module-c-outline {
+		&.#{$name} {
+			.tab-list {
 				&::before {
-					content: ' ';
-					display: block;
-					position: absolute;
-					bottom: 0;
-					width: 100%;
-					background-color: #424242;
-					
-					height: 2rem;
-					border-radius: 1rem;
+					height: 1rem;
+				}
+
+				.tab-item {
+					line-height: $line-height;
+					font-size: calc($line-height / $font-size);
+	
+					.tab-name {
+						height: $height;
+						padding: 0 calc($height * 0.25);
+	
+						&::before {
+							height: calc(1rem * 2);
+							border-radius: 1rem;
+						}
+					}
+					&.current {
+						.tab-name {
+							font-weight: $font-weight;
+						}
+					}
 				}
 			}
 		}

@@ -265,11 +265,12 @@ img {
 	overflow: hidden;
 
 }
-
+// div:has(>h3) {
+// 	background-color: red;
+// }
 .local-head {
 	@include hidden;
 }
-
 
 .local-body {
 	flex: 1 1 100%;
@@ -335,6 +336,14 @@ img {
 
 		.data-finder {
 			margin-top: 24rem;
+		}
+
+		.tab-display.module-c {
+			.tab-list {
+				&::before {
+					width: 100vw;
+				}
+			}
 		}
 	}
 
@@ -472,7 +481,6 @@ img {
 .info-board.module-a {
 	// margin: 32rem 0;;
 	margin: 24rem 0 32rem 0;;
-
 }
 
 .page-notice {
