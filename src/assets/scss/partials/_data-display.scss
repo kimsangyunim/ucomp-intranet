@@ -22,6 +22,7 @@
 );
 
 
+
  .data-display {
 	 > * {
 		margin: 0;
@@ -80,7 +81,16 @@
 			&.style-b {
 			}
 		}
-	}	 
+	}
+	// icon
+	&[class*=symbol-ltr-] .data-name::before,
+	&[class*=symbol-rtl-] .data-name::after {
+		content: '';
+		display: block;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
 }
 
 .data-display.module-a {
@@ -148,12 +158,11 @@
 		.data-item {
 			.data-wrap {
 				.data-head {
-					a {
+					.data-name {
+						display: flex;
 						color: color(base, 080);
 						text-decoration: none;
-						.data-name {
 						
-						}
 					}
 				}
 				.data-body {
@@ -162,12 +171,12 @@
 			}
 		}
 	}
+
+
 	// outline
 	@each $name, $line-height-head, $line-height-body, $font-size, $font-weight, $margin in $data-display-module-outline {
 		&.#{$name} {
 			.data-item {
-
-
 				@include display-column(2, $margin, $margin - 4);
 									// 컬럼 객수 , margin-left. marign-top 
 
@@ -184,6 +193,13 @@
 	
 					}
 				}
+			}
+			// icon
+			&[class*=symbol-ltr-] .data-name::before,
+			&[class*=symbol-rtl-] .data-name::after {
+				width: $line-height-head;
+				min-width: $line-height-head;
+				height: $line-height-head;
 			}
 			
 			&.style-a {
