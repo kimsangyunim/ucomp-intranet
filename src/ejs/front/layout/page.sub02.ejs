@@ -12,7 +12,7 @@
 	<!-- page -->
 	<div id="page">
 		<%-include('../_templates/_header.front.ejs', {
-			current: '5',
+			current: '2',
 		}) %>
 		<!-- page-body -->
 		<div class="page-body">
@@ -29,8 +29,8 @@
 					<div id="content">
 						<!-- content-head -->
 						<div class="content-head">
-							<h3 class="content-title"><span class="content-name">지출결의 등록</span></h3>
-							<div class="content-func">
+							<h3 class="content-title"><span class="content-name">연차 등록</span></h3>
+							<div class="content-navi">
 								<a class="btn" href="#"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>뒤로</title><path d="M12.7,5.7a1,1,0,0,0-1.4-1.4l-7,7a1,1,0,0,0,0,1.4l7,7a1,1,0,0,0,1.4-1.4L7.4,13H19a1,1,0,0,0,0-2H7.4Z"></path></svg></a>
 							</div>
 						</div>
@@ -273,7 +273,7 @@
 									<!-- //submit-form -->
 									<!-- submit-form -->
 									<fieldset class="submit-form module-a type-a medium">
-										<legend>지출결의 등록 입력 서식</legend>
+										<legend>연차 등록 입력 서식</legend>
 										<div class="form-list">
 											<div class="form-item">
 												<div class="form-wrap">
@@ -417,6 +417,15 @@
 							<!-- //section -->
 						</div>
 						<!-- //content-body -->
+						<!-- content-util -->
+						<div class="content-util">
+							<div class="button-display module-a style-b">
+								<span class="button-area">
+									<a href="#signoffForm" class="btn module-a style-a type-fill accent-01 x-large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
+								</span>
+							</div>
+						</div>
+						<!-- //content-util -->
 					</div>
 					<!-- //content -->
 				</div>

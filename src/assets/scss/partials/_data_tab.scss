@@ -1,0 +1,236 @@
+.bui-tab-target {
+	&:not(.active) {
+		@include hidden;
+	}
+}
+
+/* tab-display */
+.tab-display {
+	.tab-list {
+		display: flex;
+		margin: 0;
+		padding: 0;
+
+		.tab-item {
+			box-sizing: border-box;
+			list-style: none;
+			
+			.tab-name {
+				display: flex;
+				position: relative;
+				justify-content: center;
+				align-items: center;
+				text-decoration: none;
+				text-align: center;
+			}
+
+			&.current {
+				z-index: 1;
+			}
+		}
+	}
+
+	// tab type
+	&.type-a { 
+		.tab-list{
+			justify-content: flex-start;
+		}
+	}
+
+	&.type-b { 
+		.tab-list{
+			justify-content: flex-end;
+		}
+	}
+
+	&.type-c { 
+		.tab-list{
+			justify-content: center;
+		}
+	}
+
+	&.type-d { 
+		.tab-list{
+			.tab-item {
+				flex: 1 1 100%;
+				width: 100%;
+			}
+		}
+	}
+}
+
+/*
+ * module-a outline
+ *
+ * @ $line-height
+ * @ $font-size
+ * @ $font-weight
+  * @ $margin-left = $line-height/2 + 2
+ */
+ $tab-module-a-outline: (
+	'x-small'		18rem 1.25 700 10rem,
+	'small'			20rem 1.25 700 12rem,
+	'medium'		24rem 1.25 700 14rem,
+	'large'			28rem 1.25 700 16rem,
+	'x-large'		32rem 1.25 700 18rem,
+);
+
+.tab-display.module-a {
+
+	.tab-list {
+		.tab-item {
+			display: flex;
+			align-items: center;
+
+			.tab-name {
+				outline-offset: unset;
+				color: color(base, 040, .5);
+			}
+			&.current {
+				.tab-name {
+					color: color(base, 090);
+				}
+			}
+
+		}
+	}
+
+	&.style-a {
+
+	}
+	&.style-b {
+		.tab-list {
+			.tab-item {
+				position: relative;
+	
+				& +.tab-item::before {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					width: 2rem;
+					background-color: color(base, 010);
+	
+					border-radius: 1rem;
+				}
+			}
+		}	
+	}
+
+
+	// outline
+	@each $name, $line-height, $font-size, $font-weight, $margin in $tab-module-a-outline {
+		&.#{$name} {
+			.tab-item {
+				line-height: $line-height;
+				font-size: calc($line-height / $font-size);
+
+				.tab-name {
+					font-weight: $font-weight;
+				}
+			}
+
+			&.style-a {
+				.tab-list {
+					.tab-item {
+						& + .tab-item {
+							margin-left: $margin;
+						}
+					}
+				}	
+			}
+
+			&.style-b {
+				.tab-list {
+					.tab-item {
+						padding-right: $line-height * 0.5;
+						padding-left: $line-height * 0.5;
+
+						&:first-child {
+							padding-left: 0;
+						}
+						& +.tab-item::before {
+							height: $line-height - 2rem ;
+						}
+					}
+				}	
+			}
+		}
+	}
+}
+
+/*
+ * module-b outline
+ *
+ * @ $line-height
+ * @ $font-size
+ * @ $font-weight
+*/
+$tab-module-b-outline: (
+	'x-small'		18rem 1.50 400,
+	'small'			20rem 1.50 400,
+	'medium'		24rem 1.50 400,
+	'large'			28rem 1.50 400,
+	'x-large'		32rem 1.50 400,
+);
+
+.tab-display.module-b.style-c {
+	.tab-list {
+		position: relative;
+
+		&::before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0;
+			z-index: 1;
+			width: 100vw;
+			height: 1rem;
+			background-color: #ddd;
+		}
+		
+		.tab-item {
+			position: relative;
+
+			.tab-name {
+				outline-offset: unset;
+				color: color(base, 060);
+				text-align: center;
+			}
+			&.current {
+				.tab-name {
+					@include font((weight: bold)...);
+					&::before {
+						content: ' ';
+						display: block;
+						position: absolute;
+						bottom: 0;
+						width: 100%;
+						background-color: #424242;
+						
+						height: 2rem;
+						border-radius: 1rem;
+					}
+				}
+			}			
+		}
+	}
+
+	// outline
+	@each $name, $line-height, $font-size, $font-weight in $tab-module-b-outline {
+		&.#{$name} {
+			.tab-item {
+				height: $line-height * 2;
+				line-height: $line-height;
+				font-size: calc($line-height / $font-size);
+				
+				.tab-name {
+					height: calc($line-height * 2);
+					font-weight: $font-weight;
+				}
+			}
+		}
+	}
+}

@@ -21,13 +21,13 @@
 			<!-- local-body -->
 			<div class="local-body" id="content">
 				<!-- content-head -->
-				<div class="content-head"><%- include('../_mixin/_title.content.ejs', {name: 'board'}) %></div>
+				<div class="content-head"><%- include('../_mixin/_title.content.ejs', {name: 'data-table'}) %></div>
 				<!-- //content-head -->
 				<!-- content-body -->
 				<div class="content-body">
 					<!-- section : Button System-->
 					<div class="section">
-						<div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'board system'}) %></div>
+						<!-- <div class="section-head"><%- include('../_mixin/_title.section.ejs', {name: 'button system'}) %></div> -->
 						<div class="section-body">
 							<!-- subsection -->
 							<div class="subsection">
@@ -76,24 +76,24 @@
 								</div>
 							</div>
 							<!-- //subsection -->
-							<!-- info-board 기본 구조 -->
-							<div class="info-board">
-								<div class="board-wrap">
-									<div class="board-head">
-										<p class="board-caption"><span class="wbr"></span> <span class="wbr"></span></p>
-										<p class="board-subject"><span class="wbr"></span> <span class="wbr"></span></p>
-										<p class="board-summary"><span class="wbr"></span> <span class="wbr"></span></p>
+							<!-- data-table 기본 구조 -->
+							<div class="data-table">
+								<div class="data-wrap">
+									<div class="data-head">
+										<p class="data-caption"><span class="wbr"></span> <span class="wbr"></span></p>
+										<p class="data-subject"><span class="wbr"></span> <span class="wbr"></span></p>
+										<p class="data-summary"><span class="wbr"></span> <span class="wbr"></span></p>
 									</div>
-									<div class="board-body">
+									<div class="data-body">
 										<p class="para"><span class="wbr"></span> <span class="wbr"></span></p>
 										<p class="para"><span class="wbr"></span> <span class="wbr"></span></p>
 									</div>
-									<div class="board-foot"></div>
-									<div class="board-util"></div>
-									<div class="board-side"></div>
+									<div class="data-foot"></div>
+									<div class="data-util"></div>
+									<div class="data-side"></div>
 								</div>
 							</div>
-							<!-- //info-board -->
+							<!-- //data-table -->
 
 							<!-- subsection -->
 							<div class="subsection">
@@ -101,26 +101,70 @@
 								<div class="subsection-body">
 									<!-- highlight-js -->
 									<pre class="highlight-js">
-<code class="html">&lt;div class="info-board module-a style-a type-c attr-done" id="infoBoardDone"&gt;
-	&lt;div class="board-wrap"&gt;
-		&lt;div class="board-head"&gt;
-			&lt;p class="board-subject"&gt;스마트데이&lt;/p&gt;
-			&lt;p class="board-summary"&gt;등록이 완료되었습니다!&lt;/p&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
+<code class="html">
 </code></pre>
 									<!-- //highlight-js -->
-									<!-- info-board -->
-									<div class="info-board module-a style-a type-c attr-done" id="infoBoardDone">
-										<div class="board-wrap">
-											<div class="board-head">
-												<p class="board-subject">스마트데이</p>
-												<p class="board-summary">등록이 완료되었습니다!</p>
+									<!-- data-table -->
+									<div class="data-table module-a style-a type-a">
+										<div class="data-wrap">
+											<div class="data-head">
+												<p class="data-subject">지출내역</p>
+											</div>
+											<div class="data-body">
+												<!-- data-list -->
+												<ul class="data-list module-a style-d normal-05 xx-small">
+													<li class="data-item">
+														<span class="title">날짜</span><span class="data">2022-02-11</span>
+													</li>
+													<li class="data-item">
+														<span class="title">지출타입</span><span class="data">교통비</span>
+													</li>
+													<li class="data-item">
+														<span class="title">상세내역</span><span class="data">12시 지나 퇴근이라 택시 탐</span>
+													</li>
+													<li class="data-item">
+														<span class="title">프로젝트</span><span class="data">LG디스커버리</span>
+													</li>
+													<li class="data-item">
+														<span class="title">금액</span><span class="data">11,000</span>
+													</li>
+												</ul>
+												<!-- //data-list -->
 											</div>
 										</div>
 									</div>
-									<!-- //info-board -->
+									<!-- //data-table -->
+									
+									<!-- data-table -->
+									<div class="data-table module-b style-a type-a">
+										<div class="data-wrap">
+											<div class="data-head">
+												<p class="data-subject">스마트데이</p>
+											</div>
+											<div class="data-body">
+												<!-- data-list -->
+												<ul class="data-list module-a style-d normal-05 xx-small">
+													<li class="data-item">
+														<span class="title"><a href="#">김민지</a></span><span class="data">인트라넷 모바일 작업, 운영...</span>
+													</li>
+													<li class="data-item">
+														<span class="title"><a href="#">제갈정</a></span><span class="data">진학사, 인트라넷</span>
+													</li>
+													<li class="data-item">
+														<span class="title"><a href="#">이주희</a></span><span class="data">LG DLAB 프로젝트</span>
+													</li>
+													<li class="data-item">
+														<span class="title"><a href="#">권세희</a></span><span class="data">LG하우시스 웹진 개편-작업...</span>
+													</li>
+													<li class="data-item">
+														<span class="title"><a href="#">한창수</a></span><span class="data">인트라넷 모바일 고도화</span>
+													</li>
+												</ul>
+												<!-- //data-list -->
+											</div>
+										</div>
+									</div>
+									<!-- //data-table -->
 								</div>
 							</div>
 							<!-- //subsection -->
@@ -132,27 +176,8 @@
 									<!-- highlight-js -->
 									<pre class="highlight-js">
 <code class="html">
-&lt;div class="info-board module-b style-a type-c"&gt;
-	&lt;div class="board-wrap"&gt;
-		&lt;div class="board-head"&gt;
-			&lt;p class="board-subject"&gt;&lt;span class="wbr"&gt;정보&lt;/span&gt;&lt;/p&gt;
-		&lt;/div&gt;
-		&lt;div class="board-body"&gt;
-			&lt;p class="para"&gt;&lt;span class="wbr"&gt; ... &lt;/span&gt;&lt;/p&gt;
-		&lt;/div&gt;
-		&lt;div class="board-util"&gt;
-			&lt;div class="button-area"&gt;
-				&lt;a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"&gt;&lt;span class="btn-text"&gt;바로가기&lt;/span&gt;&lt;/a&gt;
-				&lt;a class="btn module-c style-c type-line accent-02 medium symbol-rtl-chevron-right" href="#"&gt;&lt;span class="btn-text"&gt;바로가기&lt;/span&gt;&lt;/a&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;	
 </code></pre>
 									<!-- //highlight-js -->
-									<style>
-										.noti-board + .noti-board {margin-top: 25rem;}
-									</style>
 
 									<!-- noti-board -->
 									<div class="noti-board module-a style-b type-fill accent-01 x-small symbol-ltr-fill-circle-caution">
