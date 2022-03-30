@@ -316,12 +316,11 @@ img {
 
 	.content-head {
 		flex-shrink: 0;
-		margin: 40rem 0 24rem 0;
 		padding: 0 $container-gap;
 		box-sizing: border-box;
-	
+		
 		.content-title {
-			margin: 0;
+			margin: 40rem 0 24rem 0;
 			color: color(base, 100);
 			@include font((outline: head, size: large, weight: bold)...);
 	
