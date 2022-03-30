@@ -15,7 +15,7 @@
 			current: '2',
 		}) %>
 		<!-- page-body -->
-		<div class="page-body page-default page-notice">
+		<div class="page-body page-default">
 			<!-- local -->
 			<div id="local">
 				<!-- local-head -->
@@ -119,82 +119,6 @@
 								<!-- //submit-form -->
 							</form>
 							<!-- //data-finder -->
-							<!-- section -->
-							<div class="section module-a">
-								<div class="section-head"><h4 class="section-title"><span class="section-name">나의 요청 연차</span></h4></div>
-								<div class="section-body">
-									<!-- post-display -->
-									<div class="post-display module-b style-a type-a">
-										<div class="post-list">
-											<% for(var i = 0; i < 1; i++) { %>
-												<%-include('../../front/_mixin/_post.item.signoff.ejs') %>
-											<% } %>
-										</div>
-									</div>
-									<!-- //post-display -->
-								</div>
-							</div>
-							<!-- //section -->
-							<!-- data-finder --> 
-							<form class="data-finder">
-								<!-- submit-form -->
-								<fieldset class="submit-form module-a">
-									<legend>게시물 검색 서식</legend>
-									<div class="form-list">
-										<div class="form-item">
-											<div class="form-head"><span class="form-name">검색어</span></div>
-											<div class="form-body">
-												<div class="form-area">
-													<span class="form textfield module-a style-b type-fill normal-04 large flex">
-														<input type="search" class="form-elem" id="expensesHistory" placeholder="검색어를 입력해 주세요." title="검색어" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-														<span class="form-func">
-															<button type="button" class="btn"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>검색</title><path d="M19.63,17.87l-2-2a7.5,7.5,0,1,0-1.76,1.76l2,2a1.24,1.24,0,0,0,1.76-1.76ZM11.5,16.5a5,5,0,1,1,5-5A5,5,0,0,1,11.5,16.5Z"></path></svg></button></span>
-														</span>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-								<!-- //submit-form -->
-							</form>
-							<!-- //data-finder -->
-							<!-- data-inform -->
-							<form class="data-inform">
-								<!-- data-list -->
-								<p class="data-list">
-									<span class="data-item total-count">
-										<span class="head">게시물</span>
-										<span class="body">총 85건</span>
-									</span>
-								</p>
-								<!-- //data-list -->
-								<!-- submit-form -->
-								<fieldset class="submit-form module-a">
-									<legend>게시물 정렬 서식</legend>
-									<div class="form-list">
-										<div class="form-item">
-											<div class="form-head"><span class="form-name">조건 선택</span></div>
-											<div class="form-body">
-												<div class="form-area">
-													<label class="form module-a style-a switch"><span class="form-text">필독만 보기</span> <input type="checkbox" class="form-elem"></label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-								<!-- //submit-form -->
-							</form>
-							<!-- //data-inform -->
-							<!-- post-display -->
-							<div class="post-display module-a style-a type-a">
-								<div class="post-list">
-									<% for(var i = 0; i < 2; i++) { %>
-										<%-include('../../front/_mixin/_post.item.notice.ejs') %>
-									<% } %>
-								</div>
-							</div>
-							<!-- //post-display -->
 							<!-- section -->
 							<div class="section module-a">
 								<div class="section-head"><h4 class="section-title"><span class="section-name">지출내역</span></h4></div>
@@ -417,19 +341,19 @@
 							<!-- //section -->
 						</div>
 						<!-- //content-body -->
-						<!-- content-util -->
-						<div class="content-util">
-							<div class="button-display module-a style-b">
-								<span class="button-area">
-									<a href="#signoffForm" class="btn module-a style-a type-fill accent-01 x-large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
-								</span>
-							</div>
-						</div>
-						<!-- //content-util -->
 					</div>
 					<!-- //content -->
 				</div>
 				<!-- //local-body -->
+				<!-- local-util -->
+				<div class="local-util">
+					<div class="button-display module-a style-b">
+						<span class="button-area">
+							<a href="#signoffForm" class="btn module-a style-a type-fill accent-01 x-large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
+						</span>
+					</div>
+				</div>
+				<!-- //local-util -->
 			</div>
 			<!-- //local -->
 		</div>
