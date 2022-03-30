@@ -267,20 +267,6 @@ img {
 }
 
 .local-head {
-	flex-shrink: 0;
-	margin: 40rem 0 24rem 0;
-	padding: 0 64rem;
-	box-sizing: border-box;
-
-	.local-title {
-		margin: 0;
-		color: color(base, 100);
-		@include font((outline: head, size: large, weight: bold)...);
-		.local-name {
-			display: block;
-		}
-	}
-
 	@include hidden;
 }
 
@@ -305,59 +291,75 @@ img {
 	flex-direction: column;
 }
 
-
 .content-head {
 	flex-shrink: 0;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 calc($container-gap * 2 + 24rem);
-	height: 56rem;
- 	
-	&::after {
-		content: '';
-		display: block;
-		position: absolute;
-		bottom: 0;
-		left: calc(50% - 50vw);
-		width: 100vw;
-		height: 1rem;
-		background-color: color(base, 010);
-	}
+	margin: 40rem 0 24rem 0;
+	padding: 0 $container-gap;
+	box-sizing: border-box;
 
 	.content-title {
-		flex: 1 1 100%;
-		display: flex;
-		width: 100%;
 		margin: 0;
 		color: color(base, 100);
-		@include font((outline: body, size: medium, weight: bold)...);
+		@include font((outline: head, size: large, weight: bold)...);
 
 		.content-name {
 			display: block;
-			width: 100%;
-			white-space: nowrap;
-			overflow: hidden;
-			text-align: center;
-			text-overflow: ellipsis;
-		}
-	}
-
-	.content-navi {
-		position: absolute;
-		left: $container-gap;
-		top: 50%;
-		transform: translate(0, -50%);
-
-		.btn {
-			display: block;
-			svg {
-				fill: color(base, 090);
-			}
 		}
 	}
 }
+
+// .content-head {
+// 	flex-shrink: 0;
+// 	position: relative;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: space-between;
+// 	padding: 0 calc($container-gap * 2 + 24rem);
+// 	height: 56rem;
+ 	
+// 	&::after {
+// 		content: '';
+// 		display: block;
+// 		position: absolute;
+// 		bottom: 0;
+// 		left: calc(50% - 50vw);
+// 		width: 100vw;
+// 		height: 1rem;
+// 		background-color: color(base, 010);
+// 	}
+
+// 	.content-title {
+// 		flex: 1 1 100%;
+// 		display: flex;
+// 		width: 100%;
+// 		margin: 0;
+// 		color: color(base, 100);
+// 		@include font((outline: body, size: medium, weight: bold)...);
+
+// 		.content-name {
+// 			display: block;
+// 			width: 100%;
+// 			white-space: nowrap;
+// 			overflow: hidden;
+// 			text-align: center;
+// 			text-overflow: ellipsis;
+// 		}
+// 	}
+
+// 	.content-navi {
+// 		position: absolute;
+// 		left: $container-gap;
+// 		top: 50%;
+// 		transform: translate(0, -50%);
+
+// 		.btn {
+// 			display: block;
+// 			svg {
+// 				fill: color(base, 090);
+// 			}
+// 		}
+// 	}
+// }
 
 .content-body {
 	flex: 1 1 100%;
