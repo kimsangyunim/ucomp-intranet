@@ -25,17 +25,12 @@
 * @ module accent
 *
 * @ $data-head: text-color
-* @ $icon: background-color
+* @ $data-head: icon-color
+* @ $data-body: text-color
 */
 $data-display-module-accent: (
-	'normal-03': (
-		'head' color(base, 080) color(base, 020),
-		'body' color(base, 060) color(base, 020),
-	),
-	'accent-01': (
-		'head' color(primary, 050) color(primary, 050),
-		'body' color(primary, 050) color(primary, 050),
-	),
+	'normal-02' color(base, 080) color(base, 020) color(base, 020),
+	'normal-03' color(base, 080) color(base, 020) color(base, 020),
 );
 
 
@@ -115,22 +110,22 @@ $data-display-module-accent: (
 	// 	background-size: cover;
 	// }
 	// accent
-	@each $accent-name in $data-display-module-accent {
-		&.#{nth($accent-name, 1)} {
-			@each $type-name, $color, $background-color in map-get($data-display-module-accent, nth($accent-name, 1)) {
-				&.color-#{$type-name} {
-					color: $color;
-					
+	@each $name, $head-color, $icon-color, $body-color in $data-display-module-accent {
+		&.#{$name} {
+			.data-head {
+				color: $head-color;
+				a.data-name {
 					@each $icon-name, $icon in $symbol-list {
-						&.data-name.symbol-ltr-#{$icon-name}::before {background-image: icon($icon-name, $background-color);}
-						&.data-name.symbol-rtl-#{$icon-name}::after {background-image: icon($icon-name, $color);}
-
+						&.symbol-ltr-#{$icon-name}::before {background-image: icon($icon-name, $icon-color);}
+						&.symbol-rtl-#{$icon-name}::after {background-image: icon($icon-name, $icon-color);}
 					}
 				}
 			}
+			.data-body {
+				color: $body-color;
+			}
 		}
-	}	
-
+	}
 }
 
 .data-display.module-a {
@@ -156,13 +151,11 @@ $data-display-module-accent: (
 			.data-item {
 				.data-wrap {
 					.data-head {
-						flex-basis: $line-height-head * 3;
-						.data-name {
-							
-						}
+						flex-basis: calc($line-height-head/$font-size) * 5;
+						flex-shrink: 0;
 					}
 					.data-body {
-						width: calc(100% - ($line-height-head * 3));
+						flex: 1 1 100%;
 						line-height: $line-height-head;
 						font-size: calc($line-height-head / $font-size);
 					}
