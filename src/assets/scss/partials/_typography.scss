@@ -5,20 +5,16 @@
  * @ $text-color
  */
 $text-accent: (
-	accent-01: #EE2C49,
-	accent-02: #313851,
+	accent-01: color(primary, 050),
+	accent-02: #3ab8ff,
+	accent-02: #ffc328,
+	accent-02: #ffb274,
 
-	normal-00: #000000,
-	normal-01: #1d1d1d,
-	normal-02: #3a3a3a,
-	normal-03: #656565,
-	normal-04: #737373,
-	normal-05: #909090,
-	normal-06: #c7c7c7,
-	normal-07: #e3e3e3,
-	normal-08: #f4f4f4,
-	normal-09: #fbfbfb,
-	normal-10: #ffffff,
+	normal-00: color(base, 100),
+	normal-01: color(base, 080),
+	normal-02: color(base, 060),
+	normal-03: color(base, 040),
+	normal-10: color(base, 000),
 );
 
 em.em {

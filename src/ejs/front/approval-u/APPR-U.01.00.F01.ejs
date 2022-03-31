@@ -15,12 +15,20 @@
 			current: '5',
 		}) %>
 		<!-- page-body -->
-		<div class="page-body">
+		<div class="page-body page-intro-temp">
 			<!-- local -->
 			<div id="local">
 				<!-- local-head -->
 				<div class="local-head">
-					<h2 class="local-title" id="localTitle"><span class="local-name">연차관리</span></h2>
+					<h2 class="local-title" id="localTitle"><span class="local-name">결재관리</span></h2>
+					<!-- local-navi -->
+					<div class="local-navi">
+						<ul class="navi-list">
+							<li class="navi-item"><a class="navi-name" href="#">연차관리</a></li>
+							<li class="navi-item current" title="현재 선택된 항목"><a class="navi-name" href="#">지출결재</a></li>
+						</ul>
+					</div>
+					<!-- //local-navi -->
 				</div>
 				<!-- //local-head -->
 				<!-- local-body -->
@@ -29,10 +37,16 @@
 					<div id="content">
 						<!-- content-head -->
 						<div class="content-head">
-							<h3 class="content-title"><span class="content-name">지출결의 등록</span></h3>
-							<div class="content-func">
-								<a class="btn" href="#"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>뒤로</title><path d="M12.7,5.7a1,1,0,0,0-1.4-1.4l-7,7a1,1,0,0,0,0,1.4l7,7a1,1,0,0,0,1.4-1.4L7.4,13H19a1,1,0,0,0,0-2H7.4Z"></path></svg></a>
+							<h3 class="content-title"><span class="content-name">지출결제</span></h3>
+							<!-- tab-display -->
+							<div class="tab-display module-c style-a type-d medium">
+								<ul class="tab-list">
+									<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">지출결재</a></li>
+									<li class="tab-item"><a class="tab-name" href="#">모든요청</a></li>
+									<li class="tab-item"><a class="tab-name" href="#">나의요청</a></li>
+								</ul>
 							</div>
+							<!-- //tab-display -->
 						</div>
 						<!-- //content-head -->
 						<!-- content-body -->
@@ -417,19 +431,19 @@
 							<!-- //section -->
 						</div>
 						<!-- //content-body -->
-						<!-- content-util -->
-						<div class="content-util">
-							<div class="button-display module-a style-b">
-								<span class="button-area">
-									<a href="#signoffForm" class="btn module-a style-a type-fill accent-01 x-large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
-								</span>
-							</div>
-						</div>
-						<!-- //content-util -->
 					</div>
 					<!-- //content -->
 				</div>
 				<!-- //local-body -->
+				<!-- local-util -->
+				<div class="local-util">
+					<div class="button-display module-a style-b">
+						<span class="button-area">
+							<a href="#signoffForm" class="btn module-a style-a type-fill accent-01 x-large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
+						</span>
+					</div>
+				</div>
+				<!-- //local-util -->
 			</div>
 			<!-- //local -->
 		</div>

@@ -285,3 +285,32 @@ $noti-board-module-accent: (
 		}
 	}	
 }
+
+
+
+
+
+.noti-board.module-b {
+	&.style-a {
+
+	}
+
+	&.small {
+		@include font((outline: body, size: small)...);
+	}
+
+	.board-head {
+		.board-subject {
+			margin: 0;
+
+			.board-name {
+				color: color(base, 050);
+			}
+		}
+
+		~.board-body {
+			margin-top: 16rem;
+			color: color(base, 050);
+		}
+	}
+}

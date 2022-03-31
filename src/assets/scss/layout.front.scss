@@ -262,34 +262,132 @@ img {
 	flex: 1 1 100%;
 	display: flex;
 	flex-direction: column;
-	overflow: hidden;
 
 }
 // div:has(>h3) {
 // 	background-color: red;
 // }
-.local-head {
-	@include hidden;
-}
 
 .local-body {
 	flex: 1 1 100%;
 	display: flex;
 	flex-direction: column;
-	overflow: hidden;
 }
 
  .local-util {
 	flex-shrink: 0;
 }
 
+
+
 /**
- * @type layout
- * @name #content
- */
+* @type layout
+* @name #content
+*/
 #content {
 	flex: 1 1 100%;
-	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	.content-body {
+		padding: 0 $container-gap;
+	}
+}
+
+/**
+ * @type layout
+ * @name page-intro
+ */
+ .page-body.page-intro-temp {
+	#local {
+		overflow-y: scroll;
+
+		.local-head {
+			padding: 0 $container-gap;
+			.local-title {
+				@include hidden;
+			}
+
+			.local-navi {
+				margin: 40rem 0 24rem 0;
+
+				.navi-list {
+					display: flex;
+					margin: 0;
+					padding: 0;
+					list-style: none;
+
+					.navi-item {
+						+.navi-item {
+							margin-left: 16rem;
+						}
+						.navi-name {
+							display: block;
+							color: color(base, 020);
+							@include font((outline: head, size: large, weight: bold)...);
+							text-decoration: none;
+						}
+
+
+						&.current {
+							.navi-name {
+								color: color(base, 100);
+							}
+						}
+					}
+				}
+			}
+		}
+		.local-body {
+		}
+
+		.local-util {
+			height: 56rem;
+
+			.button-display {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+		}
+	}
+
+	@at-root {
+		html.laptop {
+			.page-body.page-intro-temp {
+				#local {
+					@include overflow-scroll(custom);
+				}
+			}
+		}
+	}
+
+	.content-head {
+		flex-shrink: 0;
+		padding: 0 $container-gap;
+		box-sizing: border-box;
+
+		.content-title {
+			@include hidden;
+		}
+
+		.data-finder {
+			margin-top: 24rem;
+		}
+
+		.tab-display.module-c {
+			.tab-list {
+				&::before {
+					width: 100vw;
+				}
+			}
+		}
+	}
+
+	.content-body {
+		// overflow: hidden;
+	}
 }
 
 /**
@@ -298,6 +396,11 @@ img {
  */
 .page-body.page-intro {
 	#local {
+		overflow: hidden;
+
+		.local-head {
+			@include hidden;
+		}
 		.local-body {
 			overflow-y: scroll;
 		}
@@ -352,85 +455,92 @@ img {
 	}
 }
 
-.content-body {
-	padding: 0 $container-gap;
-}
-
 /**
  * @type layout
  * @name page-intro
  */
 .page-body.page-default {
-	#content {
-		display: flex;
-		flex-direction: column;
 
-		.content-head {
-			flex-shrink: 0;
-			position: relative;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding: 0 calc($container-gap * 2 + 24rem);
-			height: 56rem;
-			 
-			&::after {
-				content: '';
-				display: block;
-				position: absolute;
-				bottom: 0;
-				left: calc(50% - 50vw);
-				width: 100vw;
-				height: 1rem;
-				background-color: color(base, 010);
-			}
+	#local {
+		overflow: hidden;
+
+		.local-head {
+			@include hidden;
+		}
+		.local-body {
+			overflow: hidden;
+
+			#content {
+				overflow: hidden;
 		
-			.content-title {
-				flex: 1 1 100%;
-				display: flex;
-				width: 100%;
-				margin: 0;
-				color: color(base, 100);
-				@include font((outline: body, size: medium, weight: bold)...);
-		
-				.content-name {
-					display: block;
-					width: 100%;
-					white-space: nowrap;
-					overflow: hidden;
-					text-align: center;
-					text-overflow: ellipsis;
-				}
-			}
-		
-			.content-navi {
-				position: absolute;
-				left: $container-gap;
-				top: 50%;
-				transform: translate(0, -50%);
-		
-				.btn {
-					display: block;
-					svg {
-						fill: color(base, 090);
+				.content-head {
+					flex-shrink: 0;
+					position: relative;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 0 calc($container-gap * 2 + 24rem);
+					height: 56rem;
+					 
+					&::after {
+						content: '';
+						display: block;
+						position: absolute;
+						bottom: 0;
+						left: calc(50% - 50vw);
+						width: 100vw;
+						height: 1rem;
+						background-color: color(base, 010);
+					}
+				
+					.content-title {
+						flex: 1 1 100%;
+						display: flex;
+						width: 100%;
+						margin: 0;
+						color: color(base, 100);
+						@include font((outline: body, size: medium, weight: bold)...);
+				
+						.content-name {
+							display: block;
+							width: 100%;
+							white-space: nowrap;
+							overflow: hidden;
+							text-align: center;
+							text-overflow: ellipsis;
+						}
+					}
+				
+					.content-navi {
+						position: absolute;
+						left: $container-gap;
+						top: 50%;
+						transform: translate(0, -50%);
+				
+						.btn {
+							display: block;
+							svg {
+								fill: color(base, 090);
+							}
+						}
 					}
 				}
-			}
-		}
-
-		.content-body {
-			flex: 1 1 100%;
-			height: 100%;
-			overflow-x: hidden;
-			overflow-y: scroll;
-		}
-
-		@at-root {
-			html.laptop {
-				.page-body.page-default {
-					#content {
-						.content-body {
-							@include overflow-scroll(custom);	
+		
+				.content-body {
+					flex: 1 1 100%;
+					height: 100%;
+					overflow-x: hidden;
+					overflow-y: scroll;
+				}
+		
+				@at-root {
+					html.laptop {
+						.page-body.page-default {
+							#content {
+								.content-body {
+									@include overflow-scroll(custom);	
+								}
+							}
 						}
 					}
 				}
