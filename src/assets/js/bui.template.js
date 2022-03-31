@@ -363,7 +363,7 @@ widgetGotoTop(0);
 const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
 	accordion: false,
 	activeClass: 'active',
-	buttonClass: 'btn module-a style-a type-none normal-04 x-large flex symbol-rtl-fill-chevron-up',
+	buttonClass: 'btn module-a style-a type-none normal-04 large flex symbol-rtl-fill-chevron-up',
 	buttonText: '<span class="btn-text">자세히보기</span>',
 	buttonActiveText: '<span class="btn-text">닫기</span>',
 	buttonAppendTo: '.post-func .button-display .button-area',

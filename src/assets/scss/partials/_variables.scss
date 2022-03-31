@@ -324,6 +324,9 @@ $symbol-list: (
 	bullet-square:				(size: 24 24, path: 'M14,14h-4v-4h4V14z'),
 	bullet-star:				(size: 24 24, path: 'M10,14.1l1-1.7l-1.8-0.7l0.3-0.8l1.9,0.5l0.2-2h0.9l0.2,1.9l1.9-0.4l0.3,0.8L13,12.4l1,1.7l-0.7,0.5L12,13l-1.3,1.5L10,14.1z'),
 
+	// lamp
+	lamp-dot:					(size: 24 24, path: 'M16.8,12A4.8,4.8,0,1,1,12,7.2,4.8,4.8,0,0,1,16.8,12Z')
+
 );
 
 // Create system icon (RGB는 익스플로러를 대응하기 위해 사용 합니다.)

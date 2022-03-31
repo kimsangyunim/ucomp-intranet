@@ -614,7 +614,7 @@ hr {
 		border-spacing: 0;
 		border: 0 none transparent;
 		border-collapse: collapse;
-		border-top: 1rem solid bui-color(normal, 040);
+		border-top: 1rem solid bui-color(normal, 020);
 
 		caption {
 			overflow: hidden;
@@ -633,19 +633,19 @@ hr {
 			height: 24rem;
 			@include bui-font((outline: body, size: small, weight: regular)...);
 			word-break: break-all;
-			border-right: 1rem solid bui-color(normal, 040);
-			border-bottom: 1rem solid bui-color(normal, 040);
-			border-left: 1rem solid bui-color(normal, 040);
-			background-color: bui-color(normal, 010);
+			border-right: 1rem solid bui-color(normal, 020);
+			border-bottom: 1rem solid bui-color(normal, 020);
+			border-left: 1rem solid bui-color(normal, 020);
+			background-color: bui-color(normal, 005);
 		}
 		td {
 			padding: 12rem 12rem 11rem 12rem;
 			height: 24rem;
 			@include bui-font((outline: body, size: small, weight: regular)...);
 			word-break: break-all;
-			border-right: 1rem solid bui-color(normal, 040);
-			border-bottom: 1rem solid bui-color(normal, 040);
-			border-left: 1rem solid bui-color(normal, 040);
+			border-right: 1rem solid bui-color(normal, 020);
+			border-bottom: 1rem solid bui-color(normal, 020);
+			border-left: 1rem solid bui-color(normal, 020);
 			background-color: bui-color(normal, 000);
 
 			.para {
@@ -663,7 +663,7 @@ hr {
 	.data-list {
 		margin: 0;
 		padding: 0;
-		border: 1rem solid bui-color(normal, 040);
+		border: 1rem solid bui-color(normal, 020);
 		border-radius: 4rem;
 		overflow: hidden;
 
@@ -676,7 +676,7 @@ hr {
 				align-items: center;
 				padding: 0 16rem;
 				height: 48rem;
-				background-color: bui-color(normal, 020);
+				background-color: bui-color(normal, 005);
 				color: bui-color(normal, 100);
 				@include bui-font((outline: body, size: small, weight: regular)...);
 
@@ -685,24 +685,24 @@ hr {
 				}
 
 				&:hover {
-					background-color: bui-color(normal, 030);
+					background-color: bui-color(normal, 010);
 				}
 			}
 	
 			+.data-item {
-				border-top: 1rem solid bui-color(normal, 040);
+				border-top: 1rem solid bui-color(normal, 020);
 			}
 	
 			&[title=미정] {
 				.data-head,
 				.data-body {
-					opacity: 0.25;
+					color: rgba(0,0,0,0.25);
 				}
 			}
 	
 			&[title=진행] {
 				.data-area {
-					color: #1ec68c;
+					color: rgba(0,0,0,0.25);
 				}
 			}
 	

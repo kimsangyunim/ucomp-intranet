@@ -3,7 +3,7 @@
 <head>
 <%-include('../_templates/_data.head.front.ejs', {
 	layoutTemplate: 'front',
-	pageStyle: '',
+	pageStyle: 'front',
 	pageJavascript: ''
 }) %>
 </head>
@@ -21,14 +21,6 @@
 				<!-- local-head -->
 				<div class="local-head">
 					<h2 class="local-title" id="localTitle"><span class="local-name">공지사항</span></h2>
-					<!-- tab-display -->
-					<div class="tab-display module-b style-a type-a medium">
-						<ul class="tab-list">
-							<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">연차결제</a></li>
-							<li class="tab-item"><a class="tab-name" href="#">지출결제</a></li>
-						</ul>
-					</div>
-					<!-- //tab-display -->
 				</div>
 				<!-- //local-head -->
 				<!-- local-body -->
@@ -45,11 +37,11 @@
 									<legend>게시물 검색 서식</legend>
 									<div class="form-list">
 										<div class="form-item">
-											<div class="form-head"><span class="form-name">검색어</span></div>
+											<div class="form-head"><label class="form-name" for="searchKeyword">검색어</label></div>
 											<div class="form-body">
 												<div class="form-area">
 													<span class="form textfield module-a style-b type-line normal-04 medium flex">
-														<input type="search" class="form-elem" id="expensesHistory" placeholder="검색어를 입력해 주세요." title="검색어" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+														<input type="search" class="form-elem" id="searchKeyword" placeholder="검색어를 입력해 주세요." onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
 														<span class="form-func">
 															<button type="button" class="btn"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>검색</title><path d="M19.63,17.87l-2-2a7.5,7.5,0,1,0-1.76,1.76l2,2a1.24,1.24,0,0,0,1.76-1.76ZM11.5,16.5a5,5,0,1,1,5-5A5,5,0,0,1,11.5,16.5Z"></path></svg></button></span>
 														</span>
@@ -62,15 +54,6 @@
 								<!-- //submit-form -->
 							</form>
 							<!-- //data-finder -->
-							<!-- tab-display -->
-							<div class="tab-display module-c style-a type-d medium">
-								<ul class="tab-list">
-									<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">지출결재</a></li>
-									<li class="tab-item"><a class="tab-name" href="#">모든요청</a></li>
-									<li class="tab-item"><a class="tab-name" href="#">나의요청</a></li>
-								</ul>
-							</div>
-							<!-- //tab-display -->
 						</div>
 						<!-- //content-head -->
 						<!-- content-body -->
@@ -111,59 +94,12 @@
 								</div>
 							</div>
 							<!-- //post-display -->
-
-							<!-- section -->
-							<div class="section module-a">
-								<div class="section-head"><h4 class="section-title"><span class="section-name">나의 요청 연차</span></h4></div>
-								<div class="section-body">
-									<!-- post-display -->
-									<div class="post-display module-b style-a type-a">
-										<div class="post-list">
-											<% for(var i = 0; i < 1; i++) { %>
-												<%-include('../../front/_mixin/_post.item.signoff.ejs') %>
-											<% } %>
-										</div>
-									</div>
-									<!-- //post-display -->
-								</div>
-							</div>
-							<!-- //section -->
-							<!-- noti-board -->
-							<div class="noti-board module-b style-a small">
-								<div class="board-wrap">
-									<div class="board-head"><h4 class="board-subject"><span class="board-name">연차등록 안내</span></h4></div>
-									<div class="board-body">
-										<p class="para em accent-01">당일 연차 등록이 안되며, 사전등록을 할 시 내용 수정이 불가하오니 작성 시 유의하시기 바랍니다.</p>
-										<p class="para em accent-01">연차 등록 시 '신청' 상태 이며 경영 지원팀에서 '승인' 처리 되어야 정상 사용이 가능 합니다.</p>
-										
-
-										대체휴무 : 휴일, 주말 출근자 및 기타 사항
-										리프레시 휴가 : 2년 근무자만 등록 가능
-										<!-- data-list -->
-										<ul class="data-list module-a style-d normal-05 xx-small">
-											<li class="data-item">리플레쉬(2년근속) 휴가는 부득이한 경우를 제외하고는 1개월 사용을 원칙으로 합니다.(1일~말일) 단, 업무상 부득이한 경우에는 리더의 사유서 제출로 주 단위 사용이 가능합니다.</li>
-											<li class="data-item">리플레쉬 휴가 결제는 기존 연차와 달리 대표님 최종 결제를 받으셔야 합니다.</li>
-										</ul>
-										<!-- //data-list -->
-									</div>
-								</div>
-							</div>
-							<!-- //noti-board -->
 						</div>
 						<!-- //content-body -->
 					</div>
 					<!-- //content -->
 				</div>
 				<!-- //local-body -->
-				<!-- local-util -->
-				<div class="local-util">
-					<div class="button-display module-a style-b">
-						<span class="button-area">
-							<a href="#signoffForm" class="btn module-a style-a type-fill accent-01 x-large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
-						</span>
-					</div>
-				</div>
-				<!-- //local-util -->
 			</div>
 			<!-- //local -->
 		</div>

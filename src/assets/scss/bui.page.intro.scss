@@ -23,9 +23,9 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 	min-height: 100vh;	
-	padding: 0 map-get($bui-gutter, mobile, content);
+	padding: 48rem map-get($bui-gutter, mobile, content);
+	box-sizing: Border-box;
 
 	@include respond-above(large) {
 		padding: 0 map-get($bui-gutter, laptop, section);
@@ -48,21 +48,33 @@ body {
 		justify-content: center;
 		
 		margin: 0;
-		@include bui-font((outline: head, size: xx-large)...);
 		line-height: 1;
+		@include bui-font((outline: head, size: medium)...);
+
+		@include respond-above(large) {
+			@include bui-font((outline: head, size: xx-large)...);
+		}
+	
 
 		&::after {
 			content: attr(title);
 			display: block;
-			@include bui-font((outline: head, size: xx-small, weight: light)...);
+			@include bui-font((outline: body, size: medium, weight: light)...);
+
 			color: bui-color(normal, 100);
-			text-align: right;
+			text-align: center;
+			word-break: keep-all;
+
+			@include respond-above(large) {
+				@include bui-font((outline: head, size: xx-small)...);
+			}
 		}
 		
 		.page-name {
 			display: block;
 			color: bui-color(normal, 100);
 			@include bui-font((weight: 600, family: code)...);
+			text-align: center;
 			text-decoration: none;
 
 			abbr {
@@ -74,7 +86,11 @@ body {
 }
 
 .page-body {
-	margin-top: 48rem;
+	margin-top: 24rem;
+
+	@include respond-above(large) {
+		margin-top: 48rem;
+	}
 }
 
 .page-foot {

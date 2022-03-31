@@ -269,3 +269,79 @@ $btn-module-a-outline: (
 		}
 	}
 }
+
+
+/*
+ * module-icon outline
+ *
+ * @ $height
+ * @ $icon-size
+ */  
+ $btn-module-icon: (
+	'x-large'		56rem 28rem,
+);
+
+// btn module-icon reset
+a.btn.module-ico {
+	text-decoration: none;
+}
+
+.btn.module-ico {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4rem 8rem 0 rgba(0,0,0,0.3);
+
+	&::before {
+		content: '';
+		display: block;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: cover;
+	}
+
+	.btn-text {
+		@include hidden;
+	}
+
+	// outline
+	@each $name, $height, $icon-size in $btn-module-icon {
+		&.#{$name} {
+			width: $height;
+			height: $height;
+
+			&.style-b {
+				border-radius: $height * 0.2;
+			}
+
+			&.style-c {
+				border-radius: $height * 0.5;
+			}
+
+			// icon
+			&::before {
+				width: $icon-size;
+				height: $icon-size;
+				flex-shrink: 0;
+			}
+		}
+	}
+
+	// accent
+	@each $accent-name in $btn-module-a-accent {
+		&.#{nth($accent-name, 1)} {
+			// @debug "divider offset: #{nth($accent-name, 1)}";
+			@each $type-name, $color, $border-color, $background-color in map-get($btn-module-a-accent, nth($accent-name, 1)) {
+				&.type-#{$type-name} {
+					color: $color;
+					border-color: $border-color;
+					background-color: $background-color;
+					
+					@each $icon-name, $icon in $symbol-list {
+						&.symbol-#{$icon-name} {&::before {background-image: icon($icon-name, $color);}}
+					}
+				}
+			}
+		}
+	}
+}

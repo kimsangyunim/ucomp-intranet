@@ -289,28 +289,57 @@ $noti-board-module-accent: (
 
 
 
-
-.noti-board.module-b {
+/**
+ * @type module
+ * @name guide-board
+ * @modle a
+ */
+.guide-board.module-a {
 	&.style-a {
 
 	}
 
 	&.small {
-		@include font((outline: body, size: small)...);
-	}
-
-	.board-head {
-		.board-subject {
-			margin: 0;
-
-			.board-name {
-				color: color(base, 050);
+		.board-head {
+			.board-subject {
+				@include font((outline: body, size: small)...);
 			}
 		}
+		.board-body {
+			@include font((outline: body, size: small)...);
+		}
+	}
 
-		~.board-body {
-			margin-top: 16rem;
+	.board-wrap {
+		position: relative;
+
+		.board-head {
+			.board-subject {
+				margin: 0;
+	
+				.board-name {
+					display: flex;
+					color: color(base, 050);
+	
+					&::before {
+						content: '';
+						display: block;
+						margin-right: 5rem;
+						width: 20rem;
+						height: 20rem;
+						background: icon(fill-circle-caution, color(base, 050)) no-repeat center/cover;
+					}
+				}
+			}
+	
+			~.board-body {
+				margin-top: 16rem;
+			}
+		}
+	
+		.board-body {
 			color: color(base, 050);
+			.para {margin: 8rem 0;}
 		}
 	}
 }

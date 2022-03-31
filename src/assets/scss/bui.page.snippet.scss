@@ -392,6 +392,10 @@ html.active-toggle-react-target{
 
 
 .submit-form.module-bui {
+	margin: 0;
+	padding: 0;
+	border: hidden;
+
 	legend {
 		@include hidden;
 	}

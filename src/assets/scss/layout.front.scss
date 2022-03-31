@@ -290,7 +290,24 @@ img {
 	flex-direction: column;
 
 	.content-body {
+		display: flex;
+		flex-direction: column;
 		padding: 0 $container-gap;
+
+		.button-display.module-fab {
+			position: fixed;
+			right: $container-gap;
+			bottom: calc(138rem + 20rem);
+
+			.button-area {
+				display: flex;
+				flex-direction: column;
+
+				.btn+.btn {
+					margin-top: 8rem;
+				}
+			}
+		}
 	}
 }
 
@@ -298,7 +315,74 @@ img {
  * @type layout
  * @name page-intro
  */
- .page-body.page-intro-temp {
+.page-body.page-intro {
+	#local {
+		overflow: hidden;
+
+		.local-head {
+			@include hidden;
+		}
+		.local-body {
+			overflow-y: scroll;
+		}
+	}
+
+	@at-root {
+		html.laptop {
+			.page-body.page-intro {
+				#local {
+					.local-body {
+						@include overflow-scroll(custom);
+					}
+				}
+			}
+		}
+	}
+
+	.content-head {
+		flex-shrink: 0;
+		padding: 0 $container-gap;
+		box-sizing: border-box;
+		box-shadow: inset 0 -1rem 0 0 color(base, 010);
+		
+		.content-title {
+			margin: 40rem 0 24rem 0;
+			color: color(base, 100);
+			@include font((outline: head, size: large, weight: bold)...);
+	
+			.content-name {
+				display: block;
+			}
+		}
+	
+		.content-navi {
+			display: none;
+		}
+
+		.data-finder {
+			margin: 24rem 0;
+		}
+
+		.tab-display.module-c {
+			.tab-list {
+				&::before {
+					width: 100vw;
+				}
+			}
+		}
+	}
+
+	.content-body {
+		overflow: hidden;
+	}
+}
+
+
+/**
+ * @type layout
+ * @name page-intro-tab
+ */
+ .page-body.page-intro-tab {
 	#local {
 		overflow-y: scroll;
 
@@ -355,7 +439,7 @@ img {
 
 	@at-root {
 		html.laptop {
-			.page-body.page-intro-temp {
+			.page-body.page-intro-tab {
 				#local {
 					@include overflow-scroll(custom);
 				}
@@ -367,6 +451,7 @@ img {
 		flex-shrink: 0;
 		padding: 0 $container-gap;
 		box-sizing: border-box;
+		background-color: color(base, 000);
 
 		.content-title {
 			@include hidden;
@@ -392,72 +477,7 @@ img {
 
 /**
  * @type layout
- * @name page-intro
- */
-.page-body.page-intro {
-	#local {
-		overflow: hidden;
-
-		.local-head {
-			@include hidden;
-		}
-		.local-body {
-			overflow-y: scroll;
-		}
-	}
-
-	@at-root {
-		html.laptop {
-			.page-body.page-intro {
-				#local {
-					.local-body {
-						@include overflow-scroll(custom);
-					}
-				}
-			}
-		}
-	}
-
-	.content-head {
-		flex-shrink: 0;
-		padding: 0 $container-gap;
-		box-sizing: border-box;
-		
-		.content-title {
-			margin: 40rem 0 24rem 0;
-			color: color(base, 100);
-			@include font((outline: head, size: large, weight: bold)...);
-	
-			.content-name {
-				display: block;
-			}
-		}
-	
-		.content-navi {
-			display: none;
-		}
-
-		.data-finder {
-			margin-top: 24rem;
-		}
-
-		.tab-display.module-c {
-			.tab-list {
-				&::before {
-					width: 100vw;
-				}
-			}
-		}
-	}
-
-	.content-body {
-		overflow: hidden;
-	}
-}
-
-/**
- * @type layout
- * @name page-intro
+ * @name page-default
  */
 .page-body.page-default {
 
@@ -481,6 +501,7 @@ img {
 					justify-content: space-between;
 					padding: 0 calc($container-gap * 2 + 24rem);
 					height: 56rem;
+					background-color: color(base, 000);
 					 
 					&::after {
 						content: '';
@@ -546,55 +567,5 @@ img {
 				}
 			}
 		}
-	}
-}
-
-/**
- * @type module
- * @name section
- */
-.section.module-a {
-	position: relative;
-	margin: 24rem 0;
-
-	.section-head {
-		margin-bottom: 16rem;
-
-		.section-title {
-			margin: 0;
-			color: color(base, 090);
-			@include font((outline: body, size: medium)...);
-
-			.section-name {
-				display: block;
-			}
-		}
-	}
-}
-
-*+.section.module-a {
-	padding-top: 24rem;
-	border-top: 4rem solid color(base, 010);
-
-	&::before {
-		content: '';
-		display: block;
-		position: absolute;
-		left: calc(50% - 50vw);
-		top: -4rem;
-		width: 100vw;
-		height: 4rem;
-		background-color: color(base, 010);
-	}
-}
-
-.info-board.module-a {
-	// margin: 32rem 0;;
-	margin: 24rem 0 32rem 0;;
-}
-
-.page-notice {
-	.content-body {
-		background-color: color(base, 005);
 	}
 }
