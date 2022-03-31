@@ -78,14 +78,26 @@
 							<!-- //subsection -->
 							<!-- subsection -->
 							<div class="subsection">
-								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'info-board'}) %></div>
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'module-a'}) %></div>
 								<div class="subsection-body">
 									<!-- highlight-js -->
-									<pre class="highlight-js">
-<style>
-	.data-display + .data-display {margin-top: 30rem;}
-</style>										
-<code class="html">
+									<pre class="highlight-js"><code class="html">
+&lt;div class="data-display module-a style-a type-a small"&gt;
+	&lt;ul class="data-list"&gt;
+		&lt;li class="data-item"&gt;
+			&lt;div class="data-wrap"&gt;
+				&lt;div class="data-head"&gt;&lt;span class="data-name"&gt;Name/title&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="data-body"&gt;contents&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+		&lt;li class="data-item"&gt;
+			&lt;div class="data-wrap"&gt;
+				&lt;div class="data-head"&gt;&lt;span class="data-name"&gt;지출타입&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="data-body"&gt;교통비&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
 </code></pre>
 									<!-- //highlight-js -->
 									<!-- data-display -->
@@ -126,9 +138,35 @@
 										<!-- //data-list -->
 									</div>
 									<!--// data-display -->
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'module-b'}) %></div>
+								<div class="subsection-body">
+									<!-- highlight-js -->
+									<pre class="highlight-js"><code class="html">
+&lt;div class="data-display module-b style-a type-a small type-line normal-03 symbol-rtl-fill-circle-more"&gt;
+	&lt;ul class="data-list"&gt;
+		&lt;li class="data-item"&gt;
+			&lt;div class="data-wrap"&gt;
+				&lt;div class="data-head"&gt;&lt;a href="#"  class="data-name"&gt;Name/subject&lt;/a&gt;&lt;/div&gt;
+				&lt;div class="data-body"&gt;contents&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+		&lt;li class="data-item"&gt;
+			&lt;div class="data-wrap"&gt;
+				&lt;div class="data-head"&gt;&lt;a href="#"  class="data-name"&gt;name&lt;/a&gt;&lt;/div&gt;
+				&lt;div class="data-body"&gt;진학사, 인트라넷&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+									<!-- //highlight-js -->
 									<!-- data-display -->
-
-									<div class="data-display module-b style-a type-a small symbol-rtl-fill-circle-more">
+									<div class="data-display module-b style-a type-a small type-line normal-03 symbol-rtl-fill-circle-more">
 										<!-- data-list -->
 										<ul class="data-list">
 											<li class="data-item">

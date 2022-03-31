@@ -21,29 +21,68 @@
 	'x-large'		32rem  28rem  1.50 400 28rem,
 );
 
+/*
+* @ module accent
+*
+* @ $text-color
+* @ $border-color
+* @ $background-color
+*/
+$data-display-module-accent: (
+	'normal-00': (
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 100) color(base, 100) color(base, 000),
+		'fill' color(base, 000) color(base, 100) color(base, 100),
+	),
+	'normal-01': (
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 80) color(base, 80) color(base, 000),
+		'fill' color(base, 000) color(base, 80) color(base, 80),
+	),
+	'normal-02': (
+		'none' color(base, 070) transparent transparent,
+		'line' color(base, 070) color(base, 070) color(base, 000),
+		'fill' color(base, 000) color(base, 070) color(base, 070),
+	),
+	'normal-03': (
+		'none' color(base, 060) transparent transparent,
+		'line' color(base, 020) color(base, 020) color(base, 000),
+		'fill' color(base, 000) color(base, 020) color(base, 020),
+	),
+	'normal-04': (
+		'none' color(base, 040) transparent transparent,
+		'line' color(base, 040) color(base, 010) color(base, 000),
+		'fill' color(base, 050) color(base, 010) color(base, 010),
+	),
+	'accent-01': (
+		'none' color(primary, 050) transparent transparent,
+		'line' color(primary, 050) color(primary, 050) color(primary, 000),
+		'fill' color(primary, 000) color(primary, 050) color(primary, 050),
+	),
+);
 
 
- .data-display {
-	 > * {
-		margin: 0;
-		padding: 0;
-	 }
-	 .data-list {
-		 .data-item {
-			 .data-wrap {
-				 
+.data-display {
+	> * {
+	margin: 0;
+	padding: 0;
+	}
+	.data-list {
+		.data-item {
+			.data-wrap {
+				
 
-				 .data-head {
-					 .data-name {
+				.data-head {
+					.data-name {
 
-					 }
-				 }
-				 .data-body {
+					}
+				}
+				.data-body {
 
-				 }
-			 }
-		 }
-	 }
+				}
+			}
+		}
+	}
 	// outline
 	@each $name, $line-height-head, $line-height-body, $font-size, $font-weight, $margin in $data-display-module-outline {
 		&.#{$name} {
@@ -82,6 +121,7 @@
 			}
 		}
 	}
+
 	// icon
 	&[class*=symbol-ltr-] .data-name::before,
 	&[class*=symbol-rtl-] .data-name::after {
@@ -90,6 +130,23 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
+	// accent
+	@each $accent-name in $data-display-module-accent {
+		&.#{nth($accent-name, 1)} {
+			@each $type-name, $color, $border-color, $background-color in map-get($data-display-module-accent, nth($accent-name, 1)) {
+				&.type-#{$type-name} {
+					color: $color;
+					border-color: $border-color;
+					background-color: $background-color;
+					
+					@each $icon-name, $icon in $symbol-list {
+						&.symbol-ltr-#{$icon-name} {.data-name {&::before {background-image: icon($icon-name, $color);}}}
+						&.symbol-rtl-#{$icon-name} {.data-name {&::after {background-image: icon($icon-name, $color);}}}
+					}
+				}
+			}
+		}
+	}	
 
 }
 
