@@ -233,7 +233,7 @@
 					align-items: center;
 	
 					height: 56rem;
-					width: 56rem;		
+					width: 56rem;
 	
 					border-radius: 16rem;
 					border: 2rem solid color(base, 010);
@@ -297,5 +297,35 @@
 				}
 			}
 		}
+	}
+
+	&.style-a {
+		.upload-body {
+			
+		}
+
+	}
+	&.style-b {
+		.upload-body {
+			&:first-child {
+				margin-left: 0;
+			}
+			.file-list {
+
+				.file-item {
+					width: 240rem;
+					height: 240rem;
+
+					+.file-item {
+						margin-left: 12rem;
+					}
+	
+					.file-name {
+					
+					}
+				}
+			}
+		}
+		
 	}
 }
