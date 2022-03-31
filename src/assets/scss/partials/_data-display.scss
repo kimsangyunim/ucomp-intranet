@@ -63,15 +63,9 @@ $data-display-module-accent: (
 
 
 .data-display {
-	> * {
-	margin: 0;
-	padding: 0;
-	}
 	.data-list {
 		.data-item {
 			.data-wrap {
-				
-
 				.data-head {
 					.data-name {
 
@@ -116,7 +110,6 @@ $data-display-module-accent: (
 					}
 				}
 			}
-
 			&.style-b {
 			}
 		}
@@ -155,6 +148,7 @@ $data-display-module-accent: (
 		.data-item {
 			.data-wrap {
 				display: flex;
+				align-items: center;
 				.data-head {
 					.data-name {
 						color: color(base, 040);
@@ -200,7 +194,6 @@ $data-display-module-accent: (
 					}
 				}
 			}
-
 			&.style-b {
 			}
 		}
@@ -219,7 +212,6 @@ $data-display-module-accent: (
 						display: flex;
 						color: color(base, 080);
 						text-decoration: none;
-						
 					}
 				}
 				.data-body {

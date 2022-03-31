@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<%-include('../_templates/_data.head.front.ejs', {
+	layoutTemplate: 'snippet',
+	pageStyle: '',
+	pageJavascript: ''
+}) %>
+</head>
+<body>
+<div id="wrap">
+	<!-- page -->
+	<div id="page">
+		<%-include('../_templates/_header.front.ejs', {
+			current: '2',
+		}) %>
+		<!-- page-body -->
+		<div class="page-body page-product-main" id="local">
+			<!-- local-head -->
+			<div class="local-head">
+				<h2 class="local-title"><span class="local-name">SNIPPET</span></h2>
+			</div>
+			<!-- //local-head -->
+			<!-- local-body -->
+			<div class="local-body" id="content">
+				<!-- content-head -->
+				<div class="content-head">
+					<h3 class="content-title"><span class="content-name">공통 레이어 팝업</span></h3>
+				</div>
+				<!-- //content-head -->
+				<!-- content-body -->
+				<div class="content-body">
+					<!-- button-area -->
+					<div class="button-area module-a style-a type-c">
+						<a class="btn module-b style-c type-line normal-01 medium" href="#contentsPopupTemplate" onclick="contentsPopup.active('contentsPopupTemplate'); return false;"><span class="btn-text">팝업 열기</span></a>
+					</div>
+					<!-- //button-area -->
+				</div>
+				<!-- //content-body -->
+			</div>
+			<!-- //local-body -->
+		</div>
+		<!-- //page-body -->
+	</div>
+	<!-- //page -->
+</div>
+<hr />
+<!-- layer-popup -->
+<div class="layer-popup module-a style-a type-a medium" id="contentsPopupTemplate" data-bui-toggle="contentsPopup">
+	<div class="popup-page-body">
+		<!-- popup-local -->
+		<div class="popup-local">
+			<!-- popup-local-head -->
+			<div class="popup-local-head">
+				<h2 class="popup-local-title"><span class="popup-local-name">POPUP NAME</span></h2>
+			</div>
+			<!-- //popup-local-head -->
+			<!-- popup-local-body -->
+			<div class="popup-local-body">
+				<div class="popup-content">
+					<!-- popup-content-body -->
+					<div class="popup-content-body">
+						<!-- section -->
+						<div class="section style-a">
+							<div class="section-head">
+								<h3 class="section-title"><span class="section-name">SECTION NAME</span></h3>
+							</div>
+							<div class="section-body">
+								<p class="para">대한민국의 경제질서는 개인과 기업의 경제상의 자유와 창의를 존중함을 기본으로 한다. 국무회의는 정부의 권한에 속하는 중요한 정책을 심의한다.</p>
+							</div>
+						</div>
+						<!-- //section -->
+						<!-- section -->
+						<div class="section style-a">
+							<div class="section-head">
+								<h3 class="section-title"><span class="section-name">SECTION NAME</span></h3>
+							</div>
+							<div class="section-body">
+								<p class="para">국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 대통령은 제3항과 제4항의 사유를 지체없이 공포하여야 한다.</p>
+								<!-- subsection -->
+								<div class="subsection style-a">
+									<div class="subsection-head">
+										<h5 class="subsection-title"><span class="subsection-name">1. SUBSUCTION NAME</span></h5>
+									</div>
+									<div class="subsection-body">
+										<p class="para">대한민국의 경제질서는 개인과 기업의 경제상의 자유와 창의를 존중함을 기본으로 한다. 국무회의는 정부의 권한에 속하는 중요한 정책을 심의한다. 국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 대통령은 제3항과 제4항의 사유를 지체없이 공포하여야 한다.</p>
+									</div>
+								</div>
+								<!-- //subsection -->
+								<!-- subsection -->
+								<div class="subsection style-a">
+									<div class="subsection-head">
+										<h5 class="subsection-title"><span class="subsection-name">2. SUBSUCTION NAME</span></h5>
+									</div>
+									<div class="subsection-body">
+										<p class="para">대한민국의 경제질서는 개인과 기업의 경제상의 자유와 창의를 존중함을 기본으로 한다. 국무회의는 정부의 권한에 속하는 중요한 정책을 심의한다. 국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 대통령은 제3항과 제4항의 사유를 지체없이 공포하여야 한다.</p>
+									</div>
+								</div>
+								<!-- //subsection -->
+								<!-- subsection -->
+								<div class="subsection style-a">
+									<div class="subsection-head">
+										<h5 class="subsection-title"><span class="subsection-name">3. SUBSUCTION NAME</span></h5>
+									</div>
+									<div class="subsection-body">
+										<p class="para">대한민국의 경제질서는 개인과 기업의 경제상의 자유와 창의를 존중함을 기본으로 한다. 국무회의는 정부의 권한에 속하는 중요한 정책을 심의한다. 국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 대통령은 제3항과 제4항의 사유를 지체없이 공포하여야 한다.</p>
+									</div>
+								</div>
+								<!-- //subsection -->
+								<!-- subsection -->
+								<div class="subsection style-a">
+									<div class="subsection-head">
+										<h5 class="subsection-title"><span class="subsection-name">4. SUBSUCTION NAME</span></h5>
+									</div>
+									<div class="subsection-body">
+										<p class="para">대한민국의 경제질서는 개인과 기업의 경제상의 자유와 창의를 존중함을 기본으로 한다. 국무회의는 정부의 권한에 속하는 중요한 정책을 심의한다. 국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다. 행정권은 대통령을 수반으로 하는 정부에 속한다. 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 대통령은 제3항과 제4항의 사유를 지체없이 공포하여야 한다.</p>
+									</div>
+								</div>
+								<!-- //subsection -->
+							</div>
+						</div>
+						<!-- //section -->
+					</div>
+					<!-- //popup-content-body -->
+				</div>
+			</div>
+			<!-- //popup-local-body -->
+		</div>
+		<!-- //popup-local -->
+	</div>
+</div>
+<!-- //layer-popup -->
+<script stype="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+		contentsPopup.active('contentsPopupTemplate');
+	});
+</script>
+</body>
+</html>

@@ -265,8 +265,9 @@
 					position: relative;
 					width: 56rem;
 					height: 56rem;
+					border-color: color(base, 000);
 					border-radius: 16rem;
-					box-shadow: inset 0 0 0 1rem rgba(0,0,0,0.1);
+					// box-shadow: inset 0 0 0 1rem rgba(0,0,0,0.1);
 					background-repeat: no-repeat;
 					background-position: center;
 					background-size: cover;
@@ -315,6 +316,7 @@
 				.file-item {
 					width: 240rem;
 					height: 240rem;
+					border-color: color(base, 030);
 
 					+.file-item {
 						margin-left: 12rem;
