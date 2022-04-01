@@ -307,6 +307,14 @@ widgetGotoTop(0);
 	reactTarget: 'html',
 	reactTargetActiveClass: 'active-content-popup',
 	focusin: true,
+	activeBeforeCallBack: function(toggleTarget) {
+		toggleTarget.classList.add('enabled');
+	},	
+	inactiveAfterCallBack: function(toggleTarget) {
+		setTimeout(function() {
+			toggleTarget.classList.remove('enabled');
+		}, 750);
+	}
 	// activeBeforeCallBack: function() {
 	// 	var toggleTarget = this.target;
 	// 	toggleTarget.classList.add('enabled');

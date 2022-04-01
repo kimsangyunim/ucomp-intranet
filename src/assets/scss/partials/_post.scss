@@ -598,6 +598,7 @@
 	.post-display {
 		width: 100vw;
 		overflow-x: auto;
+		overflow-y: hidden;
 		-webkit-overflow-scrolling: touch;
 		-ms-overflow-style: none;
 		scrollbar-width: none;

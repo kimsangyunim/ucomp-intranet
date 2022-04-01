@@ -1,97 +1,6 @@
 @import '_variables';
 @import '_mixin';
 
-@mixin section-default {
-	margin-top: 28rem;
-
-	.section-head {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	
-		.section-title {
-			display: flex;
-			align-items: center;
-			margin: 0;
-
-			@include font((outline: body, size: small, weight: bold)...);
-			color: color(base, 020);
-
-			// laptop
-			@include respond-above(large) {
-				@include font((outline: body, size: medium)...);
-			}
-	
-			.section-name {
-				display: block;
-			}
-		}
-
-		~.section-body {
-			margin-top: 4rem;
-
-			// laptop
-			@include respond-above(large) {
-				margin-top: 8rem;
-			}
-		}
-	}
-
-	.section-body {
-		.para {
-			margin: 0;
-			@include font((outline: body, size: x-small)...);
-			color: color(base, 030);
-
-			// laptop
-			@include respond-above(large) {
-				@include font((outline: body, size: small)...);
-			}
-		}
-		
-		.button-area {
-			margin-top: 16rem;
-		}
-	}
-}
-
-@mixin subsection-default {
-	margin-top: 16rem;
-
-	.subsection-head {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	
-		.subsection-title {
-			display: flex;
-			align-items: center;
-			margin: 0;
-
-			@include font((outline: body, size: x-small, weight: bold)...);
-			color: color(base, 020);
-
-			// laptop
-			@include respond-above(large) {
-				@include font((outline: body, size: small)...);
-			}
-	
-			.subsection-name {
-				display: block;
-			}
-		}
-
-		~.subsection-body {
-			margin-top: 4rem;
-
-			// laptop
-			@include respond-above(large) {
-				margin-top: 8rem;
-			}
-		}
-	}
-}
-
 @keyframes popup-active {
 	0% {
 		visibility: hidden;
@@ -120,7 +29,7 @@ html.active-content-popup {
 	}
 }
 
-.layer-popup.module-a.style-a {
+.content-popup.module-a.style-a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -134,11 +43,6 @@ html.active-content-popup {
 	visibility: hidden;
 	opacity: 0;
 	background-color: rgba(0,0,0,0.7);
-
-	// laptop
-	@include respond-above(large) {
-		padding: 48rem;
-	}
 
 	&:not(.enabled) {
 		display: none;
@@ -164,12 +68,6 @@ html.active-content-popup {
 			max-width: 100%;
 			height: 100vh;
 			width: 100%;
-			
-			// laptop
-			@include respond-above(large) {
-				width: 600rem;
-				height: initial;
-			}
 		}
 	}
 
@@ -181,93 +79,39 @@ html.active-content-popup {
 		visibility: visible;
 		transition: visibility 0.25s ease, opacity 0.25s ease;
 
-		// laptop
-		@include respond-above(large) {
-			padding-top: 44rem;
-		}
 		
 		.popup-local {
 			display: flex;
 			flex-direction: column;
 			overflow: hidden;
 			width: 100%;
-			background-color: #fff;
-			box-shadow: 0 4rem 8rem 0 rgba(0,0,0,0.08), 0 0 0 0.0625rem rgba(0,0,0,0.05);
-
-			// laptop
-			@include respond-above(large) {
-				border-radius: 16rem;
-			}
+			// background-color: #fff;
+			// box-shadow: 0 4rem 8rem 0 rgba(0,0,0,0.08), 0 0 0 0.0625rem rgba(0,0,0,0.05);
 
 			.popup-local-head {
-				position: relative;
-				padding: 0 28rem;
-				border-bottom: 1rem solid color(base, 020);
-				
-				.popup-local-title {
-					display: flex;
-					align-items: center;
-					margin: 0;
-					height: 64rem;
-					color: color(base, 020);
-					@include font((outline: body, size: large, weight: bold)...);
-
-					.popup-local-name {
-						display: block;
-					}
-				}
-
-				// laptop
-				@include respond-above(large) {
-					padding: 0 36rem;
-
-					.popup-local-title {
-						height: 94rem;
-						@include font((size: x-large)...);
-					}
-				}
+				@include hidden;
 			}
 	
 			.popup-local-body {
+				display: flex;
 				flex-grow: 1;
 				overflow-y: auto;
 				@include overflow-scroll(custom);
-				padding: 0 28rem;
 
-				.popup-content-body {
-					margin: 28rem 0;
-
-					.section.style-a {
-						@include section-default;
-					}
-
-					.subsection.style-a {
-						@include subsection-default;
-					}
-				}
-
-				// laptop
-				@include respond-above(large) {
-					padding: 0 36rem;
-
-					.popup-content-body {
-						margin: 36rem 0;
-					}
-				}
-			}
-
-			.popup-local-util {
-				box-shadow: inset 0 0.0625rem 0 0 color(base, 060);	
-				.button-area {
+				.popup-content {
 					display: flex;
-	
-					.btn {
-						flex-grow: 1;
-						width: 100%;
+					justify-content: center;
+					align-items: center;
+					.popup-content-body {
+						
+						
+						.section.module-a {
+							.section-head {
+								@include hidden;
+							}
 
-						+.btn {
-							margin-left: 12rem;
 						}
+
 					}
 				}
 			}
@@ -279,26 +123,24 @@ html.active-content-popup {
 		align-items: center;
 		justify-content: center;
 		position: absolute;
-		top: 20rem;
+		top: 56rem;
 		right: 28rem;
 		outline-offset: -2px;
+		
 		svg {
 			display: block;
-			width: 24rem;
-			height: 24rem;
+			width: 32rem;
+			height: 32rem;
 			fill: color(base, 010);
-		}
 
-		// laptop
-		@include respond-above(large) {
-			top: 0;
-			right: 0;
-
-			svg {
-				width: 32rem;
-				height: 32rem;
-				fill: color(base, 100);
-			}
+			// &::before {
+			// 	content: '';
+			// 	display: block;
+			// 	width: 42rem;
+			// 	height: 42rem;
+			// 	background-color: red;
+			// 	z-index: -1;
+			// }
 		}
 	}
 }
