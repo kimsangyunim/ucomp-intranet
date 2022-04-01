@@ -5,7 +5,7 @@
  */
 
 /*
- * module-a outline
+ * module outline
  *
  * @ $line-height-head
  * @ $line-height-body
@@ -33,7 +33,6 @@ $data-display-module-accent: (
 	'normal-03' color(base, 080) color(base, 020) color(base, 020),
 );
 
-
 .data-display {
 	.data-list {
 		.data-item {
@@ -60,7 +59,6 @@ $data-display-module-accent: (
 		&.#{$name} {
 			.data-item {
 				.data-wrap {
-					
 					.data-head {
 						font-weight: $font-weight;
 						.data-name {
@@ -69,7 +67,6 @@ $data-display-module-accent: (
 						}
 					}
 					.data-body {
-	
 					}
 				}
 			}
@@ -88,27 +85,9 @@ $data-display-module-accent: (
 					}
 				}
 			}
-			&.style-b {
-			}
 		}
 	}
 
-	.data-name {
-
-	}
-
-	a.data-name::after {
-
-	}
-
-	// icon
-	// &.data-name[class*=symbol-ltr-]::before,
-	// &.data-name[class*=symbol-rtl-]::after {
-	// 	content: '';
-	// 	display: block;
-	// 	background-repeat: no-repeat;
-	// 	background-size: cover;
-	// }
 	// accent
 	@each $name, $head-color, $icon-color, $body-color in $data-display-module-accent {
 		&.#{$name} {
@@ -128,6 +107,7 @@ $data-display-module-accent: (
 	}
 }
 
+// module-a
 .data-display.module-a {
 	.data-list {
 		.data-item {
@@ -156,6 +136,7 @@ $data-display-module-accent: (
 					}
 					.data-body {
 						flex: 1 1 100%;
+						// width:100% //pc ex 경우
 						line-height: $line-height-head;
 						font-size: calc($line-height-head / $font-size);
 					}
@@ -164,28 +145,11 @@ $data-display-module-accent: (
 					margin-top: $margin;
 				}
 			}
-			
-			&.style-a {
-				.data-item {
-					.data-wrap {
-						.data-head {
-							.data-name {
-		
-							}
-						}
-						.data-body {
-		
-						}
-					}
-				}
-			}
-			&.style-b {
-			}
 		}
 	}
 }
 
-
+// module-b
 .data-display.module-b {
 	.data-list {
 		display: flex;
@@ -206,14 +170,12 @@ $data-display-module-accent: (
 		}
 	}
 
-
 	// outline module-b
 	@each $name, $line-height-head, $line-height-body, $font-size, $font-weight, $margin in $data-display-module-outline {
 		&.#{$name} {
 			.data-item {
 				@include display-column(2, $margin, $margin - 4);
-								// 컬럼 객수 , margin-left, marign-top 
-
+							// 컬럼 객수 , margin-left, marign-top 
 				.data-wrap {
 					.data-head {
 						.data-name {
@@ -222,15 +184,12 @@ $data-display-module-accent: (
 								width: $line-height-head;
 								min-width: $line-height-head;
 								height: $line-height-head;
-								// background-color: red;
 							}
 						}
 					}
 					.data-body {
-
 						line-height: $line-height-body;
 						font-size: calc($line-height-body / $font-size);
-	
 					}
 				}
 			}
@@ -240,24 +199,6 @@ $data-display-module-accent: (
 				width: $line-height-head;
 				min-width: $line-height-head;
 				height: $line-height-head;
-			}
-			
-			&.style-a {
-				.data-item {
-					.data-wrap {
-						.data-head {
-							.data-name {
-		
-							}
-						}
-						.data-body {
-		
-						}
-					}
-				}
-			}
-
-			&.style-b {
 			}
 		}
 	}	

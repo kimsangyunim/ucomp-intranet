@@ -305,28 +305,4 @@
 		}
 
 	}
-	&.style-b {
-		.upload-body {
-			&:first-child {
-				margin-left: 0;
-			}
-			.file-list {
-
-				.file-item {
-					width: 240rem;
-					height: 240rem;
-					border-color: color(base, 030);
-
-					+.file-item {
-						margin-left: 12rem;
-					}
-	
-					.file-name {
-					
-					}
-				}
-			}
-		}
-		
-	}
 }
