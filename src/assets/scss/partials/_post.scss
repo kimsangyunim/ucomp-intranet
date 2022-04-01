@@ -572,7 +572,6 @@
 
 			.post-wrap {
 				.post-figure {
-					// border-color: color(base, 030);
 					.post-thumbnail {
 						display: block;
 						overflow: hidden;
@@ -581,7 +580,6 @@
 						height: 240rem;
 						border-radius: 16rem;
 						box-shadow: inset 0 0 0 1rem rgba(0,0,0,0.1);
-						border: 2px solid red;
 						img {
 							height: auto;
 						}

@@ -83,9 +83,19 @@
 							<!-- //section -->
 							<!-- section -->
 							<div class="section module-a">
-								<div class="section-head"><h4 class="section-title"><span class="section-name">영수증 사진 첨부 list</span></h4></div>
+								<div class="section-head"><h4 class="section-title"><span class="section-name">첨부 한 영수증</span></h4></div>
 								<div class="section-body attr-scroll">
+									<!-- post-display -->
+									<div class="post-display module-c style-a type-c">
+										<ul class="post-list">
+											<% for(var i = 0; i < 7; i++) { %>
+												<%-include('../../front/_mixin/_post.item.figure.ejs') %>
+											<% } %>
+										</ul>
+									</div>
+									<!-- //post-display -->
 								</div>
+
 							</div>
 							<!-- //section -->
 							<!-- section -->
