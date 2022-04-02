@@ -145,7 +145,7 @@ $noti-board-module-accent: (
  * @ $border-width
  */  
  $noti-board-module-a-outline: (
-	'x-small'		10rem 18rem 1.50 700 1rem,
+	'x-small'		12rem 18rem 1.50 700 1rem,
 	'small'			12rem 20rem 1.50 700 1rem,
 	'medium'		14rem 24rem 1.50 700 1rem,
 	'large'			16rem 28rem 1.50 700 1rem,
@@ -158,11 +158,6 @@ $noti-board-module-accent: (
  * @modle a
  */
 .noti-board.module-a {
-	padding: 10rem;
-	box-sizing: border-box;
-	border-style: solid;
-	@include font((family: default)...);
-
 	.board-wrap {
 		.board-head {
 			.board-subject {
@@ -172,13 +167,12 @@ $noti-board-module-accent: (
 		}
 
 		.board-body {
-			.para {
-				margin: 0;
-				+.para {
-					// margin-top: 16rem;
-				}
-			}
+
 		}
+	}
+
+	&[class*=style-] {
+		border-style: solid;
 	}
 	
 	&.type-c { 
@@ -195,28 +189,24 @@ $noti-board-module-accent: (
 		}
 	}
 
-	&[class*=symbol-ltr-] .board-subject::before,
-	&[class*=symbol-rtl-] .board-subject::after {
+	&[class*=attr-] .board-subject::before {
 		content: '';
+		flex-shrink: 0;
 		display: block;
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
+
+
+
+
 	// accent
 	@each $accent-name in $noti-board-module-accent {
 		&.#{nth($accent-name, 1)} {
-			// @debug "divider offset: #{nth($accent-name, 1)}";
 			@each $type-name, $color, $border-color, $background-color in map-get($noti-board-module-accent, nth($accent-name, 1)) {
 				&.type-#{$type-name} {
 					background-color: $background-color;
-					border-color: $border-color;
-					// color: $color;
-
-					@each $icon-name, $icon in $symbol-list {
-						&.symbol-ltr-#{$icon-name} {.board-subject {&::before {background-image: icon($icon-name, $color);}}}
-						&.symbol-rtl-#{$icon-name} {.board-subject {&::after {background-image: icon($icon-name, $color);}}}
-					}
-					
+					border-color: $border-color;		
 					.board-wrap {
 						.board-head {
 							.board-name {
@@ -227,58 +217,53 @@ $noti-board-module-accent: (
 							
 						}
 					}
-					@each $icon-name, $icon in $symbol-list {
-						&.symbol-ltr-#{$icon-name} {.mark-text {&::before {background-image: icon($icon-name, $color);}}}
-						&.symbol-rtl-#{$icon-name} {.mark-text {&::after {background-image: icon($icon-name, $color);}}}
-					}
+
+					&[class*=attr-caution] .board-subject::before {background-image: icon(fill-circle-caution, $color);}
 				}
 			}
 		}
 	}
+
+
 	// outline
 	@each $name, $padding, $line-height, $font-size, $font-weight, $border-width in $noti-board-module-a-outline {
 		&.#{$name} {
-			padding: $padding;
-
-			font-weight: $font-weight;
 			line-height: $line-height;
 			font-size: calc($line-height / $font-size);
-			border-width: $border-width;
+
+			&[class*=style-] {
+				padding: $padding;
+				border-width: $border-width;
+			}
 
 			&.style-b {
 				border-radius: $padding * 0.4;
 			}
-
+	
 			&.style-c {
 				border-radius: $line-height * 0.5;
 			}
 
-			// icon
-			&[class*=symbol-ltr-] .board-subject::before,
-			&[class*=symbol-rtl-] .board-subject::after {
+			&[class*=attr-] .board-subject::before {
+				margin-right: $line-height * 0.1;
 				width: $line-height;
-				min-width: $line-height;
 				height: $line-height;
-			}
-
-			
-			&[class*="symbol-ltr"] {
-				.board-subject {
-					&::before {
-					}
-				}
 			}
 
 			.board-wrap {
 				.board-head {
 					.board-subject {
-						
+						font-weight: $font-weight;
 					}
-		
+
+					~.board-body {
+						margin-top: $line-height * 0.8;
+					}
 				}
 		
 				.board-body {
 					.para {
+
 					}
 				}
 			}
@@ -286,60 +271,47 @@ $noti-board-module-accent: (
 	}	
 }
 
-
-
-
 /**
  * @type module
- * @name guide-board
+ * @name info-board
  * @modle a
  */
-.guide-board.module-a {
-	&.style-a {
-
-	}
-
-	&.small {
+.info-board.module-b {
+	&.type-c {
 		.board-head {
-			.board-subject {
-				@include font((outline: body, size: small)...);
-			}
+			text-align: center;
 		}
 		.board-body {
+			text-align: center;
+		}
+	}
+
+	.board-head {
+		.board-summary {
 			@include font((outline: body, size: small)...);
 		}
+	}
+	.board-body {
+		@include font((outline: body, size: small)...);
 	}
 
 	.board-wrap {
 		position: relative;
 
 		.board-head {
-			.board-subject {
+			.board-summary {
 				margin: 0;
-	
-				.board-name {
-					display: flex;
-					color: color(base, 050);
-	
-					&::before {
-						content: '';
-						display: block;
-						margin-right: 5rem;
-						width: 20rem;
-						height: 20rem;
-						background: icon(fill-circle-caution, color(base, 050)) no-repeat center/cover;
-					}
-				}
-			}
-	
-			~.board-body {
-				margin-top: 16rem;
+				color: color(base, 070);
 			}
 		}
 	
 		.board-body {
 			color: color(base, 050);
 			.para {margin: 8rem 0;}
+		}
+
+		.board-util {
+			margin-top: 12rem;
 		}
 	}
 }

@@ -27,6 +27,12 @@ a.em {
 	}
 }
 
+
+strong.em,
+span.em {
+	display: inline-block;
+}
+
 .para,
 .em {
 	&.type-a {
@@ -51,4 +57,3 @@ a.em {
 	&.x-small {@include font((outline: body, size: x-small)...)}
 	&.xx-small {@include font((outline: body, size: xx-small)...)}
 }
-

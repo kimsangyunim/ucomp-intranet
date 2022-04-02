@@ -11,11 +11,8 @@
 <div id="wrap">
 	<!-- page -->
 	<div id="page">
-		<%-include('../_templates/_header.front.ejs', {
-			current: '3',
-		}) %>
 		<!-- page-body -->
-		<div class="page-body page-default">
+		<div class="page-body page-default page-holiday">
 			<!-- local -->
 			<div id="local">
 				<!-- local-head -->
@@ -38,7 +35,7 @@
 						<!-- content-body -->
 						<div class="content-body">
 							<!-- info-board -->
-							<div class="info-board module-a style-a type-c attr-done" id="infoBoardDone">
+							<div class="info-board module-a style-a type-c attr-done">
 								<div class="board-wrap">
 									<div class="board-head">
 										<p class="board-subject">스마트데이</p>
@@ -49,378 +46,84 @@
 							<!-- //info-board -->
 							<!-- section -->
 							<div class="section module-a">
-								<div class="section-head"><h4 class="section-title"><span class="section-name">영수증 사진 첨부</span></h4></div>
-								<div class="section-body attr-scroll">
-									<!-- file-upload -->
-									<fieldset class="file-upload module-a style-a type-a">
-										<!-- <legend>파일 등록 서식</legend> -->
-										<div class="upload-wrap">
-											<div class="upload-head">
-												<div class="file-to-upload"><input type="file" class="file-elem" title="파일 선택" /></div>
-												<div class="uploaded-files"><span class="head">선택된 파일</span> <span class="body">0건</span></div>
-											</div>
-											<div class="upload-body">
-												<div class="file-list">
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-													<div class="file-item" style="--thumbnail-image: url(./../../assets/images/@temp/img_receipt_01.png);"><span class="file-name">파일명</span> <button type="button" class="btn file-delete"><span class="btn-text">삭제</span></button></div>
-												</div>
-											</div>
-										</div>
-									</fieldset>
-									<!-- //file-upload -->
-								</div>
-							</div>
-							<!-- //section -->
-							<!-- goods-display -->
-							<div class="goods-display module-a style-a type-a">
-								<div class="goods-list">
-									<% for(var i = 0; i < 1; i++) { %>
-										<%-include('../../front/_mixin/_goods.item.staff.ejs') %>
-									<% } %>
-								</div>
-							</div>
-							<!-- //goods-display -->
-							<!-- data-finder -->
-							<form class="data-finder">
-								<!-- submit-form -->
-								<fieldset class="submit-form module-a">
-									<legend>구성원 검색 서식</legend>
-									<div class="form-list">
-										<div class="form-item">
-											<div class="form-head"><span class="form-name">검색어</span></div>
-											<div class="form-body">
-												<div class="form-area">
-													<span class="form select module-a style-b type-line normal-04 medium" style="width: 128rem;">
-														<select class="form-elem">
-															<option>전체</option>
-														</select>
-													</span>
-													<span class="form textfield module-a style-b type-line normal-04 medium flex">
-														<input type="search" class="form-elem" id="expensesHistory" placeholder="이름을 입력해 주세요." title="이름 입력" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-														<span class="form-func">
-															<button type="button" class="btn"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>검색</title><path d="M19.63,17.87l-2-2a7.5,7.5,0,1,0-1.76,1.76l2,2a1.24,1.24,0,0,0,1.76-1.76ZM11.5,16.5a5,5,0,1,1,5-5A5,5,0,0,1,11.5,16.5Z"></path></svg></button></span>
-														</span>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-								<!-- //submit-form -->
-							</form>
-							<!-- //data-finder -->
-							<!-- section -->
-							<div class="section module-a">
-								<div class="section-head"><h4 class="section-title"><span class="section-name">나의 요청 연차</span></h4></div>
+								<div class="section-head"><h4 class="section-title"><span class="section-name">연차 등록 내용</span></h4></div>
 								<div class="section-body">
-									<!-- post-display -->
-									<div class="post-display module-b style-a type-a">
-										<div class="post-list">
-											<% for(var i = 0; i < 1; i++) { %>
-												<%-include('../../front/_mixin/_post.item.signoff.ejs') %>
-											<% } %>
-										</div>
+									<!-- data-display -->
+									<div class="data-display module-a style-a type-a small">
+										<ul class="data-list">
+											<li class="data-item">
+												<div class="data-wrap">
+													<div class="data-head"><span class="data-name">일자</span></div>
+													<div class="data-body">2월 5일, 10일, 11일, 12일, 22일</div>
+												</div>
+											</li>
+											<li class="data-item">
+												<div class="data-wrap">
+													<div class="data-head"><span class="data-name">업무연락</span></div>
+													<div class="data-body">전화</div>
+												</div>
+											</li>
+											<li class="data-item">
+												<div class="data-wrap">
+													<div class="data-head"><span class="data-name">업무내역</span></div>
+													<div class="data-body">인트라넷 모바일 작업, 운영업무 대응</div>
+												</div>
+											</li>
+											<li class="data-item">
+												<div class="data-wrap">
+													<div class="data-head"><span class="data-name">연락처</span></div>
+													<div class="data-body">010-2729-5982</div>
+												</div>
+											</li>
+											<li class="data-item">
+												<div class="data-wrap">
+													<div class="data-head"><span class="data-name">사유</span></div>
+													<div class="data-body">오미크론 확산으로 인한 동선 최소화 재택 근무 격주 시행</div>
+												</div>
+											</li>
+										</ul>
 									</div>
-									<!-- //post-display -->
-								</div>
-							</div>
-							<!-- //section -->
-							<!-- data-finder --> 
-							<form class="data-finder">
-								<!-- submit-form -->
-								<fieldset class="submit-form module-a">
-									<legend>게시물 검색 서식</legend>
-									<div class="form-list">
-										<div class="form-item">
-											<div class="form-head"><span class="form-name">검색어</span></div>
-											<div class="form-body">
-												<div class="form-area">
-													<span class="form textfield module-a style-b type-fill normal-04 large flex">
-														<input type="search" class="form-elem" id="expensesHistory" placeholder="검색어를 입력해 주세요." title="검색어" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-														<span class="form-func">
-															<button type="button" class="btn"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>검색</title><path d="M19.63,17.87l-2-2a7.5,7.5,0,1,0-1.76,1.76l2,2a1.24,1.24,0,0,0,1.76-1.76ZM11.5,16.5a5,5,0,1,1,5-5A5,5,0,0,1,11.5,16.5Z"></path></svg></button></span>
-														</span>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-								<!-- //submit-form -->
-							</form>
-							<!-- //data-finder -->
-							<!-- data-inform -->
-							<form class="data-inform">
-								<!-- data-list -->
-								<p class="data-list">
-									<span class="data-item total-count">
-										<span class="head">게시물</span>
-										<span class="body">총 85건</span>
-									</span>
-								</p>
-								<!-- //data-list -->
-								<!-- submit-form -->
-								<fieldset class="submit-form module-a">
-									<legend>게시물 정렬 서식</legend>
-									<div class="form-list">
-										<div class="form-item">
-											<div class="form-head"><span class="form-name">조건 선택</span></div>
-											<div class="form-body">
-												<div class="form-area">
-													<label class="form module-a style-a switch"><span class="form-text">필독만 보기</span> <input type="checkbox" class="form-elem"></label>
-												</div>
-											</div>
-										</div>
-									</div>
-								</fieldset>
-								<!-- //submit-form -->
-							</form>
-							<!-- //data-inform -->
-							<!-- post-display -->
-							<div class="post-display module-a style-a type-a">
-								<div class="post-list">
-									<% for(var i = 0; i < 2; i++) { %>
-										<%-include('../../front/_mixin/_post.item.notice.ejs') %>
-									<% } %>
-								</div>
-							</div>
-							<!-- //post-display -->
-							<!-- section -->
-							<div class="section module-a">
-								<div class="section-head"><h4 class="section-title"><span class="section-name">지출내역</span></h4></div>
-								<div class="section-body">
-									<!-- submit-form -->
-									<fieldset class="submit-form module-a medium">
-										<legend>구성원 검색 서식</legend>
-										<div class="form-list">
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="memberSearch">구성원</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form select module-a style-b type-line normal-04 medium" id="memberSearch" style="width: 128rem;">
-																<select class="form-elem" id="approver">
-																	<option>전체</option>
-																	<option>경영기획팀</option>
-																	<option>기업부설연구소</option>
-																	<option>플랫폼사업본부</option>
-																	<option>서비스 운영 본부</option>
-																	<option>디지털 구축 본부</option>
-																</select>
-															</span>
-															<span class="form textfield module-a style-b type-line normal-04 medium flex">
-																<input type="search" class="form-elem" id="periodLeave" placeholder="이름을 입력해주세요." title="이름을 입력해주세요." onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-																<span class="form-func">
-																	<button type="button" class="btn"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>검색</title><path d="M19.63,17.87l-2-2a7.5,7.5,0,1,0-1.76,1.76l2,2a1.24,1.24,0,0,0,1.76-1.76ZM11.5,16.5a5,5,0,1,1,5-5A5,5,0,0,1,11.5,16.5Z"></path></svg></button>
-																</span>
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</fieldset>
-									<!-- //submit-form -->
-								</div>
-							</div>
-							<!-- //section -->
-							<!-- section -->
-							<div class="section module-a">
-								<div class="section-head"><h4 class="section-title"><span class="section-name">지출내역</span></h4></div>
-								<div class="section-body">
-									<!-- submit-form -->
-									<fieldset class="submit-form module-a large">
-										<legend>연차 유형 선택 서식</legend>
-										<div class="form-list">
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="">유형</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form select module-b style-b type-line normal-00 large flex">
-																<select class="form-elem">
-																	<option>선택</option>
-																	<option>오전반차</option>
-																	<option>오후반차</option>
-																	<option>연차</option>
-																	<option>스마트데이</option>
-																	<option>대체휴무</option>
-																	<option>하계,동계휴가</option>
-																	<option>예비군,민방위훈련</option>
-																	<option>경조휴가</option>
-																	<option>미사용연차</option>
-																	<option>리플레쉬휴가</option>
-																	<option>백신휴가</option>
-																	<option>기타</option>
-																</select>
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</fieldset>
-									<!-- //submit-form -->
-									<!-- submit-form -->
-									<fieldset class="submit-form module-a type-a medium">
-										<legend>연차 등록 입력 서식</legend>
-										<div class="form-list">
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="periodLeave">일시</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form textfield module-a style-b type-line normal-04 medium flex">
-																<input type="text" class="form-elem" id="periodLeave" placeholder="일시를 입력해주세요." value="11, 16, 18, 21일" />
-															</span>
-															<span class="sign">~</span>
-															<span class="form textfield module-a style-b type-line normal-04 medium flex">
-																<input type="text" class="form-elem" id="periodLeave" placeholder="일시를 입력해주세요." value="11, 16, 18, 21일" />
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="phoneNumbdr">연락처</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form textfield module-a style-b type-line normal-04 medium flex">
-																<input type="tel" class="form-elem" id="phoneNumbdr" placeholder="연락처를 입력해주세요." value="010-2729-5982" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="todayTask">업무내역</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form textarea module-a style-b type-line normal-04 medium flex">
-																<textarea class="form-elem" id="todayTask" rows="4" placeholder="업무 내역을 입력해 주세요."></textarea>
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="approver">승인위치</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form select module-a style-b type-line normal-04 medium flex">
-																<select class="form-elem" id="approver">
-																	<option>조완섭[수석]_UX팀</option>
-																</select>
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</fieldset>
-									<!-- //submit-form -->
-								</div>
-							</div>
-							<!-- //section -->
-							<!-- section -->
-							<div class="section module-a">
-								<div class="section-head"><h4 class="section-title"><span class="section-name">지출내역</span></h4></div>
-								<div class="section-body">
-									<!-- submit-form -->
-									<fieldset class="submit-form module-a type-a medium">
-										<legend>지출내역 입력 서식</legend>
-										<div class="form-list">
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="">날짜</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form datepicker module-a style-b type-line normal-04 medium flex">
-																<input type="text" class="form-elem" placeholder="날짜를 선택해주세요." value="2022-02-11" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="expensesType">지출타입</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form select module-a style-b type-line normal-04 medium flex">
-																<select class="form-elem" id="expensesType">
-																	<option>선택</option>
-																	<option>교통비</option>
-																	<option>석식대</option>
-																	<option>회식비</option>
-																	<option>기타</option>
-																</select>
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="expensesHistory">상세내역</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form textfield module-a style-b type-line normal-04 medium flex">
-																<input type="text" class="form-elem" id="expensesHistory" placeholder="지출 상세내역을 입력해주세요." value="12시 지나 퇴근이라 택시탐" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="expensesProjectName">프로젝트</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form textfield module-a style-b type-line normal-04 medium flex">
-																<input type="text" class="form-elem" id="expensesProjectName" placeholder="프로젝트명을 입력해주세요." value="UCOMP 인트라넷" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="form-item">
-												<div class="form-wrap">
-													<div class="form-head"><label class="form-name" for="expensesAmount">금액</label></div>
-													<div class="form-body">
-														<div class="form-area">
-															<span class="form textfield module-a style-b type-line normal-04 medium flex">
-																<input type="text" class="form-elem" id="expensesAmount" placeholder="금액을 입력해주세요." value="11,000" pattern="^[0-9]+$" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-															</span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</fieldset>
-									<!-- //submit-form -->
+									<!-- //data-display -->
 								</div>
 							</div>
 							<!-- //section -->
 						</div>
 						<!-- //content-body -->
+						<!-- content-side -->
+						<div class="content-side">
+							<!-- info-board -->
+							<div class="info-board module-b style-a type-c">
+								<div class="board-wrap">
+									<div class="board-head">
+										<p class="board-summary"><strong class="em">조완섭[수석]님</strong>에게 승인요청 메일을 보내세요!</p>
+									</div>
+									<div class="board-util">
+										<!-- button-display -->
+										<div class="button-display">
+											<span class="button-area">
+												<a href="#" class="btn module-a style-a type-line normal-04 large flex"><span class="btn-text">승인요청 메일발송</span></a>
+											</area>
+										</div>
+										<!-- //button-display -->
+									</div>
+								</div>
+							</div>
+							<!-- //info-board -->
+						</div>
+						<!-- //content-side -->
 					</div>
 					<!-- //content -->
 				</div>
 				<!-- //local-body -->
+				<!-- local-util -->
+				<div class="local-util">
+					<div class="button-display module-a style-b">
+						<span class="button-area">
+							<a href="#" class="btn module-a style-a type-fill accent-01 x-large flex"><span class="btn-text">확인</span></a>
+						</span>
+					</div>
+				</div>
+				<!-- //local-util -->
 			</div>
 			<!-- //local -->
 		</div>

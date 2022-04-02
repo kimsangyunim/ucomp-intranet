@@ -6,10 +6,9 @@
 	.section.module-a {
 		position: relative;
 		margin: 24rem 0;
-	
+
 		.section-head {
 			margin-bottom: 16rem;
-	
 			.section-title {
 				margin: 0;
 				color: color(base, 090);
@@ -17,6 +16,41 @@
 	
 				.section-name {
 					display: block;
+				}
+			}
+		}
+
+		.section-temp {
+			display: flex;
+			align-items: flex-end;
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 24rem;
+
+			.paging {
+				display: flex;
+				align-items: center;
+
+				.paging-util {
+					display: flex;
+
+					.btn {
+						width: 20rem;
+						height: 20rem;
+
+						svg {
+							width: 20rem;
+							height: 20rem;
+							fill: color(base, 030);
+						}
+					}
+				}
+
+				.paging-temp {
+					margin: 0 4rem;
+					@include font((outline: body, size: small)...);
+					color: color(base, 040);
 				}
 			}
 		}
@@ -38,35 +72,64 @@
 		}
 	}
 
-	// info-board
-	.info-board.module-a {
-		// margin: 32rem 0;;
-		margin: 24rem 0 32rem 0;;
+	// post-display
+	>.post-display.module-a {
+		margin: 32rem 0 16rem 0;
 	}
+	
+	// submit-form
+	>.submit-form.module-a {
+		margin: 24rem 0 ;
+	}
+
+	// post-display
+	>.post-display.module-b {
+		margin: 24rem 0;
+	}
+
+	// info-board
+	>.info-board.module-a {
+		// margin: 32rem 0;;
+		margin: 24rem 0 32rem 0;
+	}
+
+	// noti-board
+	>.noti-board.module-a {
+		margin: 24rem 0 ;
+	}
+
 
 	// guide-board
-	.guide-board {
-		flex: 1 1 100%;
-		position: relative;
-		padding: 32rem 0 40rem 0;
-		background-color: color(base, 005);
+	// .guide-board {
+	// 	flex: 1 1 100%;
+	// 	position: relative;
+	// 	padding: 32rem 0 40rem 0;
+	// 	background-color: color(base, 005);
 
-		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: calc(50% - 50vw);
-			width: 100vw;
-			background-color: inherit;
-		}
-	}
+	// 	&::before {
+	// 		content: '';
+	// 		display: block;
+	// 		position: absolute;
+	// 		top: 0;
+	// 		bottom: 0;
+	// 		left: calc(50% - 50vw);
+	// 		width: 100vw;
+	// 		background-color: inherit;
+	// 	}
+	// }
 }
 
+.content-side {
+	// info-board
+	.info-board.module-b {
+		margin: 32rem 0;
+	}
 
-
-
+	// noti-board
+	.noti-board.module-a {
+		margin: 32rem 0;
+	}
+}
 
 /**
  * @type layout
@@ -75,10 +138,6 @@
 .page-body.page-notice {
 	.content-body {
 		background-color: color(base, 005);
-
-		.post-display.module-a {
-			margin: 16rem 0 24rem 0;
-		}
 	}
 }
 
@@ -158,7 +217,7 @@
  * @type layout
  * @name page-approval
  */
-.page-body.page-approval {
+.page-body.page-intro-tab.page-approval {
 	.local-body {
 		background-color: color(base, 005);
 	}

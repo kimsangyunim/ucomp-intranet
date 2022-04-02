@@ -58,35 +58,36 @@
 						<!-- //content-head -->
 						<!-- content-body -->
 						<div class="content-body">
-							<!-- data-inform -->
-							<form class="data-inform">
-								<!-- data-list -->
-								<p class="data-list">
-									<span class="data-item total-count">
-										<span class="head">게시물</span>
-										<span class="body">총 85건</span>
-									</span>
-								</p>
-								<!-- //data-list -->
-								<!-- submit-form -->
-								<fieldset class="submit-form module-a">
-									<legend>게시물 정렬 서식</legend>
-									<div class="form-list">
-										<div class="form-item">
-											<div class="form-head"><span class="form-name">조건 선택</span></div>
-											<div class="form-body">
-												<div class="form-area">
-													<label class="form module-a style-a switch"><span class="form-text">필독만 보기</span> <input type="checkbox" class="form-elem"></label>
+							<!-- post-display -->
+							<div class="post-display module-a style-a type-a">
+								<!-- post-temp -->
+								<form class="post-temp">
+									<!-- data-list -->
+									<p class="data-list">
+										<span class="data-item total-count">
+											<span class="head">게시물</span>
+											<span class="body">총 85건</span>
+										</span>
+									</p>
+									<!-- //data-list -->
+									<!-- submit-form -->
+									<fieldset class="submit-form module-a">
+										<legend>게시물 정렬 서식</legend>
+										<div class="form-list">
+											<div class="form-item">
+												<div class="form-head"><span class="form-name">조건 선택</span></div>
+												<div class="form-body">
+													<div class="form-area">
+														<label class="form module-a style-a switch"><span class="form-text">필독만 보기</span> <input type="checkbox" class="form-elem"></label>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</fieldset>
-								<!-- //submit-form -->
-							</form>
-							<!-- //data-inform -->
-							<!-- post-display -->
-							<div class="post-display module-a style-a type-a">
+									</fieldset>
+									<!-- //submit-form -->
+								</form>
+								<!-- //post-temp -->
+								
 								<div class="post-list">
 									<% for(var i = 0; i < 8; i++) { %>
 										<%-include('../../front/_mixin/_post.item.notice.ejs') %>

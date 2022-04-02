@@ -241,8 +241,9 @@ $form-module-a-outline: (
 
 
 	&.textarea,
-	&.datepicker,
 	&.select,
+	&.datepicker,
+	&.date,
 	&.textfield {
 		.form-elem {
 			flex: 1 1 100%;
@@ -251,9 +252,16 @@ $form-module-a-outline: (
 		}
 	}
 
+	.form-elem[type=date]::-webkit-inner-spin-button,
+	.form-elem[type=date]::-webkit-calendar-picker-indicator {
+		display: none;
+		-webkit-appearance: none;
+	}
+
 	// select
 	&.datepicker,
-	&.select {
+	&.select,
+	&.date {
 		.form-elem {
 			text-overflow: ellipsis;
 			background-repeat: no-repeat;
@@ -343,8 +351,9 @@ $form-module-a-outline: (
 				&.type-#{$type-name} {
 					// common
 					&.textarea,
-					&.datepicker,
 					&.select,
+					&.datepicker,
+					&.date,
 					&.textfield {
 						.form-elem {
 							color: $color;
@@ -407,7 +416,8 @@ $form-module-a-outline: (
 					}
 
 					// datepicker
-					&.datepicker {
+					&.datepicker,
+					&.date {
 						.form-elem {
 							background-image: icon(line-calendar-today, $color);
 						}
@@ -423,8 +433,9 @@ $form-module-a-outline: (
 		&.#{$name} {
 			// common
 			&.textarea,
-			&.datepicker,
 			&.select,
+			&.datepicker,
+			&.date,
 			&.textfield {
 				&.style-b {
 					.form-elem {
@@ -492,8 +503,9 @@ $form-module-a-outline: (
 			}
 
 			// select
+			&.select,
 			&.datepicker,
-			&.select {
+			&.date {
 				.form-elem {
 					padding-left: $line-height * 0.8;
 					padding-right: $line-height * 1.6;

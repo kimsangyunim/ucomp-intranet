@@ -20,7 +20,6 @@ body {
 	word-break: keep-all;
 	@include font((family: default, size: small)...);
 	-webkit-text-size-adjust: none;
-
 	// background-color: color(base, 005);
 }
 
@@ -268,6 +267,10 @@ img {
 // 	background-color: red;
 // }
 
+.local-head {
+	background-color: color(base, 000);
+}
+
 .local-body {
 	flex: 1 1 100%;
 	display: flex;
@@ -276,6 +279,26 @@ img {
 
  .local-util {
 	flex-shrink: 0;
+	.request-amount {
+		display: flex;
+		justify-content: space-between;
+		padding: 14rem $container-gap;
+		@include font((outline: head, size: small)...);
+		color: color(base, 080);
+
+		.head {
+			display: flex;
+		}
+
+		.body {
+			display: flex;
+			@include font((weight: bold)...);
+			.value,
+			.unit {
+				display: block;
+			}
+		}
+	}
 }
 
 
@@ -290,14 +313,14 @@ img {
 	flex-direction: column;
 
 	.content-body {
-		display: flex;
-		flex-direction: column;
+		// display: flex;
+		// flex-direction: column;
 		padding: 0 $container-gap;
 
 		.button-display.module-fab {
-			position: fixed;
+			position: absolute;
 			right: $container-gap;
-			bottom: calc(138rem + 20rem);
+			bottom: 20rem;
 
 			.button-area {
 				display: flex;
@@ -383,11 +406,25 @@ img {
  * @name page-intro-tab
  */
  .page-body.page-intro-tab {
+	position: relative;
+
 	#local {
+		overflow-x: hidden;
 		overflow-y: scroll;
+
+		@at-root {
+			html.laptop {
+				.page-body.page-intro-tab {
+					#local {
+						@include overflow-scroll(custom);
+					}
+				}
+			}
+		}
 
 		.local-head {
 			padding: 0 $container-gap;
+
 			.local-title {
 				@include hidden;
 			}
@@ -423,6 +460,7 @@ img {
 			}
 		}
 		.local-body {
+
 		}
 
 		.local-util {
@@ -433,45 +471,42 @@ img {
 				right: 0;
 				bottom: 0;
 				left: 0;
+				box-shadow: 0 -4rem 8rem 0 rgba(0,0,0,0.06);
 			}
 		}
 	}
 
-	@at-root {
-		html.laptop {
-			.page-body.page-intro-tab {
-				#local {
-					@include overflow-scroll(custom);
+
+
+	#content {
+		position: relative;
+		
+		.content-head {
+			padding: 0 $container-gap;
+			box-sizing: border-box;
+			background-color: color(base, 000);
+	
+			.content-title {
+				@include hidden;
+			}
+	
+			.data-finder {
+				margin-top: 24rem;
+			}
+	
+			.tab-display.module-c {
+				.tab-list {
+					&::before {
+						width: 100vw;
+					}
 				}
 			}
 		}
-	}
 
-	.content-head {
-		flex-shrink: 0;
-		padding: 0 $container-gap;
-		box-sizing: border-box;
-		background-color: color(base, 000);
-
-		.content-title {
-			@include hidden;
+		.content-body {
+		
+		
 		}
-
-		.data-finder {
-			margin-top: 24rem;
-		}
-
-		.tab-display.module-c {
-			.tab-list {
-				&::before {
-					width: 100vw;
-				}
-			}
-		}
-	}
-
-	.content-body {
-		// overflow: hidden;
 	}
 }
 
@@ -480,7 +515,6 @@ img {
  * @name page-default
  */
 .page-body.page-default {
-
 	#local {
 		overflow: hidden;
 
@@ -489,13 +523,28 @@ img {
 		}
 		.local-body {
 			overflow: hidden;
+			padding-top: 56rem;
 
 			#content {
-				overflow: hidden;
+				overflow-x: hidden;
+				overflow-y: scroll;
+
+				@at-root {
+					html.laptop {
+						.page-body.page-default {
+							#content {
+								@include overflow-scroll(custom);
+							}
+						}
+					}
+				}
 		
 				.content-head {
-					flex-shrink: 0;
-					position: relative;
+					position: absolute;
+					top: 0;
+					right: 0;
+					left: 0;
+
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
@@ -548,24 +597,21 @@ img {
 				}
 		
 				.content-body {
-					flex: 1 1 100%;
-					height: 100%;
-					overflow-x: hidden;
-					overflow-y: scroll;
-				}
-		
-				@at-root {
-					html.laptop {
-						.page-body.page-default {
-							#content {
-								.content-body {
-									@include overflow-scroll(custom);	
-								}
-							}
-						}
+					&:last-child {
+						flex: 1 1 100%;
 					}
 				}
+
+				.content-side {
+					flex: 1 1 100%;
+					padding: 0 $container-gap;
+					background-color: color(base, 005);
+				}
 			}
+		}
+		.local-util {
+			position: relative;
+			box-shadow: 0 -4rem 8rem 0 rgba(0,0,0,0.06);
 		}
 	}
 }

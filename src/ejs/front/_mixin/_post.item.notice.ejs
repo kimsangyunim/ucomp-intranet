@@ -63,22 +63,21 @@
 			</span>
 		</div>
 	</div>
-	<div class="post-side">
-		<!-- data-inform -->
-		<div class="data-inform">
-			<!-- data-list -->
-			<p class="data-list">
-				<span class="data-item total-count">
-					<span class="head">댓글</span>
-					<span class="body">1개</span>
-				</span>
-			</p>
-			<!-- //data-list -->
-		</div>
-		<!-- //data-inform -->
-	
+	<div class="post-side">	
 		<!-- comment-display --> 
 		<div class="comment-display module-a style-a type-a">
+			<!-- comment-temp -->
+			<div class="comment-temp">
+				<!-- data-list -->
+				<p class="data-list">
+					<span class="data-item total-count">
+						<span class="head">댓글</span>
+						<span class="body">1개</span>
+					</span>
+				</p>
+				<!-- //data-list -->
+			</div>
+			<!-- //comment-temp -->
 			<!-- comment-write -->
 			<form class="comment-write">
 				<!-- submit-form -->
@@ -86,7 +85,7 @@
 					<legend>댓글 등록 서식</legend>
 					<div class="form-list">
 						<div class="form-item">
-							<div class="form-head"><span class="form-name">내용 작성</span></div>
+							<div class="form-head"><span class="form-name">댓글 작성</span></div>
 							<div class="form-body">
 								<div class="form-area">
 									<span class="form textarea module-a style-b type-line normal-04 medium flex" data-bui-form-value>
@@ -162,6 +161,77 @@
 								노출시켜 주세요~
 							</div>
 						</div>
+					</div>
+					<div class="comment-util">
+						<div class="button-display">
+							<span class="button-area">
+								<button class="btn edit"><span class="btn-text">수정</span></button>
+								<button class="btn delete"><span class="btn-text">삭제</span></button>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="comment-item">
+					<div class="comment-wrap" style="display: none;">
+						<div class="comment-inform">
+							<div class="comment-data">
+								<ul class="data-list">
+									<li class="data-item writer" style="--default-picture: url(./../../assets/images/@temp/img_profile_02.png);">
+										<span class="head">글쓴이</span>
+										<span class="body">
+											<span class="name">홍길순</span>
+										</span>
+									</li>
+									<li class="data-item posted">
+										<span class="head">등록일</span>
+										<span class="body">
+											<span class="date">2022-02-07</span>
+											<span class="time">16:23</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+							<div class="comment-body">
+								안녕하세요!!<br />
+								내가 쓴 댓글에만 수정 삭제 버튼<br />
+								노출시켜 주세요~
+							</div>
+						</div>
+					</div>
+					<div class="comment-side">
+						<!-- reply-display -->
+						<div class="reply-display">
+							<!-- comment-write -->
+							<form class="reply-write">
+								<!-- submit-form -->
+								<fieldset class="submit-form module-a">
+									<legend>답글 등록 서식</legend>
+									<div class="form-list">
+										<div class="form-item">
+											<div class="form-head"><span class="form-name">답글 작성</span></div>
+											<div class="form-body">
+												<div class="form-area">
+													<span class="form textarea module-a style-b type-line normal-04 medium flex" data-bui-form-value="수정할 경우 화면입니다! 프로필, 내용 등이 날라가고 텍스트필드로 변경됩니다 ㅎㅎ 버튼도 수정으로 나오게..">
+														<textarea class="form-elem" placeholder="내용을 입력해주세요." title="댓글 작성" oninput="buiFormResize(this);">수정할 경우 화면입니다! 프로필, 내용 등이 날라가고 텍스트필드로 변경됩니다 ㅎㅎ 버튼도 수정으로 나오게..</textarea>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-util">
+										<div class="button-display module-a style-a type-b">
+											<span class="button-area">
+												<button type="button" class="btn module-a style-b type-line normal-04 small"><span class="btn-text">취소</span></button>
+												<button type="submit" class="btn module-a style-b type-fill normal-02 small"><span class="btn-text">등록</span></button>
+											</span>
+										</div>
+									</div>
+								</fieldset>
+								<!-- //submit-form -->
+							</form>
+							<!-- //reply-write -->
+						</div>
+						<!-- //reply-display -->
 					</div>
 				</div>
 			</div>
