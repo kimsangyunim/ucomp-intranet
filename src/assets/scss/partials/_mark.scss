@@ -19,7 +19,7 @@
 * @ $border-color
 * @ $background-color
 */
-$mark-module-accent: (
+$mark-module-bccent: (
 	'normal-00': (
 		'none' color(base, 100) transparent transparent,
 		'line' color(base, 100) color(base, 100) color(base, 000),
@@ -114,10 +114,10 @@ $mark-module-outline: (
 	}
 
 	// accent
-	@each $accent-name in $mark-module-accent {
+	@each $accent-name in $mark-module-bccent {
 		&.#{nth($accent-name, 1)} {
 			// @debug "divider offset: #{nth($accent-name, 1)}";
-			@each $type-name, $color, $border-color, $background-color in map-get($mark-module-accent, nth($accent-name, 1)) {
+			@each $type-name, $color, $border-color, $background-color in map-get($mark-module-bccent, nth($accent-name, 1)) {
 				&.type-#{$type-name} {
 					color: $color;
 					border-color: $border-color;
@@ -182,8 +182,8 @@ $mark-module-outline: (
 }
 
 
-// module-a
-.mark.module-a {
+// module-b
+.mark.module-b {
 	display: flex;
 	font-weight: 400;
 
@@ -356,39 +356,28 @@ $mark-module-outline: (
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
-	&::before {
-		content: '';
-		display: block;
-	}
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 
 	.lamp-text {
 		@include hidden;
 	}
 
-	&.style-c::before {
-		border-radius: 50%;
-	}
-
 	&.small {
 		width: 20rem;
 		height: 20rem;
-
-		&::before {
-			width: 8rem;
-			height: 8rem;
-		}
 	}
 
-	&.normal-04::before {
-		background-color: color(base, 040);
+	&.normal-04 {
+		background-image: icon(lamp-dot, color(base, 040));
 	}
 
-	&.normal-10::before {
-		background-color: color(base, 000);
+	&.normal-10 {
+		background-image: icon(lamp-dot, color(base, 000));
 	}
 
-	&.accent-03::before {
-		background-color: #FFB274;
+	&.accent-03 {
+		background-image: icon(lamp-dot, color(secondary, 020));
 	}
 }

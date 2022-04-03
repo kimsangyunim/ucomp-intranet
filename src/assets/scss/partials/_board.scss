@@ -274,7 +274,7 @@ $noti-board-module-accent: (
 /**
  * @type module
  * @name info-board
- * @modle a
+ * @modle b
  */
 .info-board.module-b {
 	&.type-c {
@@ -302,6 +302,44 @@ $noti-board-module-accent: (
 			.board-summary {
 				margin: 0;
 				color: color(base, 070);
+			}
+		}
+	
+		.board-body {
+			color: color(base, 050);
+			.para {margin: 8rem 0;}
+		}
+
+		.board-util {
+			margin-top: 12rem;
+		}
+	}
+}
+
+
+/**
+ * @type module
+ * @name info-board
+ * @modle c
+ */
+ .info-board.module-c {
+	&.type-c {
+		.board-head {
+			text-align: center;
+		}
+		.board-body {
+			text-align: center;
+		}
+	}
+	
+	.board-wrap {
+		position: relative;
+		
+		.board-head {
+			.board-summary {
+				margin: 0;
+				@include font((outline: body, size: medium)...);
+				color: color(base, 040);
 			}
 		}
 	

@@ -331,6 +331,18 @@ img {
 				}
 			}
 		}
+
+		.content-body {
+			&:last-child {
+				flex: 1 1 100%;
+			}
+		}
+	}
+
+	.content-side {
+		flex: 1 1 100%;
+		padding: 0 $container-gap;
+		background-color: color(base, 005);
 	}
 }
 
@@ -346,6 +358,7 @@ img {
 			@include hidden;
 		}
 		.local-body {
+			overflow-x: hidden;
 			overflow-y: scroll;
 		}
 	}
@@ -396,7 +409,7 @@ img {
 	}
 
 	.content-body {
-		overflow: hidden;
+
 	}
 }
 
@@ -594,18 +607,6 @@ img {
 							}
 						}
 					}
-				}
-		
-				.content-body {
-					&:last-child {
-						flex: 1 1 100%;
-					}
-				}
-
-				.content-side {
-					flex: 1 1 100%;
-					padding: 0 $container-gap;
-					background-color: color(base, 005);
 				}
 			}
 		}

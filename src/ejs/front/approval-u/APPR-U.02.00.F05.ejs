@@ -42,13 +42,16 @@
 						<!-- //content-head -->
 						<!-- content-body -->
 						<div class="content-body">
-							<%-include('../_mixin/_post.display.signoff.ejs', {
-								moduleName: 'post-display module-b type-a"',
-								itemType: 'c',
-								iteration: '1'
-							}) %>
+							<!-- post-display -->
+							<div class="post-display module-b type-a">
+								<%-include('../_mixin/_post.display.signoff.ejs', {
+									itemType: 'c',
+									iteration: '1'
+								}) %>
+							</div>
+							<!-- //post-display -->
 							<!-- section -->
-							<div class="section module-a">
+							<div class="section module-a style-a type-a">
 								<div class="section-head"><h4 class="section-title"><span class="section-name">지출내역</span></h4></div>
 								<div class="section-body">
 									<!-- data-display -->
@@ -91,7 +94,7 @@
 							</div>
 							<!-- //section -->
 							<!-- section -->
-							<div class="section module-a">
+							<div class="section module-a style-a type-a">
 								<div class="section-head"><h4 class="section-title"><span class="section-name">지출내역2</span></h4></div>
 								<div class="section-body">
 									<!-- data-display -->
@@ -134,16 +137,15 @@
 							</div>
 							<!-- //section -->
 							<!-- section -->
-							<div class="section module-a">
+							<div class="section module-a style-a type-a">
 								<div class="section-head"><h4 class="section-title"><span class="section-name">영수증 사진 첨부</span></h4></div>
 								<div class="section-body">
 									<!-- post-display -->
 									<div class="post-display module-c style-a type-c attr-scroll">
-										<ul class="post-list">
-											<% for(var i = 0; i < 7; i++) { %>
-												<%-include('../../front/_mixin/_post.item.figure.ejs') %>
-											<% } %>
-										</ul>
+										<%-include('../../front/_mixin/_post.item.figure.ejs', {
+											itemType: 'a',
+											iteration: '8'
+										}) %>
 									</div>
 									<!-- //post-display -->
 								</div>
@@ -163,7 +165,7 @@
 										<!-- button-display -->
 										<div class="button-display">
 											<span class="button-area">
-												<a href="#" class="btn module-a style-a type-line normal-04 large flex"><span class="btn-text">승인요청 메일발송</span></a>
+												<a href="#" class="btn module-b style-b type-line normal-04 large flex"><span class="btn-text">승인요청 메일발송</span></a>
 											</area>
 										</div>
 										<!-- //button-display -->
@@ -181,8 +183,8 @@
 				<div class="local-util">
 					<div class="button-display module-a style-b">
 						<span class="button-area">
-							<button href="#" class="btn module-a style-a type-fill normal-03 x-large flex"><span class="btn-text">삭제</span></button>
-							<a href="#" class="btn module-a style-a type-fill normal-02 x-large flex"><span class="btn-text">수정</span></a>
+							<button href="#" class="btn module-b style-a type-fill normal-03 x-large flex"><span class="btn-text">삭제</span></button>
+							<a href="#" class="btn module-b style-a type-fill normal-02 x-large flex"><span class="btn-text">수정</span></a>
 						</span>
 					</div>
 				</div>

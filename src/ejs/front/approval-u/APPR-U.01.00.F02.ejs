@@ -34,19 +34,24 @@
 						<!-- //content-head -->
 						<!-- content-body -->
 						<div class="content-body">
-							<%-include('../_mixin/_post.display.signoff.ejs', {
-								moduleName: 'post-display module-b type-a"',
-								itemType: 'c',
-								iteration: '1'
-							}) %>
-
-							<%-include('../_mixin/_post.display.signoff.ejs', {
-								moduleName: 'post-display module-b type-a"',
-								itemType: 'd',
-								iteration: '1'
-							}) %>
+							<!-- post-display -->
+							<div class="post-display module-b type-a">
+								<%-include('../_mixin/_post.display.signoff.ejs', {
+									itemType: 'c',
+									iteration: '1'
+								}) %>
+							</div>
+							<!-- //post-display -->
+							<!-- post-display -->
+							<div class="post-display module-b type-a">
+								<%-include('../_mixin/_post.display.signoff.ejs', {
+									itemType: 'd',
+									iteration: '1'
+								}) %>
+							</div>
+							<!-- //post-display -->
 							<!-- section -->
-							<div class="section module-a">
+							<div class="section module-a style-a type-a">
 								<div class="section-head"><h4 class="section-title"><span class="section-name">스마트데이</span></h4></div>
 								<div class="section-body">
 									<!-- data-display -->
@@ -89,7 +94,7 @@
 							</div>
 							<!-- //section -->
 							<!-- section -->
-							<div class="section module-a">
+							<div class="section module-a style-a type-a">
 								<div class="section-head"><h4 class="section-title"><span class="section-name">리프레쉬 휴가</span></h4></div>
 								<div class="section-body">
 									<!-- data-display -->

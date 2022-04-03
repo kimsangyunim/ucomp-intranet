@@ -20,56 +20,41 @@
 			}
 		}
 
-		.section-temp {
-			display: flex;
-			align-items: flex-end;
-			position: absolute;
-			top: 0;
-			right: 0;
-			height: 24rem;
+		&:not([class*=type-]) {
+			.section-head {
+				@include hidden;
+			}
+		}
 
-			.paging {
-				display: flex;
-				align-items: center;
-
-				.paging-util {
-					display: flex;
-
-					.btn {
-						width: 20rem;
-						height: 20rem;
-
-						svg {
-							width: 20rem;
-							height: 20rem;
-							fill: color(base, 030);
-						}
-					}
-				}
-
-				.paging-temp {
-					margin: 0 4rem;
-					@include font((outline: body, size: small)...);
-					color: color(base, 040);
-				}
+		&.section.module-a.style-a {
+			padding-top: 24rem;
+			border-top: 4rem solid color(base, 010);
+		
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: calc(50% - 50vw);
+				top: -4rem;
+				width: 100vw;
+				height: 4rem;
+				background-color: color(base, 010);
 			}
 		}
 	}
-	
-	*+.section.module-a {
-		padding-top: 24rem;
-		border-top: 4rem solid color(base, 010);
-	
-		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			left: calc(50% - 50vw);
-			top: -4rem;
-			width: 100vw;
-			height: 4rem;
-			background-color: color(base, 010);
-		}
+
+	// nodata
+	.info-board.module-c.attr-nodata {
+		margin: 96rem 0;
+	}
+
+	// datepicker
+	>.datepicker-inline.style-a {
+		margin: 24rem 0;
+	}
+
+	>.goods-display.module-a {
+		margin: 32rem 0 16rem 0;
 	}
 
 	// post-display
@@ -97,26 +82,6 @@
 	>.noti-board.module-a {
 		margin: 24rem 0 ;
 	}
-
-
-	// guide-board
-	// .guide-board {
-	// 	flex: 1 1 100%;
-	// 	position: relative;
-	// 	padding: 32rem 0 40rem 0;
-	// 	background-color: color(base, 005);
-
-	// 	&::before {
-	// 		content: '';
-	// 		display: block;
-	// 		position: absolute;
-	// 		top: 0;
-	// 		bottom: 0;
-	// 		left: calc(50% - 50vw);
-	// 		width: 100vw;
-	// 		background-color: inherit;
-	// 	}
-	// }
 }
 
 .content-side {
@@ -211,7 +176,6 @@
 		}
 	}
 }
-
 
 /**
  * @type layout

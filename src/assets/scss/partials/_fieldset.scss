@@ -306,3 +306,16 @@
 
 	}
 }
+
+
+.option-list.module-a {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+
+	.option-item {
+		display: block;
+		margin-right: 16rem;
+		padding: 8rem 0;
+	}
+}

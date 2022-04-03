@@ -7,53 +7,25 @@
 	pageJavascript: ''
 }) %>
 <style>
-	.button-display + .button-display  {margin-top: 30rem;}
+	body {margin: 24rem;}
+	body>.button-display {margin: 0 auto; max-width: 480rem;}
+	body>.button-display + .button-display  {margin-top: 16rem;}
 </style>
 </head>
 <body>
-<div id="wrap">
-	<!-- page -->
-	<div id="page">
-		<%-include('../_templates/_header.snippet.ejs', {
-			pageName: '',
-		}) %>
-		<!-- page-body -->
-		<div class="page-body" id="local">
-			<!-- local-head -->
-			<div class="local-head">
-				<h2 class="local-title"><span class="local-name">SNIPPET</span></h2>
-			</div>
-			<!-- //local-head -->
-			<!-- local-body -->
-			<div class="local-body" id="content">
-				<!-- content-head -->
-				<div class="content-head">
-					<h3 class="content-title"><span class="content-name">공통 레이어 팝업</span></h3>
-				</div>
-				<!-- //content-head -->
-				<!-- content-body -->
-				<div class="content-body">
-					<div class="button-display module-a style-b">
-						<span class="button-area">
-							<a href="#signoffForm" class="btn module-a style-a type-fill accent-01 large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
-						</span>
-					</div>
-					<div class="button-display module-a style-b">
-						<span class="button-area">
-							<a href="#imgEnlarge" class="btn module-a style-a type-fill normal-02 large flex" onclick="contentsPopup.active('imgEnlarge');"><span class="btn-text">이미지 크게 보기</span></a>
-						</span>
-					</div>
-				</div>
-				<!-- //content-body -->
-			</div>
-			<!-- //local-body -->
-		</div>
-		<!-- //page-body -->
-	</div>
-	<!-- //page -->
-	<%-include('../_templates/_content.popup.ejs') %>
+<h1>공통 팝업</h1>
+<div class="button-display module-a style-b">
+	<span class="button-area">
+		<a href="#signoffForm" class="btn module-b style-a type-fill accent-01 large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
+	</span>
+</div>
+<div class="button-display module-a style-b">
+	<span class="button-area">
+		<a href="#imgEnlarge" class="btn module-b style-a type-fill normal-02 large flex" onclick="contentsPopup.active('imgEnlarge');"><span class="btn-text">이미지 크게 보기</span></a>
+	</span>
 </div>
 <hr />
+<%-include('../_templates/_content.popup.ejs') %>
 <!-- //layer-popup -->
 <script stype="text/javascript">
 	document.addEventListener('DOMContentLoaded', function() {

@@ -7,6 +7,33 @@
 			list-style: none;
 		}
 	}
+
+	.goods-info {
+		.info-list {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 12rem;
+	
+			.info-item {
+				.data-list {
+					display: flex;
+					align-items: center;
+			
+					.data-item {
+						display: block;
+						@include font((outline: body, size: medium, weight: bold)...);
+						color: color(base, 090);
+						.body,
+						.head {
+							display: inline-block;
+							vertical-align: top;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 // post-display

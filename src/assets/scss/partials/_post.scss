@@ -7,35 +7,63 @@
 			list-style: none;
 		}
 	}
-}
 
-// post-display
-.post-display.module-a {
-	.post-temp {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 12rem;
-	
-		.data-list {
+	.post-info {
+		.info-list {
 			display: flex;
+			justify-content: space-between;
 			align-items: center;
+			margin-bottom: 12rem;
 	
-			.data-item.total-count {
-				display: block;
+			.info-item {
+				.data-list {
+					display: flex;
+					align-items: center;
+			
+					.data-item {
+						display: block;
+						@include font((outline: body, size: medium, weight: bold)...);
+						color: color(base, 090);
+						.body,
+						.head {
+							display: inline-block;
+							vertical-align: top;
+						}
+					}
+				}
+
+				.paging {
+					display: flex;
+					align-items: center;
 	
-				.head {
-					@include hidden;
-				}	
-				.body {
-					display: block;
-					@include font((outline: body, size: medium, weight: bold)...);
-					color: color(base, 090);
+					.paging-util {
+						display: flex;
+	
+						.btn {
+							width: 20rem;
+							height: 20rem;
+	
+							svg {
+								width: 20rem;
+								height: 20rem;
+								fill: color(base, 030);
+							}
+						}
+					}
+	
+					.paging-temp {
+						margin: 0 4rem;
+						@include font((outline: body, size: small)...);
+						color: color(base, 040);
+					}
 				}
 			}
 		}
 	}
+}
 
+// post-display
+.post-display.module-a {
 	.post-list {
 		.post-item {
 			display: flex;
@@ -218,7 +246,7 @@
 				}
 			}
 
-			.post-func {
+			.post-util {
 				order: 3;
 				border-top: 1rem solid color(base, 010);
 			}
@@ -250,7 +278,7 @@
 					}
 				}
 
-				.post-func {
+				.post-util {
 					.button-display {
 						.button-area {
 							.btn {
@@ -268,37 +296,41 @@
 
 // comment-display
 .comment-display.module-a {
-	.comment-temp {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	
-		.data-list {
+	.comment-info {
+		.info-list {
 			display: flex;
+			justify-content: space-between;
 			align-items: center;
-	
-			.data-item.total-count {
-				display: flex;
-				@include font((outline: body, size: x-small)...);
-				color: color(base, 040);
-	
-				.head {
-					display: flex;
-					align-items: center;
-					margin-right: 4rem;
 
-					&::before {
-						content: '';
-						display: block;
-						margin-right: 2rem;
-						width: 16rem;
-						height: 16rem;
-						background: icon(line-comment, color(base, 100)) no-repeat center/cover;
-					}
-				}	
-				.body {
+			.info-item {
+				.data-list {
 					display: flex;
 					align-items: center;
+			
+					.data-item {
+						display: flex;
+						@include font((outline: body, size: x-small)...);
+						color: color(base, 040);
+			
+						.head {
+							display: flex;
+							align-items: center;
+							margin-right: 4rem;
+		
+							&::before {
+								content: '';
+								display: block;
+								margin-right: 2rem;
+								width: 16rem;
+								height: 16rem;
+								background: icon(line-comment, color(base, 100)) no-repeat center/cover;
+							}
+						}	
+						.body {
+							display: flex;
+							align-items: center;
+						}
+					}
 				}
 			}
 		}
@@ -331,8 +363,9 @@
 			}
 
 			.comment-wrap {
+				position: relative;
+				
 				.comment-inform {
-
 					.comment-type {
 						.data-list {
 							display: flex;
@@ -422,6 +455,28 @@
 							}
 						}
 					}
+
+					.comment-util {
+						position: absolute;
+						top: 0;
+						right: 0;
+		
+						.button-display {
+							.button-area {
+								display: flex;
+								.btn {
+									.btn-text {
+										display: block;
+										@include font((outline: body, size: small)...);
+										color: color(base, 040);
+									}
+									+.btn {
+										margin-left: 12rem;
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 			.comment-side {
@@ -438,28 +493,6 @@
 
 							.form-util {
 								margin-top: 8rem;
-							}
-						}
-					}
-				}
-			}
-
-			.comment-util {
-				position: absolute;
-				top: 0;
-				right: 0;
-
-				.button-display {
-					.button-area {
-						display: flex;
-						.btn {
-							.btn-text {
-								display: block;
-								@include font((outline: body, size: small)...);
-								color: color(base, 040);
-							}
-							+.btn {
-								margin-left: 12rem;
 							}
 						}
 					}

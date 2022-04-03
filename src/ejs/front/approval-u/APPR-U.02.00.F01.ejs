@@ -51,18 +51,30 @@
 						<!-- //content-head -->
 						<!-- content-body -->
 						<div class="content-body">
-							<!-- section -->
-							<div class="section module-a">
-								<div class="section-head"><h4 class="section-title"><span class="section-name">나의 요청 문서</span></h4></div>
-								<div class="section-body">
-									<%-include('../_mixin/_post.display.signoff.ejs', {
-										moduleName: 'post-display module-b style-b type-a"',
-										itemType: 'a',
-										iteration: '4'
-									}) %>
+							<!-- post-display -->
+							<div class="post-display module-b style-b type-a">
+								<!-- post-info -->
+								<div class="post-info">
+									<div class="info-list">
+										<div class="info-item">
+											<!-- data-list -->
+											<p class="data-list">
+												<span class="data-item">
+													<span class="head">나의 요청 문서</span>
+												</span>
+											</p>
+											<!-- //data-list -->
+										</div>
+									</div>
 								</div>
+								<!-- //post-info -->
+								<%-include('../_mixin/_post.display.signoff.ejs', {
+									moduleName: '"',
+									itemType: 'a',
+									iteration: '4'
+								}) %>
 							</div>
-							<!-- //section -->
+							<!-- //post-display -->
 							<!-- button-display -->
 							<div class="button-display module-fab">
 								<span class="button-area">

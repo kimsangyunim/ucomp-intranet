@@ -366,17 +366,29 @@ widgetGotoTop(0);
 // });
 
 /**
- * @module buiToggle postItem
+ * @module buiExpand postItem
  */
 const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
 	accordion: false,
 	activeClass: 'active',
-	buttonClass: 'btn module-a style-a type-none normal-04 large flex symbol-rtl-fill-chevron-up',
+	buttonClass: 'btn module-b style-a type-none normal-04 large flex symbol-rtl-fill-chevron-up',
 	buttonText: '<span class="btn-text">자세히보기</span>',
 	buttonActiveText: '<span class="btn-text">닫기</span>',
-	buttonAppendTo: '.post-func .button-display .button-area',
+	buttonAppendTo: '.post-util .button-display .button-area',
 	// targetClass: 'bui-expand-target',
- });
+});
+
+
+/**
+ * @module buiExpand workingStatus
+ */
+const workingStatus = new buiExpand('[data-bui-expand="workingStatus"]', {
+	accordion: false,
+	activeClass: 'active',
+	buttonClass: 'btn expand',
+	buttonText: '<svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>펼치기</title><path d="M6.37,8.48a1.24,1.24,0,0,1,1.76,0L12,12.35l3.87-3.87a1.25,1.25,0,1,1,1.76,1.77L12,15.88,6.37,10.25A1.25,1.25,0,0,1,6.37,8.48Z"></path></svg>',
+	buttonActiveText: '<svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>접기</title><path d="M17.63,15.52a1.24,1.24,0,0,1-1.76,0L12,11.65,8.13,15.52a1.25,1.25,0,1,1-1.76-1.77L12,8.12l5.63,5.63A1.25,1.25,0,0,1,17.63,15.52Z"></path></svg>',
+});
 
 
 
@@ -414,3 +426,50 @@ const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
 // navigator.virtualKeyboard.addEventListener('geometrychanged', (event) => {
 // 	alert('ddd');
 //  });
+
+
+
+
+
+
+
+
+
+
+
+
+// datepicker options setup
+// Datepicker.locales.en = {
+// 	days: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"],
+// 	daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+// 	daysMin: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+// 	months: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+// 	monthsShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+// 	today: "오늘",
+// 	clear: "삭제",
+// 	titleFormat: "yyyy.mm",
+// 	weekStart: 0
+// };
+
+// const datepickers = document.querySelectorAll('.form.datepicker .form-elem:not(:read-only)');
+// datepickers.forEach(function(datepickerSelector) {	
+// 	const datepicker = new Datepicker(datepickerSelector, {
+// 		format: "yyyy-mm-dd",
+// 		prevArrow: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" focusable="false"><title>전월</title><path d="M15.52,6.37a1.24,1.24,0,0,1,0,1.76L11.65,12l3.87,3.87a1.25,1.25,0,1,1-1.77,1.76L8.12,12l5.63-5.63A1.25,1.25,0,0,1,15.52,6.37Z"></path></svg>',
+// 		nextArrow: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" focusable="false"><title>차월</title><path d="M8.48,17.63a1.24,1.24,0,0,1,0-1.76L12.35,12,8.48,8.13a1.25,1.25,0,1,1,1.77-1.76L15.88,12l-5.63,5.63A1.25,1.25,0,0,1,8.48,17.63Z"></path></svg>',
+// 		weekStart: 1,
+// 		autohide: true,
+// 		todayHighlight: true,
+// 	}); 
+// });
+
+
+
+// const datepicker = new Datepicker(document.getElementById('datepickerInline'), {
+// 	format: "yyyy-mm-dd",
+// 	prevArrow: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" focusable="false"><title>전월</title><path d="M15.52,6.37a1.24,1.24,0,0,1,0,1.76L11.65,12l3.87,3.87a1.25,1.25,0,1,1-1.77,1.76L8.12,12l5.63-5.63A1.25,1.25,0,0,1,15.52,6.37Z"></path></svg>',
+// 	nextArrow: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" focusable="false"><title>차월</title><path d="M8.48,17.63a1.24,1.24,0,0,1,0-1.76L12.35,12,8.48,8.13a1.25,1.25,0,1,1,1.77-1.76L15.88,12l-5.63,5.63A1.25,1.25,0,0,1,8.48,17.63Z"></path></svg>',
+// 	weekStart: 1,
+// 	autohide: true,
+// 	todayHighlight: true,
+// });

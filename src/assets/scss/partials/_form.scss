@@ -24,75 +24,11 @@ label.form {
 	vertical-align: top;
 }
 
-/*
- * form module-a system
- */
 
-/**
- * @ module-a accent
- *
- * @ $color
- * @ $color-unit
- * @ $color-disabled
- *
- * @ $border-color
- *
- * @ $background-readonly
- * @ $background-disabled
- * @ $background-color
- */
- $form-module-a-accent: (
-	'normal-00': (
-		'none' color(base, 100) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 100) color(base, 030) color(base, 020)				color(base, 100)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 000) color(base, 000) color(base, 020)				color(base, 100)		color(base, 010) color(base, 010) color(base, 100),
-	),
-	'normal-01': (
-		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 090)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 000) color(base, 000) color(base, 070)				color(base, 100)		color(base, 090) color(base, 090) color(base, 100),
-	),
-	'normal-02': (
-		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 070)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 000) color(base, 000) color(base, 050)				color(base, 070)		color(base, 070) color(base, 070) color(base, 070),
-	),
-	'normal-03': (
-		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 030)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 000) color(base, 000) color(base, 020)				color(base, 030)		color(base, 030) color(base, 030) color(base, 030),
-	),
-	'normal-04': (
-		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 010)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 070) color(base, 030) color(base, 030)				color(base, 010)		color(base, 010) color(base, 010) color(base, 010),
-	),
-	'accent-01': (
-		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 020)				color(primary, 050)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 000) color(base, 000, 0.75) color(base, 000, 0.25)	color(primary, 050)		color(primary, 050) color(primary, 050) color(primary, 050),
-	),
-);
 
 /*
- * module-a outline
- *
- * @ $height
- * @ $line-height
- * @ $font-size
- * @ $font-weight
- * @ $border-width
- */  
-
-
-$form-module-a-outline: (
-	'x-small'		24rem 16rem 1.5 700 1rem,
-	'small'			32rem 18rem 1.5 700 1rem,
-	'medium'		40rem 20rem 1.5 700 1rem,
-	'large'			48rem 20rem 1.5 700 1rem,
-	'x-large'		56rem 24rem 1.5 700 1rem,
-);
-
+ * form module-b system
+ */
 .form.module-a {
 	display: inline-flex;
 	position: relative;
@@ -101,7 +37,6 @@ $form-module-a-outline: (
 		position: relative;
 		box-sizing: border-box;
 	}
-
 
 	&.radio {
 		.form-elem {
@@ -238,10 +173,92 @@ $form-module-a-outline: (
 			margin-left: 4rem;
 		}
 	}
+}
 
+
+
+/*
+ * form module-b system
+ */
+
+/**
+ * @ module-b accent
+ *
+ * @ $color
+ * @ $color-unit
+ * @ $color-disabled
+ *
+ * @ $border-color
+ *
+ * @ $background-readonly
+ * @ $background-disabled
+ * @ $background-color
+ */
+ $form-module-b-accent: (
+	'normal-00': (
+		'none' color(base, 100) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 100) color(base, 030) color(base, 020)				color(base, 100)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 000) color(base, 000) color(base, 020)				color(base, 100)		color(base, 010) color(base, 010) color(base, 100),
+	),
+	'normal-01': (
+		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 090)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 000) color(base, 000) color(base, 070)				color(base, 100)		color(base, 090) color(base, 090) color(base, 100),
+	),
+	'normal-02': (
+		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 070)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 000) color(base, 000) color(base, 050)				color(base, 070)		color(base, 070) color(base, 070) color(base, 070),
+	),
+	'normal-03': (
+		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 030)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 000) color(base, 000) color(base, 020)				color(base, 030)		color(base, 030) color(base, 030) color(base, 030),
+	),
+	'normal-04': (
+		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 010)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 070) color(base, 030) color(base, 030)				color(base, 010)		color(base, 010) color(base, 010) color(base, 010),
+	),
+	'accent-01': (
+		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 020)				color(primary, 050)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 000) color(base, 000, 0.75) color(base, 000, 0.25)	color(primary, 050)		color(primary, 050) color(primary, 050) color(primary, 050),
+	),
+);
+
+/*
+ * module-b outline
+ *
+ * @ $height
+ * @ $line-height
+ * @ $font-size
+ * @ $font-weight
+ * @ $border-width
+ */  
+
+
+$form-module-b-outline: (
+	'x-small'		24rem 16rem 1.5 700 1rem,
+	'small'			32rem 18rem 1.5 700 1rem,
+	'medium'		40rem 20rem 1.5 700 1rem,
+	'large'			48rem 20rem 1.5 700 1rem,
+	'x-large'		56rem 24rem 1.5 700 1rem,
+);
+
+.form.module-b {
+	display: inline-flex;
+	position: relative;
+
+	.form-elem {
+		position: relative;
+		box-sizing: border-box;
+	}
 
 	&.textarea,
 	&.select,
+	&.checkbox,
+	&.radio,
 	&.datepicker,
 	&.date,
 	&.textfield {
@@ -259,12 +276,33 @@ $form-module-a-outline: (
 	}
 
 	// select
-	&.datepicker,
 	&.select,
+	&.checkbox,
+	&.datepicker,
+	&.radio,
 	&.date {
 		.form-elem {
 			text-overflow: ellipsis;
 			background-repeat: no-repeat;
+		}
+	}
+
+	&.checkbox,
+	&.radio {
+		.form-text {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			box-sizing: border-box;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
 		}
 	}
 
@@ -344,10 +382,10 @@ $form-module-a-outline: (
 	}
 
 	// accent
-	@each $accent-name in $form-module-a-accent {
+	@each $accent-name in $form-module-b-accent {
 		&.#{nth($accent-name, 1)} {
 			// @debug "divider offset: #{nth($accent-name, 1)}";
-			@each $type-name, $color, $color-unit, $color-disabled, $border-color, $background-readonly, $background-disabled, $background-color  in map-get($form-module-a-accent, nth($accent-name, 1)) {
+			@each $type-name, $color, $color-unit, $color-disabled, $border-color, $background-readonly, $background-disabled, $background-color  in map-get($form-module-b-accent, nth($accent-name, 1)) {
 				&.type-#{$type-name} {
 					// common
 					&.textarea,
@@ -355,6 +393,9 @@ $form-module-a-outline: (
 					&.datepicker,
 					&.date,
 					&.textfield {
+						.form-text {
+							color: $color;
+						}
 						.form-elem {
 							color: $color;
 							border-color: $border-color;
@@ -366,12 +407,6 @@ $form-module-a-outline: (
 
 							&.invalid {
 								border-color: red;
-							}
-
-							&:not(select):read-only {
-								color: $color;
-								border-color: $border-color;
-								background-color: $background-readonly;
 							}
 
 							&:read-only:disabled {
@@ -387,7 +422,18 @@ $form-module-a-outline: (
 						}
 					}
 
-					// textfield
+					// readonly
+					&.textarea,
+					&.datepicker,
+					&.date,
+					&.textfield {
+						.form-elem:read-only {
+							color: $color;
+							border-color: $border-color;
+							background-color: $background-readonly;
+						}
+					}
+
 					&.textfield {
 						.form-elem {
 							&::placeholder {
@@ -404,6 +450,34 @@ $form-module-a-outline: (
 								svg {
 									fill: $color;
 								}	
+							}
+						}
+					}
+
+					// radio, checkbox
+					&.checkbox,
+					&.radio {
+						.form-text {
+							color: $color-unit;
+							background-image: icon(fill-check, $color-unit);
+						}
+						.form-elem {
+							border-color: $border-color;
+							background-color: $background-color;
+
+							&:read-only:disabled {
+								background-color: $background-disabled;
+
+								~.form-text {
+									color: $color-disabled;
+								}
+							}
+
+							&:checked {
+								~.form-text {
+									color: $color;
+									background-image: icon(fill-check, $color);
+								}
 							}
 						}
 					}
@@ -429,7 +503,7 @@ $form-module-a-outline: (
 
 
 	// outline
-	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $form-module-a-outline {
+	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $form-module-b-outline {
 		&.#{$name} {
 			// common
 			&.textarea,
@@ -448,7 +522,6 @@ $form-module-a-outline: (
 						border-radius: $height * 0.5;
 					}
 				}
-	
 				
 				.form-elem {
 					line-height: $line-height;
@@ -514,12 +587,40 @@ $form-module-a-outline: (
 					background-position: calc(100% - ($line-height * 0.6)) 50%;
 				}
 			}
+
+			// radio, checkbox
+			&.checkbox,
+			&.radio {
+				&.style-b {
+					.form-elem {
+						border-radius: $height * 0.2;
+					}
+				}
+	
+				&.style-c {
+					.form-elem {
+						border-radius: $height * 0.5;
+					}
+				}
+
+				.form-elem {
+					height: $height;
+					border-width: $border-width;
+				}
+
+				.form-text {
+					padding-left: $line-height * 0.8;
+					padding-right: $line-height * 1.6;
+					background-size: $line-height $line-height;
+					background-position: calc(100% - ($line-height * 0.6)) 50%;
+				}
+			}
 		}
 	}
 }
 
 
-.form.module-b {
+.form.module-c {
 	display: inline-flex;
 	position: relative;
 
@@ -625,10 +726,10 @@ $form-module-a-outline: (
 	}
 
 	// accent
-	@each $accent-name in $form-module-a-accent {
+	@each $accent-name in $form-module-b-accent {
 		&.#{nth($accent-name, 1)} {
 			// @debug "divider offset: #{nth($accent-name, 1)}";
-			@each $type-name, $color, $color-unit, $color-disabled, $border-color, $background-readonly, $background-disabled, $background-color  in map-get($form-module-a-accent, nth($accent-name, 1)) {
+			@each $type-name, $color, $color-unit, $color-disabled, $border-color, $background-readonly, $background-disabled, $background-color  in map-get($form-module-b-accent, nth($accent-name, 1)) {
 				&.type-#{$type-name} {
 					// common
 					&.textarea,
@@ -707,7 +808,7 @@ $form-module-a-outline: (
 	}
 
 	// outline
-	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $form-module-a-outline {
+	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $form-module-b-outline {
 		&.#{$name} {
 			// common
 			&.textarea,

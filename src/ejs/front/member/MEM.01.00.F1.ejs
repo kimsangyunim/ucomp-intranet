@@ -40,12 +40,12 @@
 											<div class="form-head"><label class="form-name" for="searchScope">검색어</label></div>
 											<div class="form-body">
 												<div class="form-area">
-													<span class="form select module-a style-b type-line normal-04 medium" style="width: 128rem;">
+													<span class="form select module-b style-b type-line normal-04 medium" style="width: 128rem;">
 														<select class="form-elem" id="searchScope">
 															<option>전체</option>
 														</select>
 													</span>
-													<span class="form textfield module-a style-b type-line normal-04 medium flex">
+													<span class="form textfield module-b style-b type-line normal-04 medium flex">
 														<input type="search" class="form-elem" id="searchKeyword" placeholder="이름을 입력해 주세요." onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
 														<span class="form-func">
 															<button type="button" class="btn"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>검색</title><path d="M19.63,17.87l-2-2a7.5,7.5,0,1,0-1.76,1.76l2,2a1.24,1.24,0,0,0,1.76-1.76ZM11.5,16.5a5,5,0,1,1,5-5A5,5,0,0,1,11.5,16.5Z"></path></svg></button></span>
@@ -63,38 +63,43 @@
 						<!-- //content-head -->
 						<!-- content-body -->
 						<div class="content-body">
-							<!-- section -->
-							<div class="section module-a">
-								<div class="section-head">
-									<h4 class="section-title"><span class="section-name">근무상태</span></h4>
-									<div class="section-control">
-										<div class="lamp-info">
-											<div class="info-wrap">
-												<div class="info-head"><span class="info-name">근무형태 표시</span></div>
-												<div class="info-body">
-													<ul class="data-list">
-														<li class="data-item">정상근무</li>
-														<li class="data-item">스마트데이</li>
-														<li class="data-item">휴가</li>
-													</ul>
+							<!-- goods-display -->
+							<div class="goods-display module-a style-a type-a">
+								<!-- goods-info -->
+								<div class="goods-info">
+									<div class="info-list">
+										<div class="info-item">
+											<!-- data-list -->
+											<p class="data-list">
+												<span class="data-item">
+													<span class="head">근무상태</span>
+												</span>
+											</p>
+											<!-- //data-list -->
+										</div>
+										<form class="info-item">
+											<div class="lamp-info">
+												<div class="info-wrap">
+													<div class="info-head"><span class="info-name">근무형태 표시</span></div>
+													<div class="info-body">
+														<ul class="data-list">
+															<li class="data-item">정상근무</li>
+															<li class="data-item">스마트데이</li>
+															<li class="data-item">휴가</li>
+														</ul>
+													</div>
 												</div>
 											</div>
-										</div>
+										</form>
 									</div>
 								</div>
-								<div class="section-body">
-									<!-- goods-display -->
-									<div class="goods-display module-a style-a type-a">
-										<div class="goods-list">
-											<% for(var i = 0; i < 4; i++) { %>
-												<%-include('../../front/_mixin/_goods.item.staff.ejs') %>
-											<% } %>
-										</div>
-									</div>
-									<!-- //goods-display -->
-								</div>
+								<!-- //goods-info -->
+								<%-include('../../front/_mixin/_goods.item.staff.ejs', {
+									itemType: 'a',
+									iteration: '4'
+								}) %>
 							</div>
-							<!-- //section -->
+							<!-- //goods-display -->
 						</div>
 						<!-- //content-body -->
 					</div>

@@ -21,17 +21,17 @@ button.btn {
 }
 
 /*
- * btn module-a system
+ * btn module-b system
 */
 
 /*
-* @ module-a accent
+* @ module-b accent
 *
 * @ $text-color
 * @ $border-color
 * @ $background-color
 */
-$btn-module-a-accent: (
+$btn-module-b-accent: (
 	'normal-00': (
 		'none' color(base, 100) transparent transparent,
 		'line' color(base, 100) color(base, 100) color(base, 000),
@@ -65,7 +65,7 @@ $btn-module-a-accent: (
 );
 
 /*
- * module-a outline
+ * module-b outline
  *
  * @ $height
  * @ $line-height
@@ -73,7 +73,7 @@ $btn-module-a-accent: (
  * @ $font-weight
  * @ $border-width
  */  
-$btn-module-a-outline: (
+$btn-module-b-outline: (
 	'x-small'		24rem 16rem 1.25 700 1rem,
 	'small'			32rem 20rem 1.50 700 1rem,
 	'medium'		40rem 20rem 1.50 700 1rem,
@@ -81,12 +81,12 @@ $btn-module-a-outline: (
 	'x-large'		56rem 24rem 1.50 700 1rem,
 );
 
-// btn module-a reset
- a.btn.module-a {
+// btn module-b reset
+ a.btn.module-b {
 	 text-decoration: none;
  }
 
- .btn.module-a {
+ .btn.module-b {
 	// general
 	display: flex;
 	align-items: center;
@@ -121,10 +121,10 @@ $btn-module-a-outline: (
 	}
 
 	// accent
-	@each $accent-name in $btn-module-a-accent {
+	@each $accent-name in $btn-module-b-accent {
 		&.#{nth($accent-name, 1)} {
 			// @debug "divider offset: #{nth($accent-name, 1)}";
-			@each $type-name, $color, $border-color, $background-color in map-get($btn-module-a-accent, nth($accent-name, 1)) {
+			@each $type-name, $color, $border-color, $background-color in map-get($btn-module-b-accent, nth($accent-name, 1)) {
 				&.type-#{$type-name} {
 					color: $color;
 					border-color: $border-color;
@@ -140,7 +140,7 @@ $btn-module-a-outline: (
 	}
 
 	// outline
-	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $btn-module-a-outline {
+	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $btn-module-b-outline {
 		&.#{$name} {
 			padding-right: $height * 0.5;
 			padding-left: $height * 0.5;
@@ -328,10 +328,10 @@ a.btn.module-ico {
 	}
 
 	// accent
-	@each $accent-name in $btn-module-a-accent {
+	@each $accent-name in $btn-module-b-accent {
 		&.#{nth($accent-name, 1)} {
 			// @debug "divider offset: #{nth($accent-name, 1)}";
-			@each $type-name, $color, $border-color, $background-color in map-get($btn-module-a-accent, nth($accent-name, 1)) {
+			@each $type-name, $color, $border-color, $background-color in map-get($btn-module-b-accent, nth($accent-name, 1)) {
 				&.type-#{$type-name} {
 					color: $color;
 					border-color: $border-color;
