@@ -312,6 +312,10 @@ img {
 	display: flex;
 	flex-direction: column;
 
+	.content-head {
+		background-color: color(base, 000);
+	}
+
 	.content-body {
 		// display: flex;
 		// flex-direction: column;

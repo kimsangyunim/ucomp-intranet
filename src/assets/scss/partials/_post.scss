@@ -57,6 +57,17 @@
 						color: color(base, 040);
 					}
 				}
+
+				.button-display {
+					.button-area {
+						display: flex;
+						.btn.module-a {
+							+.btn.module-a {
+								margin-left: 12rem;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

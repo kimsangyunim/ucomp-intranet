@@ -37,22 +37,24 @@
 						<!-- //content-head -->
 						<!-- content-body -->
 						<div class="content-body">
-
+							<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+							<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+							<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 						</div>
 						<!-- //content-body -->
-						<!-- content-util -->
-						<div class="content-util">
-							<div class="button-display module-a style-b">
-								<span class="button-area">
-									<a href="#signoffForm" class="btn module-b style-a type-fill accent-01 x-large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
-								</span>
-							</div>
-						</div>
-						<!-- //content-util -->
 					</div>
 					<!-- //content -->
 				</div>
 				<!-- //local-body -->
+				<!-- local-util -->
+				<div class="local-util">
+					<div class="button-display module-a style-b type-d">
+						<span class="button-area">
+							<a href="#signoffForm" class="btn module-b style-a type-fill accent-01 x-large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
+						</span>
+					</div>
+				</div>
+				<!-- //local-util -->
 			</div>
 			<!-- //local -->
 		</div>
@@ -62,5 +64,10 @@
 	<!-- //page -->
 	<%-include('../_templates/_content.popup.ejs') %>
 </div>
+<script type="text/javascript">
+window.addEventListener('DOMContentLoaded', function() {
+	toastPopup.active('signoffForm');
+});
+</script>
 </body>
 </html>

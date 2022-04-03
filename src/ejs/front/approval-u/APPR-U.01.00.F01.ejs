@@ -38,15 +38,6 @@
 						<!-- content-head -->
 						<div class="content-head">
 							<h3 class="content-title"><span class="content-name">연차관리</span></h3>
-							<!-- tab-display -->
-							<div class="tab-display module-c style-a type-d medium">
-								<ul class="tab-list">
-									<li class="tab-item"><a class="tab-name" href="#">지출결재</a></li>
-									<li class="tab-item"><a class="tab-name" href="#">모든요청</a></li>
-									<li class="tab-item current" title="현재 선택된 항목"><a class="tab-name" href="#">나의요청</a></li>
-								</ul>
-							</div>
-							<!-- //tab-display -->
 						</div>
 						<!-- //content-head -->
 						<!-- content-body -->
@@ -69,7 +60,7 @@
 								</div>
 								<!-- //post-info -->
 								<%-include('../_mixin/_post.display.signoff.ejs', {
-									itemType: 'b',
+									itemType: 'a',
 									iteration: '4'
 								}) %>
 							</div>
@@ -87,15 +78,6 @@
 					<!-- //content -->
 				</div>
 				<!-- //local-body -->
-				<!-- local-util -->
-				<div class="local-util">
-					<div class="button-display module-a style-b">
-						<span class="button-area">
-							<a href="#signoffForm" class="btn module-b style-a type-fill accent-01 x-large flex" onclick="toastPopup.active('signoffForm');"><span class="btn-text">총 #개 결재하기</span></a>
-						</span>
-					</div>
-				</div>
-				<!-- //local-util -->
 			</div>
 			<!-- //local -->
 		</div>

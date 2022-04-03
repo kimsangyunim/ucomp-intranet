@@ -261,6 +261,7 @@ $form-module-b-outline: (
 	&.radio,
 	&.datepicker,
 	&.date,
+	&.search,
 	&.textfield {
 		.form-elem {
 			flex: 1 1 100%;
@@ -343,6 +344,7 @@ $form-module-b-outline: (
 	}
 
 	// textfield
+	&.search,
 	&.textfield {
 		.form-elem {
 			text-overflow: ellipsis;
@@ -392,6 +394,7 @@ $form-module-b-outline: (
 					&.select,
 					&.datepicker,
 					&.date,
+					&.search,
 					&.textfield {
 						.form-text {
 							color: $color;
@@ -426,6 +429,7 @@ $form-module-b-outline: (
 					&.textarea,
 					&.datepicker,
 					&.date,
+					&.search,
 					&.textfield {
 						.form-elem:read-only {
 							color: $color;
@@ -434,6 +438,7 @@ $form-module-b-outline: (
 						}
 					}
 
+					&.search,
 					&.textfield {
 						.form-elem {
 							&::placeholder {
@@ -510,6 +515,7 @@ $form-module-b-outline: (
 			&.select,
 			&.datepicker,
 			&.date,
+			&.search,
 			&.textfield {
 				&.style-b {
 					.form-elem {
@@ -532,6 +538,7 @@ $form-module-b-outline: (
 			}
 			
 			// textfield
+			&.search,
 			&.textfield {
 				.form-elem {
 					height: $height;
