@@ -219,6 +219,7 @@ $noti-board-module-accent: (
 					}
 
 					&[class*=attr-caution] .board-subject::before {background-image: icon(fill-circle-caution, $color);}
+					&[class*=attr-information] .board-subject::before {background-image: icon(fill-circle-information, $color);}
 				}
 			}
 		}
