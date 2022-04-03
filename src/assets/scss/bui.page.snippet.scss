@@ -43,8 +43,11 @@
 		.subsection {
 			
 			.data-list {
+
 				display: flex;
 				flex-wrap: wrap;
+				gap: 4rem;
+
 				overflow: hidden;
 				margin: 0;
 				padding: 0;
@@ -55,12 +58,9 @@
 					flex-direction: column;
 					justify-content: space-between;
 					position: relative;
-					top: -4rem;
-					left: -4rem;
-					margin: 8rem 0 0 8rem;
 					padding: 16rem;
-					width: 128rem;
-					height: 128rem;
+					width: 112rem;
+					height: 112rem;
 					box-sizing: border-box;
 					font-size: 16rem;
 					line-height: 1.5;
