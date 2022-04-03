@@ -43,15 +43,10 @@
 				&lt;div class="form-head"&gt;&lt;label class="form-name" for="form_id"&gt;form name&lt;/label&gt;&lt;/div&gt;
 				&lt;div class="form-body"&gt;
 					&lt;div class="form-area"&gt;
-						&lt;input type="text" id="form_id" /&gt;
+
 					&lt;/div&gt;
 				&lt;/div&gt;
 			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="form-util"&gt;
-		&lt;div class="button-area"&gt;
-			&lt;button type="submit"&gt;submit&lt;/button&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/fieldset&gt;
@@ -61,45 +56,52 @@
 							<!-- //subsection -->
 							<!-- subsection -->
 							<div class="subsection">
+								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'Class Options'}) %></div>
+								<div class="subsection-body">
+									<!-- data-table -->
+									<div class="data-table module-bui type-a">
+										<table>
+											<colgroup>
+												<col style="width: 128rem;">
+												<col>
+											</colgroup>
+											<tbody>
+												<tr>
+													<th scope="row">module</th>
+													<td>module-*</td>
+												</tr>
+												<tr>
+													<th scope="row">style</th>
+													<td>style-*</td>
+												</tr>
+												<tr>
+													<th scope="row">type</th>
+													<td>type-*</td>
+												</tr>
+												<tr>
+													<th scope="row">outline</th>
+													<td>xx-small, x-small, small, medium, large, x-large, xx-large, xx-large</td>
+												</tr>
+												<tr>
+													<th scope="row">symbols</th>
+													<td>attr-*</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- //data-table -->
+								</div>
+							</div>
+							<!-- //subsection -->
+							<!-- subsection -->
+							<div class="subsection">
 								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'demos'}) %></div>
 								<div class="subsection-body">
+
 									<!--subsubsection-->
 									<div class="subsubsection">
 										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: '연차 등록'}) %></div>
 										<div class="subsubsection-body">
-											<!-- submit-form -->
-											<fieldset class="submit-form module-a type-a medium">
-												<legend>연차 유형 선택 서식</legend>
-												<div class="form-list">
-													<div class="form-item">
-														<div class="form-wrap">
-															<div class="form-head"><label class="form-name" for="">유형</label></div>
-															<div class="form-body">
-																<div class="form-area">
-																	<span class="form select module-b style-b type-line normal-04 medium flex">
-																		<select class="form-elem">
-																			<option>선택</option>
-																			<option>오전반차</option>
-																			<option>오후반차</option>
-																			<option>연차</option>
-																			<option>스마트데이</option>
-																			<option>대체휴무</option>
-																			<option>하계,동계휴가</option>
-																			<option>예비군,민방위훈련</option>
-																			<option>경조휴가</option>
-																			<option>미사용연차</option>
-																			<option>리플레쉬휴가</option>
-																			<option>백신휴가</option>
-																			<option>기타</option>
-																		</select>
-																	</span>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</fieldset>
-											<!-- //submit-form -->
 											<!-- submit-form -->
 											<fieldset class="submit-form module-a type-a medium">
 												<legend>연차 등록 입력 서식</legend>
@@ -110,8 +112,20 @@
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form textfield module-b style-b type-line normal-04 medium flex">
-																		<input type="text" class="form-elem" id="periodLeave" placeholder="일시를 입력해주세요." value="11, 16, 18, 21일" readonly="readonly" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+																		<input type="text" class="form-elem" id="periodLeave" placeholder="일시를 입력해주세요." readonly="readonly" value="11, 16, 18, 21일">
 																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-item">
+														<div class="form-wrap">
+															<div class="form-head"><span class="form-name">업무연락</span></div>
+															<div class="form-body">
+																<div class="form-area">
+																	<label class="form checkbox module-b style-b type-line normal-04 medium flex"><input type="checkbox" class="form-elem" checked="checked"> <span class="form-text">전화</span></label>
+																	<label class="form checkbox module-b style-b type-line normal-04 medium flex"><input type="checkbox" class="form-elem"> <span class="form-text">팀즈</span></label>
+																	<label class="form checkbox module-b style-b type-line normal-04 medium flex"><input type="checkbox" class="form-elem"> <span class="form-text">이메일</span></label>
 																</div>
 															</div>
 														</div>
@@ -122,8 +136,8 @@
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form textfield module-b style-b type-line normal-04 medium flex">
-																		<input type="text" class="form-elem" id="phoneNumbdr" placeholder="연락처를 입력해주세요." value="010-2729-5982" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-																	</span>
+																		<input type="tel" class="form-elem typed" id="phoneNumbdr" placeholder="연락처를 입력해주세요." value="010-2729-5982" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" style="padding-right: 46rem;">
+																	<span class="form-func"><span class="form-cancel"></span></span></span>
 																</div>
 															</div>
 														</div>
@@ -134,8 +148,20 @@
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form textarea module-b style-b type-line normal-04 medium flex">
-																		<textarea class="form-elem" id="todayTask" rows="4" placeholder="업무 내역을 입력해 주세요.">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia ratione ipsum, ad ullam enim obcaecati tempore reprehenderit quas aspernatur sit sequi. Nemo molestiae deserunt mollitia commodi ipsum fugiat tenetur veritatis. Necessitatibus, facilis earum. Totam aliquam, soluta similique quibusdam non fuga labore eius provident ea numquam sint accusamus ducimus, in quis saepe. Quas ratione repellat saepe consectetur cumque numquam corrupti sunt! Sequi fuga at necessitatibus, doloribus delectus repellat alias rem. Esse, error explicabo! Enim maxime vitae sapiente aliquam, minima sit sunt. Veritatis itaque autem id expedita voluptates tempore quasi quos dolor! Sapiente nobis eaque laudantium perferendis. Blanditiis fugiat animi nobis recusandae, doloribus ipsa cupiditate pariatur vel repellat voluptate cum voluptatum quibusdam tempore eum aliquid dolores non ab, aliquam fuga molestias quia. Est quam iusto dignissimos officiis perferendis, ipsum tempore nam sapiente ea error doloribus a quis in corporis eveniet deleniti consectetur corrupti quisquam possimus animi debitis facilis maiores quasi. Ratione, vero. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia ratione ipsum, ad ullam enim obcaecati tempore reprehenderit quas aspernatur sit sequi. Nemo molestiae deserunt mollitia commodi ipsum fugiat tenetur veritatis. Necessitatibus, facilis earum. Totam aliquam, soluta similique quibusdam non fuga labore eius provident ea numquam sint accusamus ducimus, in quis saepe. Quas ratione repellat saepe consectetur cumque numquam corrupti sunt! Sequi fuga at necessitatibus, doloribus delectus repellat alias rem. Esse, error explicabo! Enim maxime vitae sapiente aliquam, minima sit sunt. Veritatis itaque autem id expedita voluptates tempore quasi quos dolor! Sapiente nobis eaque laudantium perferendis. Blanditiis fugiat animi nobis recusandae, doloribus ipsa cupiditate pariatur vel repellat voluptate cum voluptatum quibusdam tempore eum aliquid dolores non ab, aliquam fuga molestias quia. Est quam iusto dignissimos officiis perferendis, ipsum tempore nam sapiente ea error doloribus a quis in corporis eveniet deleniti consectetur corrupti quisquam possimus animi debitis facilis maiores quasi. Ratione, vero.</textarea>
+																		<textarea class="form-elem" id="todayTask" rows="4" placeholder="업무 내역을 입력해 주세요."></textarea>
 																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="form-item">
+														<div class="form-wrap">
+															<div class="form-head"><label class="form-name" for="requestReason">사유</label></div>
+															<div class="form-body">
+																<div class="form-area">
+																	<span class="form textfield module-b style-b type-line normal-04 medium flex">
+																		<input type="text" class="form-elem typed" id="requestReason" placeholder="" value="UCOMP 인트라넷" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" style="padding-right: 46rem;">
+																	<span class="form-func"><span class="form-cancel"></span></span></span>
 																</div>
 															</div>
 														</div>
@@ -166,15 +192,15 @@
 										<div class="subsubsection-body">
 											<!-- submit-form -->
 											<fieldset class="submit-form module-a type-a medium">
-												<legend>지출결의 기본정보 입력 서식</legend>
+												<legend>지출결의 입력 서식</legend>
 												<div class="form-list">
 													<div class="form-item">
 														<div class="form-wrap">
-															<div class="form-head"><label class="form-name" for="">신청자</label></div>
+															<div class="form-head"><label class="form-name" for="requesterName">신청자</label></div>
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form textfield module-b style-b type-line normal-04 medium flex">
-																		<input type="text" class="form-elem" placeholder="신청자를 입력해주세요." value="홍길순" readonly="readonly" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+																		<input type="text" class="form-elem" id="requesterName" placeholder="" value="이지혜" readonly="readonly" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);">
 																	</span>
 																</div>
 															</div>
@@ -182,11 +208,11 @@
 													</div>
 													<div class="form-item">
 														<div class="form-wrap">
-															<div class="form-head"><label class="form-name" for="">본부</label></div>
+															<div class="form-head"><label class="form-name" for="requesterDepartment">본부</label></div>
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form textfield module-b style-b type-line normal-04 medium flex">
-																		<input type="text" class="form-elem" placeholder="본부를 입력해주세요." value="서비스 운영 본부" readonly="readonly" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+																		<input type="text" class="form-elem" id="requesterDepartment" placeholder="" value="서비스 운영 본부" readonly="readonly" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);">
 																	</span>
 																</div>
 															</div>
@@ -194,11 +220,11 @@
 													</div>
 													<div class="form-item">
 														<div class="form-wrap">
-															<div class="form-head"><label class="form-name" for="">부서</label></div>
+															<div class="form-head"><label class="form-name" for="requesterTeam">부서</label></div>
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form textfield module-b style-b type-line normal-04 medium flex">
-																		<input type="text" class="form-elem" placeholder="부서를 입력해주세요." value="UX팀" readonly="readonly" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+																		<input type="text" class="form-elem" id="requesterTeam" placeholder="" value="UX팀" readonly="readonly" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);">
 																	</span>
 																</div>
 															</div>
@@ -206,23 +232,24 @@
 													</div>
 													<div class="form-item">
 														<div class="form-wrap">
-															<div class="form-head"><label class="form-name" for="">제목</label></div>
+															<div class="form-head"><label class="form-name" for="requestTitle">제목</label></div>
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form textfield module-b style-b type-line normal-04 medium flex">
-																		<input type="text" class="form-elem" placeholder="제목을 입력해주세요." value="02월 지출결의_홍길순" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-																	</span>
+																		<input type="text" class="form-elem typed" id="requestTitle" placeholder="" value="02월 지출결의_이지혜" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" style="padding-right: 46rem;">
+																	<span class="form-func"><span class="form-cancel"></span></span></span>
 																</div>
 															</div>
 														</div>
 													</div>
 													<div class="form-item">
 														<div class="form-wrap">
-															<div class="form-head"><label class="form-name" for="">승인위치</label></div>
+															<div class="form-head"><label class="form-name" for="approver">승인위치</label></div>
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form select module-b style-b type-line normal-04 medium flex">
-																		<select class="form-elem">
+																		<select class="form-elem" id="approver">
+																			<option>선택</option>
 																			<option>조완섭[수석]_UX팀</option>
 																		</select>
 																	</span>
@@ -236,10 +263,9 @@
 										</div>
 									</div>
 									<!--//subsubsection-->
-
 									<!--subsubsection-->
 									<div class="subsubsection">
-										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: '지출내역'}) %></div>
+										<div class="subsubsection-head"><%- include('../_mixin/_title.subsubsection.ejs', {name: '지출결의 상세내역'}) %></div>
 										<div class="subsubsection-body">
 											<!-- submit-form -->
 											<fieldset class="submit-form module-a type-a medium">
@@ -247,11 +273,11 @@
 												<div class="form-list">
 													<div class="form-item">
 														<div class="form-wrap">
-															<div class="form-head"><label class="form-name" for="">날짜</label></div>
+															<div class="form-head"><label class="form-name" for="expensesDate">날짜</label></div>
 															<div class="form-body">
 																<div class="form-area">
-																	<span class="form datepicker module-a style-b type-line normal-04 medium flex">
-																		<input type="text" class="form-elem" placeholder="날짜를 선택해주세요." value="2022-02-11" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
+																	<span class="form date module-b style-b type-line normal-04 medium flex">
+																		<input type="date" class="form-elem" id="expensesDate" placeholder="날짜를 선택해주세요." value="2022-02-11">
 																	</span>
 																</div>
 															</div>
@@ -281,8 +307,8 @@
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form textfield module-b style-b type-line normal-04 medium flex">
-																		<input type="text" class="form-elem" id="expensesHistory" placeholder="지출 상세내역을 입력해주세요." value="12시 지나 퇴근이라 택시탐" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-																	</span>
+																		<input type="text" class="form-elem typed" id="expensesHistory" placeholder="지출 상세내역을 입력해주세요." value="12시 지나 퇴근이라 택시탐" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" style="padding-right: 46rem;">
+																	<span class="form-func"><span class="form-cancel"></span></span></span>
 																</div>
 															</div>
 														</div>
@@ -293,8 +319,8 @@
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form textfield module-b style-b type-line normal-04 medium flex">
-																		<input type="text" class="form-elem" id="expensesProjectName" placeholder="프로젝트명을 입력해주세요." value="UCOMP 인트라넷" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-																	</span>
+																		<input type="text" class="form-elem typed" id="expensesProjectName" placeholder="프로젝트명을 입력해주세요." value="UCOMP 인트라넷" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" style="padding-right: 46rem;">
+																	<span class="form-func"><span class="form-cancel"></span></span></span>
 																</div>
 															</div>
 														</div>
@@ -305,8 +331,8 @@
 															<div class="form-body">
 																<div class="form-area">
 																	<span class="form textfield module-b style-b type-line normal-04 medium flex">
-																		<input type="text" class="form-elem" id="expensesAmount" placeholder="금액을 입력해주세요." value="11,000" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" />
-																	</span>
+																		<input type="text" class="form-elem typed" id="expensesAmount" placeholder="금액을 입력해주세요." value="11,000" pattern="^[0-9]+$" onfocus="buiFormCancel(this);" onmousemove="buiFormCancel(this);" style="padding-right: 46rem;">
+																	<span class="form-func"><span class="form-cancel"></span></span></span>
 																</div>
 															</div>
 														</div>

@@ -33,7 +33,7 @@
 							<div class="subsection">
 								<div class="subsection-head">
 									<%- include('../_mixin/_title.subsection.ejs', {name: 'font face'}) %>
-									<p class="para">현재 사용하는 Font의 종류와 포함된 Style입니다. Font의 Style는 서로 다를 수 있기 때문에 반드시 확인 후 사용해야 합니다.<br />더 많은 정보는 <a target="_blank" href="https://fonts.google.com/specimen/Open+Sans">Google Fonts Noto Sans Korean</a>, <a target="_blank" href="https://fonts.google.com/specimen/Open+Sans">Google Fonts Open Sans</a>를 참고하세요</p>
+									<p class="para">Font Style의 정의는 서로 다를 수 있습니다.<br />Google Fonts(<a target="_blank" href="https://fonts.google.com/specimen/Open+Sans">Google Fonts Noto Sans Korean</a>, <a target="_blank" href="https://fonts.google.com/specimen/Open+Sans">Google Fonts Open Sans</a>)를 참고하세요</p>
 								</div>
 								<div class="subsection-body">
 									<!-- data-table -->
@@ -158,7 +158,10 @@
 							<!-- //subsection -->
 							<!-- subsection -->
 							<div class="subsection">
-								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'size'}) %></div>
+								<div class="subsection-head">
+									<%- include('../_mixin/_title.subsection.ejs', {name: 'size'}) %>
+									<p class="para">행간은 Baseline 기준으로 확장됩니다. 폰트 사이즈는 행간과 비례한 사이즈를 갖게 됩니다.</p>
+								</div>
 								<div class="subsection-body">
 									<!-- data-table -->
 									<div class="data-table module-bui type-a">
@@ -297,7 +300,7 @@
 							<div class="subsection">
 								<div class="subsection-head"><%- include('../_mixin/_title.subsection.ejs', {name: 'demos'}) %></div>
 								<div class="subsection-body">
-									<p class="para">Lorem ipsum dolor sit amet consectetur <strong class="em normal-01">adipisicing</strong> elit. Esse ut sint deleniti voluptatem exercitationem! <strong class="em accent-01">Nesciunt</strong> non laboriosam asperiores dicta repellendus, <strong class="em accent-02">voluptatibus</strong> in quo autem, tempora, quam quae impedit voluptas esse?</p>
+									<p class="para em normal-03">Lorem ipsum dolor sit amet consectetur <strong class="em normal-00">adipisicing</strong> elit. Esse ut sint deleniti voluptatem exercitationem! <strong class="em accent-01">Nesciunt</strong> non laboriosam asperiores dicta repellendus, <strong class="em accent-02">voluptatibus</strong> in quo autem, tempora, quam quae impedit voluptas esse?</p>
 								</div>
 							</div>
 						</div>
@@ -313,15 +316,5 @@
 	</div>
 	<!-- //page -->
 </div>
-<script type="text/javascript">
-	window.addEventListener('DOMContentLoaded', function() {
-		var buttons = document.querySelectorAll('.bui-button-area .btn');
-		Array.prototype.forEach.call(buttons, function(button) {
-			button.addEventListener('click', function(e) {
-				e.preventDefault();
-			});
-		});
-	});
-</script>
 </body>
 </html>
