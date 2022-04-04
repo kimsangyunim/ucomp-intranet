@@ -127,8 +127,8 @@ gulp.task('js', () => {
 	.pipe(browserSync.stream());
 });
 
-gulp.task('js-all', () => {
-  return gulp.src([ src_assets_folder + 'js/**/*.js' ], { since: gulp.lastRun('js') })
+gulp.task('jsall', () => {
+  return gulp.src([ src_assets_folder + 'jsall/*.js' ], { since: gulp.lastRun('jsall') })
     .pipe(plumber())
     .pipe(webpack({
       mode: 'production'
@@ -140,7 +140,7 @@ gulp.task('js-all', () => {
       .pipe(concat('all.js'))
       .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(dist_assets_folder + 'js'))
+    .pipe(gulp.dest(dist_assets_folder + 'jsall'))
     .pipe(browserSync.stream());
 });
 
@@ -189,8 +189,8 @@ gulp.task('vendor', () => {
 //     .pipe(deploy())
 // });
 
-gulp.task('build', gulp.series('clear', 'html', 'ejs', 'sass', 'less', 'stylus', 'js', 'images', 'svg', 'fonts', 'vendor'));
-gulp.task('dev', gulp.series('html', 'ejs', 'sass', 'less', 'stylus', 'js'));
+gulp.task('build', gulp.series('clear', 'html', 'ejs', 'sass', 'less', 'stylus', 'js', 'jsall', 'images', 'svg', 'fonts', 'vendor'));
+gulp.task('dev', gulp.series('html', 'ejs', 'sass', 'less', 'stylus', 'js', 'jsall'));
 gulp.task('serve', () => {
   return browserSync.init({
     server: {
@@ -219,7 +219,8 @@ gulp.task('watch', () => {
     src_assets_folder + 'scss/**/*.scss',
     src_assets_folder + 'less/**/*.less',
     src_assets_folder + 'stylus/**/*.styl',
-    src_assets_folder + 'js/**/*.js'
+    src_assets_folder + 'js/**/*.js',
+    src_assets_folder + 'jsall/*.js'
   ];
 
   gulp.watch(watch, gulp.series('dev')).on('change', browserSync.reload);
