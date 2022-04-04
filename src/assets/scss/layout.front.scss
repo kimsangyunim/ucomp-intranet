@@ -322,9 +322,11 @@ img {
 		padding: 0 $container-gap;
 
 		.button-display.module-fab {
-			position: absolute;
+			position: fixed;
+			bottom: 92rem;
+			// position: absolute;
+			// bottom: 20rem;
 			right: $container-gap;
-			bottom: 20rem;
 
 			.button-area {
 				display: flex;
