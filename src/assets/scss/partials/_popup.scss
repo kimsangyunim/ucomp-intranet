@@ -42,7 +42,8 @@ html.active-content-popup {
 	left: 0;
 	visibility: hidden;
 	opacity: 0;
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(0,0,0,0.0);
+	
 
 	&:not(.enabled) {
 		display: none;
@@ -56,6 +57,9 @@ html.active-content-popup {
 	}
 
 	&.active {
+		background-color: rgba(0,0,0,0.2);
+		// background-color: rgba(0,0,0,0.7);
+
 		animation-name: popup-active;
 		animation-duration: 0.75s;
 		animation-fill-mode: forwards;
@@ -123,9 +127,18 @@ html.active-content-popup {
 		align-items: center;
 		justify-content: center;
 		position: absolute;
-		top: 56rem;
+		top: 48rem;
 		right: 28rem;
 		outline-offset: -2px;
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 48rem;
+			height: 48rem;
+			background:rgba(0,0,0,0.1);
+			border-radius: 50%;
+		}
 		
 		svg {
 			display: block;
@@ -133,14 +146,6 @@ html.active-content-popup {
 			height: 32rem;
 			fill: color(base, 010);
 
-			// &::before {
-			// 	content: '';
-			// 	display: block;
-			// 	width: 42rem;
-			// 	height: 42rem;
-			// 	background-color: red;
-			// 	z-index: -1;
-			// }
 		}
 	}
 }

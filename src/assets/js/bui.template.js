@@ -302,7 +302,7 @@ widgetGotoTop(0);
  const contentsPopup = new buiToggle('[data-bui-toggle="contentsPopup"]', {
 	inactiveButton: true,
 	inactiveButtonClass: 'btn popup-close',
-	inactiveButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><title>닫기</title><path d="M10.5382 12L3 4.46179L4.46179 3L12 10.5382L19.5382 3L21 4.46179L13.4618 12L21 19.5382L19.5382 21L12 13.4618L4.46179 21L3 19.5382L10.5382 12Z"/></svg>',
+	inactiveButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32px" height="32px"><title>닫기</title><path d="M19,6.77A1.25,1.25,0,1,0,17.23,5L12,10.23,6.77,5A1.25,1.25,0,0,0,5,6.77L10.23,12,5,17.23A1.25,1.25,0,1,0,6.77,19L12,13.77,17.23,19A1.25,1.25,0,1,0,19,17.23L13.77,12Z"/></svg>',
 	inactiveButtonArea: '.popup-local',
 	reactTarget: 'html',
 	reactTargetActiveClass: 'active-content-popup',
