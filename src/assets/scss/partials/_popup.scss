@@ -29,7 +29,8 @@ html.active-content-popup {
 	}
 }
 
-.content-popup.module-a.style-a {
+
+.content-popup.module-a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -66,19 +67,13 @@ html.active-content-popup {
 		animation-timing-function: ease;
 	}
 
-	// popup size
-	&.medium {
-		.popup-page-body {
-			max-width: 100%;
-			height: 100vh;
-			width: 100%;
-		}
-	}
+
 
 	.popup-page-body {
 		display: flex;
 		position: relative;
 		overflow: hidden;
+		width: 100%;
 		opacity: 1;
 		visibility: visible;
 		transition: visibility 0.25s ease, opacity 0.25s ease;
@@ -89,8 +84,79 @@ html.active-content-popup {
 			flex-direction: column;
 			overflow: hidden;
 			width: 100%;
+			align-items: center;
 			// background-color: #fff;
 			// box-shadow: 0 4rem 8rem 0 rgba(0,0,0,0.08), 0 0 0 0.0625rem rgba(0,0,0,0.05);
+
+			.popup-local-head {
+				
+			}
+	
+			.popup-local-body {
+				display: flex;
+				flex-grow: 1;
+				overflow-y: auto;
+				@include overflow-scroll(custom);
+
+				.popup-content {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					.popup-content-body {
+						
+						
+						.section.module-a {
+							.section-head {
+								
+							}
+
+						}
+
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.content-popup.module-a.style-a {
+
+	
+
+	&:not(.enabled) {
+
+	}
+
+	&:not(.active) {
+
+	}
+
+	&.active {
+
+	}
+
+	// popup size
+	&.medium {
+		.popup-page-body {
+			max-width: 100%;
+			height: 100vh;
+			width: 100%;
+		}
+	}
+	.popup-page-body {
+		display: flex;
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		opacity: 1;
+		visibility: visible;
+		transition: visibility 0.25s ease, opacity 0.25s ease;
+
+		
+		.popup-local {
+
 
 			.popup-local-head {
 				@include hidden;
@@ -150,6 +216,86 @@ html.active-content-popup {
 	}
 }
 
+.content-popup.module-a.style-b {
+
+
+	&:not(.enabled) {
+
+	}
+
+	&:not(.active) {
+
+	}
+
+	&.active {
+
+	}
+
+	// popup size
+	&.medium {
+		.popup-page-body {
+
+		}
+	}
+
+	.popup-page-body {
+		max-width: 280rem;
+		background-color: color(base, 000);
+		border-radius: 16rem;
+		box-shadow: 0 0.25rem 0.5rem 0 rgba(0,0,0,0.08), 0 0 0 0.0625rem rgba(0,0,0,0.05);
+
+		.popup-local {
+
+			.popup-local-head {
+				@include hidden;
+			}
+	
+			.popup-local-body {
+				padding: 24rem 16rem;
+				.popup-content {
+
+					.popup-content-body {
+						
+						.section.module-a.style-a {
+							&.xx-small {
+								.section-head {
+									@include font((outline: head, size: xx-small)...);
+									.section-name {
+										@include font((outline: head, size: x-small)...);
+									}
+
+									.section-title {
+										margin: 0 0 12rem;
+										.section-name {
+
+										}
+									}
+								}
+							}
+
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+	.btn.popup-close {
+
+		&::before {
+
+		}
+		
+		svg {
+			display: block;
+			width: 32rem;
+			height: 32rem;
+			fill: color(base, 010);
+
+		}
+	}
+}
 
 
 
