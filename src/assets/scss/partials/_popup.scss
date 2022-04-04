@@ -67,8 +67,6 @@ html.active-content-popup {
 		animation-timing-function: ease;
 	}
 
-
-
 	.popup-page-body {
 		display: flex;
 		position: relative;
@@ -78,7 +76,6 @@ html.active-content-popup {
 		visibility: visible;
 		transition: visibility 0.25s ease, opacity 0.25s ease;
 
-		
 		.popup-local {
 			display: flex;
 			flex-direction: column;
@@ -104,7 +101,6 @@ html.active-content-popup {
 					align-items: center;
 					.popup-content-body {
 						
-						
 						.section.module-a {
 							.section-head {
 								
@@ -122,9 +118,6 @@ html.active-content-popup {
 
 
 .content-popup.module-a.style-a {
-
-	
-
 	&:not(.enabled) {
 
 	}
@@ -154,10 +147,7 @@ html.active-content-popup {
 		visibility: visible;
 		transition: visibility 0.25s ease, opacity 0.25s ease;
 
-		
 		.popup-local {
-
-
 			.popup-local-head {
 				@include hidden;
 			}
@@ -173,15 +163,11 @@ html.active-content-popup {
 					justify-content: center;
 					align-items: center;
 					.popup-content-body {
-						
-						
 						.section.module-a {
 							.section-head {
 								@include hidden;
 							}
-
 						}
-
 					}
 				}
 			}
@@ -217,27 +203,6 @@ html.active-content-popup {
 }
 
 .content-popup.module-a.style-b {
-
-
-	&:not(.enabled) {
-
-	}
-
-	&:not(.active) {
-
-	}
-
-	&.active {
-
-	}
-
-	// popup size
-	&.medium {
-		.popup-page-body {
-
-		}
-	}
-
 	.popup-page-body {
 		max-width: 280rem;
 		background-color: color(base, 000);
@@ -255,24 +220,26 @@ html.active-content-popup {
 				.popup-content {
 
 					.popup-content-body {
-						
 						.section.module-a.style-a {
-							&.xx-small {
-								.section-head {
-									@include font((outline: head, size: xx-small)...);
+							.section-head {
+								display: flex;
+								align-items: center;
+								margin-bottom: 16rem;
+								
+								.section-title {
+									color: color(base, 070);
+									margin: 0;
 									.section-name {
-										@include font((outline: head, size: x-small)...);
 									}
-
-									.section-title {
-										margin: 0 0 12rem;
-										.section-name {
-
-										}
+									.section-sub {
+										margin-left: 6rem;
+										@include font((weight: regular)...);
 									}
 								}
+								.data-list.module-a.style-c {
+									display: flex;
+								}
 							}
-
 						}
 
 					}
@@ -282,17 +249,52 @@ html.active-content-popup {
 	}
 
 	.btn.popup-close {
+		display: block;
+		width: 100%;
+		height: 48rem;
+		// padding: 14rem 24rem;
+		border-top: 1rem solid color(base, 010);
+		color: color(base, 040);;
+		@include font((outline: body, size: small, weight: bold)...);
+	}
 
-		&::before {
+	// popup size
+	&.small {
+		.popup-page-body {
+			.popup-local {
+				.popup-local-body {
+					.popup-content {
+						.popup-content-body {
+							.section.module-a.style-a {
 
-		}
-		
-		svg {
-			display: block;
-			width: 32rem;
-			height: 32rem;
-			fill: color(base, 010);
+								&.xx-small {
+									.section-head {
+										@include font((outline: head, size: xx-small)...);
+							
+										.section-title {
+											.section-name {
+												@include font((outline: head, size: x-small)...);
+											}
 
+										}
+										.data-list {
+											.data-item {
+												@include font((outline: head, size: xx-small)...);
+											}
+											&.normal-04 {
+												&::before {
+													background-color: color(base, 020),;
+												}
+											}
+										}
+	
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

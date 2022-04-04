@@ -326,6 +326,36 @@ widgetGotoTop(0);
 	// 	}, 750);
 	// }
 });
+/**
+ * @module buiToggle contentsSmallPopup
+ */
+ const contentsSmallPopup = new buiToggle('[data-bui-toggle="contentsSmallPopup"]', {
+	inactiveButton: true,
+	inactiveButtonClass: 'btn popup-close',
+	inactiveButtonText: '닫기',
+	inactiveButtonArea: '.popup-local',
+	reactTarget: 'html',
+	reactTargetActiveClass: 'active-content-popup',
+	focusin: true,
+	activeBeforeCallBack: function(toggleTarget) {
+		toggleTarget.classList.add('enabled');
+	},	
+	inactiveAfterCallBack: function(toggleTarget) {
+		setTimeout(function() {
+			toggleTarget.classList.remove('enabled');
+		}, 750);
+	}
+	// activeBeforeCallBack: function() {
+	// 	var toggleTarget = this.target;
+	// 	toggleTarget.classList.add('enabled');
+	// },	
+	// inactiveAfterCallBack: function() {
+	// 	var toggleTarget = this.target;
+	// 	setTimeout(function() {
+	// 		toggleTarget.classList.remove('enabled');
+	// 	}, 750);
+	// }
+});
 
 /**
  * @module buiToggle toastPopup
