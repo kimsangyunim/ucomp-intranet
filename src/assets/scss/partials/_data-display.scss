@@ -31,6 +31,7 @@
 $data-display-module-accent: (
 	'normal-02' color(base, 080) color(base, 020) color(base, 020),
 	'normal-03' color(base, 080) color(base, 020) color(base, 020),
+	'normal-04' color(base, 040) color(base, 040) color(base, 040),
 );
 
 .data-display {
@@ -113,7 +114,7 @@ $data-display-module-accent: (
 		.data-item {
 			.data-wrap {
 				display: flex;
-				align-items: center;
+				// align-items: center;
 				.data-head {
 					.data-name {
 						color: color(base, 040);
