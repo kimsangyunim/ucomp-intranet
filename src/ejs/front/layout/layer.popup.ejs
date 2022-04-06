@@ -29,13 +29,11 @@
 		<a href="#imageEnlarge" class="btn module-b style-a type-fill normal-04 large flex" onclick="imageEnlarge.active('imageEnlarge');"><span class="btn-text">이미지 크게 보기</span></a>
 	</span>
 </div>
-
 <hr />
 <%-include('../_templates/_content.popup.ejs') %>
-<!-- //layer-popup -->
 <script stype="text/javascript">
 	document.addEventListener('DOMContentLoaded', function() {
-		contentsPopup.active('contentsPopupTemplate');
+		imageEnlarge.active('imageEnlarge');
 	});
 </script>
 </body>
