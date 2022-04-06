@@ -148,7 +148,6 @@ html.active-content-popup {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	padding: 32rem 0;
 	visibility: hidden;
 	opacity: 0;
 	background-color: rgba(0,0,0,0.0);
@@ -183,24 +182,29 @@ html.active-content-popup {
 		visibility: visible;
 		transition: visibility 0.25s ease, opacity 0.25s ease;
 
+		height: 100vh;
+
 		.popup-local {
 			display: flex;
 			flex-direction: column;
 			overflow: hidden;
 			width: 100%;
 			align-items: center;
+			justify-content: center;
+			overflow-y: scroll;
 
 			.popup-local-head {
 				@include hidden;
 			}
 	
 			.popup-local-body {
-				display: flex;
+				// display: flex;
+				// align-items: center;
 
 				.popup-content {
-					display: flex;
-					justify-content: center;
-					align-items: center;
+					// display: flex;
+					// justify-content: center;
+					// align-items: center;
 				}
 			}
 		}
@@ -218,18 +222,13 @@ html.active-content-popup {
 		align-items: center;
 		justify-content: center;
 		position: absolute;
-		top: 24rem;
+		top: 48rem;
 		left: calc(100vw - 20rem - 48rem);
-		outline-offset: -2px;
-		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			width: 48rem;
-			height: 48rem;
-			background:rgba(0,0,0,0.1);
-			border-radius: 50%;
-		}
+		// outline-offset: -2px;
+		width: 48rem;
+		height: 48rem;
+		background:rgba(0,0,0,0.1);
+		border-radius: 50%;
 		
 		svg {
 			display: block;
