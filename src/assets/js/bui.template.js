@@ -339,9 +339,9 @@ widgetGotoTop(0);
 	}
 });
 /**
- * @module buiToggle imgEnlargePopup
+ * @module buiToggle imageEnlarge
  */
- const imgEnlargePopup = new buiToggle('[data-bui-toggle="imgEnlargePopup"]', {
+ const imageEnlarge = new buiToggle('[data-bui-toggle="imageEnlarge"]', {
 	inactiveButton: true,
 	inactiveButtonClass: 'btn popup-close',
 	inactiveButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32px" height="32px"><title>닫기</title><path d="M19,6.77A1.25,1.25,0,1,0,17.23,5L12,10.23,6.77,5A1.25,1.25,0,0,0,5,6.77L10.23,12,5,17.23A1.25,1.25,0,1,0,6.77,19L12,13.77,17.23,19A1.25,1.25,0,1,0,19,17.23L13.77,12Z"/></svg>',
