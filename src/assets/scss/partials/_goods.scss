@@ -97,7 +97,7 @@
 							
 							.goods-name {
 								@include font((outline: body, size: small, weight: bold)...);
-								color: color(base, 070);	
+								color: color(base, 070);
 							}
 
 							.goods-position {
@@ -211,5 +211,38 @@
 				}
 			}
 		}
+	}
+
+	&.style-b {
+		.goods-list {
+			.goods-item {
+				padding: 0;
+				margin-bottom: 12rem;
+				.goods-wrap {
+					&::before {
+						display: none;
+					}
+					.goods-inform {
+						.goods-head {
+							.goods-title {
+								.goods-name {
+									@include font((outline: head, size: x-small)...);
+								}
+								.goods-position { 
+									margin-left: 6rem;
+									@include font((outline: head, size: xx-small)...);
+								}
+								.goods-team,
+								.goods-department {
+									@include font((outline: head, size: xx-small)...);
+								}
+							}
+						}
+					}
+
+				}
+			}
+		}
+
 	}
 }

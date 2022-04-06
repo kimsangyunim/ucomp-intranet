@@ -296,40 +296,11 @@ const pageNavigations = new buiToggle('[data-bui-toggle="pageNavigations"]', {
 }
 widgetGotoTop(0);
 
+
 /**
  * @module buiToggle contentsPopup
  */
  const contentsPopup = new buiToggle('[data-bui-toggle="contentsPopup"]', {
-	inactiveButton: true,
-	inactiveButtonClass: 'btn popup-close',
-	inactiveButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32px" height="32px"><title>닫기</title><path d="M19,6.77A1.25,1.25,0,1,0,17.23,5L12,10.23,6.77,5A1.25,1.25,0,0,0,5,6.77L10.23,12,5,17.23A1.25,1.25,0,1,0,6.77,19L12,13.77,17.23,19A1.25,1.25,0,1,0,19,17.23L13.77,12Z"/></svg>',
-	inactiveButtonArea: '.popup-local',
-	reactTarget: 'html',
-	reactTargetActiveClass: 'active-content-popup',
-	focusin: true,
-	activeBeforeCallBack: function(toggleTarget) {
-		toggleTarget.classList.add('enabled');
-	},	
-	inactiveAfterCallBack: function(toggleTarget) {
-		setTimeout(function() {
-			toggleTarget.classList.remove('enabled');
-		}, 750);
-	}
-	// activeBeforeCallBack: function() {
-	// 	var toggleTarget = this.target;
-	// 	toggleTarget.classList.add('enabled');
-	// },	
-	// inactiveAfterCallBack: function() {
-	// 	var toggleTarget = this.target;
-	// 	setTimeout(function() {
-	// 		toggleTarget.classList.remove('enabled');
-	// 	}, 750);
-	// }
-});
-/**
- * @module buiToggle contentsSmallPopup
- */
- const contentsSmallPopup = new buiToggle('[data-bui-toggle="contentsSmallPopup"]', {
 	inactiveButton: true,
 	inactiveButtonClass: 'btn popup-close',
 	inactiveButtonText: '닫기',
@@ -345,16 +316,6 @@ widgetGotoTop(0);
 			toggleTarget.classList.remove('enabled');
 		}, 750);
 	}
-	// activeBeforeCallBack: function() {
-	// 	var toggleTarget = this.target;
-	// 	toggleTarget.classList.add('enabled');
-	// },	
-	// inactiveAfterCallBack: function() {
-	// 	var toggleTarget = this.target;
-	// 	setTimeout(function() {
-	// 		toggleTarget.classList.remove('enabled');
-	// 	}, 750);
-	// }
 });
 
 /**
@@ -364,6 +325,26 @@ widgetGotoTop(0);
 	inactiveButton: true,
 	inactiveButtonClass: 'btn popup-close',
 	inactiveButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><title>닫기</title><path d="M6.37,8.48a1.24,1.24,0,0,1,1.76,0L12,12.35l3.87-3.87a1.25,1.25,0,1,1,1.76,1.77L12,15.88,6.37,10.25A1.25,1.25,0,0,1,6.37,8.48Z"/></svg>',
+	inactiveButtonArea: '.popup-local',
+	reactTarget: 'html',
+	reactTargetActiveClass: 'active-content-popup',
+	focusin: true,
+	activeBeforeCallBack: function(toggleTarget) {
+		toggleTarget.classList.add('enabled');
+	},	
+	inactiveAfterCallBack: function(toggleTarget) {
+		setTimeout(function() {
+			toggleTarget.classList.remove('enabled');
+		}, 750);
+	}
+});
+/**
+ * @module buiToggle imgEnlargePopup
+ */
+ const imgEnlargePopup = new buiToggle('[data-bui-toggle="imgEnlargePopup"]', {
+	inactiveButton: true,
+	inactiveButtonClass: 'btn popup-close',
+	inactiveButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32px" height="32px"><title>닫기</title><path d="M19,6.77A1.25,1.25,0,1,0,17.23,5L12,10.23,6.77,5A1.25,1.25,0,0,0,5,6.77L10.23,12,5,17.23A1.25,1.25,0,1,0,6.77,19L12,13.77,17.23,19A1.25,1.25,0,1,0,19,17.23L13.77,12Z"/></svg>',
 	inactiveButtonArea: '.popup-local',
 	reactTarget: 'html',
 	reactTargetActiveClass: 'active-content-popup',
