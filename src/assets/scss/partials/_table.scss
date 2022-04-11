@@ -5,7 +5,7 @@
 
 .data-table.module-c {
 	overflow-x: auto;
-	@include overflow-scroll(custom);
+	@include overflow-scroll(default, dark);
 	border-top: 2px solid color(base, 020);
 	border-bottom: 1px solid color(base, 060);
 

@@ -312,7 +312,7 @@ $form-module-b-outline: (
 		.form-elem {
 			resize: none;
 			overflow: auto;
-			@include overflow-scroll(custom);
+			@include overflow-scroll(default, dark);
 		}
 
 		&[data-bui-form-value] {
@@ -662,7 +662,7 @@ $form-module-b-outline: (
 		.form-elem {
 			resize: none;
 			overflow: auto;
-			@include overflow-scroll(custom);
+			@include overflow-scroll(default, dark);
 		}
 
 		&[data-bui-form-value] {

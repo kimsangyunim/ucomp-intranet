@@ -374,7 +374,7 @@ img {
 			.page-body.page-intro {
 				#local {
 					.local-body {
-						@include overflow-scroll(custom);
+						@include overflow-scroll(default, dark);
 					}
 				}
 			}
@@ -435,7 +435,7 @@ img {
 			html.laptop {
 				.page-body.page-intro-tab {
 					#local {
-						@include overflow-scroll(custom);
+						@include overflow-scroll(default, dark);
 					}
 				}
 			}
@@ -552,7 +552,7 @@ img {
 					html.laptop {
 						.page-body.page-default {
 							#content {
-								@include overflow-scroll(custom);
+								@include overflow-scroll(default, dark);
 							}
 						}
 					}

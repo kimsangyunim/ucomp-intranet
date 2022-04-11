@@ -314,7 +314,7 @@ widgetGotoTop(0);
 	inactiveAfterCallBack: function(toggleTarget) {
 		setTimeout(function() {
 			toggleTarget.classList.remove('enabled');
-		}, 750);
+		}, 250);
 	}
 });
 
@@ -347,34 +347,9 @@ widgetGotoTop(0);
 	inactiveButtonText: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32px" height="32px"><title>닫기</title><path d="M19,6.77A1.25,1.25,0,1,0,17.23,5L12,10.23,6.77,5A1.25,1.25,0,0,0,5,6.77L10.23,12,5,17.23A1.25,1.25,0,1,0,6.77,19L12,13.77,17.23,19A1.25,1.25,0,1,0,19,17.23L13.77,12Z"/></svg>',
 	inactiveButtonArea: '.popup-local',
 	reactTarget: 'html',
-	reactTargetActiveClass: 'active-content-popup',
+	reactTargetActiveClass: 'active-image-popup',
 	focusin: true,
-	activeBeforeCallBack: function(toggleTarget) {
-		toggleTarget.classList.add('enabled');
-	},	
-	inactiveAfterCallBack: function(toggleTarget) {
-		setTimeout(function() {
-			toggleTarget.classList.remove('enabled');
-		}, 750);
-	}
 });
-
-/**
- * @module buiToggle postAttachments
- */
-// const postAttachments = new buiToggle('[data-bui-toggle="postAttachments"]', {
-// 	focusin: true,
-// 	activeBeforeCallBack: function() {
-// 		var toggleTarget = this.target;
-// 		toggleTarget.classList.add('enabled');
-// 	},	
-// 	inactiveAfterCallBack: function() {
-// 		var toggleTarget = this.target;
-// 		setTimeout(function() {
-// 			toggleTarget.classList.remove('enabled');
-// 		}, 750);
-// 	}
-// });
 
 /**
  * @module buiExpand postItem
@@ -388,7 +363,6 @@ const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
 	buttonAppendTo: '.post-util .button-display .button-area',
 	// targetClass: 'bui-expand-target',
 });
-
 
 /**
  * @module buiExpand workingStatus
