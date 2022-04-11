@@ -106,3 +106,207 @@ p.data-item {
 		}
 	}
 }
+
+
+
+/**
+ * @type module
+ * @name data-display
+ */
+
+/*
+ * module outline
+ *
+ * @ $line-height-head
+ * @ $line-height-body
+ * @ $font-size
+ * @ $font-weight
+ * @ $margin = $line-height - 4
+ */
+ $data-display-module-outline: (
+	'x-small'		18rem  16rem  1.50 400 14rem,
+	'small'			20rem  18rem  1.50 400 16rem,
+	'medium'		24rem  20rem  1.50 400 20rem,
+	'large'			28rem  24rem  1.50 400 24rem,
+	'x-large'		32rem  28rem  1.50 400 28rem,
+);
+
+/*
+* @ module accent
+*
+* @ $data-head: text-color
+* @ $data-head: icon-color
+* @ $data-body: text-color
+*/
+$data-display-module-accent: (
+	'normal-02' color(base, 080) color(base, 020) color(base, 020),
+	'normal-03' color(base, 080) color(base, 020) color(base, 020),
+	'normal-04' color(base, 040) color(base, 040) color(base, 040),
+);
+
+.data-display {
+	.data-list {
+		.data-item {
+			.data-wrap {
+				.data-head {
+					.data-name {
+						&[class*=symbol-ltr-]::before,
+						&[class*=symbol-rtl-]::after {
+							content: '';
+							display: block;
+							background-repeat: no-repeat;
+							background-size: cover;
+						}
+					}
+				}
+				.data-body {
+
+				}
+			}
+		}
+	}
+	// outline
+	@each $name, $line-height-head, $line-height-body, $font-size, $font-weight, $margin in $data-display-module-outline {
+		&.#{$name} {
+			.data-item {
+				.data-wrap {
+					.data-head {
+						font-weight: $font-weight;
+						.data-name {
+							line-height: $line-height-head;
+							font-size: calc($line-height-head / $font-size);
+						}
+					}
+					.data-body {
+					}
+				}
+			}
+			
+			&.style-a {
+				.data-item {
+					.data-wrap {
+						.data-head {
+							.data-name {
+		
+							}
+						}
+						.data-body {
+		
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// accent
+	@each $name, $head-color, $icon-color, $body-color in $data-display-module-accent {
+		&.#{$name} {
+			.data-head {
+				color: $head-color;
+				a.data-name {
+					@each $icon-name, $icon in $symbol-list {
+						&.symbol-ltr-#{$icon-name}::before {background-image: icon($icon-name, $icon-color);}
+						&.symbol-rtl-#{$icon-name}::after {background-image: icon($icon-name, $icon-color);}
+					}
+				}
+			}
+		}
+	}
+}
+
+// module-a
+.data-display.module-a {
+	.data-list {
+		.data-item {
+			.data-wrap {
+				display: flex;
+				// align-items: center;
+				.data-head {
+					.data-name {
+						color: color(base, 040);
+					}
+				}
+				.data-body {
+					color: color(base, 070);
+				}
+			}
+		}
+	}
+	// outline module-a
+	@each $name, $line-height-head, $line-height-body, $font-size, $font-weight, $margin in $data-display-module-outline {
+		&.#{$name} {
+			.data-item {
+				.data-wrap {
+					.data-head {
+						flex-basis: calc($line-height-head/$font-size) * 5;
+						flex-shrink: 0;
+					}
+					.data-body {
+						flex: 1 1 100%;
+						// width:100% //pc ex 경우
+						line-height: $line-height-head;
+						font-size: calc($line-height-head / $font-size);
+					}
+				}
+				& + .data-item {
+					margin-top: $margin;
+				}
+			}
+		}
+	}
+}
+
+// module-b
+.data-display.module-b {
+	.data-list {
+		display: flex;
+		flex-wrap: wrap;
+		.data-item {
+			.data-wrap {
+				.data-head {
+					.data-name {
+						display: flex;
+						color: color(base, 080);
+						text-decoration: none;
+					}
+				}
+				.data-body {
+					color: color(base, 060);
+				}
+			}
+		}
+	}
+
+	// outline module-b
+	@each $name, $line-height-head, $line-height-body, $font-size, $font-weight, $margin in $data-display-module-outline {
+		&.#{$name} {
+			.data-item {
+				@include display-column(2, $margin, $margin - 4);
+				.data-wrap {
+					.data-head {
+						.data-name {
+							&[class*=symbol-ltr-]::before,
+							&[class*=symbol-rtl-]::after {
+								width: $line-height-head;
+								min-width: $line-height-head;
+								height: $line-height-head;
+							}
+						}
+					}
+					.data-body {
+						line-height: $line-height-body;
+						font-size: calc($line-height-body / $font-size);
+					}
+				}
+			}
+			// icon
+			&[class*=symbol-ltr-] .data-name::before,
+			&[class*=symbol-rtl-] .data-name::after {
+				width: $line-height-head;
+				min-width: $line-height-head;
+				height: $line-height-head;
+			}
+		}
+	}	
+}

@@ -97,7 +97,7 @@
 }
 
 /**
- * @type layout
+ * @type front
  * @name page-notice
  */
 .page-body.page-notice {
@@ -107,10 +107,10 @@
 }
 
 /**
- * @type layout
+ * @type front
  * @name page-member
  */
- .page-body.page-member {
+.page-body.page-member {
 	.content-body {
 		.section.module-a {
 			.section-head {
@@ -178,12 +178,27 @@
 }
 
 /**
- * @type layout
+ * @type front
  * @name page-approval
  */
 .page-body.page-intro.page-approval,
 .page-body.page-intro-tab.page-approval {
 	.local-body {
 		background-color: color(base, 005);
+	}
+}
+
+
+/**
+ * @type front
+ * @name page-holiday
+ */
+.page-body.page-holiday {
+	.data-display.module-b {
+		.data-body {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
 	}
 }
