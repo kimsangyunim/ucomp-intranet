@@ -1,16 +1,12 @@
 /*
  * mark system reset
-*/
+ */
 .mark svg {
 	display: block;
 	position: relative;
 	top: 0;
 	left: 0;
 }
-
-/*
- * mark module system
-*/
 
 /*
 * @ mark module accent
@@ -68,19 +64,20 @@ $mark-module-a-accent: (
 );
 
 /*
- * mark module outline
+ * mark module a outline
  *
  * @ $height
  * @ $line-height
  * @ $font-size
+ * @ $font-weight
  * @ $border-width
  */
-$mark-module-outline: (
-	'x-small'		18rem 16rem 1.5 1rem,
-	'small'			20rem 16rem 1.5 1rem,
-	'medium'		24rem 18rem 1.5 1rem,
-	'large'			28rem 20rem 1.5 1rem,
-	'x-large'		32rem 24rem 1.5 1rem,
+$mark-module-a-outline: (
+	'x-small'		18rem 16rem 1.5 400 1rem,
+	'small'			20rem 16rem 1.5 400 1rem,
+	'medium'		24rem 18rem 1.5 400 1rem,
+	'large'			28rem 20rem 1.5 400 1rem,
+	'x-large'		32rem 24rem 1.5 400 1rem,
 );
 
 .mark.module-a {
@@ -137,13 +134,14 @@ $mark-module-outline: (
 	}
 
 	// outline
-	@each $name, $height, $line-height, $font-size, $border-width in $mark-module-outline {
+	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $mark-module-a-outline {
 		&.#{$name} {
 			padding-right: calc($height / 3);
 			padding-left: calc($height / 3);
 			height: $height;
 
 			line-height: $line-height;
+			font-weight: $font-weight;
 			font-size: calc($line-height / $font-size);
 			border-width: $border-width;
 
@@ -193,45 +191,42 @@ $mark-module-b-accent: (
 		'fill' color(base, 000) color(base, 100) color(base, 100),
 	),
 	'normal-01': (
-		'none' color(base, 100) transparent transparent,
-		'line' color(base, 80) color(base, 80) color(base, 000),
-		'fill' color(base, 000) color(base, 80) color(base, 80),
+		'none' color(navy, 100) transparent transparent,
+		'line' color(navy, 80) color(navy, 80) color(navy, 000),
+		'fill' color(navy, 000) color(navy, 80) color(navy, 80),
 	),
 	'normal-02': (
-		'none' color(base, 060) transparent transparent,
-		'line' color(base, 040) color(base, 030) color(base, 000),
-		'fill' color(base, 000) color(base, 070) color(base, 070),
+		'none' color(navy, 060) transparent transparent,
+		'line' color(navy, 040) color(navy, 030) color(navy, 000),
+		'fill' color(navy, 000) color(navy, 070) color(navy, 070),
 	),
 	'normal-03': (
-		'none' color(base, 040) transparent transparent,
-		'line' color(base, 040) color(base, 030) color(base, 000),
-		'fill' color(base, 000) color(base, 030) color(base, 030),
-	),
-	'normal-04': (
-		'none' color(base, 040) transparent transparent,
-		'line' color(base, 070) color(base, 010) color(base, 000),
-		'fill' color(base, 070) color(base, 010) color(base, 010),
+		'none' color(navy, 040) transparent transparent,
+		'line' color(navy, 040) color(navy, 030) color(navy, 000),
+		'fill' color(navy, 000) color(navy, 030) color(navy, 030),
 	),
 	'accent-01': (
 		'none' color(primary, 050) transparent transparent,
 		'line' color(primary, 050) color(primary, 050) color(primary, 000),
 		'fill' color(primary, 000) color(primary, 050) color(primary, 050),
 	),
-	'accent-02': (
-		'none' color(secondary, 010) transparent transparent,
-		'line' color(secondary, 010) color(secondary, 010) color(base, 000),
-		'fill' color(base, 000) color(secondary, 010) color(secondary, 010),
-	),
-	'accent-03': (
-		'none' color(secondary, 030) transparent transparent,
-		'line' color(secondary, 030) color(secondary, 030) color(base, 000),
-		'fill' color(base, 000) color(secondary, 030) color(secondary, 030),
-	),
-	'accent-04': (
-		'none' color(secondary, 030) transparent transparent,
-		'line' color(secondary, 030) color(secondary, 030) color(base, 000),
-		'fill' color(base, 000) color(secondary, 030) color(secondary, 030),
-	)
+);
+
+/*
+ * mark module b outline
+ *
+ * @ $height
+ * @ $line-height
+ * @ $font-size
+ * @ $font-weight
+ * @ $border-width
+ */
+ $mark-module-b-outline: (
+	'x-small'		18rem 16rem 1.5 700 1rem,
+	'small'			20rem 16rem 1.5 700 1rem,
+	'medium'		24rem 18rem 1.5 700 1rem,
+	'large'			28rem 20rem 1.5 700 1rem,
+	'x-large'		32rem 24rem 1.5 700 1rem,
 );
 
 
@@ -251,16 +246,6 @@ $mark-module-b-accent: (
 		text-align: center;
 	}
 
-	// icon
-	// 1. 아이콘의 유무는 특정 클래스명으로 한다.
-	// 2. 아이콘의 위치는 특정 클래스명으로 한다.
-	// 3. 아이콘의 종류는 지정한 아이콘셋(클래스명)으로 한다.
-	// 4. 아이콘의 사이즈는 outline별로 달라야 한다.
-	//		1) 행간에 맞춘다.
-	//		2) 별도의 사이즈를 지정한다.
-	// 5. 무조건 중앙에 또는 상단 기준을 택일
-	// 6. accent에 따라 컬러를 다르게 한다.
-
 	&[class*=symbol-ltr-] .mark-text::before,
 	&[class*=symbol-rtl-] .mark-text::after {
 		content: '';
@@ -272,7 +257,6 @@ $mark-module-b-accent: (
 	// accent
 	@each $accent-name in $mark-module-b-accent {
 		&.#{nth($accent-name, 1)} {
-			// @debug "divider offset: #{nth($accent-name, 1)}";
 			@each $type-name, $color, $border-color, $background-color in map-get($mark-module-b-accent, nth($accent-name, 1)) {
 				&.type-#{$type-name} {
 					color: $color;
@@ -289,13 +273,14 @@ $mark-module-b-accent: (
 	}
 
 	// outline
-	@each $name, $height, $line-height, $font-size, $border-width in $mark-module-outline {
+	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $mark-module-b-outline {
 		&.#{$name} {
 			padding-right: calc($height / 3);
 			padding-left: calc($height / 3);
 			height: $height;
 
 			line-height: $line-height;
+			font-weight: $font-weight;
 			font-size: calc($line-height / $font-size);
 			border-width: $border-width;
 
