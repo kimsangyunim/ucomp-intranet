@@ -80,11 +80,11 @@
 
 			.tab-name {
 				position: relative;
-				color: color(base, 040, .5);
+				color: color(navy, 020);
 			}
 			&.current {
 				.tab-name {
-					color: color(base, 090);
+					color: color(navy, 080);
 				}
 			}
 
@@ -114,7 +114,6 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					color: color(base, 060);
 					text-align: center;
 				}
 
@@ -128,7 +127,7 @@
 							right: 0;
 							bottom: 0;
 							left: 0;
-							background-color: color(base, 60);
+							background-color: color(navy, 080);
 						}
 					}
 				}

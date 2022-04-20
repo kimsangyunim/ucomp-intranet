@@ -119,8 +119,14 @@ $btn-module-b-accent: (
 	'accent-01': (
 		'none' color(primary, 050) transparent transparent,
 		'line' color(primary, 050) color(primary, 050) color(primary, 000),
-		'fill' color(primary, 000) color(primary, 050) color(primary, 050),
-	),
+		'fill' color(base, 000) color(primary, 050) color(primary, 050),
+	)
+	,
+	'accent-02': (
+		'none' color(navy, 080) transparent transparent,
+		'line' color(navy, 080) color(navy, 040) color(base, 000),
+		'fill' color(base, 000) color(navy, 080) color(navy, 080),
+	)
 );
 
 /*
