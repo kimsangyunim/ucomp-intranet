@@ -118,7 +118,7 @@ $btn-module-b-accent: (
 	),
 	'accent-01': (
 		'none' color(primary, 050) transparent transparent,
-		'line' color(primary, 050) color(primary, 050) color(primary, 000),
+		'line' color(primary, 050) color(primary, 020) color(primary, 000),
 		'fill' color(base, 000) color(primary, 050) color(primary, 050),
 	)
 	,
@@ -206,6 +206,184 @@ $btn-module-b-outline: (
 
 	// outline
 	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $btn-module-b-outline {
+		&.#{$name} {
+			padding-right: $height * 0.5;
+			padding-left: $height * 0.5;
+			height: $height;
+
+			font-weight: $font-weight;
+			line-height: $line-height;
+			font-size: calc($line-height / $font-size);
+			border-width: $border-width;
+
+			&.style-b {
+				border-radius: $height * 0.2;
+			}
+
+			&.style-c {
+				border-radius: $height * 0.5;
+			}
+
+			// icon
+			&[class*=symbol-ltr-] .btn-text::before,
+			&[class*=symbol-rtl-] .btn-text::after {
+				width: $line-height;
+				min-width: $line-height;
+				height: $line-height;
+			}
+
+			
+			&[class*="symbol-ltr"] {
+				padding-left: ($height * 0.5) - ($line-height * 0.25);
+				.btn-text {
+					&::before {
+						margin-right: $line-height * 0.1;
+					}
+				}
+			}
+
+			&[class*="symbol-rtl"] {
+				padding-right: ($height * 0.5) - ($line-height * 0.25);
+				.btn-text {
+					&::after {
+						margin-left: $line-height * 0.1;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+/*
+ * btn module-c system
+ */
+
+/*
+ * @ module-c accent
+ *
+ * @ $text-color
+ * @ $border-color
+ * @ $background-color
+*/
+$btn-module-c-accent: (
+	'normal-00': (
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 100) color(base, 100) color(base, 000),
+		'fill' color(base, 000) color(base, 100) color(base, 100),
+	),
+	'normal-01': (
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 80) color(base, 80) color(base, 000),
+		'fill' color(base, 000) color(base, 80) color(base, 80),
+	),
+	'normal-02': (
+		'none' color(base, 070) transparent transparent,
+		'line' color(base, 070) color(base, 070) color(base, 000),
+		'fill' color(base, 000) color(base, 070) color(base, 070),
+	),
+	'normal-03': (
+		'none' color(base, 060) transparent transparent,
+		'line' color(base, 040) color(base, 030) color(base, 000),
+		'fill' color(base, 000) color(base, 030) color(base, 030),
+	),
+	'normal-04': (
+		'none' color(base, 040) transparent transparent,
+		'line' color(base, 040) color(base, 010) color(base, 000),
+		'fill' color(base, 050) color(base, 010) color(base, 010),
+	),
+	'accent-01': (
+		'none' color(primary, 050) transparent transparent,
+		'line' color(primary, 050) color(primary, 050) color(primary, 000),
+		'fill' color(base, 000) color(primary, 050) color(primary, 050),
+	)
+	,
+	'accent-02': (
+		'none' color(navy, 050) transparent transparent,
+		'line' color(navy, 050) color(navy, 010) color(base, 000),
+		'fill' color(navy, 050) color(navy, 020) color(navy, 020),
+	)
+);
+
+/*
+ * module-b outline
+ *
+ * @ $height
+ * @ $line-height
+ * @ $font-size
+ * @ $font-weight
+ * @ $border-width
+ */  
+$btn-module-c-outline: (
+	'x-small'		24rem 16rem 1.25 700 1rem,
+	'small'			32rem 20rem 1.50 700 1rem,
+	'medium'		40rem 20rem 1.50 700 1rem,
+	'large'			48rem 20rem 1.25 700 1rem,
+	'x-large'		56rem 24rem 1.50 700 1rem,
+);
+
+// btn module-b reset
+ a.btn.module-c {
+	 text-decoration: none;
+ }
+
+ .btn.module-c {
+	// general
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	@include font((family: default)...);
+	box-sizing: border-box;
+	border-style: solid;
+
+	.btn-text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	// icon
+	// 1. 아이콘의 유무는 특정 클래스명으로 한다.
+	// 2. 아이콘의 위치는 특정 클래스명으로 한다.
+	// 3. 아이콘의 종류는 지정한 아이콘셋(클래스명)으로 한다.
+	// 4. 아이콘의 사이즈는 outline별로 달라야 한다.
+	//		1) 행간에 맞춘다.
+	//		2) 별도의 사이즈를 지정한다.
+	// 5. 무조건 중앙에 또는 상단 기준을 택일
+	// 6. accent에 따라 컬러를 다르게 한다.
+
+	&[class*=symbol-ltr-] .btn-text::before,
+	&[class*=symbol-rtl-] .btn-text::after {
+		content: '';
+		display: block;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	// accent
+	@each $accent-name in $btn-module-c-accent {
+		&.#{nth($accent-name, 1)} {
+			// @debug "divider offset: #{nth($accent-name, 1)}";
+			@each $type-name, $color, $border-color, $background-color in map-get($btn-module-c-accent, nth($accent-name, 1)) {
+				&.type-#{$type-name} {
+					color: $color;
+					border-color: $border-color;
+					background-color: $background-color;
+					
+					@each $icon-name, $icon in $symbol-list {
+						&.symbol-ltr-#{$icon-name} {.btn-text {&::before {background-image: icon($icon-name, $color);}}}
+						&.symbol-rtl-#{$icon-name} {.btn-text {&::after {background-image: icon($icon-name, $color);}}}
+					}
+				}
+			}
+		}
+	}
+
+	// outline
+	@each $name, $height, $line-height, $font-size, $font-weight, $border-width in $btn-module-c-outline {
 		&.#{$name} {
 			padding-right: $height * 0.5;
 			padding-left: $height * 0.5;
