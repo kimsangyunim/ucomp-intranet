@@ -623,14 +623,14 @@
 									.name {
 										display: block;
 										@include font((outline: body, size: xx-small)...);
-										color: color(base, 090);
+										color: color(base, 070);
 									}
 
 									.department,
 									.team {
 										display: flex;
 										@include font((outline: body, size: xx-small)...);
-										color: color(base, 040);
+										color: color(navy, 050);
 
 										&::before {
 											content: '';
@@ -638,7 +638,7 @@
 											display: block;
 											width: 12rem;
 											height: 16rem;
-											background: icon(bullet-dot, color(base, 040)) no-repeat center/cover;
+											background: icon(bullet-dot, color(base, 020)) no-repeat center/cover;
 										}
 									}
 								}
@@ -655,7 +655,7 @@
 								.body {
 									display: block;
 									@include font((outline: body, size: xx-small)...);
-									color: color(base, 040);
+									color: color(navy, 050);
 								}
 							}
 
