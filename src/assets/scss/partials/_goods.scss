@@ -45,7 +45,7 @@
 			padding: 16rem 0;
 			
 			+.goods-item {
-				border-top: 1rem solid color(base, 010);
+				border-top: 1rem solid color(navy, 010);
 			}
 
 			.goods-wrap {
@@ -102,7 +102,7 @@
 
 							.goods-position {
 								margin-left: 4rem;
-								@include font((outline: body, size: xx-small)...);
+								@include font((outline: body, size: xx-small, weight: light)...);
 								color: color(base, 070);
 							}
 
@@ -110,7 +110,7 @@
 							.goods-department {
 								display: flex;
 								align-items: center;
-								@include font((outline: body, size: xx-small)...);
+								@include font((outline: body, size: xx-small, weight: light)...);
 								color: color(base, 040);
 
 								&::before {

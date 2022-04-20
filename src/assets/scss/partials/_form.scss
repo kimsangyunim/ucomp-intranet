@@ -216,9 +216,9 @@ label.form {
 		'fill' color(base, 000) color(base, 000) color(base, 020)				color(base, 030)		color(base, 030) color(base, 030) color(base, 030),
 	),
 	'normal-04': (
-		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 010)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 070) color(base, 030) color(base, 030)				color(base, 010)		color(base, 010) color(base, 010) color(base, 010),
+		'none' color(base, 070) color(navy, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(navy, 030) color(base, 020)				color(base, 010)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 070) color(navy, 030) color(base, 030)				color(base, 010)		color(base, 010) color(base, 010) color(base, 010),
 	),
 	'accent-01': (
 		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
@@ -239,11 +239,11 @@ label.form {
 
 
 $form-module-b-outline: (
-	'x-small'		24rem 16rem 1.5 700 1rem,
-	'small'			32rem 18rem 1.5 700 1rem,
-	'medium'		40rem 20rem 1.5 700 1rem,
-	'large'			48rem 20rem 1.5 700 1rem,
-	'x-large'		56rem 24rem 1.5 700 1rem,
+	'x-small'		24rem 16rem 1.5 300 1rem,
+	'small'			32rem 18rem 1.5 300 1rem,
+	'medium'		40rem 20rem 1.5 300 1rem,
+	'large'			48rem 20rem 1.5 300 1rem,
+	'x-large'		56rem 24rem 1.5 300 1rem,
 );
 
 .form.module-b {
