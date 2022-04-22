@@ -166,6 +166,7 @@ label.form {
 
 		.form-text {
 			@include font((outline: body, size: small)...);
+			color: color(base, 070);
 		}
 
 		.form-text~.form-elem,
@@ -186,6 +187,7 @@ label.form {
  *
  * @ $color
  * @ $color-unit
+ * @ $color-placeholder
  * @ $color-disabled
  *
  * @ $border-color
@@ -196,34 +198,34 @@ label.form {
  */
  $form-module-b-accent: (
 	'normal-00': (
-		'none' color(base, 100) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 100) color(base, 030) color(base, 020)				color(base, 100)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 000) color(base, 000) color(base, 020)				color(base, 100)		color(base, 010) color(base, 010) color(base, 100),
+		'none' color(base, 100) color(base, 030) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 100) color(base, 030) color(base, 030) color(base, 020)				color(base, 100)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 000) color(base, 000) color(base, 000) color(base, 020)				color(base, 100)		color(base, 010) color(base, 010) color(base, 100),
 	),
 	'normal-01': (
-		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 090)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 000) color(base, 000) color(base, 070)				color(base, 100)		color(base, 090) color(base, 090) color(base, 100),
+		'none' color(base, 070) color(base, 030) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 030) color(base, 020)				color(base, 090)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 000) color(base, 000) color(base, 000) color(base, 070)				color(base, 100)		color(base, 090) color(base, 090) color(base, 100),
 	),
 	'normal-02': (
-		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 070)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 000) color(base, 000) color(base, 050)				color(base, 070)		color(base, 070) color(base, 070) color(base, 070),
+		'none' color(base, 070) color(base, 030) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 030) color(base, 020)				color(base, 070)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 000) color(base, 000) color(base, 000) color(base, 050)				color(base, 070)		color(base, 070) color(base, 070) color(base, 070),
 	),
 	'normal-03': (
-		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 020)				color(base, 030)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 000) color(base, 000) color(base, 020)				color(base, 030)		color(base, 030) color(base, 030) color(base, 030),
+		'none' color(base, 070) color(base, 030) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 030) color(base, 020)				color(base, 030)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 000) color(base, 000) color(base, 000) color(base, 020)				color(base, 030)		color(base, 030) color(base, 030) color(base, 030),
 	),
 	'normal-04': (
-		'none' color(base, 070) color(navy, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(navy, 030) color(base, 020)				color(navy, 010)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 030) color(navy, 030) color(base, 030)				color(navy, 010)		color(navy, 010) color(navy, 010) color(base, 010),
+		'none' color(base, 070) color(navy, 030) color(navy, 030)  color(base, 030)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(navy, 030) color(navy, 030)  color(base, 030)				color(navy, 010)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 030) color(navy, 030) color(navy, 030)  color(base, 030)				color(navy, 010)		color(navy, 010) color(navy, 010) color(base, 010),
 	),
 	'accent-01': (
-		'none' color(base, 070) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(base, 030) color(base, 020)				color(primary, 050)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 000) color(base, 000, 0.75) color(base, 000, 0.25)	color(primary, 050)		color(primary, 050) color(primary, 050) color(primary, 050),
+		'none' color(base, 070) color(base, 030) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 030) color(base, 020)				color(primary, 050)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 000) color(base, 000, 0.75) color(base, 000, 0.75) color(base, 000, 0.25)	color(primary, 050)		color(primary, 050) color(primary, 050) color(primary, 050),
 	),
 );
 
@@ -387,7 +389,7 @@ $form-module-b-outline: (
 	@each $accent-name in $form-module-b-accent {
 		&.#{nth($accent-name, 1)} {
 			// @debug "divider offset: #{nth($accent-name, 1)}";
-			@each $type-name, $color, $color-unit, $color-disabled, $border-color, $background-readonly, $background-disabled, $background-color  in map-get($form-module-b-accent, nth($accent-name, 1)) {
+			@each $type-name, $color, $color-unit, $color-placeholder, $color-disabled, $border-color, $background-readonly, $background-disabled, $background-color  in map-get($form-module-b-accent, nth($accent-name, 1)) {
 				&.type-#{$type-name} {
 					// common
 					&.textarea,
@@ -442,7 +444,7 @@ $form-module-b-outline: (
 					&.textfield {
 						.form-elem {
 							&::placeholder {
-								color: $color-unit;
+								color: $color-placeholder;
 							}
 						}
 
