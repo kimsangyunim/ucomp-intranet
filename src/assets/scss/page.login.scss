@@ -1,0 +1,40 @@
+@import 'partials/_variables';
+@import 'partials/_mixin';
+
+:root {
+	font-size: 1px;
+}
+
+hr {
+	display: none;
+}
+body {
+	background-color: color(navy, 005);
+	@include font((outline: body, size: medium, family: default)...);
+}
+
+
+.page-head {
+	@include hidden;
+}
+
+.page-body {
+	#local {
+		.local-head {
+			@include hidden;
+		}
+	}
+}
+
+.page-foot {
+	@include hidden;
+}
+
+
+
+
+
+
+.page-body.page-login {
+
+}
