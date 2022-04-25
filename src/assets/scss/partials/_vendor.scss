@@ -1093,6 +1093,10 @@
 	}
 }
 
+// .air-datepicker-cell.-disabled-:not(.-selected-) {
+// 	pointer-events: none;
+// }
+
 .air-datepicker-cell.-disabled- {
 	display: none;
 }
