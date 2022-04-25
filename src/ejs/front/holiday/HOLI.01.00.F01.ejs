@@ -201,11 +201,15 @@
 			navTitles: {
 				days: 'yyyy.MM'
 			},
-			prevHtml: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" focusable="false"><title>전월</title><path d="M15.52,6.37a1.24,1.24,0,0,1,0,1.76L11.65,12l3.87,3.87a1.25,1.25,0,1,1-1.77,1.76L8.12,12l5.63-5.63A1.25,1.25,0,0,1,15.52,6.37Z"></path></svg>',
-			nextHtml: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" focusable="false"><title>차월</title><path d="M8.48,17.63a1.24,1.24,0,0,1,0-1.76L12.35,12,8.48,8.13a1.25,1.25,0,1,1,1.77-1.76L15.88,12l-5.63,5.63A1.25,1.25,0,0,1,8.48,17.63Z"></path></svg>',
+			prevHtml: '',
+			nextHtml: '',
 			selectedDates: ['2022-04-04', '2022-04-05'],
 			minDate: '2022-04-03',
 			maxDate: '2022-04-09',
+
+			onSelect: function(date, formattedDate, datepicker) {
+				console.log(selectedDates);
+			},
 		});
 	});
 </script>
