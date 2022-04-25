@@ -42,7 +42,7 @@ label.form {
 		.form-elem {
 			width: 24rem;
 			height: 24rem;
-			border: 1rem solid color(navy, 020);
+			border: 1rem solid color(base, 010);
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-color: color(base, 000);
@@ -93,12 +93,12 @@ label.form {
 		.form-elem {
 			width: 24rem;
 			height: 24rem;
-			border: 1rem solid color(navy, 020);
+			border: 1rem solid color(base, 020);
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-color: color(base, 000);
 			background-size: 16rem 16rem;
-			background-image: icon(fill-check, color(navy, 020));
+			background-image: icon(fill-check, color(base, 020));
 
 			&:checked {
 				border-color: color(primary, 050);
@@ -136,7 +136,7 @@ label.form {
 			width: 36rem;
 			height: 20rem;
 			border-radius: calc(20rem * 0.5);
-			background-color: color(navy, 020);
+			background-color: color(base, 020);
 			transition: background-color 0.1s ease-out;
 			
 			&::after {
@@ -149,7 +149,7 @@ label.form {
 				height: 16rem;
 				border-width: 2rem;
 				border-style: solid;
-				border-color: color(navy, 020);
+				border-color: color(base, 020);
 				border-radius: calc(20rem * 0.5);
 				background-color: #fff;
 				transition: left 0.1s ease-out, border-color 0.1s ease-out;
@@ -218,9 +218,9 @@ label.form {
 		'fill' color(base, 000) color(base, 000) color(base, 000) color(base, 020)				color(base, 030)		color(base, 030) color(base, 030) color(base, 030),
 	),
 	'normal-04': (
-		'none' color(base, 070) color(navy, 030) color(navy, 030)  color(base, 030)				transparent				transparent transparent transparent,
-		'line' color(base, 070) color(navy, 030) color(navy, 030)  color(base, 030)				color(navy, 010)		color(base, 005) color(base, 010) color(base, 000),
-		'fill' color(base, 030) color(navy, 030) color(navy, 030)  color(base, 030)				color(navy, 010)		color(navy, 010) color(navy, 010) color(base, 010),
+		'none' color(base, 070) color(base, 030) color(base, 030)  color(base, 030)				transparent				transparent transparent transparent,
+		'line' color(base, 070) color(base, 030) color(base, 030)  color(base, 030)				color(base, 010)		color(base, 005) color(base, 010) color(base, 000),
+		'fill' color(base, 030) color(base, 030) color(base, 030)  color(base, 030)				color(base, 010)		color(base, 010) color(base, 010) color(base, 010),
 	),
 	'accent-01': (
 		'none' color(base, 070) color(base, 030) color(base, 030) color(base, 020)				transparent				transparent transparent transparent,

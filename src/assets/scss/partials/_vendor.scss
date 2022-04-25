@@ -1076,7 +1076,7 @@
 			color: color(base, 090);
 
 			&::before {
-				border-color: color(navy, 040);
+				border-color: color(base, 040);
 			}
 		}
 	
@@ -1085,8 +1085,8 @@
 			color: color(base, 000);
 
 			&::before {
-				border-color: color(navy, 080);
-				background-color: color(navy, 080);
+				border-color: color(base, 080);
+				background-color: color(base, 080);
 
 			}
 		}

@@ -213,14 +213,14 @@
 									display: flex;
 									align-items: center;
 									@include font((outline: body, size: x-small)...);
-									color: color(navy, 040);
+									color: color(base, 040);
 
 									&::after {
 										content: '';
 										display: block;
 										width: 20rem;
 										height: 20rem;
-										background: icon(fill-download, color(navy, 040)) no-repeat center/cover;
+										background: icon(fill-download, color(base, 040)) no-repeat center/cover;
 									}
 								}
 								
@@ -321,7 +321,7 @@
 					.data-item {
 						display: flex;
 						@include font((outline: body, size: x-small)...);
-						color: color(navy, 040);
+						color: color(base, 040);
 			
 						.head {
 							display: flex;
@@ -334,7 +334,7 @@
 								margin-right: 2rem;
 								width: 16rem;
 								height: 16rem;
-								background: icon(line-comment, color(navy, 040)) no-repeat center/cover;
+								background: icon(line-comment, color(base, 040)) no-repeat center/cover;
 							}
 						}	
 						.body {
@@ -630,7 +630,7 @@
 									.team {
 										display: flex;
 										@include font((outline: body, size: xx-small)...);
-										color: color(navy, 050);
+										color: color(base, 050);
 
 										&::before {
 											content: '';
@@ -655,7 +655,7 @@
 								.body {
 									display: block;
 									@include font((outline: body, size: xx-small)...);
-									color: color(navy, 050);
+									color: color(base, 050);
 								}
 							}
 

@@ -37,9 +37,9 @@ $mark-module-a-accent: (
 		'fill' color(base, 050) color(base, 010) color(base, 010),
 	),
 	'normal-04': (
-		'none' color(navy, 040) transparent transparent,
-		'line' color(navy, 050) color(navy, 020) color(navy, 000),
-		'fill' color(navy, 050) color(navy, 020) color(navy, 020),
+		'none' color(base, 040) transparent transparent,
+		'line' color(base, 050) color(base, 020) color(base, 000),
+		'fill' color(base, 050) color(base, 020) color(base, 020),
 	),
 	'accent-01': (
 		'none' color(primary, 040) transparent transparent,
@@ -47,9 +47,9 @@ $mark-module-a-accent: (
 		'fill' color(primary, 000) color(primary, 040) color(primary, 040),
 	),
 	'accent-02': (
-		'none' color(navy, 080) transparent transparent,
-		'line' color(navy, 080) color(navy, 080) color(navy, 000),
-		'fill' color(navy, 000) color(navy, 080) color(navy, 080),
+		'none' color(base, 080) transparent transparent,
+		'line' color(base, 080) color(base, 080) color(base, 000),
+		'fill' color(base, 000) color(base, 080) color(base, 080),
 	),
 	'accent-03': (
 		'none' color(secondary, 010) transparent transparent,
@@ -191,19 +191,19 @@ $mark-module-b-accent: (
 		'fill' color(base, 000) color(base, 100) color(base, 100),
 	),
 	'normal-01': (
-		'none' color(navy, 100) transparent transparent,
-		'line' color(navy, 80) color(navy, 80) color(navy, 000),
-		'fill' color(navy, 000) color(navy, 80) color(navy, 80),
+		'none' color(base, 100) transparent transparent,
+		'line' color(base, 80) color(base, 80) color(base, 000),
+		'fill' color(base, 000) color(base, 80) color(base, 80),
 	),
 	'normal-02': (
-		'none' color(navy, 060) transparent transparent,
-		'line' color(navy, 040) color(navy, 030) color(navy, 000),
-		'fill' color(navy, 000) color(navy, 070) color(navy, 070),
+		'none' color(base, 060) transparent transparent,
+		'line' color(base, 040) color(base, 030) color(base, 000),
+		'fill' color(base, 000) color(base, 070) color(base, 070),
 	),
 	'normal-03': (
-		'none' color(navy, 040) transparent transparent,
-		'line' color(navy, 040) color(navy, 030) color(navy, 000),
-		'fill' color(navy, 000) color(navy, 030) color(navy, 030),
+		'none' color(base, 040) transparent transparent,
+		'line' color(base, 040) color(base, 030) color(base, 000),
+		'fill' color(base, 000) color(base, 030) color(base, 030),
 	),
 	'accent-01': (
 		'none' color(primary, 050) transparent transparent,
