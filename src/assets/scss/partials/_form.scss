@@ -151,7 +151,7 @@ label.form {
 				border-style: solid;
 				border-color: color(base, 020);
 				border-radius: calc(20rem * 0.5);
-				background-color: #fff;
+				background-color: color(base, 000);
 				transition: left 0.1s ease-out, border-color 0.1s ease-out;
 			}
 

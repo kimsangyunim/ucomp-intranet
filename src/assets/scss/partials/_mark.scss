@@ -47,19 +47,19 @@ $mark-module-a-accent: (
 		'fill' color(primary, 000) color(primary, 040) color(primary, 040),
 	),
 	'accent-02': (
-		'none' color(base, 080) transparent transparent,
-		'line' color(base, 080) color(base, 080) color(base, 000),
-		'fill' color(base, 000) color(base, 080) color(base, 080),
-	),
-	'accent-03': (
 		'none' color(secondary, 010) transparent transparent,
-		'line' color(secondary, 010) color(secondary, 010) color(base, 000),
+		'line' color(secondary, 010) color(base, 080) color(base, 000),
 		'fill' color(base, 000) color(secondary, 010) color(secondary, 010),
 	),
-	'accent-04': (
+	'accent-03': (
 		'none' color(secondary, 020) transparent transparent,
 		'line' color(secondary, 020) color(secondary, 020) color(base, 000),
 		'fill' color(base, 000) color(secondary, 020) color(secondary, 020),
+	),
+	'accent-04': (
+		'none' color(secondary, 030) transparent transparent,
+		'line' color(secondary, 030) color(secondary, 030) color(base, 000),
+		'fill' color(base, 000) color(secondary, 030) color(secondary, 030),
 	)
 );
 
@@ -513,6 +513,6 @@ $mark-module-b-accent: (
 	}
 
 	&.accent-03 {
-		background-image: icon(lamp-dot, color(secondary, 030));
+		background-image: icon(lamp-dot, color(secondary, 040));
 	}
 }
