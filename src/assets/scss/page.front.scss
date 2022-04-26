@@ -201,4 +201,22 @@
 			white-space: nowrap;
 		}
 	}
+
+	.section.module-a.type-a {
+		&+.section.module-a.type-a {
+			padding-top: 24rem;
+			border-top: 4rem solid color(base, 010);
+		
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: calc(50% - 50vw);
+				top: -4rem;
+				width: 100vw;
+				height: 4rem;
+				background-color: color(base, 010);
+			}
+		}
+	}
 }

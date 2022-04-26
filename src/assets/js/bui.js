@@ -336,8 +336,8 @@
 		/* callback */
 		onloadCallBack: function() {return false;},
 		eventCallBack: function() {return false;},
-		activeCallBack: function() {return false;},
-		inactiveCallBack: function() {return false;}
+		activeAfterCallBack: function() {return false;},
+		inactiveAfterCallBack: function() {return false;}
 	};
 
 	/**
@@ -360,12 +360,16 @@
 		toggleTarget.classList.add(settings.activeClass);
 		toggleButton.classList.add(settings.buttonActiveClass);
 		settings.buttonActiveText != null ?  toggleButton.innerHTML = settings.buttonActiveText : null;
+
+		settings.activeAfterCallBack.call(this, toggleTarget, toggleButton);
 	};
 
 	var actionInactive = function(settings, toggleTarget, toggleButton) {
 		toggleTarget.classList.remove(settings.activeClass);
 		toggleButton.classList.remove(settings.buttonActiveClass);
 		settings.buttonActiveText != null ? toggleButton.innerHTML = settings.buttonText : null;
+
+		settings.inactiveAfterCallBack.call(this, toggleTarget, toggleButton);
 	};
 
 	var ellipsis = function(settings, toggleTarget) {

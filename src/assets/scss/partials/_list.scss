@@ -265,7 +265,10 @@ $data-display-module-accent: (
 		.data-item {
 			.data-wrap {
 				.data-head {
+					display: flex;
+
 					.data-name {
+						flex-shrink: 0;
 						display: flex;
 						color: color(base, 080);
 						text-decoration: none;

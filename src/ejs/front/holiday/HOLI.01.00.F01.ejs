@@ -69,10 +69,7 @@
 						<!-- content-body -->
 						<div class="content-body">
 							<!-- datepicker -->
-							<!-- <div class="datepicker-inline style-b" id="datepickerInline" data-bui-expand="workingStatus"></div> -->
-							<div class="datepicker-inline style-b" data-bui-expand="workingStatus">
-								<input type="hidden" id="datepickerInline" value="2022-04-04, 2022-04-05, 2022-04-06" oninput="console.log(this.value);" />
-							</div>
+							<div class="datepicker-inline style-b" id="datepickerInline" data-bui-expand="workingStatus"></div>
 							<!-- //datepicker -->
 							<!-- section -->
 							<div class="section module-a type-a">
@@ -120,7 +117,7 @@
 							</div>
 							<!-- //section -->
 							<!-- section -->
-							<div class="section module-a style-a type-a">
+							<div class="section module-a type-a">
 								<div class="section-head"><h4 class="section-title"><span class="section-name">휴가</span></h4></div>
 								<div class="section-body">
 									<!-- data-display -->
@@ -182,9 +179,13 @@
 <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.1.1/air-datepicker.min.js"></script>
 <script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', function() {
+		/**
+		 * @module AirDatepicker datepickerInline
+		 */
 		const datepicker = new AirDatepicker('#datepickerInline', {
 			inline: true,
-			multipleDates: true,
+			toggleSelected: false,
+			multipleDates: false,
 			firstDay: 0,
 			locale: {
 				days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -201,14 +202,37 @@
 			navTitles: {
 				days: 'yyyy.MM'
 			},
-			prevHtml: '',
-			nextHtml: '',
-			selectedDates: ['2022-04-04', '2022-04-05'],
-			minDate: '2022-04-03',
-			maxDate: '2022-04-09',
-
+			prevHtml: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" focusable="false"><title>전월</title><path d="M15.52,6.37a1.24,1.24,0,0,1,0,1.76L11.65,12l3.87,3.87a1.25,1.25,0,1,1-1.77,1.76L8.12,12l5.63-5.63A1.25,1.25,0,0,1,15.52,6.37Z"></path></svg>',
+			nextHtml: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" focusable="false"><title>차월</title><path d="M8.48,17.63a1.24,1.24,0,0,1,0-1.76L12.35,12,8.48,8.13a1.25,1.25,0,1,1,1.77-1.76L15.88,12l-5.63,5.63A1.25,1.25,0,0,1,8.48,17.63Z"></path></svg>',
+			minDate: '2022-04-24', // 금주 시작
+			maxDate: '2022-04-30', // 금주 마지막
+			selectedDates: ['2022-04-27'], // 오늘 날짜
 			onSelect: function(date, formattedDate, datepicker) {
-				console.log(selectedDates);
+				console.log(date.datepicker.focusDate); // 선택한 날짜
+			},
+		});
+
+		/**
+		 * @module buiExpand workingStatus
+		 */
+		const workingStatus = new buiExpand('[data-bui-expand="workingStatus"]', {
+			accordion: false,
+			activeClass: 'active',
+			buttonClass: 'btn expand',
+			buttonText: '<svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>펼치기</title><path d="M6.37,8.48a1.24,1.24,0,0,1,1.76,0L12,12.35l3.87-3.87a1.25,1.25,0,1,1,1.76,1.77L12,15.88,6.37,10.25A1.25,1.25,0,0,1,6.37,8.48Z"></path></svg>',
+			buttonActiveText: '<svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>접기</title><path d="M17.63,15.52a1.24,1.24,0,0,1-1.76,0L12,11.65,8.13,15.52a1.25,1.25,0,1,1-1.76-1.77L12,8.12l5.63,5.63A1.25,1.25,0,0,1,17.63,15.52Z"></path></svg>',
+
+			activeAfterCallBack: function() {
+				datepicker.update({
+					minDate: false, // 금주 시작
+					maxDate: false, // 금주 마지막
+				});
+			},
+			inactiveAfterCallBack: function() {
+				datepicker.update({
+					minDate: '2022-04-24', // 금주 시작
+					maxDate: '2022-04-30', // 금주 마지막
+				});
 			},
 		});
 	});

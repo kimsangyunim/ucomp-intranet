@@ -364,18 +364,6 @@ const postItem = new buiExpand('.post-item[data-bui-expand="postItem"]', {
 	// targetClass: 'bui-expand-target',
 });
 
-/**
- * @module buiExpand workingStatus
- */
-const workingStatus = new buiExpand('[data-bui-expand="workingStatus"]', {
-	accordion: false,
-	activeClass: 'active',
-	buttonClass: 'btn expand',
-	buttonText: '<svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>펼치기</title><path d="M6.37,8.48a1.24,1.24,0,0,1,1.76,0L12,12.35l3.87-3.87a1.25,1.25,0,1,1,1.76,1.77L12,15.88,6.37,10.25A1.25,1.25,0,0,1,6.37,8.48Z"></path></svg>',
-	buttonActiveText: '<svg width="24" height="24" viewBox="0 0 24 24" focusable="false" xmlns="http://www.w3.org/2000/svg"><title>접기</title><path d="M17.63,15.52a1.24,1.24,0,0,1-1.76,0L12,11.65,8.13,15.52a1.25,1.25,0,1,1-1.76-1.77L12,8.12l5.63,5.63A1.25,1.25,0,0,1,17.63,15.52Z"></path></svg>',
-});
-
-
 
 
 
