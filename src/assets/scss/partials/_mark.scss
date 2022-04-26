@@ -82,7 +82,7 @@ $mark-module-a-outline: (
 
 .mark.module-a {
 	// general
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	@include font((family: default)...);
@@ -232,7 +232,7 @@ $mark-module-b-accent: (
 
 .mark.module-b {
 	// general
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	@include font((family: default)...);
