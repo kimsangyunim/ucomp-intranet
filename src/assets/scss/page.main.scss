@@ -125,7 +125,7 @@ body {
 					height: 40rem;
 					.data-list{
 						display: flex;
-						justify-content:center;
+						justify-content: center;
 						padding: 12rem 0;
 						.working-hours{
 							display: flex;
@@ -179,86 +179,110 @@ body {
 	
 }
 
-.section.approve{
-	.section-wrap{
-		.section-head{
+.section.approve {
+	.section-wrap {
+		.section-head {
 			margin-bottom: 8rem;
-			.section-subject{
+			.section-subject {
 				margin: 0;
 			}
-			.section-name{
+			.section-name {
 				@include font((outline: body, size: medium, weight: bold)...);
 				color: color(base,090);
 			}
 		}
-		.section-body{
-			background-color: color(primary, 050);
-			border-radius: 12rem;
-			padding: 16rem;
-			color: color(base,000);
-			.data-display{
-				&::before {
-					content: '';
+		.section-body {
+			.data-display {
+				background-color: color(primary, 050);
+				border-radius: 12rem;
+				padding: 16rem;
+				color: color(base,000);
+
+				.data-list {
 					display: flex;
-					flex: 1 1 100%;
-					// align-items: center;
-					width: 20rem;
-					height: 20rem;
-					background: icon(line-description, color(base, 000)) no-repeat center/cover;
-					opacity: .8;
-					margin-right: 2rem;
-				}
-				.data-list{
-					display: flex;
-					margin: 0;
+
 					.data-item{
-						.dayoff-approve{
-							.data-head{
-								@include font((outline: body, size: small, weight: bold)...);
-								color: color(base,000);
-								opacity: .8;
+						flex: 1 1 100%;
+						display: flex;
 
-								&~.data-body{
-									margin-left: 29rem;
-								}
+						+.data-item {
+							position: relative;
+							margin-left: 16rem;
+							padding-left: 16rem;
+
+							&::after {
+								content: '';
+								display: block;
+								position: absolute;
+								left: 0;
+								bottom: 0;
+								width: 2rem;
+								height: 20rem;
+								background-color: color(base,100);
+								opacity: .1;
 							}
-							.data-body{
-								@include font((outline: body, size: xx-large, weight: bold)...);
-								color: color(base,000);
-
-								&::after {
-									content: '';
-									display: inline-flex;
-									align-items: flex-end;
-									width: 2rem;
-									height: 20rem;
-									background-color: color(base,100);
-									opacity: .1;
-									margin: 0 19rem;
-								}
-								
-							}
-
 						}
-						.expenses{
-							.data-head{
+
+						.data-wrap {
+							flex: 1 1 100%;
+							display: flex;
+							justify-content: space-between;
+							align-items: flex-end;
+
+							@include respond-below(x-small) {
+								flex-wrap: wrap;
+							}
+
+							.data-head {
+								flex: 1 1 100%;
 								@include font((outline: body, size: small, weight: bold)...);
 								color: color(base,000);
 								opacity: .8;
-								
-								&~.data-body{
-									margin-left: 55rem;
+
+								.data-name{
+									display: block;
+
+									&::before {
+										content: '';
+										display: flex;
+										width: 20rem;
+										height: 20rem;
+										background-repeat: no-repeat;
+										background-position: 0 0;
+										background-size: cover;
+										opacity: .8;
+									}
 								}
 							}
-							.data-body{
-								@include font((outline: body, size: xx-large, weight: bold)...);
+							.data-body {
+								line-height: 1;
+								font-size: 24rem;
+								font-weight: 700;
 								color: color(base,000);
-								opacity: .4;
 							}
+						}
+
+						&.dayoff-approve {
+							.data-head {
+								.data-name::before {
+									background-image: icon(line-description, color(base, 000));
+								}
+							}
+						}
+
+						&.expenses {
+
 						}
 					}
 				}
 			}
 		}
 	}
+
+	&~.section.inquire {
+		margin-top: 40rem;
+	}
+}
+.section.inquire {
+
 }
