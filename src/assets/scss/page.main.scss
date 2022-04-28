@@ -498,22 +498,40 @@ body {
 		}
 		
 		.section-body {
+			// width: 100vw;
 			.post-latest {
 				display: flex;
+				overflow-x: auto;
+				-webkit-overflow-scrolling: touch;
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+
+				&::-webkit-scrollbar {
+					display: none;
+				}
+				
 				.post-list {
 					display: flex;
-					flex: 1 1 100%;
+					// flex: 1 1 100%;
+					position: relative;
+					box-sizing: border-box;
+					width: 159rem;
 					background-color: color(base,000);
 					border: 1px solid #e8eced ;
 					border-radius: 12rem;
 					padding: 16rem;
-
-					&~.post-list{
+					
+					&~.post-list {
 						margin-left: 8rem;
 					}
+
 					.post-item {
 						display: flex;
+						box-sizing: border-box;
+						width: 159rem;
+						
 						.post-wrap {
+							position: relative;
 							.post-inform {
 								.post-type {
 									display: inline-flex;
