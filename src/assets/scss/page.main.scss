@@ -81,7 +81,7 @@ body {
 			padding-bottom: 40rem;
 			position: relative;
 			
-			.goods-wrap{
+			.goods-wrap {
 				display: flex;
 				border-bottom: 1px solid #f0f3f4;
 				padding: 24rem 16rem;
@@ -102,19 +102,19 @@ body {
 					background-size: cover;
 					background-image: var(--default-picture);
 				}
-				.goods-head{
+				.goods-head {
 					.goods-title {
 						display: flex;
 						flex-wrap: wrap;
 						margin: 0;
 						
-						.goods-name{
+						.goods-name {
 							flex: 1 1 100%;
 							display: flex;
 							@include font((outline: body, size: small, weight: bold)...);
 							color: color(base, 070);
 						}
-						.goods-department{
+						.goods-department {
 							display: flex;
 							@include font((outline: body, size: small, weight: light)...);
 							color: color(base, 040);
@@ -127,24 +127,28 @@ body {
 								background: icon(bullet-dot, color(base, 020)) no-repeat center/cover;
 							}
 						}
-						.goods-team{
+						.goods-team {
 							display: flex;
 							@include font((outline: body, size: small, weight: light)...);
 							color: color(base, 040);
 						}
 					}
 				}
-				.goods-data{
+				.goods-data {
 					position: absolute;
 					left: 0; bottom: 0;
 					width: 100%;
 					height: 40rem;
-					.data-list{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					.data-list {
 						display: flex;
-						justify-content: center;
-						padding: 12rem 0;
-						.working-hours{
+
+						.working-hours {
 							display: flex;
+							flex-wrap: wrap;
 							@include font((outline: body, size: xx-small, weight: light)...);
 							color: color(base, 050);
 							border-right: 1px solid #e8eced;
@@ -160,12 +164,13 @@ body {
 								background: icon(line-time, color(base, 030)) no-repeat center/cover;
 								margin-right: 2rem;
 							}
-							>.head{
+							>.head {
 								margin-right: 4rem;
 							}
 						}
-						.day-off{
+						.day-off {
 							display: flex;
+							flex-wrap: wrap;
 							@include font((outline: body, size: xx-small, weight: light)...);
 							color: color(base, 050);
 
@@ -178,7 +183,7 @@ body {
 								background: icon(line-bag, color(base, 030)) no-repeat center/cover;
 								margin-right: 2rem;
 							}
-							>.head{
+							>.head {
 								margin-right: 4rem;
 							}
 						}
@@ -189,7 +194,7 @@ body {
 		}
 	}
 
-	&~.section.approve{
+	&~.section.approve {
 		margin-top: 40rem;
 	}
 	
