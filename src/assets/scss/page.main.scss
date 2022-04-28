@@ -564,6 +564,11 @@ body {
 											.head {
 												@include hidden;
 											}
+											.body{
+												.date{
+													color: color(base,050);
+												}
+											}
 										}
 									}
 								}
