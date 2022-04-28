@@ -195,7 +195,7 @@
 
 								.body {
 									display: block;
-									@include font((outline: body, size: xx-small)...);
+									@include font((outline: body, size: xx-small, weight: light)...);
 									color: color(base, 050);
 								}
 							}
