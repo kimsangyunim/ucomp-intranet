@@ -2,17 +2,33 @@
 @import 'partials/_mixin';
 
 :root {
+	height: 100%;
 	font-size: 1px;
+}
+
+#local {
+	overflow: hidden;
+
+	.local-head {
+		@include hidden;
+	}
+	.local-body {
+		overflow-x: hidden;
+		overflow-y: scroll;
+
+		#content .content-body {
+			padding-bottom: 36rem;
+		}
+	}
 }
 
 body {
 	margin: 0;
+	height: 100%;
 	@include font((outline: body, size: medium, family: default)...);
 }
 
-.local-head{
-	@include hidden;
-}
+
 
 .main-info {
 	position: relative;
@@ -251,6 +267,7 @@ body {
 										background-position: 0 0;
 										background-size: cover;
 										opacity: .8;
+										margin-bottom: 4rem;
 									}
 								}
 							}
@@ -271,7 +288,9 @@ body {
 						}
 
 						&.expenses {
-
+							.data-body{
+								opacity: .4;
+							}
 						}
 					}
 				}
@@ -284,5 +303,267 @@ body {
 	}
 }
 .section.inquire {
+	.section-wrap {
+		.section-head {
+			margin-bottom: 8rem;
+			.section-subject {
+				margin: 0;
+			}
+			.section-name {
+				@include font((outline: body, size: medium, weight: bold)...);
+				color: color(base,090);
+			}
+		}
+		.section-body {
+			.data-display {
+				background-color: color(secondary, 010);
+				border-radius: 12rem;
+				padding: 16rem;
+				color: color(base,000);
 
+				.data-list {
+					display: flex;
+
+					.data-item{
+						flex: 1 1 100%;
+						display: flex;
+
+						+.data-item {
+							position: relative;
+							margin-left: 16rem;
+							padding-left: 16rem;
+
+							&::after {
+								content: '';
+								display: block;
+								position: absolute;
+								left: 0;
+								bottom: 0;
+								width: 2rem;
+								height: 20rem;
+								background-color: color(base,100);
+								opacity: .25;
+							}
+						}
+
+						.data-wrap {
+							flex: 1 1 100%;
+							display: flex;
+							justify-content: space-between;
+							align-items: flex-end;
+
+							@include respond-below(x-small) {
+								flex-wrap: wrap;
+							}
+
+							.data-head {
+								flex: 1 1 100%;
+								@include font((outline: body, size: small, weight: bold)...);
+								color: color(base,000);
+								opacity: .8;
+
+								.data-name {
+									display: block;
+
+									&::before {
+										content: '';
+										display: flex;
+										width: 20rem;
+										height: 20rem;
+										background-repeat: no-repeat;
+										background-position: 0 0;
+										background-size: cover;
+										opacity: .7;
+										margin-bottom: 4rem;
+									}
+								}
+							}
+							.data-body {
+								line-height: 1;
+								font-size: 24rem;
+								font-weight: 700;
+								color: color(base,000);
+							}
+						}
+
+						&.my-dayoff {
+							.data-head {
+								.data-name::before {
+									background-image: icon(fill-plus, color(base, 000));
+								}
+							}
+						}
+
+						&.my-expenses {
+							.data-head {
+								.data-name::before {
+									background-image: icon(fill-write, color(base, 000));
+								}
+							}
+							.data-body {
+								opacity: .4;
+							}
+						}
+					}
+				}
+				&~.button-display {
+					margin-top: 8rem;
+				}
+			}
+			.button-display {
+				.button-area {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 16rem;
+					border-radius: 12rem;
+					background-color: color(base,005);
+					cursor: pointer;
+			
+					.btn {
+						display: flex;
+						text-decoration: none;
+						@include font((outline: body, size: small, weight: bold)...);
+						color: color(base,050);
+						
+						&::before {
+							content: '';
+							display: inline-flex;
+							align-items: center;
+							width: 20rem;
+							height: 20rem;
+							background-repeat: no-repeat;
+							background-position: 0 0;
+							background-size: cover;
+							margin-right: 4rem;
+						}
+						.btn-text {
+							display: block;
+						}
+					}
+											
+					&::after {
+						content: '';
+						display: inline-flex;
+						align-items: center;
+						width: 20rem;
+						height: 20rem;
+						background-image: icon(fill-chevron-right, color(base, 030));	
+						background-repeat: no-repeat;
+						background-position: right;
+						background-size: cover;
+						margin-right: 4rem;
+					}
+
+					&.working-status {
+						.btn::before {
+							background-image: icon(line-calendar-today, color(base, 050));
+						}
+
+					}
+					&.employees{
+						.btn::before{
+							background-image: icon(line-profile, color(base, 050));
+						}
+					}
+
+					&~.button-area{margin-top: 8rem;}		
+				}
+			}
+		}
+	}
+
+	&~.section.announce{
+		margin-top: 40rem;
+	}
+}
+
+.section.announce {
+	.section-wrap {
+		position: relative;
+		.section-head {
+			margin-bottom: 8rem;
+			.section-subject {
+				margin: 0;
+			}
+			.section-name {
+				@include font((outline: body, size: medium, weight: bold)...);
+				color: color(base,090);
+			}
+		}
+		
+		.section-body {
+			.post-latest {
+				display: flex;
+				.post-list {
+					display: flex;
+					flex: 1 1 100%;
+					background-color: color(base,000);
+					border: 1px solid #e8eced ;
+					border-radius: 12rem;
+					padding: 16rem;
+
+					&~.post-list{
+						margin-left: 8rem;
+					}
+					.post-item {
+						display: flex;
+						.post-wrap {
+							.post-inform {
+								.post-type {
+									display: inline-flex;
+									&~.post-head {
+										margin-top: 8rem;
+									}
+								}
+								.post-head {
+									.post-title {
+										margin: 0;
+										.post-name {
+											@include font((outline: body, size: small, weight: bold)...);
+											color: color(base,070);
+											@include ellipsis(2);
+										}
+									}
+									&~.post-data {
+										margin-top: 12rem;
+									}
+								}
+								.post-data {
+									.data-list {
+										display: flex;
+										justify-content: space-between;
+										flex-wrap: wrap;
+								
+										.data-item {
+											@include font((outline: body, size: xx-small, weight: light)...);
+											color: color(base,070);
+											.head {
+												@include hidden;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.section-side {
+			display:block;
+			position: absolute;
+			top: 0; right: 0;
+			.button-display {
+				.button-area {
+					.btn {
+						text-decoration: none;
+						@include font((outline: body, size: small)...);
+						color: color(base,040);
+					}
+				}
+			}
+		}
+	}
 }
