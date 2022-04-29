@@ -1,11 +1,6 @@
 @import 'partials/_variables';
 @import 'partials/_mixin';
 
-:root {
-	height: 100%;
-	font-size: 1px;
-}
-
 #local {
 	overflow: hidden;
 
@@ -15,26 +10,55 @@
 	.local-body {
 		overflow-x: hidden;
 		overflow-y: scroll;
+	}
+}
 
-		#content .content-body {
-			padding-bottom: 36rem;
+.section.module-a.type-a {
+	margin: 32rem 0;
+
+	.section-wrap {
+		.section-head {
+			margin-bottom: 8rem;
+
+			.section-subject {
+				display: flex;
+				margin: 0;
+
+				.section-name {
+					display: block;
+					@include font((outline: body, size: medium, weight: bold)...);
+					color: color(base,090);
+				}
+			}
+		}
+
+		.section-side {
+			display: flex;
+			height: 24rem;
+			align-items: flex-end;
+			position: absolute;
+			top: 0; right: 0;
+			.button-area {
+				.btn.more-data {
+					text-decoration: none;
+					@include font((outline: body, size: small)...);
+					color: color(base,040);
+					.btn-text {
+						display: flex;
+						align-items: flex-end;
+					}
+				}
+			}
 		}
 	}
 }
 
-body {
-	margin: 0;
-	height: 100%;
-	@include font((outline: body, size: medium, family: default)...);
-}
 
 
-
-.main-info {
+.info-board.main-info {
 	position: relative;
 	padding: 24rem 0 16rem 0;
 
-	
 	
 	&::before {
 		content: '';
@@ -151,9 +175,10 @@ body {
 							flex-wrap: wrap;
 							@include font((outline: body, size: xx-small, weight: light)...);
 							color: color(base, 050);
-							border-right: 1px solid #e8eced;
-							padding-right: 20rem;
+							// border-right: 1px solid #e8eced;
+							// padding-right: 20rem;
 							margin-right: 20rem;
+
 
 							&::before {
 								content: '';
@@ -189,29 +214,13 @@ body {
 						}
 					}
 				}
-			}
-			
+			}		
 		}
 	}
-
-	&~.section.approve {
-		margin-top: 40rem;
-	}
-	
 }
 
 .section.approve {
 	.section-wrap {
-		.section-head {
-			margin-bottom: 8rem;
-			.section-subject {
-				margin: 0;
-			}
-			.section-name {
-				@include font((outline: body, size: medium, weight: bold)...);
-				color: color(base,090);
-			}
-		}
 		.section-body {
 			.data-display {
 				background-color: color(primary, 050);
@@ -302,23 +311,9 @@ body {
 			}
 		}
 	}
-
-	&~.section.inquire {
-		margin-top: 32rem;
-	}
 }
 .section.inquire {
 	.section-wrap {
-		.section-head {
-			margin-bottom: 8rem;
-			.section-subject {
-				margin: 0;
-			}
-			.section-name {
-				@include font((outline: body, size: medium, weight: bold)...);
-				color: color(base,090);
-			}
-		}
 		.section-body {
 			.data-display {
 				background-color: color(secondary, 010);
@@ -416,24 +411,18 @@ body {
 				}
 			}
 			.button-display {
+				display: block;
 				.button-area {
 					display: flex;
-					align-items: center;
-					justify-content: space-between;
-					padding: 16rem;
-					border-radius: 12rem;
-					background-color: color(base,005);
-					cursor: pointer;
-			
 					.btn {
 						display: flex;
-						text-decoration: none;
-						@include font((outline: body, size: small, weight: bold)...);
-						color: color(base,050);
+						flex: 1 1  100%;
+						justify-content: flex-start;
+						padding: 0 16rem;
 						
 						&::before {
 							content: '';
-							display: inline-flex;
+							display: flex;
 							align-items: center;
 							width: 20rem;
 							height: 20rem;
@@ -443,22 +432,26 @@ body {
 							margin-right: 4rem;
 						}
 						.btn-text {
-							display: block;
+							display: flex;
+							flex: 1 1 100%;
+							justify-content: space-between;
+							align-items: center;
+							@include font((outline: body, size: small, weight: bold)...);
 						}
 					}
 											
-					&::after {
-						content: '';
-						display: inline-flex;
-						align-items: center;
-						width: 20rem;
-						height: 20rem;
-						background-image: icon(fill-chevron-right, color(base, 030));	
-						background-repeat: no-repeat;
-						background-position: right;
-						background-size: cover;
-						margin-right: 4rem;
-					}
+					// &::after {
+					// 	content: '';
+					// 	display: inline-flex;
+					// 	align-items: center;
+					// 	width: 20rem;
+					// 	height: 20rem;
+					// 	background-image: icon(fill-chevron-right, color(base, 030));	
+					// 	background-repeat: no-repeat;
+					// 	background-position: right;
+					// 	background-size: cover;
+					// 	margin-right: 4rem;
+					// }
 
 					&.working-status {
 						.btn::before {
@@ -466,8 +459,8 @@ body {
 						}
 
 					}
-					&.employees{
-						.btn::before{
+					&.employees {
+						.btn::before {
 							background-image: icon(line-profile, color(base, 050));
 						}
 					}
@@ -477,30 +470,20 @@ body {
 			}
 		}
 	}
-
-	&~.section.announce{
-		margin-top: 32rem;
-	}
 }
 
 .section.announce {
 	.section-wrap {
 		position: relative;
-		.section-head {
-			margin-bottom: 8rem;
-			.section-subject {
-				margin: 0;
-			}
-			.section-name {
-				@include font((outline: body, size: medium, weight: bold)...);
-				color: color(base,090);
-			}
-		}
-		
+	
 		.section-body {
-			// width: 100vw;
+			width: 100vw;
+			position: relative;
+			left: calc(50% - 50vw);
+
 			.post-latest {
 				display: flex;
+				padding: 0 20rem;
 				overflow-x: auto;
 				-webkit-overflow-scrolling: touch;
 				-ms-overflow-style: none;
@@ -512,29 +495,45 @@ body {
 				
 				.post-list {
 					display: flex;
-					// flex: 1 1 100%;
-					position: relative;
-					box-sizing: border-box;
-					width: 159rem;
-					background-color: color(base,000);
-					border: 1px solid #e8eced ;
-					border-radius: 12rem;
-					padding: 16rem;
-					
-					&~.post-list {
-						margin-left: 8rem;
-					}
-
 					.post-item {
 						display: flex;
+						// flex: 1 1 100%;
+						position: relative;
 						box-sizing: border-box;
-						width: 159rem;
-						
+						width: 156rem;
+						background-color: color(base,000);
+						border: 1px solid #e8eced ;
+						border-radius: 12rem;
+						padding: 16rem;
+
+						&~.post-item {
+							margin-left: 8rem;
+						}
+
 						.post-wrap {
-							position: relative;
+							display: flex;
+							box-sizing: border-box;
+							width: 156rem;
+							
 							.post-inform {
+								position: relative;
+								display: block;
 								.post-type {
-									display: inline-flex;
+									display: block;
+									.data-list{
+										display: flex;
+										flex-wrap: wrap;
+										column-gap: 4rem;
+										row-gap: 4rem;
+
+										.data-item{
+											display: flex;
+											
+											.mark {
+												flex-shrink: 0;
+											}
+										}
+									}
 									&~.post-head {
 										margin-top: 8rem;
 									}
@@ -542,6 +541,7 @@ body {
 								.post-head {
 									.post-title {
 										margin: 0;
+										display: block;
 										.post-name {
 											@include font((outline: body, size: small, weight: bold)...);
 											color: color(base,070);
@@ -553,17 +553,22 @@ body {
 									}
 								}
 								.post-data {
+									display: block;
+
 									.data-list {
 										display: flex;
 										justify-content: space-between;
 										flex-wrap: wrap;
+										margin: 0;
 								
 										.data-item {
+											display: block;
 											@include font((outline: body, size: xx-small, weight: light)...);
 											color: color(base,070);
 											.head {
 												@include hidden;
 											}
+
 											.body{
 												.date{
 													color: color(base,050);
@@ -574,21 +579,6 @@ body {
 								}
 							}
 						}
-					}
-				}
-			}
-		}
-
-		.section-side {
-			display:block;
-			position: absolute;
-			top: 0; right: 0;
-			.button-display {
-				.button-area {
-					.btn {
-						text-decoration: none;
-						@include font((outline: body, size: small)...);
-						color: color(base,040);
 					}
 				}
 			}
