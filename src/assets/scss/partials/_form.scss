@@ -136,7 +136,7 @@ label.form {
 			width: 36rem;
 			height: 20rem;
 			border-radius: calc(20rem * 0.5);
-			background-color: color(base, 020);
+			background-color: color(base, 010);
 			transition: background-color 0.1s ease-out;
 			
 			&::after {
@@ -149,7 +149,7 @@ label.form {
 				height: 16rem;
 				border-width: 2rem;
 				border-style: solid;
-				border-color: color(base, 020);
+				border-color: color(base, 010);
 				border-radius: calc(20rem * 0.5);
 				background-color: color(base, 000);
 				transition: left 0.1s ease-out, border-color 0.1s ease-out;
@@ -166,7 +166,7 @@ label.form {
 
 		.form-text {
 			@include font((outline: body, size: small)...);
-			color: color(base, 070);
+			color: color(base, 040);
 		}
 
 		.form-text~.form-elem,
@@ -296,7 +296,6 @@ $form-module-b-outline: (
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -350,7 +349,9 @@ $form-module-b-outline: (
 	&.textfield {
 		.form-elem {
 			text-overflow: ellipsis;
+			font-weight: 300;
 		}
+	
 
 		.form-func {
 			display: flex;
@@ -373,6 +374,7 @@ $form-module-b-outline: (
 			.btn {
 				svg {
 					display: block;
+					color: color(base,070);
 				}	
 			}
 		}

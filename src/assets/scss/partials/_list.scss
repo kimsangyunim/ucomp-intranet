@@ -140,7 +140,7 @@ p.data-item {
 */
 $data-display-module-accent: (
 	'normal-02' color(base, 080) color(base, 020) color(base, 020),
-	'normal-03' color(base, 080) color(base, 020) color(base, 020),
+	'normal-03' color(base, 080) color(base, 010) color(base, 020),
 	'normal-04' color(base, 040) color(base, 040) color(base, 040),
 );
 
@@ -270,12 +270,12 @@ $data-display-module-accent: (
 					.data-name {
 						flex-shrink: 0;
 						display: flex;
-						color: color(base, 080);
+						color: color(base, 070);
 						text-decoration: none;
 					}
 				}
 				.data-body {
-					color: color(base, 060);
+					color: color(base, 040);
 				}
 			}
 		}
