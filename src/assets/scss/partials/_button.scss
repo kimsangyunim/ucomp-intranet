@@ -109,7 +109,7 @@ $btn-module-b-accent: (
 	'normal-03': (
 		'none' color(base, 060) transparent transparent,
 		'line' color(base, 040) color(base, 030) color(base, 000),
-		'fill' color(base, 000) color(base, 030) color(base, 030),
+		'fill' color(base, 040) color(base, 010) color(base, 010),
 	),
 	'normal-04': (
 		'none' color(base, 040) transparent transparent,
@@ -301,9 +301,9 @@ $btn-module-c-accent: (
 	)
 	,
 	'accent-02': (
-		'none' color(base, 050) transparent transparent,
-		'line' color(base, 050) color(base, 010) color(base, 000),
-		'fill' color(base, 050) color(base, 020) color(base, 020),
+		'none' color(base, 040) transparent transparent,
+		'line' color(base, 040) color(base, 010) color(base, 000),
+		'fill' color(base, 040) color(base, 020) color(base, 020),
 	)
 );
 
