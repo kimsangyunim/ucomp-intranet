@@ -661,6 +661,7 @@ $form-module-b-outline: (
 		}
 	}
 
+
 	// textarea
 	&.textarea {
 		.form-elem {
@@ -740,7 +741,7 @@ $form-module-b-outline: (
 	@each $accent-name in $form-module-b-accent {
 		&.#{nth($accent-name, 1)} {
 			// @debug "divider offset: #{nth($accent-name, 1)}";
-			@each $type-name, $color, $color-unit, $color-disabled, $border-color, $background-readonly, $background-disabled, $background-color  in map-get($form-module-b-accent, nth($accent-name, 1)) {
+			@each $type-name, $color, $color-unit, $color-placeholder, $color-disabled, $border-color, $background-readonly, $background-disabled, $background-color  in map-get($form-module-b-accent, nth($accent-name, 1)) {
 				&.type-#{$type-name} {
 					// common
 					&.textarea,
