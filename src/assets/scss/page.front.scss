@@ -40,6 +40,35 @@
 				height: 4rem;
 				background-color: color(base, 010);
 			}
+
+			.section-func {
+				position: absolute;
+				top: 24rem;
+				right: 0;
+
+				.button-area {
+					display: flex;
+					column-gap: 4rem;
+
+					.btn.delete {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 24rem;
+						height: 24rem;
+						box-sizing: border-box;
+						border: 1rem solid color(base, 010);
+						border-radius: 4rem;
+						background-color: color(base, 000);
+
+						svg {
+							height: 16rem;
+							width: 16rem;
+							fill: color(base, 040);
+						}
+					}
+				}
+			}
 		}
 	}
 
