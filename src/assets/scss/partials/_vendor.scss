@@ -61,7 +61,6 @@
 	&.-days- {
 		grid-template-columns: repeat(7, 40rem);
 	}
-
 	.air-datepicker-cell {
 		display: flex;
 		justify-content: center;
@@ -93,7 +92,8 @@
 
 		&:nth-child(7n + 1),
 		&:nth-child(7n),
-		&.-other-month- {
+		&.-other-month-,
+		&.-disabled- {
 			pointer-events: none;
 			color: color(base, 020);
 		}
