@@ -231,6 +231,9 @@ $data-display-module-accent: (
 					color: color(base, 070);
 				}
 			}
+			& + .data-item {
+				margin-top: 8rem;
+			}
 		}
 	}
 	// outline module-a
@@ -249,9 +252,9 @@ $data-display-module-accent: (
 						font-size: calc($line-height-head / $font-size);
 					}
 				}
-				& + .data-item {
-					margin-top: $margin;
-				}
+				// & + .data-item {
+				// 	margin-top: 8rem;
+				// }
 			}
 		}
 	}
