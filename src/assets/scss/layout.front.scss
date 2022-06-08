@@ -88,7 +88,7 @@ img {
  * @name page-navi
  */
 .page-navi {
-	order: 3;
+	order: 4;
 	flex-shrink: 0;
 	
 	position: relative;
@@ -250,7 +250,6 @@ img {
  */
 .page-foot {
 	order: 3;
-	@include hidden;
 }
 
 /**

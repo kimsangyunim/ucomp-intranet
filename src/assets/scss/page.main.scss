@@ -53,8 +53,6 @@
 	}
 }
 
-
-
 .info-board.main-info {
 	position: relative;
 	padding: 24rem 0 16rem 0;
@@ -313,6 +311,7 @@
 		}
 	}
 }
+
 .section.inquire {
 	.section-wrap {
 		.section-body {
@@ -584,5 +583,53 @@
 				}
 			}
 		}
+	}
+}
+
+.page-foot {
+	background-color: color(base, 010);
+	padding: 32rem 0 17rem 0;
+	.section.company-info {
+		.section-head {
+			@include hidden;
+		}
+		.section-body {
+			margin: 0;
+			.navi-list {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				justify-content: center;
+	
+				.navi-item {
+					display: flex;
+					list-style:none;
+					align-items: center;
+					&:last-child{
+						&::before {
+							display: block;
+							content: "";
+							width: 1rem;
+							height: 12rem;
+							background-color: color(base, 020);
+							margin: 0 8rem;
+						}
+					}
+					.navi-name {
+						text-decoration: none;
+						@include font((outline: body, size: small)...);
+						color: color(base,040);
+					}
+				}
+			}
+		}
+	}
+	.copyright {
+		margin: 0;
+		text-align: center;
+		margin-top: 16rem;
+		@include font((outline: body, size: xx-small, weight: light)...);
+		font-family: Open Sans;
+		color: color(base,040);
 	}
 }
