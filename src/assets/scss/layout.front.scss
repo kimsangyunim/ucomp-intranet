@@ -20,7 +20,6 @@ body {
 	word-break: keep-all;
 	@include font((family: default, size: small)...);
 	-webkit-text-size-adjust: none;
-	// background-color: color(base, 005);
 }
 
 hr {
@@ -38,15 +37,15 @@ img {
 #wrap {
 	position: relative;
 	overflow: hidden;
-	height: 100%;
+	// height: 100%;
 }
 
 #page {
-	display: flex;
-	flex-direction: column;
 	overflow: hidden;
-	width: 100%;
-	height: 100%;
+	// display: flex;
+	// flex-direction: column;
+	// width: 100%;
+	// height: 100%;
 }
 
 /**

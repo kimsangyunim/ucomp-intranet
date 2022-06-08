@@ -8,9 +8,17 @@
 		@include hidden;
 	}
 	.local-body {
-		overflow-x: hidden;
-		overflow-y: scroll;
+		// overflow-x: hidden;
+		// overflow-y: scroll;
+		// padding-bottom: 100rem;
 	}
+}
+
+.page-navi {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 .section.module-a.type-a {
@@ -588,7 +596,7 @@
 
 .page-foot {
 	background-color: color(base, 010);
-	padding: 32rem 0 17rem 0;
+	padding: 32rem 0 88rem 0;
 	.section.company-info {
 		.section-head {
 			@include hidden;
